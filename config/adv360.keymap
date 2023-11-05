@@ -8,6 +8,10 @@
     tapping-term-ms = <150>;
 };
 
+&mt {
+    tapping-term-ms = <150>;
+};
+
 / {
     behaviors {
         #include "macros.dtsi"
