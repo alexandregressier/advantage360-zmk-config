@@ -90,7 +90,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans                    &kp PERCENT              &kp KP_MULTIPLY  &kp LESS_THAN  &kp GREATER_THAN  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans                    &kp KP_N7                &kp KP_N8        &kp KP_N9      &kp KP_PLUS       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans                    &kp KP_N4                &kp KP_N5        &kp KP_N6      &kp KP_N0         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp KP_N0                 &kp KP_N4                &kp KP_N5        &kp KP_N6      &kp KP_PLUS       &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp KP_RIGHT_PARENTHESIS  &kp KP_N1                &kp KP_N2        &kp KP_N3      &kp KP_MINUS      &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                            &kp KP_LEFT_PARENTHESIS  &kp KP_COMMA     &kp KP_DOT     &kp KP_SLASH      &kp KP_EQUAL
             >;
