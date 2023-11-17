@@ -71,31 +71,31 @@
 
         default_layer {
             bindings = <
-&kp TILDE          &kp F1               &kp F2           &kp F3               &kp F4                 &kp F5  &tog 2                                                                                        &mo 4                   &kp F6  &kp F7                &kp F8                &kp F9            &kp F10                   &kp GRAVE
-&kp TAB            &kp Q                &kp W            &kp E                &kp R                  &kp T   &kp LS(LA(LC(LG(F3))))                                                                        &kp LS(LA(LC(LG(F4))))  &kp Y   &kp U                 &kp I                 &kp O             &kp P                     &kp EQUAL
-&kp DOUBLE_QUOTES  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_COMMAND D  &hml LEFT_SHIFT F      &kp G   &kp LS(LA(LC(LG(F1))))  &kp LEFT_ALT  &kp LEFT_CONTROL      &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp LS(LA(LC(LG(F2))))  &kp H   &hmr RIGHT_SHIFT J    &hmr RIGHT_COMMAND K  &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL COLON  &kp SINGLE_QUOTE
-&motog 3 3         &kp Z                &kp X            &kp C                &kp V                  &kp B                                         &kp HOME              &kp PG_UP                                                 &kp N   &kp M                 &kp COMMA             &kp DOT           &kp FSLH                  &kp MINUS
-&mo 3              &none                &none            &kp RIGHT_BRACE      &kp RIGHT_PARENTHESIS          &lt 2 BACKSPACE         &lt 3 ESCAPE  &kp END               &kp PAGE_DOWN      &lt 3 ENTER    &lt 1 SPACE                     &kp LEFT_PARENTHESIS  &kp LEFT_BRACE        &kp LEFT_BRACKET  &kp RIGHT_BRACKET         &none
+&kp LS(LA(LC(LG(F9))))  &kp F1               &kp F2           &kp F3                 &kp F4                 &kp F5  &tog 2                                                                          &mo 4                   &kp F6  &kp F7                &kp F8                &kp F9            &kp F10                           &none
+&kp TAB                 &kp Q                &kp W            &kp E                  &kp R                  &kp T   &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y   &kp U                 &kp I                 &kp O             &kp P                             &kp EQUAL
+&kp RS(APOSTROPHE)      &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D        &hml LEFT_SHIFT F      &kp G   &kp LS(LA(LC(LG(F5))))  &tog 2        &none         &none          &tog 1       &kp LS(LA(LC(LG(F6))))  &kp H   &hmr RIGHT_SHIFT J    &hmr RIGHT_GUI K      &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL LS(SEMICOLON)  &kp SINGLE_QUOTE
+&kp LS(LA(LC(LG(F1))))  &kp Z                &kp X            &kp C                  &kp V                  &kp B                                         &kp HOME      &kp PG_UP                                           &kp N   &kp M                 &kp COMMA             &kp DOT           &kp FSLH                          &kp LS(LA(LC(LG(F2))))
+&kp LS(LA(LC(LG(F3))))  &kp RS(MINUS)        &kp MINUS        &kp LS(RIGHT_BRACKET)  &kp RIGHT_PARENTHESIS          &lt 2 BACKSPACE         &lt 3 ESCAPE  &kp END       &kp PAGE_DOWN  &lt 3 ENTER  &lt 1 SPACE                     &kp LEFT_PARENTHESIS  &kp RS(LEFT_BRACKET)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                 &kp LS(LA(LC(LG(F4))))
             >;
         };
 
         shift {
             bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans     &trans                                      &trans  &trans     &trans     &trans         &trans       &trans         &trans
-&trans  &kp RS(Q)  &kp RS(W)  &kp RS(E)  &kp RS(R)  &kp RS(T)  &trans                                      &trans  &kp LS(Y)  &kp LS(U)  &kp LS(I)      &kp LS(O)    &kp LS(P)      &trans
-&trans  &kp RS(A)  &kp RS(S)  &kp RS(D)  &kp RS(F)  &kp RS(G)  &trans  &trans  &trans      &trans  &trans  &trans  &kp LS(H)  &kp LS(J)  &kp LS(K)      &kp LS(L)    &kp SEMICOLON  &trans
-&trans  &kp RS(Z)  &kp RS(X)  &kp RS(C)  &kp RS(V)  &kp RS(B)                  &trans      &trans                  &kp LS(N)  &kp LS(M)  &kp LS(COMMA)  &kp LS(DOT)  &kp LS(SLASH)  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans             &trans     &trans         &trans       &trans         &trans
+&trans  &trans                   &trans               &trans               &trans     &trans     &trans                                                 &trans  &trans     &trans     &trans                &trans                &trans                        &trans
+&trans  &kp RS(Q)                &kp RS(W)            &kp RS(E)            &kp RS(R)  &kp RS(T)  &trans                                                 &trans  &kp LS(Y)  &kp LS(U)  &kp LS(I)             &kp LS(O)             &kp LS(P)                     &kp LS(EQUAL)
+&trans  &hml LEFT_CONTROL RS(A)  &hml LEFT_ALT RS(S)  &hml LEFT_GUI RS(D)  &kp RS(F)  &kp RS(G)  &trans         &trans      &trans      &trans  &trans  &trans  &kp LS(H)  &kp LS(J)  &hmr RIGHT_GUI LS(K)  &hmr RIGHT_ALT LS(L)  &hmr RIGHT_CONTROL SEMICOLON  &kp LS(DOUBLE_QUOTES)
+&trans  &kp RS(Z)                &kp RS(X)            &kp RS(C)            &kp RS(V)  &kp RS(B)                             &trans      &trans                  &kp LS(N)  &kp LS(M)  &kp LS(COMMA)         &kp LS(DOT)           &kp LS(SLASH)                 &trans
+&trans  &trans                   &trans               &trans               &trans                &kp BACKSPACE  &kp ESCAPE  &trans      &trans  &trans  &trans             &trans     &trans                &trans                &trans                        &trans
             >;
         };
 
         keypad {
             bindings = <
-&trans  &trans  &trans           &trans        &trans     &trans  &trans                                      &trans  &trans  &trans     &kp KP_MULTIPLY  &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS  &trans
-&trans  &trans  &kp AMPERSAND    &kp ASTERISK  &trans     &trans  &trans                                      &trans  &trans  &kp KP_N7  &kp KP_N8        &kp KP_N9                &kp KP_EQUAL              &trans
-&trans  &trans  &kp DOLLAR       &kp PERCENT   &kp CARET  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp KP_N4  &kp KP_N5        &kp KP_N6                &kp KP_PLUS               &trans
-&trans  &trans  &kp EXCLAMATION  &kp AT        &kp POUND  &trans                  &trans      &trans                  &trans  &kp KP_N1  &kp KP_N2        &kp KP_N3                &kp KP_MINUS              &trans
-&trans  &trans  &trans           &trans        &trans             &trans  &trans  &trans      &trans  &trans  &trans          &kp KP_N0  &kp KP_COMMA     &kp KP_DOT               &kp KP_SLASH              &trans
+&trans  &trans                   &trans                &trans                &trans                  &trans  &trans                                          &trans     &trans  &trans                      &kp KP_MULTIPLY           &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS        &trans
+&trans  &kp RS(GRAVE)            &kp RS(N7)            &kp RS(N8)            &kp RS(BACKSLASH)       &trans  &trans                                          &trans     &trans  &kp KP_N7                   &kp KP_N8                 &kp KP_N9                &kp KP_EQUAL                    &trans
+&trans  &hml LEFT_CONTROL GRAVE  &hml LEFT_ALT RS(N4)  &hml LEFT_GUI RS(N5)  &hml LEFT_SHIFT RS(N6)  &trans  &trans  &trans  &trans      &trans  &trans      &trans     &trans  &hmr RIGHT_SHIFT LS(KP_N4)  &hmr RIGHT_GUI LS(KP_N5)  &hmr RIGHT_ALT KP_N6     &hmr RIGHT_CONTROL LS(KP_PLUS)  &trans
+&trans  &kp BACKSLASH            &kp RS(N1)            &kp RS(N2)            &kp RS(N3)              &trans                  &trans      &trans                         &trans  &kp KP_N1                   &kp KP_N2                 &kp KP_N3                &kp KP_MINUS                    &trans
+&trans  &trans                   &trans                &trans                &trans                          &trans  &trans  &trans      &trans  &kp RETURN  &kp SPACE          &kp KP_N0                   &kp KP_COMMA              &kp KP_DOT               &kp KP_SLASH                    &trans
             >;
         };
 
