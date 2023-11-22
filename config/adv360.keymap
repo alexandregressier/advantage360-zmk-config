@@ -47,10 +47,10 @@
         ss: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_SHIFT";
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&sk RIGHT_CONTROL>, <&caps_word>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RCTL)>;
+            mods = <(MOD_RSFT)>;
         };
 
         motog: momentary_toggle_layer {
