@@ -50,7 +50,7 @@
             bindings = <&sk LSHFT>, <&caps_word>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RCTL)>;
         };
 
         motog: momentary_toggle_layer {
@@ -71,21 +71,21 @@
 
         default_layer {
             bindings = <
-&kp LS(LA(LC(LG(F9))))  &none                &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &kp LS(RIGHT_BRACKET)  &kp LS(LEFT_BRACKET)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none
-&kp TAB                 &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y                  &kp U                 &kp I                 &kp O                  &kp P     &kp EQUAL
-&kp RS(APOSTROPHE)      &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &tog 2        &none         &none          &tog 1       &kp LS(LA(LC(LG(F6))))  &kp H                  &hmr RIGHT_SHIFT J    &hmr RIGHT_GUI K      &hmr RIGHT_ALT L       &ss       &kp SINGLE_QUOTE
-&kp LS(LA(LC(LG(F1))))  &kp Z                &kp X            &kp C             &kp V              &kp B                                        &kp HOME      &kp PG_UP                                           &kp N                  &kp M                 &kp COMMA             &kp DOT                &kp FSLH  &kp LS(LA(LC(LG(F2))))
-&kp LS(LA(LC(LG(F3))))  &none                &kp RS(EQUAL)    &kp RS(MINUS)     &kp MINUS                 &lt 2 BACKSPACE         &lt 3 ESCAPE  &kp END       &kp PAGE_DOWN  &lt 3 ENTER  &lt 1 SPACE                                    &kp EQUAL             &kp LS(SEMICOLON)     &kp SEMICOLON          &none     &kp LS(LA(LC(LG(F4))))
+&kp LS(LA(LC(LG(F9))))  &none                &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &none  &none               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none
+&kp TAB                 &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y  &kp U               &kp I                 &kp O                  &kp P     &kp EQUAL
+&kp RS(APOSTROPHE)      &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &tog 2        &none         &none          &tog 1       &kp LS(LA(LC(LG(F6))))  &kp H  &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K      &hmr RIGHT_ALT L       &ss       &kp SINGLE_QUOTE
+&kp LS(LA(LC(LG(F1))))  &kp Z                &kp X            &kp C             &kp V              &kp B                                        &kp HOME      &kp PG_UP                                           &kp N  &kp M               &kp COMMA             &kp DOT                &kp FSLH  &kp LS(LA(LC(LG(F2))))
+&kp LS(LA(LC(LG(F3))))  &none                &kp RS(EQUAL)    &kp RS(MINUS)     &kp MINUS                 &lt 2 BACKSPACE         &lt 3 ESCAPE  &kp END       &kp PAGE_DOWN  &lt 3 ENTER  &lt 1 SPACE                    &kp EQUAL           &kp LS(SEMICOLON)     &kp SEMICOLON          &none     &kp LS(LA(LC(LG(F4))))
             >;
         };
 
         shift {
             bindings = <
-&trans  &trans                   &trans               &trans               &trans     &trans     &trans                                                 &trans  &trans     &trans                 &trans                 &trans                 &trans                        &trans
-&trans  &kp RS(Q)                &kp RS(W)            &kp RS(E)            &kp RS(R)  &kp RS(T)  &trans                                                 &trans  &kp LS(Y)  &kp LS(U)              &kp LS(I)              &kp LS(O)              &kp LS(P)                     &kp LS(EQUAL)
-&trans  &hml LEFT_CONTROL RS(A)  &hml LEFT_ALT RS(S)  &hml LEFT_GUI RS(D)  &kp RS(F)  &kp RS(G)  &trans         &trans      &trans      &trans  &trans  &trans  &kp LS(H)  &kp LS(J)              &hmr RIGHT_GUI LS(K)   &hmr RIGHT_ALT LS(L)   &hmr RIGHT_CONTROL SEMICOLON  &kp LS(DOUBLE_QUOTES)
-&trans  &kp RS(Z)                &kp RS(X)            &kp RS(C)            &kp RS(V)  &kp RS(B)                             &trans      &trans                  &kp LS(N)  &kp LS(M)              &kp LS(COMMA)          &kp LS(DOT)            &kp LS(SLASH)                 &trans
-&trans  &trans                   &trans               &trans               &trans                &kp BACKSPACE  &kp ESCAPE  &trans      &trans  &trans  &trans             &kp RIGHT_PARENTHESIS  &kp LS(RIGHT_BRACKET)  &kp LS(RIGHT_BRACKET)  &trans                        &trans
+&trans  &trans                   &trans               &trans               &trans     &trans     &trans                                                 &trans  &trans     &trans     &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &trans         &trans
+&trans  &kp RS(Q)                &kp RS(W)            &kp RS(E)            &kp RS(R)  &kp RS(T)  &trans                                                 &trans  &kp LS(Y)  &kp LS(U)  &kp LS(I)             &kp LS(O)              &kp LS(P)      &kp LS(EQUAL)
+&trans  &hml LEFT_CONTROL RS(A)  &hml LEFT_ALT RS(S)  &hml LEFT_GUI RS(D)  &kp RS(F)  &kp RS(G)  &trans         &trans      &trans      &trans  &trans  &trans  &kp LS(H)  &kp LS(J)  &hmr RIGHT_GUI LS(K)  &hmr RIGHT_ALT LS(L)   &trans         &kp LS(DOUBLE_QUOTES)
+&trans  &kp RS(Z)                &kp RS(X)            &kp RS(C)            &kp RS(V)  &kp RS(B)                             &trans      &trans                  &kp LS(N)  &kp LS(M)  &kp LS(COMMA)         &kp LS(DOT)            &kp LS(SLASH)  &trans
+&trans  &trans                   &trans               &trans               &trans                &kp BACKSPACE  &kp ESCAPE  &trans      &trans  &trans  &trans             &trans     &trans                &trans                 &trans         &trans
             >;
         };
 
@@ -101,11 +101,11 @@
 
         fn {
             bindings = <
-&kp F1  &kp F2                     &kp F3                     &kp F4                  &kp F5                  &kp F6                  &tog 2                                                      &mo 4   &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
-&trans  &kp LS(LA(LC(LG(EQUAL))))  &kp LS(LA(LC(LG(MINUS))))  &trans                  &trans                  &trans                  &none                                                       &none   &trans          &trans          &trans        &trans           &trans   &trans
-&trans  &kp LS(LA(LC(LG(N1))))     &kp LS(LA(LC(LG(N2))))     &kp LS(LA(LC(LG(N3))))  &kp LS(LA(LC(LG(N4))))  &kp LS(LA(LC(LG(N5))))  &kp LS(LA(LC(LG(N6))))  &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans   &trans
-&trans  &kp LS(LA(LC(LG(N7))))     &kp LS(LA(LC(LG(N8))))     &kp LS(LA(LC(LG(N9))))  &kp LS(LA(LC(LG(N0))))  &trans                                                  &trans      &trans                  &trans          &trans          &trans        &trans           &trans   &trans
-&trans  &trans                     &trans                     &trans                  &trans                                          &trans                  &trans  &trans      &trans  &trans  &trans                  &trans          &trans        &trans           &trans   &trans
+&kp F1  &kp F2                     &kp F3                     &kp F4                  &kp F5                  &kp F6                  &tog 2                                                      &mo 4             &kp F7          &kp F8          &kp F9        &kp F10          &kp F11  &kp F12
+&trans  &kp LS(LA(LC(LG(EQUAL))))  &kp LS(LA(LC(LG(MINUS))))  &trans                  &trans                  &trans                  &none                                                       &none             &trans          &trans          &trans        &trans           &trans   &trans
+&trans  &kp LS(LA(LC(LG(N1))))     &kp LS(LA(LC(LG(N2))))     &kp LS(LA(LC(LG(N3))))  &kp LS(LA(LC(LG(N4))))  &kp LS(LA(LC(LG(N5))))  &kp LS(LA(LC(LG(N6))))  &trans  &trans      &trans  &trans  &none             &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans   &trans
+&trans  &kp LS(LA(LC(LG(N7))))     &kp LS(LA(LC(LG(N8))))     &kp LS(LA(LC(LG(N9))))  &kp LS(LA(LC(LG(N0))))  &trans                                                  &trans      &trans                            &trans          &trans          &trans        &trans           &trans   &trans
+&trans  &trans                     &trans                     &trans                  &trans                                          &trans                  &trans  &trans      &trans  &trans  &kp C_PLAY_PAUSE                  &trans          &trans        &trans           &trans   &trans
             >;
         };
 
