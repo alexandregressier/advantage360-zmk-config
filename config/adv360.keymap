@@ -75,14 +75,14 @@
     combos {
         compatible = "zmk,combos";
 
-        down_arrow {
-            bindings = <&kp DOWN_ARROW>;
+        return {
+            bindings = <&kp RETURN>;
             key-positions = <41 42>;
         };
 
-        right_arrow {
-            bindings = <&kp RIGHT_ARROW>;
-            key-positions = <42 43>;
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <32 31>;
         };
     };
 
