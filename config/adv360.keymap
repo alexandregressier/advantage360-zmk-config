@@ -74,6 +74,36 @@
             slow-release;
             require-prior-idle-ms = <150>;
         };
+
+        combo_undo {
+            bindings = <&kp K_UNDO>;
+            key-positions = <47 48>;
+        };
+
+        combo_redo {
+            bindings = <&kp K_REDO>;
+            key-positions = <47 48 49>;
+        };
+
+        combo_copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <49 48>;
+        };
+
+        combo_paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <49 50>;
+        };
+
+        combo_clipboard_history {
+            bindings = <&kp RG(RS(V))>;
+            key-positions = <49 48 50>;
+        };
+
+        combo_cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <50 51>;
+        };
     };
 
     keymap {
