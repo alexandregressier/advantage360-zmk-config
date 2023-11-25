@@ -114,6 +114,21 @@
             bindings = <&kp LG(RIGHT_BRACKET)>;
             key-positions = <73 72>;
         };
+
+        combo_raycast {
+            bindings = <&kp LS(LA(LC(LG(F1))))>;
+            key-positions = <43 42>;
+        };
+
+        combo_quit {
+            bindings = <&kp RG(Q)>;
+            key-positions = <16 17>;
+        };
+
+        combo_close_window {
+            bindings = <&kp RG(W)>;
+            key-positions = <17 18>;
+        };
     };
 
     keymap {
