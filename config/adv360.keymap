@@ -165,6 +165,13 @@
             require-prior-idle-ms = <150>;
             slow-release;
         };
+
+        combo_select_all {
+            bindings = <&kp RG(A)>;
+            key-positions = <30 31>;
+            require-prior-idle-ms = <150>;
+            slow-release;
+        };
     };
 
     keymap {
