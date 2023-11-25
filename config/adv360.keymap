@@ -11,7 +11,9 @@
 };
 
 &mt {
-    tapping-term-ms = <120>;
+    tapping-term-ms = <220>;
+    quick-tap-ms = <220>;
+    flavor = "tap-preferred";
 };
 
 &caps_word {
