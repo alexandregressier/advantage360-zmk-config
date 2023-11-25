@@ -5,7 +5,9 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &lt {
-    tapping-term-ms = <120>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    flavor = "balanced";
 };
 
 &mt {
@@ -21,6 +23,7 @@
 &num_word {
     layers = <2>;
     continue-list = <DOT COMMA PLUS MINUS ASTERISK SLASH LEFT_PARENTHESIS RIGHT_PARENTHESIS BACKSPACE DELETE>;
+
     /delete-property/ ignore-modifiers;
 };
 
