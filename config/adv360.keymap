@@ -112,7 +112,7 @@
 
         combo_cut {
             bindings = <&kp RG(X)>;
-            key-positions = <50 51>;
+            key-positions = <47 48>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
@@ -150,6 +150,20 @@
             key-positions = <17 18>;
             slow-release;
             require-prior-idle-ms = <150>;
+        };
+
+        combo_terminal {
+            bindings = <&kp LS(LA(LC(LG(F2))))>;
+            key-positions = <24 25>;
+            require-prior-idle-ms = <150>;
+            slow-release;
+        };
+
+        combo_ai {
+            bindings = <&kp LS(LA(LC(LG(F3))))>;
+            key-positions = <41 42 43>;
+            require-prior-idle-ms = <150>;
+            slow-release;
         };
     };
 
