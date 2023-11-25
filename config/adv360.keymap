@@ -24,9 +24,7 @@
 
 &num_word {
     layers = <2>;
-    continue-list = <DOT COMMA PLUS MINUS ASTERISK SLASH LEFT_PARENTHESIS RIGHT_PARENTHESIS BACKSPACE DELETE>;
-
-    /delete-property/ ignore-modifiers;
+    continue-list = <KP_DOT COMMA KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_LEFT_PARENTHESIS KP_RIGHT_PARENTHESIS BACKSPACE DELETE>;
 };
 
 / {
