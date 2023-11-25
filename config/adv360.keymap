@@ -138,20 +138,6 @@
             require-prior-idle-ms = <150>;
         };
 
-        combo_quit {
-            bindings = <&kp RG(Q)>;
-            key-positions = <16 17>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_close_window {
-            bindings = <&kp RG(W)>;
-            key-positions = <17 18>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
         combo_terminal {
             bindings = <&kp LS(LA(LC(LG(F2))))>;
             key-positions = <24 23>;
