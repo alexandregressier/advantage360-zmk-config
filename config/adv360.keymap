@@ -77,12 +77,12 @@
 
         combo_undo {
             bindings = <&kp RG(Z)>;
-            key-positions = <47 48>;
+            key-positions = <55 56>;
         };
 
         combo_redo {
             bindings = <&kp RS(RG(Z))>;
-            key-positions = <47 48 49>;
+            key-positions = <56 57>;
         };
 
         combo_copy {
@@ -103,6 +103,16 @@
         combo_cut {
             bindings = <&kp RG(X)>;
             key-positions = <50 51>;
+        };
+
+        combo_go_back {
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            key-positions = <71 72>;
+        };
+
+        combo_go_forward {
+            bindings = <&kp LG(RIGHT_BRACKET)>;
+            key-positions = <73 72>;
         };
     };
 
