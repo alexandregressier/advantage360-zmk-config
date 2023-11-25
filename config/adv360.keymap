@@ -154,21 +154,42 @@
 
         combo_terminal {
             bindings = <&kp LS(LA(LC(LG(F2))))>;
-            key-positions = <24 25>;
+            key-positions = <24 23>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
 
         combo_ai {
             bindings = <&kp LS(LA(LC(LG(F3))))>;
-            key-positions = <41 42 43>;
+            key-positions = <24 25>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
 
         combo_select_all {
             bindings = <&kp RG(A)>;
+            key-positions = <30 31 32>;
+            require-prior-idle-ms = <150>;
+            slow-release;
+        };
+
+        combo_google {
+            bindings = <&kp LS(LA(LC(LG(F4))))>;
+            key-positions = <43 41 42>;
+            require-prior-idle-ms = <150>;
+            slow-release;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
             key-positions = <30 31>;
+            slow-release;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_shift_tab {
+            bindings = <&kp RS(TAB)>;
+            key-positions = <29 30>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
@@ -181,7 +202,7 @@
             bindings = <
 &none                   &none                &kp RS(N1)       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RS(GRAVE)  &tog 2                                                               &mo 4                   &kp GRAVE  &kp LS(SLASH)       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none                        &none
 &none                   &kp Q                &kp W            &kp E             &kp R              &kp T          &kp LS(LA(LC(LG(F7))))                                               &kp LS(LA(LC(LG(F8))))  &kp Y      &kp U               &kp I                 &kp O                  &kp P                        &kp BACKSLASH
-&kp TAB                 &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G          &kp LS(LA(LC(LG(F5))))  &tog 2  &none         &none          &tog 1  &kp LS(LA(LC(LG(F6))))  &kp H      &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K      &hmr RIGHT_ALT L       &hmr RIGHT_CONTROL LS(SEMI)  &kp SINGLE_QUOTE
+&none                   &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G          &kp LS(LA(LC(LG(F5))))  &tog 2  &none         &none          &tog 1  &kp LS(LA(LC(LG(F6))))  &kp H      &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K      &hmr RIGHT_ALT L       &hmr RIGHT_CONTROL LS(SEMI)  &kp SINGLE_QUOTE
 &kp LS(LA(LC(LG(F1))))  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &kp HOME      &kp PG_UP                                      &kp N      &kp M               &kp COMMA             &kp DOT                &kp FSLH                     &kp LS(LA(LC(LG(F2))))
 &kp LS(LA(LC(LG(F3))))  &none                &kp RS(EQUAL)    &kp RS(MINUS)     &kp MINUS                         &lt 3 BACKSPACE         &tog 2  &kp END       &kp PAGE_DOWN  &ss     &kp SPACE                          &kp EQUAL           &kp LS(APOSTROPHE)    &kp SEMICOLON          &none                        &kp LS(LA(LC(LG(F4))))
             >;
