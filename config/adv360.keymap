@@ -238,11 +238,11 @@
 
         num {
             bindings = <
-&trans  &trans                   &trans               &trans                 &trans                  &trans  &trans                                      &trans  &trans         &trans               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none                    &trans
-&trans  &trans                   &kp PIPE             &kp ASTERISK           &kp AMPERSAND           &trans  &trans                                      &trans  &kp TAB        &kp N7               &kp N8                &kp N9                 &kp ASTERISK             &trans
-&trans  &hml LEFT_CONTROL GRAVE  &hml LEFT_ALT CARET  &hml LEFT_GUI PERCENT  &hml LEFT_SHIFT DOLLAR  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp BACKSPACE  &hmr RIGHT_SHIFT N4  &hmr RIGHT_GUI N5     &hmr RIGHT_ALT N6      &hmr RIGHT_CONTROL PLUS  &trans
-&trans  &trans                   &kp HASH             &kp AT_SIGN            &kp EXCLAMATION         &trans                  &trans      &trans                  &kp EQUAL      &kp N1               &kp N2                &kp N3                 &kp MINUS                &trans
-&trans  &trans                   &trans               &trans                 &trans                          &trans  &trans  &trans      &trans  &trans  &trans                 &kp N0               &kp COMMA             &kp DOT                &kp SLASH                &trans
+&trans  &trans                   &trans                &trans                &trans                  &trans  &trans                                      &trans  &trans         &trans                  &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS  &none                       &trans
+&trans  &trans                   &kp RS(BACKSLASH)     &kp RS(N8)            &kp RS(N7)              &trans  &trans                                      &trans  &kp TAB        &kp KP_N7               &kp KP_N8                &kp KP_N9                 &kp KP_MULTIPLY             &trans
+&trans  &hml LEFT_CONTROL GRAVE  &hml LEFT_ALT RS(N6)  &hml LEFT_GUI RS(N5)  &hml LEFT_SHIFT RS(N4)  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp BACKSPACE  &hmr RIGHT_SHIFT KP_N4  &hmr RIGHT_GUI KP_N5     &hmr RIGHT_ALT KP_N6      &hmr RIGHT_CONTROL KP_PLUS  &trans
+&trans  &trans                   &kp RS(N3)            &kp RS(N2)            &kp RS(N1)              &trans                  &trans      &trans                  &kp KP_EQUAL   &kp KP_N1               &kp KP_N2                &kp KP_N3                 &kp KP_MINUS                &trans
+&trans  &trans                   &trans                &trans                &trans                          &trans  &trans  &trans      &trans  &trans  &trans                 &kp KP_N0               &kp COMMA                &kp KP_DOT                &kp KP_DIVIDE               &trans
             >;
         };
 
