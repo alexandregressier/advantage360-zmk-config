@@ -76,32 +76,32 @@
         };
 
         combo_undo {
-            bindings = <&kp K_UNDO>;
+            bindings = <&kp RG(Z)>;
             key-positions = <47 48>;
         };
 
         combo_redo {
-            bindings = <&kp K_REDO>;
+            bindings = <&kp RS(RG(Z))>;
             key-positions = <47 48 49>;
         };
 
         combo_copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp RG(C)>;
             key-positions = <49 48>;
         };
 
         combo_paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp RG(V)>;
             key-positions = <49 50>;
         };
 
         combo_clipboard_history {
-            bindings = <&kp RG(RS(V))>;
+            bindings = <&kp RS(RG(V))>;
             key-positions = <49 48 50>;
         };
 
         combo_cut {
-            bindings = <&kp K_CUT>;
+            bindings = <&kp RG(X)>;
             key-positions = <50 51>;
         };
     };
