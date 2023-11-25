@@ -14,6 +14,12 @@
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+    /delete-property/ ignore-modifiers;
+};
+
+&num_word {
+    layers = <2>;
+    continue-list = <KP_DOT COMMA KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_LPAR KP_RPAR PERCENT BACKSPACE DELETE>;
 };
 
 / {
@@ -62,7 +68,7 @@
             label = "NUM_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&caps_word>, <&sl 2>;
+            bindings = <&num_word>, <&sl 2>;
         };
 
         sn: smart_num {
