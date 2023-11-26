@@ -73,7 +73,7 @@
             label = "NUM_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&num_word>, <&sl 2>;
+            bindings = <&num_word>, <&tog 2>;
         };
 
         sn: smart_num {
