@@ -175,9 +175,9 @@
             slow-release;
         };
 
-        combo_ai {
+        combo_arc {
             bindings = <&kp LS(LA(LC(LG(F3))))>;
-            key-positions = <44 42 43>;
+            key-positions = <40 41>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
