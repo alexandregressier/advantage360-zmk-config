@@ -170,7 +170,7 @@
 
         combo_terminal {
             bindings = <&kp LS(LA(LC(LG(F2))))>;
-            key-positions = <24 25>;
+            key-positions = <24 23>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
