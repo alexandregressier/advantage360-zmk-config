@@ -93,7 +93,7 @@
 
         combo_escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <56 57>;
+            key-positions = <42 41>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
@@ -114,7 +114,7 @@
 
         combo_redo {
             bindings = <&kp RS(RG(Z))>;
-            key-positions = <54 55>;
+            key-positions = <57 56>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
@@ -177,7 +177,7 @@
 
         combo_arc {
             bindings = <&kp LS(LA(LC(LG(F3))))>;
-            key-positions = <40 41>;
+            key-positions = <24 25 23>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
@@ -191,7 +191,7 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <41 42>;
+            key-positions = <30 31>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
