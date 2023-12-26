@@ -135,14 +135,14 @@
 
         combo_go_back {
             bindings = <&kp LG(LEFT_BRACKET)>;
-            key-positions = <63 64>;
+            key-positions = <54 55>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
 
         combo_go_forward {
             bindings = <&kp LG(RIGHT_BRACKET)>;
-            key-positions = <62 63>;
+            key-positions = <55 56>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
@@ -187,14 +187,14 @@
             key-positions = <55 56 57>;
         };
 
-        combo_undo {
-            bindings = <&kp RG(Z)>;
+        combo_quit {
+            bindings = <&kp RG(Q)>;
             key-positions = <72 73>;
         };
 
-        combo_redo {
-            bindings = <&kp RG(RS(Z))>;
-            key-positions = <71 72>;
+        combo_close_window {
+            bindings = <&kp RG(W)>;
+            key-positions = <72 71>;
         };
     };
 
