@@ -1,4 +1,2 @@
 /firmware/*.uf2
 .idea/
-zephyr/
-modules/
