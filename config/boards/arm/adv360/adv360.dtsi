@@ -17,6 +17,10 @@
     model = "Adv360";
     compatible = "kinesis,adv360";
 
+    aliases {
+        uart0 = &uart0;
+    };
+
     chosen {
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
