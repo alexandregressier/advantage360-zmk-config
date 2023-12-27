@@ -96,6 +96,15 @@
     };
 };
 
+&uart0 {
+    compatible = "nordic,nrf-uarte";
+    status = "okay";
+    current-speed = <115200>;
+    tx-pin = <39>;
+    rx-pin = <44>;
+    rts-pin = <34>;
+    cts-pin = <9>;
+};
 
 &flash0 {
     /*
