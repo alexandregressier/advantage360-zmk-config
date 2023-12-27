@@ -69,4 +69,3 @@ CONFIG_BUILD_OUTPUT_UF2=y
 # Turn on logging, and set ZMK logging to debug output
 CONFIG_LOG=y
 CONFIG_ZMK_USB_LOGGING=y
-CONFIG_PINCTRL=n
