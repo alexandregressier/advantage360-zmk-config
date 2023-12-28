@@ -14,5 +14,7 @@ grep -vE '(^#|^$)' build/left/zephyr/.config
 west build -s zmk/app -d build/right -b adv360_right -- -DZMK_CONFIG="${PWD}/config"
 # Adv360 Right Kconfig file
 grep -vE '(^#|^$)' build/right/zephyr/.config
+# Delete previous firmware files
+rm -f firmware/*-{left,right}.uf2
 # Rename zmk.uf2
 cp build/left/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-left.uf2" && cp build/right/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-right.uf2"
