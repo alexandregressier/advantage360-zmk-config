@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
       - name: Get version data
         id: get_info
         run: |
@@ -30,14 +32,17 @@ jobs:
             tools/
             zephyr/
             bootloader/
-            zmk/
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Copy ZMK west.yml
+        run: |
+          mkdir app/
+          cp zmk/app/west.yml app/
       - name: West Init
-        run: west init -l config
+        run: west init --local app/
       - name: West Update
         run: west update
       - name: West Zephyr export
