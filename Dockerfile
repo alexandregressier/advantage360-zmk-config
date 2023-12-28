@@ -13,4 +13,8 @@ RUN west zephyr-export
 
 COPY bin/build.sh ./
 
+RUN apt update \
+    && apt install -y parallel \
+    && rm -rf /var/lib/apt/lists/*
+
 CMD ["./build.sh"]
