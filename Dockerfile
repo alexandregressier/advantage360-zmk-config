@@ -2,10 +2,10 @@ FROM docker.io/zmkfirmware/zmk-build-arm:stable
 
 WORKDIR /app
 
-COPY config/west.yml config/west.yml
+COPY zmk/app/west.yml app/west.yml
 
 # West Init
-RUN west init -l config
+RUN west init --local app/
 # West Update
 RUN west update
 # West Zephyr export

@@ -13,15 +13,18 @@ endif
 .PHONY: all clean
 
 all:
+	set -eu
 	$(shell bin/get_version.sh >> /dev/null)
-	$(DOCKER) build --tag zmk --file Dockerfile .
+	$(DOCKER) build --tag adv360-zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
-		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
-		-v $(PWD)/config:/app/config:ro$(SELINUX2) \
-		-e TIMESTAMP=$(TIMESTAMP) \
-		-e COMMIT=$(COMMIT) \
-		zmk
+		--volume $(PWD)/firmware:/app/firmware$(SELINUX1) \
+		--volume $(PWD)/config:/app/config:ro$(SELINUX2) \
+		--volume $(PWD)/zmk/app:/app/app:ro$(SELINUX2) \
+		--env TIMESTAMP=$(TIMESTAMP) \
+		--env COMMIT=$(COMMIT) \
+		adv360-zmk
 
 clean:
+	set -eu
 	rm -f firmware/*.uf2
 	$(DOCKER) image rm zmk docker.io/zmkfirmware/zmk-build-arm:stable
