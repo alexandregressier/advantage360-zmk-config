@@ -221,14 +221,14 @@
         };
 
         combo_launcher {
-            bindings = <&kp LA(LC(LG(F1)))>;
+            bindings = <&kp LC(LA(LG(F1)))>;
             key-positions = <43 42 41>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
 
         combo_terminal {
-            bindings = <&kp LA(LC(LG(F2)))>;
+            bindings = <&kp LC(LA(LG(F2)))>;
             key-positions = <24 23 25>;
             require-prior-idle-ms = <150>;
             slow-release;
@@ -259,8 +259,10 @@
         };
 
         combo_ai {
-            bindings = <&kp LA(LC(LG(F3)))>;
+            bindings = <&kp LC(LA(LG(F3)))>;
             key-positions = <55 56 57>;
+            slow-release;
+            require-prior-idle-ms = <150>;
         };
     };
 
