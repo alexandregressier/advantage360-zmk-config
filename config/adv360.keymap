@@ -220,14 +220,14 @@
             require-prior-idle-ms = <150>;
         };
 
-        combo_launcher {
+        combo_ctrl_f1 {
             bindings = <&kp LC(F1)>;
             key-positions = <43 42 41>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
 
-        combo_terminal {
+        combo_ctrl_f2 {
             bindings = <&kp LC(F2)>;
             key-positions = <24 23 25>;
             require-prior-idle-ms = <150>;
@@ -258,9 +258,16 @@
             key-positions = <72 71>;
         };
 
-        combo_ai {
+        combo_ctrl_f3 {
             bindings = <&kp LC(F3)>;
             key-positions = <55 56 57>;
+            slow-release;
+            require-prior-idle-ms = <150>;
+        };
+
+        combo_ctrl_f4 {
+            bindings = <&kp LC(F4)>;
+            key-positions = <9 10 11>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
