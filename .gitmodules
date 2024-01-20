@@ -1,4 +1,4 @@
 [submodule "zmk"]
 	path = zmk
 	url = git@github.com:alexandregressier/zmk.git
-	branch = adv360-z3.2-2
+	branch = adv360-z3.2-3
