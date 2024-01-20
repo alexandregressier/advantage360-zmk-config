@@ -262,7 +262,7 @@
             require-prior-idle-ms = <150>;
         };
 
-        combo_go_forward {
+        combo_go_back {
             bindings = <&none>;
             key-positions = <72 71>;
         };
