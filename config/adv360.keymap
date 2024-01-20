@@ -294,11 +294,11 @@
 
         wm {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp LC(LA(J))           &kp LC(LA(F))           &kp LC(LA(G))         &kp LC(LA(H))            &kp LC(LA(I))          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans                  &kp LC(LA(F))           &kp LC(LA(G))         &kp LC(LA(H))            &kp LC(LA(I))          &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp LC(LA(E))           &kp LC(LA(A))           &kp LC(LA(B))         &kp LC(LA(C))            &kp LC(LA(D))          &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(LA(LEFT_ARROW))  &kp LC(LA(DOWN_ARROW))  &kp LC(LA(UP_ARROW))  &kp LC(LA(RIGHT_ARROW))  &kp LC(LA(SEMICOLON))  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(LA(O))           &kp LC(LA(K))           &kp LC(LA(L))         &kp LC(LA(M))            &kp LC(LA(N))          &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                          &kp LC(LA(P))           &kp LC(LA(Q))         &kp LC(LA(R))            &kp LC(LA(S))          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(LA(N))           &kp LC(LA(J))           &kp LC(LA(K))         &kp LC(LA(L))            &kp LC(LA(M))          &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                          &kp LC(LA(O))           &kp LC(LA(P))         &kp LC(LA(Q))            &kp LC(LA(R))          &trans
             >;
         };
 
