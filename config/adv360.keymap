@@ -178,13 +178,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <31 30>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
         combo_return {
             bindings = <&kp RETURN>;
             key-positions = <42 43>;
