@@ -271,21 +271,21 @@
 
         base {
             bindings = <
-&none         &kp TILDE            &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &kp BACKSLASH  &kp QUESTION          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp K_PLAY_PAUSE         &kp C_PLAY_PAUSE
-&none         &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y          &kp U                 &i_morph              &kp O                  &kp P                    &kp BACKSLASH
-&kp LEFT_GUI  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &trans          &none       &kp LC(F9)     &kp LC(F10)  &kp LS(LA(LC(LG(F6))))  &kp H          &hmr_j RIGHT_SHIFT 0  &hmr_k RIGHT_GUI 0    &hmr_l RIGHT_ALT 0     &hmr RIGHT_CONTROL SEMI  &kp DOUBLE_QUOTES
-&kp LEFT_GUI  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &trans      &none                                               &kp N          &kp M                 &kp COMMA             &kp DOT                &kp FSLH                 &kp LS(LA(LC(LG(F2))))
-&kp LEFT_GUI  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &none       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                    &kp LS(LA(LC(LG(F4))))
+&none         &kp TILDE            &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &kp BACKSLASH  &kp QUESTION          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp K_PLAY_PAUSE          &kp C_PLAY_PAUSE
+&none         &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y          &kp U                 &i_morph              &kp O                  &kp P                     &kp BACKSLASH
+&kp LEFT_GUI  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &trans          &none       &kp LC(F9)     &kp LC(F10)  &kp LS(LA(LC(LG(F6))))  &kp H          &hmr_j RIGHT_SHIFT 0  &hmr_k RIGHT_GUI 0    &hmr_l RIGHT_ALT 0     &hmr RIGHT_CONTROL COLON  &kp DOUBLE_QUOTES
+&kp LEFT_GUI  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &trans      &none                                               &kp N          &kp M                 &kp COMMA             &kp DOT                &kp FSLH                  &kp LS(LA(LC(LG(F2))))
+&kp LEFT_GUI  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &none       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                     &kp LS(LA(LC(LG(F4))))
             >;
         };
 
         shift {
             bindings = <
-&trans  &trans                   &trans               &trans               &trans     &trans     &trans                                      &trans  &trans     &trans     &kp RS(LEFT_BRACKET)  &kp RS(RIGHT_BRACKET)  &trans     &trans
-&trans  &kp RS(Q)                &kp RS(W)            &kp RS(E)            &kp RS(R)  &kp RS(T)  &trans                                      &trans  &kp RS(Y)  &kp RS(U)  &kp RS(I)             &kp RS(O)              &kp RS(P)  &trans
-&trans  &hml LEFT_CONTROL RS(A)  &hml LEFT_ALT RS(S)  &hml LEFT_GUI RS(D)  &kp RS(F)  &kp RS(G)  &trans  &trans  &trans      &trans  &trans  &trans  &kp RS(H)  &kp RS(J)  &hmr RIGHT_GUI RS(K)  &hmr RIGHT_ALT RS(L)   &kp COLON  &kp SINGLE_QUOTE
-&trans  &kp RS(Z)                &kp RS(X)            &kp RS(C)            &kp RS(V)  &kp RS(B)                  &trans      &trans                  &kp LS(N)  &kp RS(M)  &kp RS(COMMA)         &kp RS(DOT)            &trans     &trans
-&trans  &trans                   &trans               &trans               &trans                &trans  &trans  &trans      &trans  &trans  &trans             &trans     &trans                &trans                 &trans     &trans
+&trans  &trans                   &trans               &trans               &trans     &trans     &trans                                      &trans  &trans     &trans     &kp RS(LEFT_BRACKET)  &kp RS(RIGHT_BRACKET)  &trans         &trans
+&trans  &kp RS(Q)                &kp RS(W)            &kp RS(E)            &kp RS(R)  &kp RS(T)  &trans                                      &trans  &kp RS(Y)  &kp RS(U)  &kp RS(I)             &kp RS(O)              &kp RS(P)      &trans
+&trans  &hml LEFT_CONTROL RS(A)  &hml LEFT_ALT RS(S)  &hml LEFT_GUI RS(D)  &kp RS(F)  &kp RS(G)  &trans  &trans  &trans      &trans  &trans  &trans  &kp RS(H)  &kp RS(J)  &hmr RIGHT_GUI RS(K)  &hmr RIGHT_ALT RS(L)   &kp SEMICOLON  &kp SINGLE_QUOTE
+&trans  &kp RS(Z)                &kp RS(X)            &kp RS(C)            &kp RS(V)  &kp RS(B)                  &trans      &trans                  &kp LS(N)  &kp RS(M)  &kp RS(COMMA)         &kp RS(DOT)            &trans         &trans
+&trans  &trans                   &trans               &trans               &trans                &trans  &trans  &trans      &trans  &trans  &trans             &trans     &trans                &trans                 &trans         &trans
             >;
         };
 
