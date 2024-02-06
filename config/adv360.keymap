@@ -314,7 +314,7 @@
 
         num {
             bindings = <
-&trans  &trans                   &trans                &trans                &trans                  &trans  &trans                                      &trans        &kp LA(LS(NUMBER_2))  &kp DOLLAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE  &trans
+&trans  &trans                   &trans                &trans                &trans                  &trans  &trans                                      &trans        &kp LA(LS(NUMBER_2))  &kp DOLLAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE  &kp LC(LA(LS(LG(F6))))
 &trans  &trans                   &kp RS(BACKSLASH)     &kp RS(N8)            &kp RS(N7)              &trans  &trans                                      &trans        &trans                &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp ASTERISK   &trans
 &trans  &hml LEFT_CONTROL GRAVE  &hml LEFT_ALT RS(N6)  &hml LEFT_GUI RS(N5)  &hml LEFT_SHIFT RS(N4)  &trans  &trans  &trans  &trans      &trans  &trans  &trans        &trans                &kp NUMBER_4  &kp NUMBER_5          &kp NUMBER_6           &kp EQUAL      &trans
 &trans  &trans                   &kp RS(N3)            &kp RS(N2)            &kp RS(N1)              &trans                  &trans      &trans                        &trans                &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp SLASH      &trans
