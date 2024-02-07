@@ -208,30 +208,9 @@
             require-prior-idle-ms = <150>;
         };
 
-        combo_copy {
-            bindings = <&kp RG(C)>;
-            key-positions = <49 48>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_paste {
-            bindings = <&kp RG(V)>;
-            key-positions = <49 50>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
         combo_clipboard_history {
             bindings = <&kp RS(RG(V))>;
-            key-positions = <49 48 50>;
-            slow-release;
-            require-prior-idle-ms = <150>;
-        };
-
-        combo_cut {
-            bindings = <&kp RG(X)>;
-            key-positions = <47 48>;
+            key-positions = <50 66>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
@@ -246,13 +225,6 @@
         combo_ctrl_f2 {
             bindings = <&kp LC(F2)>;
             key-positions = <24 23 25>;
-            require-prior-idle-ms = <150>;
-            slow-release;
-        };
-
-        combo_select_all {
-            bindings = <&kp RG(A)>;
-            key-positions = <30 31 32>;
             require-prior-idle-ms = <150>;
             slow-release;
         };
@@ -299,11 +271,11 @@
 
         base {
             bindings = <
-&none         &kp TILDE            &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &kp BACKSLASH  &kp QUESTION          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp K_PLAY_PAUSE            &kp C_PLAY_PAUSE
-&none         &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y          &kp U                 &i_morph              &kp O                  &kp P                       &kp BACKSLASH
-&kp LEFT_GUI  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &trans          &none       &kp LC(F9)     &kp LC(F10)  &kp LS(LA(LC(LG(F6))))  &kp H          &hmr_j RIGHT_SHIFT 0  &hmr_k RIGHT_GUI 0    &hmr_l RIGHT_ALT 0     &hmr_colon RIGHT_CONTROL 0  &kp DOUBLE_QUOTES
-&kp LEFT_GUI  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &trans      &none                                               &kp N          &kp M                 &kp COMMA             &kp DOT                &kp FSLH                    &kp LS(LA(LC(LG(F2))))
-&kp LEFT_GUI  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &none       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                       &kp LS(LA(LC(LG(F4))))
+&none  &kp TILDE            &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none  &tog 2                                                                          &mo 4                   &kp BACKSLASH  &kp QUESTION          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp K_PLAY_PAUSE            &kp C_PLAY_PAUSE
+&none  &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y          &kp U                 &i_morph              &kp O                  &kp P                       &kp BACKSLASH
+&none  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &trans          &none       &kp LC(F9)     &kp LC(F10)  &kp LS(LA(LC(LG(F6))))  &kp H          &hmr_j RIGHT_SHIFT 0  &hmr_k RIGHT_GUI 0    &hmr_l RIGHT_ALT 0     &hmr_colon RIGHT_CONTROL 0  &kp DOUBLE_QUOTES
+&none  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &trans      &none                                               &kp N          &kp M                 &kp COMMA             &kp DOT                &kp FSLH                    &kp LS(LA(LC(LG(F2))))
+&none  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &none       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                       &kp LS(LA(LC(LG(F4))))
             >;
         };
 
@@ -329,11 +301,11 @@
 
         wm {
             bindings = <
-&trans  &trans         &trans         &trans         &trans         &trans  &trans                                      &trans  &trans                  &kp LC(LA(F))           &kp LC(LA(G))         &kp LC(LA(H))            &kp LC(LA(I))          &trans
-&trans  &trans         &trans         &trans         &trans         &trans  &trans                                      &trans  &kp LC(LA(E))           &kp LC(LA(A))           &kp LC(LA(B))         &kp LC(LA(C))            &kp LC(LA(D))          &trans
-&trans  &kp RC(RA(S))  &kp RC(RA(T))  &kp RC(RA(U))  &kp RC(RA(V))  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(LA(LEFT_ARROW))  &kp LC(LA(DOWN_ARROW))  &kp LC(LA(UP_ARROW))  &kp LC(LA(RIGHT_ARROW))  &kp LC(LA(SEMICOLON))  &trans
-&trans  &kp RC(RA(W))  &kp RC(RA(X))  &kp RC(RA(Y))  &kp RC(RA(Z))  &trans                  &trans      &trans                  &kp LC(LA(N))           &kp LC(LA(J))           &kp LC(LA(K))         &kp LC(LA(L))            &kp LC(LA(M))          &trans
-&trans  &trans         &trans         &trans         &trans                 &trans  &trans  &trans      &trans  &trans  &trans                          &kp LC(LA(O))           &kp LC(LA(P))         &kp LC(LA(Q))            &kp LC(LA(R))          &trans
+&trans  &trans         &trans         &trans         &trans         &trans         &trans                                      &trans  &trans                  &kp LC(LA(F))           &kp LC(LA(G))         &kp LC(LA(H))            &kp LC(LA(I))          &trans
+&trans  &kp RC(RA(S))  &kp RC(RA(T))  &kp RC(RA(U))  &kp RC(RA(V))  &trans         &trans                                      &trans  &kp LC(LA(E))           &kp LC(LA(A))           &kp LC(LA(B))         &kp LC(LA(C))            &kp LC(LA(D))          &trans
+&trans  &kp RG(A)      &kp RC(RA(W))  &kp RC(RA(X))  &kp RC(RA(Y))  &kp RC(RA(Z))  &trans  &trans  &trans      &trans  &trans  &trans  &kp LC(LA(LEFT_ARROW))  &kp LC(LA(DOWN_ARROW))  &kp LC(LA(UP_ARROW))  &kp LC(LA(RIGHT_ARROW))  &kp LC(LA(SEMICOLON))  &trans
+&trans  &kp RG(Z)      &kp RG(X)      &kp RG(C)      &kp RG(V)      &trans                         &trans      &trans                  &kp LC(LA(N))           &kp LC(LA(J))           &kp LC(LA(K))         &kp LC(LA(L))            &kp LC(LA(M))          &trans
+&trans  &trans         &trans         &trans         &trans                        &trans  &trans  &trans      &trans  &trans  &trans                          &kp LC(LA(O))           &kp LC(LA(P))         &kp LC(LA(Q))            &kp LC(LA(R))          &trans
             >;
         };
 
