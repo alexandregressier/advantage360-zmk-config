@@ -275,7 +275,7 @@
 &none  &kp Q                &kp W            &kp E             &kp R              &kp T  &kp LS(LA(LC(LG(F7))))                                                          &kp LS(LA(LC(LG(F8))))  &kp Y          &kp U                 &i_morph              &kp O                  &kp P                       &kp BACKSLASH
 &none  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G  &kp LS(LA(LC(LG(F5))))  &trans          &none       &kp LC(F9)     &kp LC(F10)  &kp LS(LA(LC(LG(F6))))  &kp H          &hmr_j RIGHT_SHIFT 0  &hmr_k RIGHT_GUI 0    &hmr_l RIGHT_ALT 0     &hmr_colon RIGHT_CONTROL 0  &kp DOUBLE_QUOTES
 &none  &kp Z                &kp X            &kp C             &kp V              &kp B                                          &trans      &none                                               &kp N          &kp M                 &kp COMMA             &kp DOT                &kp FSLH                    &kp LS(LA(LC(LG(F2))))
-&none  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &none       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                       &kp LS(LA(LC(LG(F4))))
+&none  &none                &kp GRAVE        &kp PLUS          &kp EQUAL                 &lt 2 BACKSPACE         &mokp 3 ESCAPE  &sl 6       &sk RIGHT_ALT  &ss          &kp SPACE                              &kp MINUS             &kp UNDER             &kp SEMICOLON          &none                       &kp LS(LA(LC(LG(F4))))
             >;
         };
 
@@ -316,6 +316,26 @@
 &none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
 &none  &none         &none         &none         &none         &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
 &none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        capture {
+            bindings = <
+&trans  &trans  &trans              &trans              &trans              &trans              &trans                                      &trans  &trans  &trans      &trans       &trans     &trans  &trans
+&trans  &trans  &kp LC(LA(LS(N9)))  &kp LC(LA(LS(N8)))  &kp LC(LA(LS(N7)))  &trans              &trans                                      &trans  &trans  &kp AMPS    &kp STAR     &kp PIPE   &trans  &trans
+&trans  &trans  &kp LC(LA(LS(N6)))  &kp LC(LA(LS(N5)))  &kp LC(LA(LS(N4)))  &kp LC(LA(LS(N0)))  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp DOLLAR  &kp PERCENT  &kp CARET  &trans  &trans
+&trans  &trans  &kp LC(LA(LS(N3)))  &kp LC(LA(LS(N2)))  &kp LC(LA(LS(N1)))  &trans                              &trans      &trans                  &trans  &kp EXCL    &kp AT       &kp HASH   &trans  &trans
+&trans  &trans  &trans              &trans              &trans                                  &trans  &trans  &trans      &trans  &trans  &trans          &trans      &trans       &trans     &trans  &trans
             >;
         };
     };
