@@ -279,13 +279,18 @@
         };
 
         combo_go_back {
-            bindings = <&none>;
+            bindings = <&kp LG(LEFT_BRACKET)>;
             key-positions = <72 71>;
         };
 
         combo_go_forward {
-            bindings = <&none>;
+            bindings = <&kp LG(RIGHT_BRACKET)>;
             key-positions = <72 73>;
+        };
+
+        combo_ctrl_f5 {
+            bindings = <&kp LC(F5)>;
+            key-positions = <71 72 73>;
         };
     };
 
