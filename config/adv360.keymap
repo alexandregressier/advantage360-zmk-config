@@ -270,6 +270,13 @@
             slow-release;
             require-prior-idle-ms = <150>;
         };
+
+        combo_ctrl_f4 {
+            bindings = <&kp LC(F4)>;
+            key-positions = <55 56 57>;
+            slow-release;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     keymap {
