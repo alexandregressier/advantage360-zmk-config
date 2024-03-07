@@ -273,7 +273,7 @@
 
         combo_ctrl_f4 {
             bindings = <&kp LC(F4)>;
-            key-positions = <55 56 57>;
+            key-positions = <9 10 11>;
             slow-release;
             require-prior-idle-ms = <150>;
         };
