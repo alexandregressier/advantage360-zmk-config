@@ -59,6 +59,3 @@ CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
 
 CONFIG_ZMK_BLE=y
 CONFIG_ZMK_USB=y
-
-# Turn on logging, and set ZMK logging to debug output
-CONFIG_ZMK_USB_LOGGING=y

@@ -72,6 +72,3 @@ CONFIG_ZMK_BLE_PASSKEY_ENTRY=n
 CONFIG_ZMK_BLE=y
 CONFIG_ZMK_USB=y
 CONFIG_ZMK_HID_INDICATORS=y
-
-# Turn on logging, and set ZMK logging to debug output
-CONFIG_ZMK_USB_LOGGING=y
