@@ -1,1 +1,28 @@
-/firmware/*.uf2
+# macOS
+*.DS_Store
+
+# Vim & Emacs
+*~
+
+# Vim
+*.sw[p-z]
+
+# Emacs
+\#*\#
+.\#*
+
+# JetBrains IDEs
+**/.idea/*
+
+# Python venv
+.venv/
+
+# West
+.west/
+build/
+/zmk/
+/zephyr/
+/modules/
+
+# Firmware files
+*.uf2
