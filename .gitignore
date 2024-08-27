@@ -24,6 +24,7 @@ build/
 /modules/
 /zmk/
 /zmk-helpers/
+/zmk-auto-layer/
 
 # Firmware files
 *.uf2
