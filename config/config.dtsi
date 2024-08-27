@@ -36,20 +36,20 @@
 #define THUMBS_RIGHT 37 38 53 68 69 70
 
 
-/* Global settings */
+/* Global Settings */
 
 #define QUICK_TAP_MS 175
 
-&sk { // Sticky-key
+&sk { // Sticky Key
 	release-after-ms = <900>; // Release after 0.9s
 	quick-release;            // No double capitalization when rolling keys
 };
 
-&sl { // Sticky-layer
+&sl { // Sticky Layer
 	ignore-modifiers; // Allow chording sticky mods & layers
 };
 
-&lt { // Layer-tap
+&lt { // Layer-Tap
 	flavor = "balanced";
 	tapping-term-ms = <200>;
 	quick-tap-ms = <QUICK_TAP_MS>;
@@ -75,7 +75,7 @@ ZMK_COMBO(command_space, &kp LG(SPACE), 41 42 43, ALL, COMBO_TERM_FAST, COMBO_ID
 ZMK_COMBO(return, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
-/* Homerow mods */
+/* Homerow Mods */
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
@@ -89,3 +89,21 @@ ZMK_COMBO(return, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
     )
 MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
+
+
+/* Smart Shift */
+
+// Tap: sticky shift | Double-tap: caps-word | Hold: shift
+ZMK_HOLD_TAP(smart_shift,
+	flavor = "balanced";
+	tapping-term-ms = <200>;
+	quick-tap-ms = <QUICK_TAP_MS>;
+	bindings = <&kp>, <&shift_dance>;
+)
+ZMK_TAP_DANCE(shift_dance,
+    tapping-term-ms = <200>;
+	bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+)
+&caps_word { // Mods deactivate caps-word (Requires PR #1451 or ZMK-AUTO-LAYER)
+	/delete-property/ ignore-modifiers;
+};
