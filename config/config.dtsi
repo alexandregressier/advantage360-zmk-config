@@ -56,6 +56,25 @@
 };
 
 
+/* Combos */
+
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
+// Make homerow combos tap-only (so HRMs can be chorded instantaneously)
+#define HRC_TAB    &hml         LS(LALT) TAB
+#define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
+#define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
+#define HRC_RPAR   &hmr_rpar_gt RS(LALT) 0
+
+// Horizontal Combos - Right Hand
+ZMK_COMBO(command_space, &kp LG(SPACE), 41 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(return, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+
 /* Homerow mods */
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
