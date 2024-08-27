@@ -20,9 +20,10 @@
 # West
 .west/
 build/
-/zmk/
 /zephyr/
 /modules/
+/zmk/
+/zmk-helpers/
 
 # Firmware files
 *.uf2

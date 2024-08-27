@@ -1,9 +1,15 @@
 manifest:
+  remotes:
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       url: ../../zmk
       revision: advantage360
       clone-depth: 0
       import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+      revision: main
   self:
     path: config
