@@ -1,9 +1,5 @@
 #include "config.dtsi"
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/backlight.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
+// Make sure that there are no other imports, otherwise the config will be overwritten (e.g., behavior reconfigurations)
 
 / {
     keymap {
