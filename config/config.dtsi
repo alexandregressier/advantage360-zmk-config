@@ -132,23 +132,25 @@ ZMK_TAP_DANCE(num_dance,
 
 
 /* Hyper & Super */
-ZMK_MACRO(hyper_trans,
+ZMK_MACRO_ONE_PARAM(hyper_kp,
 	wait-ms = <0>;
 	tap-ms = <0>;
 	bindings
 	= <&macro_press &kp LG(LS(LA(LCTRL)))>
-	, <&macro_tap &trans>
+    , <&macro_param_1to1>
+	, <&macro_tap &kp MACRO_PLACEHOLDER>
 	, <&macro_release &kp LG(LS(LA(LCTRL)))>
 	, <&macro_tap &sl SUPER>
 	;
 )
 
-ZMK_MACRO(super_trans,
+ZMK_MACRO_ONE_PARAM(super_kp,
 	wait-ms = <0>;
 	tap-ms = <0>;
 	bindings
 	= <&macro_press &kp LG(LA(LCTRL))>
-	, <&macro_tap &trans>
+	, <&macro_param_1to1>
+	, <&macro_tap &kp MACRO_PLACEHOLDER>
 	, <&macro_release &kp LG(LA(LCTRL))>
 	, <&macro_tap &to DEFAULT>
 	;
