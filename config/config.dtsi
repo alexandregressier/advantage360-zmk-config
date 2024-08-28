@@ -38,6 +38,8 @@
 
 #define DEFAULT 0
 #define NUMBERS 1
+#define HYPER   3
+#define SUPER   20
 
 
 /* Global Settings */
@@ -50,6 +52,7 @@
 };
 
 &sl { // Sticky Layer
+	release-after-ms = <3000>;
 	ignore-modifiers; // Allow chording sticky mods & layers
 };
 
@@ -112,6 +115,7 @@ ZMK_TAP_DANCE(shift_dance,
 	/delete-property/ ignore-modifiers;
 };
 
+
 /* Smart Number */
 
 ZMK_HOLD_TAP(smart_number,
@@ -125,3 +129,33 @@ ZMK_TAP_DANCE(num_dance,
 	bindings = <&num_word NUMBERS>, <&sl NUMBERS>;
 )
 &num_word {};
+
+
+/* Hyper & Super */
+ZMK_MACRO(hyper_trans,
+	wait-ms = <0>;
+	tap-ms = <0>;
+	bindings
+	= <&macro_press &kp LG(LS(LA(LCTRL)))>
+	, <&macro_tap &trans>
+	, <&macro_release &kp LG(LS(LA(LCTRL)))>
+	, <&macro_tap &sl SUPER>
+	;
+)
+
+ZMK_MACRO(super_trans,
+	wait-ms = <0>;
+	tap-ms = <0>;
+	bindings
+	= <&macro_press &kp LG(LA(LCTRL))>
+	, <&macro_tap &trans>
+	, <&macro_release &kp LG(LA(LCTRL))>
+	, <&macro_tap &to DEFAULT>
+	;
+)
+
+ZMK_MACRO(esc_and_default,
+	wait-ms = <0>;
+	tap-ms = <0>;
+	bindings = <&kp ESC &to DEFAULT>;
+)
