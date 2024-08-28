@@ -52,7 +52,7 @@
 };
 
 &sl { // Sticky Layer
-	release-after-ms = <5000>; // Default: 1000
+	release-after-ms = <10000>; // Default: 1000
 	ignore-modifiers;          // Allow chording sticky mods & layers
 };
 
