@@ -28,9 +28,6 @@ build-parallel:
       'just build-left' \
       'just build-right'
 
-clean:
-	rm -r build/
-
 build-left:
 	.venv/bin/west build \
 	    --pristine \
@@ -48,3 +45,6 @@ build-right:
 	    ../zmk/app \
 	    -- \
 	    -DZMK_CONFIG="{{justfile_directory()}}/config/"
+
+clean:
+	rm -rf build/
