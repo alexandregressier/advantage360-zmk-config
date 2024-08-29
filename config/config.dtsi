@@ -89,7 +89,7 @@ ZMK_COMBO(at_sign,    &kp AT_SIGN,    16 17, ALL, COMBO_TERM_FAST, COMBO_IDLE_FA
 ZMK_COMBO(hash,       &kp HASH,       17 18, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(percent,    &kp PERCENT,    18 19, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(caret,      &kp CARET,      22 23, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(ampersand,  &kp CARET,      22 23, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(asterisk,   &kp ASTERISK,   23 24, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(plus,       &kp PLUS,       24 25, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
@@ -124,6 +124,7 @@ ZMK_COMBO(slash,      &kp SLASH,      56 57, ALL, COMBO_TERM_FAST, COMBO_IDLE_FA
 
 // Tap: ? | ⇧ Tap: !
 
+SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &kp CARET)
 
 SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &not_equal)
 SIMPLE_MACRO(not_equal, &kp EXCL &kp EQUAL)
@@ -137,18 +138,23 @@ ZMK_MOD_MORPH(plus_morph,
 )
 
 
-
 SIMPLE_MORPH(doubleq_morph, SFT, &kp DOUBLE_QUOTES, &kp GRAVE)
 
 SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp BACKSLASH)
 
 SIMPLE_MORPH(qmark_morph, SFT, &kp QMARK, &kp EXCL)
 
-SIMPLE_MORPH(less_than_morph, SFT, &kp LESS_THAN, &less_than_or_equal)
-SIMPLE_MACRO(less_than_or_equal, &kp LESS_THAN &kp EQUAL)
 
 SIMPLE_MORPH(greater_than_morph, SFT, &kp GREATER_THAN, &greater_than_or_equal)
 SIMPLE_MACRO(greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
+
+SIMPLE_MORPH(less_than_morph, SFT, &kp LESS_THAN, &less_than_or_equal)
+SIMPLE_MACRO(less_than_or_equal, &kp LESS_THAN &kp EQUAL)
+
+SIMPLE_MORPH(left_brace_morph, SFT, &kp LEFT_BRACE, &kp RIGHT_BRACE)
+
+SIMPLE_MORPH(left_bracket_morph, SFT, &kp LEFT_BRACKET, &kp RIGHT_BRACKET)
+
 
 /* Homerow Mods */
 
