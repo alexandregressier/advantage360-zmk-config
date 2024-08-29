@@ -39,8 +39,8 @@
 #define DEFAULT 0
 #define NUMBERS 1
 #define HYPER   3
-#define MOD     4
 #define SUPER   20
+#define MOD     31
 
 
 /* Global Settings */
