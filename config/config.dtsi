@@ -132,10 +132,7 @@ SIMPLE_MACRO(not_equal, &kp EXCL &kp EQUAL)
 SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &thin_arrow)
 SIMPLE_MACRO(thin_arrow, &kp MINUS &kp GREATER_THAN)
 
-ZMK_MOD_MORPH(plus_morph,
-	mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-	bindings = <&kp EQUAL>, <&kp PLUS>;
-)
+SIMPLE_MORPH(plus_morph, GUI, &kp PLUS, &kp LG(EQUAL))
 
 
 SIMPLE_MORPH(doubleq_morph, SFT, &kp DOUBLE_QUOTES, &kp GRAVE)
