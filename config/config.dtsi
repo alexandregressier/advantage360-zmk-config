@@ -133,7 +133,7 @@ SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &thin_arrow)
 SIMPLE_MACRO(thin_arrow, &kp MINUS &kp GREATER_THAN)
 
 ZMK_MOD_MORPH(plus_morph,
-	mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RSFT|MOD_RGUI)>;
+	mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
 	bindings = <&kp EQUAL>, <&kp PLUS>;
 )
 
