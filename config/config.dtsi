@@ -174,7 +174,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 // Tap: sticky shift | Double-tap: caps-word | Hold: shift
 ZMK_HOLD_TAP(smart_shift,
 	flavor = "balanced";
-	tapping-term-ms = <200>;
+	tapping-term-ms = <400>;
 	quick-tap-ms = <QUICK_TAP_MS>;
 	bindings = <&kp>, <&shift_dance>;
 )
@@ -193,7 +193,9 @@ ZMK_TAP_DANCE(num_dance,
 	tapping-term-ms = <200>;
 	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
 )
-&num_word {};
+&num_word {
+	ignore-modifiers; // Needed for shortcuts like
+};
 
 
 /* Hyper & Super */

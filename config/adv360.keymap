@@ -7,11 +7,11 @@
 
         default {
             bindings = <
-&mo MOD       &none         &underscore_morph    &equal_morph  &minus_morph   &plus_morph  &kp N0                                                                  &none                 &kp DOLLAR      &doubleq_morph      &kp COLON            &slash_morph      &none         &mo MOD
-&none         &kp Q         &kp W                &kp E         &kp R          &kp T        &kp LG(RIGHT_BRACKET)                                                   &kp LG(LEFT_BRACKET)  &kp Y           &kp U               &kp I                &kp O             &kp P         &kp SEMICOLON
-&kp ESC       &hml LCTRL A  &hml LALT S          &hml LGUI D   &hml LSHIFT F  &kp G        &kp LS(TAB)  &none                  &none         &none      &none      &kp TAB               &kp H           &hmr RSHIFT J       &hmr RGUI K          &hmr RALT L       &num_dance    &kp SINGLE_QUOTE
-&tog COMMAND  &kp Z         &kp X                &kp C         &kp V          &kp B                                            &kp HOME      &kp PG_UP                                   &kp N           &kp M               &kp COMMA            &kp DOT           &qmark_morph  &kp LG(RIGHT_ARROW)
-&none         &none         &greater_than_morph  &kp LPAR      &kp RPAR                    &kp BSPC     &smart_shift LSHIFT 0  &kp END       &kp PG_DN  &to HYPER  &kp SPACE                             &left_brace_morph   &left_bracket_morph  &less_than_morph  &none         &none
+&mo MOD         &none         &underscore_morph    &equal_morph    &minus_morph   &plus_morph  &kp N0                                                                  &none                 &left_bracket_morph  &left_brace_morph   &kp LPAR             &kp RPAR          &none         &mo MOD
+&kp BACKSLASH   &kp Q         &kp W                &kp E           &kp R          &kp T        &kp LG(RIGHT_BRACKET)                                                   &kp LG(LEFT_BRACKET)  &kp Y                &kp U               &kp I                &kp O             &kp P         &kp SLASH
+&doubleq_morph  &hml LCTRL A  &hml LALT S          &hml LGUI D     &hml LSHIFT F  &kp G        &kp LS(TAB)  &none                  &none         &none      &none      &kp TAB               &kp H                &hmr RSHIFT J       &hmr RGUI K          &hmr RALT L       &num_dance    &kp SINGLE_QUOTE
+&tog COMMAND    &kp Z         &kp X                &kp C           &kp V          &kp B                                            &kp HOME      &kp PG_UP                                   &kp N                &kp M               &kp COMMA            &kp DOT           &qmark_morph  &kp LG(RIGHT_ARROW)
+&none           &none         &greater_than_morph  &kp LPAR        &kp RPAR                    &kp BSPC     &smart_shift LSHIFT 0  &kp END       &kp PG_DN  &to HYPER  &kp SPACE                                  &kp COLON           &kp SEMI             &kp EXCL          &none         &none
             >;
         };
 
