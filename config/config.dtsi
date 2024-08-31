@@ -182,7 +182,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 /* Smart Shift */
 
 // Tap: sticky shift | Double-tap: caps-word | Hold: shift
-//SIMPLE_MORPH(smart_shift, SFT, &kp CAPS_LOCK, &smart_shift_hold_tap)
+//SIMPLE_MORPH(smart_shift, SFT, &kp CAPSLOCK, &smart_shift_hold_tap)
+
 ZMK_HOLD_TAP(smart_shift,
 	flavor = "balanced";
 	tapping-term-ms = <200>;
@@ -191,7 +192,7 @@ ZMK_HOLD_TAP(smart_shift,
 )
 ZMK_TAP_DANCE(shift_dance,
     tapping-term-ms = <400>;
-	bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+	bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
 )
 &caps_word {
 	/delete-property/ ignore-modifiers;
