@@ -7,21 +7,21 @@
 
         default {
             bindings = <
-&mo MOD            &kp CARET     &greater_than_morph  &equal_morph       &less_than_morph  &dollar_morph  &none                                                                                        &none                 &left_bracket_morph  &left_brace_morph  &kp LPAR     &kp RPAR     &none          &mo MOD
-&backslash_morph   &kp Q         &kp W                &kp E              &kp R             &kp T          &kp LG(RIGHT_BRACKET)                                                                        &kp LG(LEFT_BRACKET)  &kp Y                &kp U              &kp I        &kp O        &kp P          &slash_morph
-&kp DOUBLE_QUOTES  &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F     &kp G          &kp LS(TAB)            &none                  &none         &none      &none                 &kp TAB               &kp H                &hmr RSHIFT J      &hmr RGUI K  &hmr RALT L  &num_dance     &single_quote_morph
-&tog COMMAND       &kp Z         &kp X                &kp C              &kp V             &kp B                                                        &kp HOME      &kp PG_UP                                              &kp N                &kp M              &kp COMMA    &dot_morph   &kp QUESTION   &kp LG(RIGHT_ARROW)
-&none              &kp PIPE      &plus_morph          &underscore_morph  &minus_morph                     &kp BSPC               &smart_shift LSHIFT 0  &kp END       &kp PG_DN  &to HYPER             &kp SPACE                                  &kp COLON          &kp SEMI     &kp EXCL     &kp AMPERSAND  &none
+&mo MOD            &kp CARET     &kp RBRC            &kp LBKT           &kp RBKT       &less_than_morph  &none                                                                       &none        &greater_than_morph  &kp LBRC       &kp LPAR     &kp RPAR     &none                       &mo MOD
+&backslash_morph   &kp Q         &kp W               &kp E              &kp R          &kp T             &kp LG(RIGHT_BRACKET)                                                       &kp LS(TAB)  &kp Y                &kp U          &kp I        &kp O        &kp P                       &kp SEMI
+&kp DOUBLE_QUOTES  &hml LCTRL A  &hml LALT S         &hml LGUI D        &hml LSHIFT F  &kp G             &kp LG(LEFT_BRACKET)  &smart_num             &none  &none        &none      &kp TAB      &kp H                &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL LG(RIGHT_ARROW)  &single_quote_morph
+&tog COMMAND       &kp Z         &kp X               &kp C              &kp V          &kp B                                                          &none  &sl SYMBOLS                          &kp N                &kp M          &kp COMMA    &dot_morph   &kp QUESTION                &tog COMMAND
+&none              &kp PIPE      &underscore_morph   &minus_morph       &equal_morph                     &kp BACKSPACE         &smart_shift LSHIFT 0  &none  &none        &to HYPER  &kp SPACE                         &kp COLON      &kp SLASH    &kp EXCL     &kp AMPERSAND               &none
             >;
         };
 
         numbers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans          &trans        &trans       &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp ASTERISK  &kp N7          &kp N8        &kp N9       &kp SLASH     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp PLUS      &hmr RSHIFT N4  &hmr RGUI N5  &hmr RALT N6 &tog NUMBERS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp MINUS     &kp N1          &kp N2        &kp N3       &kp RETURN    &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &kp N0  &trans                &trans          &kp COMMA     &kp DOT      &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &kp KP_MULTIPLY  &kp LPAR      &kp RPAR      &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans  &kp N7           &kp N8        &kp N9        &kp KP_DIVIDE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &hmr RSHIFT N4   &hmr RGUI N5  &hmr RALT N6  &kp KP_PLUS    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans            &trans                  &trans  &kp N1           &kp N2        &kp N3        &kp KP_ENTER   &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &tog NUMBERS      &trans  &kp N0  &trans          &kp KP_NUMLOCK   &kp KP_COMMA  &kp KP_DOT    &trans         &trans
             >;
         };
 
@@ -275,13 +275,13 @@
             >;
         };
 
-        layer_27 {
+        symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans                     &trans       &trans            &trans         &trans       &curr_euro     &trans                                      &trans  &trans  &trans       &trans            &trans            &trans  &trans
+&trans                     &fr_ae       &fr_e_circumflex  &fr_e_acute    &fr_e_grave  &curr_yen      &trans                                      &trans  &trans  &fr_u_morph  &fr_i_circumflex  &fr_o_circumflex  &fr_oe  &trans
+&double_quotes_pair_morph  &fr_a_grave  &fr_a_circumflex  &trans         &trans       &curr_pound    &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans       &trans            &trans            &fr_ou  &curly_apostrophe_morph
+&trans                     &trans       &trans            &fr_c_cedilla  &curr_cent   &curr_bitcoin                  &trans      &trans                  &trans  &trans       &trans            &ellipsis         &trans  &trans
+&trans                     &trans       &em_dash          &inequal       &em_dash                    &trans  &trans  &trans      &trans  &trans  &trans          &trans       &trans            &trans            &trans  &trans
             >;
         };
 

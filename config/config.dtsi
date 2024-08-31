@@ -9,6 +9,7 @@
 #define HOST_OS 2
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/currency.dtsi"
+#include "zmk-helpers/unicode-chars/french.dtsi"
 
 /*
  ╭────────────────────────────┬────────────────────────────╮
@@ -45,6 +46,7 @@
 #define HYPER   3
 #define WM      7
 #define SUPER   20
+#define SYMBOLS 27
 #define MOD     31
 
 
@@ -106,13 +108,8 @@ ZMK_COMBO(underscore, &kp UNDERSCORE, 54 55, ALL, COMBO_TERM_FAST, COMBO_IDLE_FA
 ZMK_COMBO(minus,      &kp MINUS,      55 56, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(slash,      &kp SLASH,      56 57, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-/* Custom Behaviors */
 
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_MOD_MORPH(NAME, \
-        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
+/* Macros */
 
 #define SIMPLE_MACRO(NAME, SEQUENCE) \
 	ZMK_MACRO(NAME, \
@@ -121,19 +118,16 @@ ZMK_COMBO(slash,      &kp SLASH,      56 57, ALL, COMBO_TERM_FAST, COMBO_IDLE_FA
 		bindings = <SEQUENCE>; \
 	)
 
-// Tap: , | ⇧ Tap: ;
-//SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMI)
 
-// Tap: . | ⇧ Tap: :
-//SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
+/* Custom Behaviors */
 
-// Tap: ? | ⇧ Tap: !
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+    ZMK_MOD_MORPH(NAME, \
+        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+        bindings = <BINDING1>, <BINDING2>; \
+    )
 
-// Tap: ? | ⇧ Tap: !
 
-
-ZMK_UNICODE_SINGLE(ellipsis, N2, N0, N2, N6)
-ZMK_UNICODE_SINGLE(plus_minus, N0, N0, B, N1)
 
 
 // First Row
@@ -153,7 +147,6 @@ SIMPLE_MORPH(left_brace_morph, SFT, &kp LEFT_BRACE, &kp RIGHT_BRACE)
 
 // Top Row
 SIMPLE_MORPH(backslash_morph, SFT, &kp BACKSLASH, &kp TILDE)
-SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp PERCENT)
 
 // Middle Row
 SIMPLE_MORPH(single_quote_morph, SFT, &kp SINGLE_QUOTE, &kp GRAVE)
@@ -189,14 +182,15 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 /* Smart Shift */
 
 // Tap: sticky shift | Double-tap: caps-word | Hold: shift
+//SIMPLE_MORPH(smart_shift, SFT, &kp CAPS_LOCK, &smart_shift_hold_tap)
 ZMK_HOLD_TAP(smart_shift,
 	flavor = "balanced";
-	tapping-term-ms = <400>;
+	tapping-term-ms = <200>;
 	quick-tap-ms = <QUICK_TAP_MS>;
 	bindings = <&kp>, <&shift_dance>;
 )
 ZMK_TAP_DANCE(shift_dance,
-    tapping-term-ms = <500>;
+    tapping-term-ms = <400>;
 	bindings = <&sk LEFT_SHIFT>, <&caps_word>;
 )
 &caps_word {
@@ -206,8 +200,8 @@ ZMK_TAP_DANCE(shift_dance,
 
 /* Smart Number */
 
-ZMK_TAP_DANCE(num_dance,
-	tapping-term-ms = <200>;
+ZMK_TAP_DANCE(smart_num,
+	tapping-term-ms = <400>;
 	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
 )
 &num_word {
@@ -260,6 +254,7 @@ ZMK_MACRO_ONE_PARAM(wm_kp,
 	;
 )
 
+
 /* Command Mode */
 
 ZMK_MACRO_ONE_PARAM(kpi,
@@ -269,3 +264,42 @@ ZMK_MACRO_ONE_PARAM(kpi,
 	= <&macro_param_1to1>
     , <&kp MACRO_PLACEHOLDER &to DEFAULT>;
 )
+
+
+/* Symbols */
+
+ZMK_UNICODE_SINGLE(curly_apostrophe, N2, N0, N1, N9)
+
+ZMK_UNICODE_SINGLE(curly_single_quote_left, N2, N0, N1, N8)
+SIMPLE_MACRO(curly_single_quote_pair, &curly_single_quote_left &curly_apostrophe &kp LEFT)
+
+SIMPLE_MORPH(curly_apostrophe_morph, SFT, &curly_apostrophe, &curly_single_quote_pair)
+
+ZMK_UNICODE_SINGLE(curly_double_quotes_left, N2, N0, N1, C)
+ZMK_UNICODE_SINGLE(curly_double_quotes_right, N2, N0, N1, D)
+SIMPLE_MACRO(curly_double_quotes_pair, &curly_double_quotes_left &curly_double_quotes_right &kp LEFT)
+
+ZMK_UNICODE_SINGLE(fr_guillemet_left,  N0, N0, A, B)
+ZMK_UNICODE_SINGLE(fr_guillemet_right, N0, N0, B, B)
+SIMPLE_MACRO(fr_guillemet_pair, &fr_guillemet_left &kp SPACE &kp SPACE &fr_guillemet_right &kp LEFT &kp LEFT)
+
+SIMPLE_MORPH(double_quotes_pair_morph, SFT, &curly_double_quotes_pair, &fr_guillemet_pair)
+
+ZMK_UNICODE_SINGLE(en_dash, N2, N0, N1, N3)
+ZMK_UNICODE_SINGLE(em_dash, N2, N0, N1, N4)
+ZMK_UNICODE_SINGLE(ellipsis, N2, N0, N2, C)
+
+ZMK_UNICODE_SINGLE(degree_sign, N0, N0, B, N0)
+
+ZMK_UNICODE_SINGLE(inverted_question, N0, N0, B, F)
+ZMK_UNICODE_SINGLE(inverted_exclamation, N0, N0, A, N1)
+
+ZMK_UNICODE_SINGLE(plus_minus, N0, N0, B, N1)
+ZMK_UNICODE_SINGLE(multiplication, N0, N0, D, N7)
+ZMK_UNICODE_SINGLE(division, N0, N0, F, N7)
+ZMK_UNICODE_SINGLE(inequal, N2, N2, N6, N0)
+
+SIMPLE_MORPH(fr_u_morph, SFT, &fr_u_circumflex, &fr_u_diaeresis)
+SIMPLE_MORPH(fr_i_morph, SFT, &fr_i_circumflex, &fr_i_diaeresis)
+
+SIMPLE_MACRO(fr_ou, &kp O &fr_u_grave)
