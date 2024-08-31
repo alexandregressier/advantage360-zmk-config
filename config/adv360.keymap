@@ -37,11 +37,11 @@
 
         hyper {
             bindings = <
-&trans  &trans       &trans       &trans       &trans       &trans       &trans                                             &trans  &trans       &trans       &trans           &trans        &trans         &trans
-&trans  &hyper_kp Q  &hyper_kp W  &hyper_kp E  &hyper_kp R  &hyper_kp T  &trans                                             &trans  &hyper_kp Y  &hyper_kp U  &hyper_kp I      &hyper_kp O   &hyper_kp P    &trans
-&trans  &hyper_kp A  &hyper_kp S  &hyper_kp D  &hyper_kp F  &hyper_kp G  &trans  &trans  &trans      &trans  &trans         &trans  &hyper_kp H  &hyper_kp J  &hyper_kp K      &hyper_kp L   &hyper_kp SEMI &trans
-&trans  &hyper_kp Z  &hyper_kp X  &hyper_kp C  &hyper_kp V  &hyper_kp B                  &trans      &trans                         &hyper_kp N  &hyper_kp M  &hyper_kp COMMA  &hyper_kp DOT &hyper_kp FSLH &trans
-&trans  &trans       &trans       &trans       &trans                    &trans  &trans  &trans      &trans  &kpi LG(SPACE) &to WM               &trans       &trans           &trans        &trans         &trans
+&none  &none                  &none            &none            &none            &none               &none                                             &none   &none                      &none                &none                &none                &none                   &none
+&none  &hyper_kp KP_DIVIDE    &hyper_kp KP_N7  &hyper_kp KP_N8  &hyper_kp KP_N9  &hyper_kp KP_MINUS  &none                                             &none   &hyper_kp LA(KP_DIVIDE)    &hyper_kp LA(KP_N7)  &hyper_kp LA(KP_N8)  &hyper_kp LA(KP_N9)  &hyper_kp LA(KP_MINUS)  &none
+&none  &hyper_kp KP_MULTIPLY  &hyper_kp KP_N4  &hyper_kp KP_N5  &hyper_kp KP_N6  &hyper_kp KP_PLUS   &none   &none   &none      &none  &none           &none   &hyper_kp LA(KP_MULTIPLY)  &hyper_kp LA(KP_N4)  &hyper_kp LA(KP_N5)  &hyper_kp LA(KP_N6)  &hyper_kp LA(KP_PLUS)   &none
+&none  &hyper_kp KP_N0        &hyper_kp KP_N1  &hyper_kp KP_N2  &hyper_kp KP_N3  &hyper_kp KP_DOT                    &none      &none                          &hyper_kp LA(KP_N0)        &hyper_kp LA(KP_N1)  &hyper_kp LA(KP_N2)  &hyper_kp LA(KP_N3)  &hyper_kp LA(KP_DOT)    &none
+&none  &none                  &none            &none            &none                                &trans  &trans  &none      &none  &kpi LG(SPACE)  &to WM                             &none                &none                &none                &none                   &none
             >;
         };
 
@@ -75,13 +75,13 @@
             >;
         };
 
-        layer_7 {
+        wm {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans         &trans         &trans         &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp LC(KP_DIVIDE)  &kp LC(KP_N7)  &kp LC(KP_N8)  &kp LC(KP_N9)  &kp LC(KP_MINUS)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LC(KP_N4)  &kp LC(KP_N5)  &kp LC(KP_N6)  &kp LC(KP_PLUS)   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LC(KP_DOT)  &kp LC(KP_N1)  &kp LC(KP_N2)  &kp LC(KP_N3)  &kp LC(KP_ENTER)  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans         &trans         &trans         &trans            &trans
             >;
         };
 
@@ -207,11 +207,11 @@
 
         super {
             bindings = <
-&trans    &trans       &trans       &trans       &trans       &trans       &trans                                         &trans  &trans       &trans       &trans           &trans        &trans         &trans
-&trans    &super_kp Q  &super_kp W  &super_kp E  &super_kp R  &super_kp T  &trans                                         &trans  &super_kp Y  &super_kp U  &super_kp I      &super_kp O   &super_kp P    &trans
-&kpi ESC  &super_kp A  &super_kp S  &super_kp D  &super_kp F  &super_kp G  &trans  &trans  &trans      &trans  &trans     &trans  &super_kp H  &super_kp J  &super_kp K      &super_kp L   &super_kp SEMI &trans
-&trans    &super_kp Z  &super_kp X  &super_kp C  &super_kp V  &super_kp B                  &trans      &trans                     &super_kp N  &super_kp M  &super_kp COMMA  &super_kp DOT &super_kp FSLH &trans
-&trans    &trans       &trans       &trans       &trans                    &trans  &trans  &trans      &trans  &kpi ESC   &trans               &trans       &trans           &trans        &trans         &trans
+&none  &none                  &none            &none            &none            &none               &none                                       &none   &none                      &none                &none                &none                &none                   &none
+&none  &super_kp KP_DIVIDE    &super_kp KP_N7  &super_kp KP_N8  &super_kp KP_N9  &super_kp KP_MINUS  &none                                       &none   &super_kp LA(KP_DIVIDE)    &super_kp LA(KP_N7)  &super_kp LA(KP_N8)  &super_kp LA(KP_N9)  &super_kp LA(KP_MINUS)  &none
+&none  &super_kp KP_MULTIPLY  &super_kp KP_N4  &super_kp KP_N5  &super_kp KP_N6  &super_kp KP_PLUS   &none   &none   &none      &none  &none     &none   &super_kp LA(KP_MULTIPLY)  &super_kp LA(KP_N4)  &super_kp LA(KP_N5)  &super_kp LA(KP_N6)  &super_kp LA(KP_PLUS)   &none
+&none  &super_kp KP_N0        &super_kp KP_N1  &super_kp KP_N2  &super_kp KP_N3  &super_kp KP_DOT                    &none      &none                    &super_kp LA(KP_N0)        &super_kp LA(KP_N1)  &super_kp LA(KP_N2)  &super_kp LA(KP_N3)  &super_kp LA(KP_DOT)    &none
+&none  &none                  &none            &none            &none                                &trans  &trans  &none      &none  &kpi ESC  &to WM                             &none                &none                &none                &none                   &none
             >;
         };
 

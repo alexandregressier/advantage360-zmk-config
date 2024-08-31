@@ -43,6 +43,7 @@
 #define NUMBERS 1
 #define COMMAND 2
 #define HYPER   3
+#define WM      7
 #define SUPER   20
 #define MOD     31
 
@@ -81,6 +82,11 @@
 #define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
 #define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 #define HRC_RPAR   &hmr_rpar_gt RS(LALT) 0
+
+
+ZMK_COMBO(wm_left,    &to WM,         65 66, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(wm_right,   &to WM,         69 70, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 
 // Horizontal Combos - Right Hand
 ZMK_COMBO(esc,        &kpi ESC,       30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -215,10 +221,10 @@ ZMK_MACRO_ONE_PARAM(hyper_kp,
 	wait-ms = <0>;
 	tap-ms = <0>;
 	bindings
-	= <&macro_press &kp LG(LS(LA(LCTRL)))>
+	= <&macro_press &kp LG(LCTRL)> // More modifiers before: the next shortcuts are gated and cannot be triggered inadvertently
     , <&macro_param_1to1>
 	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_release &kp LG(LS(LA(LCTRL)))>
+	, <&macro_release &kp LG(LCTRL)>
 	, <&macro_tap &sl SUPER>
 	;
 )
@@ -227,10 +233,10 @@ ZMK_MACRO_ONE_PARAM(super_kp,
 	wait-ms = <0>;
 	tap-ms = <0>;
 	bindings
-	= <&macro_press &kp LG(LA(LCTRL))>
+	= <&macro_press &kp LCTRL>
 	, <&macro_param_1to1>
 	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_release &kp LG(LA(LCTRL))>
+	, <&macro_release &kp LCTRL>
 	, <&macro_tap &to DEFAULT>
 	;
 )
