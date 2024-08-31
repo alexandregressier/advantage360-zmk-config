@@ -17,11 +17,11 @@
 
         numbers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &trans        &trans          &trans        &trans       &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                            &trans  &kp ASTERISK  &kp N7          &kp N8        &kp N9       &kp SLASH     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans  &kp PLUS      &hmr RSHIFT N4  &hmr RGUI N5  &hmr RALT N6 &tog NUMBERS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                        &kp MINUS     &kp N1          &kp N2        &kp N3       &kp RETURN    &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &kp NUMBER_0  &trans                &trans          &kp COMMA     &kp DOT      &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans          &trans        &trans       &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp ASTERISK  &kp N7          &kp N8        &kp N9       &kp SLASH     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp PLUS      &hmr RSHIFT N4  &hmr RGUI N5  &hmr RALT N6 &tog NUMBERS  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp MINUS     &kp N1          &kp N2        &kp N3       &kp RETURN    &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &kp N0  &trans                &trans          &kp COMMA     &kp DOT      &trans        &trans
             >;
         };
 
@@ -37,11 +37,11 @@
 
         hyper {
             bindings = <
-&trans       &trans       &trans       &trans       &trans       &trans       &trans                                             &trans  &trans       &trans       &trans           &trans        &trans         &trans
-&trans       &hyper_kp Q  &hyper_kp W  &hyper_kp E  &hyper_kp R  &hyper_kp T  &trans                                             &trans  &hyper_kp Y  &hyper_kp U  &hyper_kp I      &hyper_kp O   &hyper_kp P    &trans
-&to DEFAULT  &hyper_kp A  &hyper_kp S  &hyper_kp D  &hyper_kp F  &hyper_kp G  &trans  &trans  &trans      &trans  &trans         &trans  &hyper_kp H  &hyper_kp J  &hyper_kp K      &hyper_kp L   &hyper_kp SEMI &trans
-&trans       &hyper_kp Z  &hyper_kp X  &hyper_kp C  &hyper_kp V  &hyper_kp B                  &trans      &trans                         &hyper_kp N  &hyper_kp M  &hyper_kp COMMA  &hyper_kp DOT &hyper_kp FSLH &trans
-&trans       &trans       &trans       &trans       &trans                    &trans  &trans  &trans      &trans  &kpi LG(SPACE) &trans               &trans       &trans           &trans        &trans         &trans
+&trans  &trans       &trans       &trans       &trans       &trans       &trans                                             &trans  &trans       &trans       &trans           &trans        &trans         &trans
+&trans  &hyper_kp Q  &hyper_kp W  &hyper_kp E  &hyper_kp R  &hyper_kp T  &trans                                             &trans  &hyper_kp Y  &hyper_kp U  &hyper_kp I      &hyper_kp O   &hyper_kp P    &trans
+&trans  &hyper_kp A  &hyper_kp S  &hyper_kp D  &hyper_kp F  &hyper_kp G  &trans  &trans  &trans      &trans  &trans         &trans  &hyper_kp H  &hyper_kp J  &hyper_kp K      &hyper_kp L   &hyper_kp SEMI &trans
+&trans  &hyper_kp Z  &hyper_kp X  &hyper_kp C  &hyper_kp V  &hyper_kp B                  &trans      &trans                         &hyper_kp N  &hyper_kp M  &hyper_kp COMMA  &hyper_kp DOT &hyper_kp FSLH &trans
+&trans  &trans       &trans       &trans       &trans                    &trans  &trans  &trans      &trans  &kpi LG(SPACE) &to WM               &trans       &trans           &trans        &trans         &trans
             >;
         };
 
