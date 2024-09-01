@@ -37,11 +37,11 @@
 
         hyper {
             bindings = <
-&none  &none                  &none            &none            &none            &none               &none                                             &none   &none                      &none                &none                &none                &none                   &none
-&none  &hyper_kp KP_DIVIDE    &hyper_kp KP_N7  &hyper_kp KP_N8  &hyper_kp KP_N9  &hyper_kp KP_MINUS  &none                                             &none   &hyper_kp LA(KP_DIVIDE)    &hyper_kp LA(KP_N7)  &hyper_kp LA(KP_N8)  &hyper_kp LA(KP_N9)  &hyper_kp LA(KP_MINUS)  &none
-&none  &hyper_kp KP_MULTIPLY  &hyper_kp KP_N4  &hyper_kp KP_N5  &hyper_kp KP_N6  &hyper_kp KP_PLUS   &none   &none   &none      &none  &none           &none   &hyper_kp LA(KP_MULTIPLY)  &hyper_kp LA(KP_N4)  &hyper_kp LA(KP_N5)  &hyper_kp LA(KP_N6)  &hyper_kp LA(KP_PLUS)   &none
-&none  &hyper_kp KP_N0        &hyper_kp KP_N1  &hyper_kp KP_N2  &hyper_kp KP_N3  &hyper_kp KP_DOT                    &none      &none                          &hyper_kp LA(KP_N0)        &hyper_kp LA(KP_N1)  &hyper_kp LA(KP_N2)  &hyper_kp LA(KP_N3)  &hyper_kp LA(KP_DOT)    &none
-&none  &none                  &none            &none            &none                                &trans  &trans  &none      &none  &kpi LG(SPACE)  &to WM                             &none                &none                &none                &none                   &none
+&hyper_kp NON_US_BACKSLASH  &trans            &hyper_kp LA(F12)  &hyper_kp LA(F13)  &hyper_kp LA(F14)  &trans         &trans                                      &trans  &trans            &hyper_kp LA(F17)  &hyper_kp LA(F18)  &hyper_kp LA(F19)  &trans             &hyper_kp LA(NON_US_BACKSLASH)
+&trans                      &hyper_kp F17     &hyper_kp LA(F3)   &hyper_kp F5       &hyper_kp F18      &hyper_kp F20  &trans                                      &trans  &hyper_kp LA(F5)  &hyper_kp LA(F1)   &hyper_kp F9       &hyper_kp F15      &hyper_kp F16      &trans
+&trans                      &hyper_kp F1      &hyper_kp F19      &hyper_kp F4       &hyper_kp F6       &hyper_kp F7   &trans  &trans  &trans      &trans  &trans  &trans  &hyper_kp F8      &hyper_kp F10      &hyper_kp F11      &hyper_kp F12      &hyper_kp LA(F7)   &trans
+&trans                      &hyper_kp LA(F6)  &hyper_kp LA(F4)   &hyper_kp F3       &hyper_kp LA(F2)   &hyper_kp F2                   &trans      &trans                  &hyper_kp F13     &hyper_kp F14      &hyper_kp LA(F8)   &hyper_kp LA(F9)   &hyper_kp LA(F10)  &trans
+&trans                      &trans            &trans             &hyper_kp LA(F11)  &hyper_kp LA(F15)                 &trans  &trans  &trans      &trans  &trans  &trans                    &hyper_kp LA(F16)  &hyper_kp LA(F20)  &trans             &trans             &trans
             >;
         };
 
@@ -207,11 +207,11 @@
 
         super {
             bindings = <
-&none  &none                  &none            &none            &none            &none               &none                                       &none   &none                      &none                &none                &none                &none                   &none
-&none  &super_kp KP_DIVIDE    &super_kp KP_N7  &super_kp KP_N8  &super_kp KP_N9  &super_kp KP_MINUS  &none                                       &none   &super_kp LA(KP_DIVIDE)    &super_kp LA(KP_N7)  &super_kp LA(KP_N8)  &super_kp LA(KP_N9)  &super_kp LA(KP_MINUS)  &none
-&none  &super_kp KP_MULTIPLY  &super_kp KP_N4  &super_kp KP_N5  &super_kp KP_N6  &super_kp KP_PLUS   &none   &none   &none      &none  &none     &none   &super_kp LA(KP_MULTIPLY)  &super_kp LA(KP_N4)  &super_kp LA(KP_N5)  &super_kp LA(KP_N6)  &super_kp LA(KP_PLUS)   &none
-&none  &super_kp KP_N0        &super_kp KP_N1  &super_kp KP_N2  &super_kp KP_N3  &super_kp KP_DOT                    &none      &none                    &super_kp LA(KP_N0)        &super_kp LA(KP_N1)  &super_kp LA(KP_N2)  &super_kp LA(KP_N3)  &super_kp LA(KP_DOT)    &none
-&none  &none                  &none            &none            &none                                &trans  &trans  &none      &none  &kpi ESC  &to WM                             &none                &none                &none                &none                   &none
+&super_kp NON_US_BACKSLASH  &trans            &super_kp LA(F12)  &super_kp LA(F13)  &super_kp LA(F14)  &trans         &trans                                      &trans  &trans            &super_kp LA(F17)  &super_kp LA(F18)  &super_kp LA(F19)  &trans             &super_kp LA(NON_US_BACKSLASH)
+&trans                      &super_kp F17     &super_kp LA(F3)   &super_kp F5       &super_kp F18      &super_kp F20  &trans                                      &trans  &super_kp LA(F5)  &super_kp LA(F1)   &super_kp F9       &super_kp F15      &super_kp F16      &trans
+&trans                      &super_kp F1      &super_kp F19      &super_kp F4       &super_kp F6       &super_kp F7   &trans  &trans  &trans      &trans  &trans  &trans  &super_kp F8      &super_kp F10      &super_kp F11      &super_kp F12      &super_kp LA(F7)   &trans
+&trans                      &super_kp LA(F6)  &super_kp LA(F4)   &super_kp F3       &super_kp LA(F2)   &super_kp F2                   &trans      &trans                  &super_kp F13     &super_kp F14      &super_kp LA(F8)   &super_kp LA(F9)   &super_kp LA(F10)  &trans
+&trans                      &trans            &trans             &super_kp LA(F11)  &super_kp LA(F15)                 &trans  &trans  &trans      &trans  &trans  &trans                    &super_kp LA(F16)  &super_kp LA(F20)  &trans             &trans             &trans
             >;
         };
 
