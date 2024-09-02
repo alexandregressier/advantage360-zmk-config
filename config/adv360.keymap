@@ -77,11 +77,11 @@
 
         wm {
             bindings = <
-&none  &none               &none         &none         &none            &none         &none                                       &none   &none                   &none             &none             &none             &none                &none
-&none  &wm_kp KP_DIVIDE    &wm_kp KP_N7  &wm_kp KP_N8  &wm_kp KP_N9  &wm_kp KP_MINUS  &none                                       &none   &wm_kp LA(KP_DIVIDE)    &wm_kp LA(KP_N7)  &wm_kp LA(KP_N8)  &wm_kp LA(KP_N9)  &wm_kp LA(KP_MINUS)  &none
-&none  &wm_kp KP_MULTIPLY  &wm_kp KP_N4  &wm_kp KP_N5  &wm_kp KP_N6  &wm_kp KP_PLUS   &none   &none   &none      &none  &none     &none   &wm_kp LA(KP_MULTIPLY)  &wm_kp LA(KP_N4)  &wm_kp LA(KP_N5)  &wm_kp LA(KP_N6)  &wm_kp LA(KP_PLUS)   &none
-&none  &wm_kp KP_N0        &wm_kp KP_N1  &wm_kp KP_N2  &wm_kp KP_N3  &wm_kp KP_DOT                    &none      &none                    &wm_kp LA(KP_N0)        &wm_kp LA(KP_N1)  &wm_kp LA(KP_N2)  &wm_kp LA(KP_N3)  &wm_kp LA(KP_DOT)    &none
-&none  &none               &none         &none         &none                          &trans  &trans  &none      &none  &kpi ESC  &none                           &none             &none             &none             &none                &none
+&wm_kp NON_US_BACKSLASH  &trans         &wm_kp LA(F12)  &wm_kp LA(F13)  &wm_kp LA(F14)  &trans      &trans                                      &trans  &trans         &wm_kp LA(F17)  &wm_kp LA(F18)  &wm_kp LA(F19)  &trans          &wm_kp LA(NON_US_BACKSLASH)
+&trans                   &wm_kp F17     &wm_kp LA(F3)   &wm_kp F5       &wm_kp F18      &wm_kp F20  &trans                                      &trans  &wm_kp LA(F5)  &wm_kp LA(F1)   &wm_kp F9       &wm_kp F15      &wm_kp F16      &trans
+&trans                   &wm_kp F1      &wm_kp F19      &wm_kp F4       &wm_kp F6       &wm_kp F7   &trans  &trans  &trans      &trans  &trans  &trans  &wm_kp F8      &wm_kp F10      &wm_kp F11      &wm_kp F12      &wm_kp LA(F7)   &trans
+&trans                   &wm_kp LA(F6)  &wm_kp LA(F4)   &wm_kp F3       &wm_kp LA(F2)   &wm_kp F2                   &trans      &trans                  &wm_kp F13     &wm_kp F14      &wm_kp LA(F8)   &wm_kp LA(F9)   &wm_kp LA(F10)  &trans
+&trans                   &trans         &trans          &wm_kp LA(F11)  &wm_kp LA(F15)              &trans  &trans  &trans      &trans  &trans  &trans                 &wm_kp LA(F16)  &wm_kp LA(F20)  &trans          &trans          &trans
             >;
         };
 
