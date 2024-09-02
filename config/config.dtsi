@@ -288,7 +288,7 @@ SIMPLE_MORPH(double_quotes_pair_morph, SFT, &curly_double_quotes_pair, &fr_guill
 
 ZMK_UNICODE_SINGLE(en_dash, N2, N0, N1, N3)
 ZMK_UNICODE_SINGLE(em_dash, N2, N0, N1, N4)
-ZMK_UNICODE_SINGLE(ellipsis, N2, N0, N2, C)
+ZMK_UNICODE_SINGLE(ellipsis, N2, N0, N2, N6)
 
 ZMK_UNICODE_SINGLE(degree_sign, N0, N0, B, N0)
 
