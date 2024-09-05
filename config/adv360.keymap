@@ -7,11 +7,11 @@
 
         default {
             bindings =<
-&mo MOD          &tilde_morph  &left_bracket_morph  &left_brace_morph  &right_bracket_morph  &less_than_morph  &none                                                                 &none        &greater_than_morph  &right_brace_morph  &left_parenthesis_morph  &right_parenthesis_morph  &backslash_morph  &mo MOD
-&backtick_morph  &kp Q         &kp W                &kp E              &kp R                 &kp T             &none                                                                 &kp LS(TAB)  &kp Y                &kp U               &kp I                    &kp O                     &kp P             &semicolon_morph
-&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &none                  &none      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
-&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                                   &none      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
-&kp CAPSLOCK     &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift LSHIFT 0  &none      &none   &to HYPER    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &none
+&mo MOD          &tilde_morph  &left_bracket_morph  &left_brace_morph  &right_bracket_morph  &less_than_morph  &none                                                        &none        &greater_than_morph  &right_brace_morph  &left_parenthesis_morph  &right_parenthesis_morph  &backslash_morph  &mo MOD
+&backtick_morph  &kp Q         &kp W                &kp E              &kp R                 &kp T             &none                                                        &kp LS(TAB)  &kp Y                &kp U               &kp I                    &kp O                     &kp P             &semicolon_morph
+&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &none         &none      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
+&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                          &none      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
+&kp CAPSLOCK     &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift  &none      &none   &to HYPER    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &none
             >;
         };
 

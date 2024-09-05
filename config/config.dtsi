@@ -228,18 +228,15 @@ SIMPLE_MORPH(end_morph, SFT, &kp LG(RIGHT_ARROW), &kp LG(DOWN_ARROW))
 
 // Tap: sticky shift | Double-tap: caps-word | Hold: shift
 
-ZMK_HOLD_TAP(smart_shift,
-	flavor = "balanced";
-	tapping-term-ms = <200>;
-	quick-tap-ms = <QUICK_TAP_MS>;
-	bindings = <&kp>, <&shift_dance>;
-)
-
-SIMPLE_MORPH(smart_shift_morph, SFT, &sk LEFT_SHIFT, &kp CAPSLOCK)
-
-ZMK_TAP_DANCE(shift_dance,
-    tapping-term-ms = <400>;
-	bindings = <&smart_shift_morph>, <&caps_word>, <&kp CAPSLOCK>;
+//ZMK_HOLD_TAP(smart_shift,
+//	flavor = "balanced";
+//	tapping-term-ms = <200>;
+//	quick-tap-ms = <QUICK_TAP_MS>;
+//	bindings = <&kp>, <&shift_dance>;
+//)
+ZMK_TAP_DANCE(smart_shift,
+    tapping-term-ms = <400>; // Max time between each step below (200 is too short)
+	bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
 )
 &caps_word {
 	/delete-property/ ignore-modifiers;
