@@ -41,9 +41,9 @@
 
 #define DEFAULT 0
 #define NUMBERS 1
-#define COMMAND 2
-#define HYPER   3
-#define WM      7
+#define HYPER   2
+#define LEADER  3
+#define WM      6
 #define SUPER   20
 #define SYMBOLS 27
 #define MOD     31
@@ -60,7 +60,7 @@
 
 &sl { // Sticky Layer
 	release-after-ms = <10000>; // Default: 1000
-	ignore-modifiers;          // Allow chording sticky mods & layers
+	ignore-modifiers;           // Allow chording sticky mods & layers
 };
 
 &lt { // Layer-Tap
@@ -79,6 +79,10 @@
 		bindings = <SEQUENCE>; \
 	)
 
+SIMPLE_MACRO(m_leader, &kp LG(LS(LA(LC(F1)))) &sl LEADER)
+SIMPLE_MACRO(m_esc_cmdspace, &kp ESC &kp LG(SPACE))
+
+SIMPLE_MACRO(m_wm, &kp LG(LS(LA(LC(F2)))) &sl WM)
 
 /* Combos */
 
@@ -92,7 +96,7 @@ ZMK_COMBO(escape_combo, &kpi ESCAPE, 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAS
 ZMK_COMBO(return_combo, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 //ZMK_COMBO(wm_left_combo, &to WM, 65 66, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-//ZMK_COMBO(wm_right_combo, &to WM, 69 70, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(wm_right_combo, &m_wm, 69 70, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 /* Symbols */

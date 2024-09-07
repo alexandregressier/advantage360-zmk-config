@@ -9,9 +9,9 @@
             bindings =<
 &mo MOD          &tilde_morph  &left_bracket_morph  &left_brace_morph  &right_bracket_morph  &less_than_morph  &none                                                        &none        &greater_than_morph  &right_brace_morph  &left_parenthesis_morph  &right_parenthesis_morph  &backslash_morph  &mo MOD
 &backtick_morph  &kp Q         &kp W                &kp E              &kp R                 &kp T             &none                                                        &kp LS(TAB)  &kp Y                &kp U               &kp I                    &kp O                     &kp P             &semicolon_morph
-&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &none         &none      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
-&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                          &none      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
-&kp CAPSLOCK     &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift  &none      &none   &to HYPER    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &none
+&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &kp NON_US_BACKSLASH        &kp F13      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
+&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                          &kp F12      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
+&kp CAPSLOCK     &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift  &kp F14      &none   &m_leader    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &none
             >;
         };
 
@@ -25,16 +25,6 @@
             >;
         };
 
-        command {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans       &trans  &trans                                            &trans  &trans     &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans  &trans                                            &trans  &kpi LG(F)  &trans    &kp UP    &trans     &trans  &trans
-&trans  &trans  &trans  &trans     &to DEFAULT  &trans  &trans        &trans  &trans      &trans  &trans  &trans  &trans     &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &kp RG(C)  &kp RG(V)    &trans                        &trans      &trans                  &kp LG(Z)  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans  &trans     &trans               &kp LG(BSPC)  &trans  &trans      &trans  &trans  &trans             &trans    &trans    &trans     &trans  &trans
-            >;
-        };
-
         hyper {
             bindings = <
 &hyper_kp NON_US_BACKSLASH  &trans            &hyper_kp LA(F12)  &hyper_kp LA(F13)  &hyper_kp LA(F14)  &trans         &trans                                      &trans  &trans            &hyper_kp LA(F17)  &hyper_kp LA(F18)  &hyper_kp LA(F19)  &trans             &hyper_kp LA(NON_US_BACKSLASH)
@@ -42,6 +32,16 @@
 &trans                      &hyper_kp F1      &hyper_kp F19      &hyper_kp F4       &hyper_kp F6       &hyper_kp F7   &trans  &trans  &trans      &trans  &trans  &trans  &hyper_kp F8      &hyper_kp F10      &hyper_kp F11      &hyper_kp F12      &hyper_kp LA(F7)   &trans
 &trans                      &hyper_kp LA(F6)  &hyper_kp LA(F4)   &hyper_kp F3       &hyper_kp LA(F2)   &hyper_kp F2                   &trans      &trans                  &hyper_kp F13     &hyper_kp F14      &hyper_kp LA(F8)   &hyper_kp LA(F9)   &hyper_kp LA(F10)  &trans
 &trans                      &trans            &trans             &hyper_kp LA(F11)  &hyper_kp LA(F15)                 &trans  &trans  &trans      &trans  &trans  &trans                    &hyper_kp LA(F16)  &hyper_kp LA(F20)  &trans             &trans             &trans
+            >;
+        };
+
+        leader {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                               &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                               &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &m_esc_cmdspace  &m_wm   &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -65,7 +65,7 @@
             >;
         };
 
-        layer_6 {
+        wm {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -75,13 +75,13 @@
             >;
         };
 
-        wm {
+        layer_6 {
             bindings = <
-&wm_kp NON_US_BACKSLASH  &trans         &wm_kp LA(F12)  &wm_kp LA(F13)  &wm_kp LA(F14)  &trans      &trans                                      &trans  &trans         &wm_kp LA(F17)  &wm_kp LA(F18)  &wm_kp LA(F19)  &trans          &wm_kp LA(NON_US_BACKSLASH)
-&trans                   &wm_kp F17     &wm_kp LA(F3)   &wm_kp F5       &wm_kp F18      &wm_kp F20  &trans                                      &trans  &wm_kp LA(F5)  &wm_kp LA(F1)   &wm_kp F9       &wm_kp F15      &wm_kp F16      &trans
-&trans                   &wm_kp F1      &wm_kp F19      &wm_kp F4       &wm_kp F6       &wm_kp F7   &trans  &trans  &trans      &trans  &trans  &trans  &wm_kp F8      &wm_kp F10      &wm_kp F11      &wm_kp F12      &wm_kp LA(F7)   &trans
-&trans                   &wm_kp LA(F6)  &wm_kp LA(F4)   &wm_kp F3       &wm_kp LA(F2)   &wm_kp F2                   &trans      &trans                  &wm_kp F13     &wm_kp F14      &wm_kp LA(F8)   &wm_kp LA(F9)   &wm_kp LA(F10)  &trans
-&trans                   &trans         &trans          &wm_kp LA(F11)  &wm_kp LA(F15)              &trans  &trans  &trans      &trans  &trans  &trans                 &wm_kp LA(F16)  &wm_kp LA(F20)  &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
