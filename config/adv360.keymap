@@ -7,11 +7,11 @@
 
         default {
             bindings =<
-&mo MOD          &tilde_morph  &left_bracket_morph  &left_brace_morph  &right_bracket_morph  &less_than_morph  &none                                                        &none        &greater_than_morph  &right_brace_morph  &left_parenthesis_morph  &right_parenthesis_morph  &backslash_morph  &mo MOD
+&none            &tilde_morph  &left_bracket_morph  &left_brace_morph  &right_bracket_morph  &less_than_morph  &none                                                        &none        &greater_than_morph  &right_brace_morph  &left_parenthesis_morph  &right_parenthesis_morph  &backslash_morph  &none
 &backtick_morph  &kp Q         &kp W                &kp E              &kp R                 &kp T             &none                                                        &kp LS(TAB)  &kp Y                &kp U               &kp I                    &kp O                     &kp P             &semicolon_morph
-&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &kp NON_US_BACKSLASH        &kp F13      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
-&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                          &kp F12      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
-&kp CAPSLOCK     &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift  &kp F14      &none   &m_leader    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &none
+&equal_morph     &hml LCTRL A  &hml LALT S          &hml LGUI D        &hml LSHIFT F         &kp G             &none          &none         &none      &none   &sl SYMBOLS  &kp TAB      &kp H                &hmr RSHIFT J       &hmr RGUI K              &hmr RALT L               &hmr_end RCTRL 0  &apostrophe_morph
+&smart_num       &kp Z         &kp X                &kp C              &kp V                 &kp B                                          &none      &none                             &kp N                &kp M               &comma_morph             &dot_morph                &slash_morph      &double_quotes_morph
+&mo MOD          &none         &plus_morph          &underscore_morph  &minus_morph                            &kp BACKSPACE  &smart_shift  &none      &none   &m_leader    &kp SPACE                         &colon_morph        &question_morph          &exclamation_morph        &none             &mo MOD
             >;
         };
 
@@ -327,11 +327,11 @@
 
         mod {
             bindings = <
-&trans      &bootloader   &none         &none         &none         &none         &none                                  &none  &none  &none       &none                   &none       &bootloader  &trans
-&none       &none         &none         &none         &none         &none         &none                                  &none  &none  &none       &rgb_ug RGB_MEFS_CMD 5  &none       &none        &none
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none  &none  &none      &none  &none  &none  &none  &bl BL_DEC  &bl BL_TOG              &bl BL_INC  &none        &none
-&none       &none         &none         &none         &none         &none                       &none      &none                &none  &none       &rgb_ug RGB_TOG         &none       &none        &none
-&none       &none         &none         &none         &none                       &none  &none  &none      &none  &none  &none         &none       &none                   &none       &none        &none
+&bootloader  &none         &none         &none         &none         &none         &none                                  &none  &none  &none       &none                   &none       &none  &bootloader
+&none        &none         &none         &none         &none         &none         &none                                  &none  &none  &none       &rgb_ug RGB_MEFS_CMD 5  &none       &none  &none
+&bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 0  &none  &none  &none      &none  &none  &none  &none  &bl BL_DEC  &bl BL_TOG              &bl BL_INC  &none  &none
+&none        &none         &none         &none         &none         &none                       &none      &none                &none  &none       &rgb_ug RGB_TOG         &none       &none  &none
+&trans       &none         &none         &none         &none                       &none  &none  &none      &none  &none  &none         &none       &none                   &none       &none  &trans
             >;
         };
     };
