@@ -120,6 +120,9 @@ ZMK_UNICODE_SINGLE(u_em_dash, N2, N0, N1, N4) // — EM DASH (codepoint 8212, #o
 ZMK_UNICODE_SINGLE(u_ellipsis, N2, N0, N2, N6) // … HORIZONTAL ELLIPSIS (codepoint 8230, #o20046, #x2026)
 ZMK_UNICODE_SINGLE(u_interpunct, N0, N0, B, N7) // · MIDDLE DOT (codepoint 183, #o267, #xb7)
 
+ZMK_UNICODE_SINGLE(u_multiplication, N0, N0, D, N7) // × MULTIPLICATION SIGN (codepoint 215, #o327, #xd7)
+ZMK_UNICODE_SINGLE(u_division, N0, N0, F, N7) // ÷ DIVISION SIGN (codepoint 247, #o367, #xf7)
+ZMK_UNICODE_SINGLE(u_almost_equal_to, N2, N2, N4, N8) // ≈ ALMOST EQUAL TO (codepoint 8776, #o21110, #x2248)
 
 //ZMK_UNICODE_SINGLE(degree_sign, N0, N0, B, N0)
 //
@@ -148,28 +151,30 @@ ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20
     )
 
 // First Row
-/// 1
-SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
-/// 2
-SIMPLE_MORPH(left_bracket_morph, SFT, &kp LEFT_BRACKET, &kp AT_SIGN)
-/// 3
-SIMPLE_MORPH(left_brace_morph, SFT, &kp LEFT_BRACE, &kp HASH)
-/// 4
-SIMPLE_MORPH(right_bracket_morph, SFT, &kp RIGHT_BRACKET, &kp DOLLAR)
-/// 5
-SIMPLE_MORPH(less_than_morph, SFT, &kp LESS_THAN, &kp PERCENT)
-//SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
-/// 6
-SIMPLE_MORPH(greater_than_morph, SFT, &kp GREATER_THAN, &kp CARET)
-//SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
-/// 7
-SIMPLE_MORPH(right_brace_morph, SFT, &kp RIGHT_BRACE, &kp AMPERSAND)
-/// 8
-SIMPLE_MORPH(left_parenthesis_morph, SFT, &kp LEFT_PARENTHESIS, &kp ASTERISK)
-/// 9
-SIMPLE_MORPH(right_parenthesis_morph, SFT, &kp RIGHT_PARENTHESIS, &kp PIPE)
-/// 0
 SIMPLE_MORPH(backslash_morph, SFT, &kp BACKSLASH, &kp BACKSLASH)
+
+SIMPLE_MORPH(asterisk_morph, SFT, &kp ASTERISK, &u_multiplication)
+
+SIMPLE_MORPH(left_bracket_morph, SFT, &kp LEFT_BRACKET, &kp LEFT_BRACKET)
+
+SIMPLE_MORPH(left_brace_morph, SFT, &kp LEFT_BRACE, &kp LEFT_BRACE)
+
+SIMPLE_MORPH(right_brace_morph, SFT, &kp RIGHT_BRACE, &kp RIGHT_BRACE)
+
+SIMPLE_MORPH(dollar_morph, SFT, &kp DOLLAR, &kp DOLLAR)
+
+SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &u_en_dash)
+
+SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &m_thin_arrow)
+SIMPLE_MACRO(m_thin_arrow, &kp MINUS &kp GREATER_THAN)
+
+SIMPLE_MORPH(left_parenthesis_morph, SFT, &kp LEFT_PARENTHESIS, &kp LEFT_PARENTHESIS)
+SIMPLE_MORPH(right_parenthesis_morph, SFT, &kp RIGHT_PARENTHESIS, &kp RIGHT_PARENTHESIS)
+
+SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &m_addition_assignment)
+SIMPLE_MACRO(m_addition_assignment, &kp PLUS &kp EQUAL)
+
+SIMPLE_MORPH(at_sign_morph, SFT, &kp AT_SIGN, &kp AT_SIGN)
 
 // Top Row
 SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &m_triple_backticks)
@@ -179,35 +184,37 @@ SIMPLE_MORPH(semicolon_morph, SFT, &kp SEMICOLON, &m_terminate_statement)
 SIMPLE_MACRO(m_terminate_statement, &kp LG(RIGHT_ARROW) &kp SEMICOLON &kp RETURN)
 
 // Middle Row
-SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &m_fat_arrow)
-SIMPLE_MACRO(m_fat_arrow, &kp EQUAL &kp GREATER_THAN)
+SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &m_curly_double_quotes_pair)
+SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 
-SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
+SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &u_curly_apostrophe)
 
 // Bottom Row
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &u_interpunct)
 
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &u_ellipsis)
 
-SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp SLASH)
-
-SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
+SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &u_division)
 
 // Last Row
-SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &m_addition_assignment_operator)
-SIMPLE_MACRO(m_addition_assignment_operator, &kp PLUS &kp EQUAL)
+SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &u_almost_equal_to)
 
-SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &kp UNDERSCORE)
+SIMPLE_MORPH(less_than_morph, SFT, &kp LESS_THAN, &m_less_than_or_equal)
+SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
 
-SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &m_thin_arrow)
-SIMPLE_MACRO(m_thin_arrow, &kp MINUS &kp GREATER_THAN)
+SIMPLE_MORPH(greater_than_morph, SFT, &kp GREATER_THAN, &m_greater_than_or_equal)
+SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
+
+SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &m_not_equal_to)
+SIMPLE_MACRO(m_not_equal_to, &kp EXCLAMATION &kp EQUAL)
 
 SIMPLE_MORPH(colon_morph, SFT, &kp COLON, &kp COLON)
 
 SIMPLE_MORPH(question_morph, SFT, &kp QUESTION, &kp QUESTION)
 
-SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &m_not_equal_to_operator)
-SIMPLE_MACRO(m_not_equal_to_operator, &kp EXCLAMATION &kp EQUAL)
+SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &kp EXCLAMATION)
+
+SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &u_em_dash)
 
 
 /* Homerow Mods */
