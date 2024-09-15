@@ -7,7 +7,7 @@
 
         default {
             bindings =<
-&backslash_morph      &asterisk_morph  &left_bracket_morph  &left_brace_or_right_bracket   &none &dollar_morph  &none                                                        &none        &underscore_morph  &minus_morph   &left_parenthesis_morph  &right_parenthesis_morph  &plus_morph        &at_sign_morph
+&backslash_morph      &asterisk_morph  &left_bracket_morph  &left_brace_or_right_bracket   &right_brace_morph &dollar_morph  &none                                                        &none        &underscore_morph  &minus_morph   &left_parenthesis_morph  &right_parenthesis_morph  &plus_morph        &at_sign_morph
 &backtick_morph       &kp Q            &kp W                &kp E                &kp R               &kp T          &kp LG(W)                                                    &kp LS(TAB)  &kp Y              &kp U          &kp I                    &kp O                     &kp P              &semicolon_morph
 &double_quotes_morph  &hml LCTRL A     &hml LALT S          &hml LGUI D          &hml LSHIFT F       &kp G          &kp ESCAPE     &none         &none      &none   &sl SYMBOLS  &kp TAB      &kp H              &hmr RSHIFT J  &hmr RGUI K              &hmr RALT L               &hmr RCTRL RETURN  &apostrophe_morph
 &smart_num            &kp Z            &kp X                &kp C                &kp V               &kp B                                       &none      &none                             &kp N              &kp M          &comma_morph             &dot_morph                &slash_morph       &none
