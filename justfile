@@ -17,6 +17,9 @@ bootstrap:
 update:
     .venv/bin/west update
 
+update-zmk:
+    .venv/bin/west update zmk
+
 build: build-left build-right
 
 build-parallel:
@@ -28,7 +31,7 @@ build-parallel:
       'just build-left' \
       'just build-right'
 
-build-left:
+build-left: clean clean-zmk update-zmk
 	.venv/bin/west build \
 	    --pristine \
 	    --build-dir=build/left \
@@ -48,3 +51,7 @@ build-right:
 
 clean:
 	rm -rf build/
+
+clean-zmk:
+	rm -rf zmk/
+

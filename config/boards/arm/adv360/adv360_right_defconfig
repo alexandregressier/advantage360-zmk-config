@@ -62,3 +62,4 @@ CONFIG_ZMK_USB=y
 
 # Custom
 CONFIG_ZMK_RGB_UNDERGLOW_MOD_COLOR=0x0000FF
+CONFIG_ZMK_USB_LOGGING=y # Turn on logging, and set ZMK logging to debug output

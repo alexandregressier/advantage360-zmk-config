@@ -144,11 +144,20 @@ ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20
 
 /* Custom Behaviors */
 
+#define ZMK_BEHAVIOR_CORE_dependent_key_press compatible = "zmk,behavior-dependent-key-press"; #binding-cells = <0>
+#define DEPENDENT_KEY_PRESS(name, ...) ZMK_BEHAVIOR(name, dependent_key_press, __VA_ARGS__)
+
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
     ZMK_MOD_MORPH(NAME, \
         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
         bindings = <BINDING1>, <BINDING2>; \
     )
+
+DEPENDENT_KEY_PRESS(left_brace_or_right_bracket,
+	default-keycode = <LEFT_BRACE>;
+	dependency-keycode = <LEFT_BRACKET>;
+	alternative-keycode = <RIGHT_BRACKET>;
+)
 
 // First Row
 SIMPLE_MORPH(backslash_morph, SFT, &kp BACKSLASH, &kp BACKSLASH)

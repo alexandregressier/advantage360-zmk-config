@@ -25,6 +25,7 @@ build/
 /zmk/
 /zmk-helpers/
 /zmk-auto-layer/
+/zmk-conditional-prev/
 
 # Firmware files
 *.uf2
