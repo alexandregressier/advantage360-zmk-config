@@ -79,7 +79,16 @@
 		bindings = <SEQUENCE>; \
 	)
 
-SIMPLE_MACRO(m_leader, &kp LG(LS(LA(LC(F1)))) &sl LEADER)
+ZMK_MACRO(m_leader,
+	wait-ms = <0>;
+	tap-ms = <0>;
+	bindings
+	= <&macro_press &kp LCTRL &kp LALT &kp LSHIFT &kp LGUI>
+	, <&macro_tap &kp F13>
+	, <&macro_release &kp LGUI &kp LSHIFT &kp LALT &kp LCTRL>
+	, <&macro_tap &sl LEADER>
+	;
+)
 SIMPLE_MACRO(m_esc_cmdspace, &kp ESC &kp LG(SPACE))
 
 SIMPLE_MACRO(m_wm, &kp LG(LS(LA(LC(F2)))) &sl WM)
