@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: urob
       url-base: https://github.com/urob
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       url: ../../zmk
@@ -13,6 +15,9 @@ manifest:
       revision: main
     - name: zmk-auto-layer
       remote: urob
+      revision: main
+    - name: zmk-antecedent-morph
+      remote: ssbb
       revision: main
   self:
     path: config

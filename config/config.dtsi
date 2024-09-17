@@ -144,8 +144,8 @@ ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20
 
 /* Custom Behaviors */
 
-#define ZMK_BEHAVIOR_CORE_dependent_key_press compatible = "zmk,behavior-dependent-key-press"; #binding-cells = <0>
-#define DEPENDENT_KEY_PRESS(name, ...) ZMK_BEHAVIOR(name, dependent_key_press, __VA_ARGS__)
+#define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
+#define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
 
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
     ZMK_MOD_MORPH(NAME, \
@@ -153,10 +153,10 @@ ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20
         bindings = <BINDING1>, <BINDING2>; \
     )
 
-DEPENDENT_KEY_PRESS(left_brace_or_right_bracket,
-	default-keycode = <LEFT_BRACE>;
-	dependency-keycode = <LEFT_BRACKET>;
-	alternative-keycode = <RIGHT_BRACKET>;
+ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
+	defaults = <&kp LEFT_BRACE>;
+	bindings = <&kp RIGHT_BRACKET>;
+	antecedents = <LEFT_BRACKET>;
 )
 
 // First Row
