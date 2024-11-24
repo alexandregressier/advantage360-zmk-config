@@ -217,11 +217,11 @@ SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &kp EQUAL)
 // Last Row
 SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
 
-SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp RIGHT)
+SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
 SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp DOWN)
 
-SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
+SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp RIGHT)
 
 
 /* Homerow Mods */
