@@ -169,70 +169,59 @@ ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
 )
 
 // First Row
-SIMPLE_MORPH(backslash_morph, SFT, &kp BACKSLASH, &kp BACKSLASH)
+SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &kp TILDE)
 
-SIMPLE_MORPH(asterisk_morph, SFT, &kp ASTERISK, &u_multiplication)
+SIMPLE_MORPH(n1_morph, SFT, &kp N1, &kp EXCLAMATION)
 
-SIMPLE_MORPH(left_bracket_morph, SFT, &kp LEFT_BRACKET, &kp LEFT_BRACKET)
+SIMPLE_MORPH(n2_morph, SFT, &kp N2, &kp AT_SIGN)
 
-SIMPLE_MORPH(left_brace_morph, SFT, &kp LEFT_BRACE, &kp LEFT_BRACE)
+SIMPLE_MORPH(n3_morph, SFT, &kp N3, &kp HASH)
 
-SIMPLE_MORPH(right_brace_morph, SFT, &kp RIGHT_BRACE, &kp RIGHT_BRACE)
+SIMPLE_MORPH(n4_morph, SFT, &kp N4, &kp DOLLAR)
 
-SIMPLE_MORPH(dollar_morph, SFT, &kp DOLLAR, &kp DOLLAR)
+SIMPLE_MORPH(n5_morph, SFT, &kp N5, &kp PERCENT)
 
-SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &u_en_dash)
+SIMPLE_MORPH(n6_morph, SFT, &kp N6, &kp CARET)
 
-SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &m_thin_arrow)
-SIMPLE_MACRO(m_thin_arrow, &kp MINUS &kp GREATER_THAN)
+SIMPLE_MORPH(n7_morph, SFT, &kp N7, &kp AMPERSAND)
 
-SIMPLE_MORPH(left_parenthesis_morph, SFT, &kp LEFT_PARENTHESIS, &kp LEFT_PARENTHESIS)
-SIMPLE_MORPH(right_parenthesis_morph, SFT, &kp RIGHT_PARENTHESIS, &kp RIGHT_PARENTHESIS)
+SIMPLE_MORPH(n8_morph, SFT, &kp N8, &kp LEFT_BRACE)
 
-SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &m_addition_assignment)
-SIMPLE_MACRO(m_addition_assignment, &kp PLUS &kp EQUAL)
+SIMPLE_MORPH(n9_morph, SFT, &kp N9, &kp RIGHT_BRACE)
 
-SIMPLE_MORPH(at_sign_morph, SFT, &kp AT_SIGN, &kp AT_SIGN)
+SIMPLE_MORPH(n0_morph, SFT, &kp N0, &kp ASTERISK)
+
+SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &kp PLUS)
 
 // Top Row
-SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &m_triple_backticks)
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &kp UNDERSCORE)
 
-SIMPLE_MORPH(semicolon_morph, SFT, &kp SEMICOLON, &m_terminate_statement)
-SIMPLE_MACRO(m_terminate_statement, &kp LG(RIGHT_ARROW) &kp SEMICOLON &kp RETURN)
+SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &kp MINUS)
 
 // Middle Row
-SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &m_curly_double_quotes_pair)
-SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
+SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
 
-SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &u_curly_apostrophe)
+SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
 
 // Bottom Row
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &u_interpunct)
-
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &u_ellipsis)
-
-SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &u_division)
-
-// Last Row
-SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &u_almost_equal_to)
-
-SIMPLE_MORPH(less_than_morph, SFT, &kp LESS_THAN, &m_less_than_or_equal)
-SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
-
-SIMPLE_MORPH(greater_than_morph, SFT, &kp GREATER_THAN, &m_greater_than_or_equal)
-SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
-
-SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &m_not_equal_to)
-SIMPLE_MACRO(m_not_equal_to, &kp EXCLAMATION &kp EQUAL)
-
 SIMPLE_MORPH(colon_morph, SFT, &kp COLON, &kp COLON)
 
-SIMPLE_MORPH(question_morph, SFT, &kp QUESTION, &kp QUESTION)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LEFT_PARENTHESIS)
 
-SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &kp EXCLAMATION)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp RIGHT_PARENTHESIS)
 
-SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &u_em_dash)
+SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
+
+SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &kp EQUAL)
+
+// Last Row
+SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
+
+SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp RIGHT)
+
+SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp DOWN)
+
+SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
 
 /* Homerow Mods */
@@ -249,9 +238,6 @@ SIMPLE_MORPH(pipe_morph, SFT, &kp PIPE, &u_em_dash)
     )
 MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
-
-MAKE_HRM(hmr_end, &kp, &end_morph, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
-SIMPLE_MORPH(end_morph, SFT, &kp LG(RIGHT_ARROW), &kp LG(DOWN_ARROW))
 
 /* Smart Shift */
 
