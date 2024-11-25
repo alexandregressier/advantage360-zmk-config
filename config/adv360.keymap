@@ -10,7 +10,7 @@
 &backtick_morph       &n1_morph     &n2_morph    &n3_morph    &n4_morph      &n5_morph  &kp LG(X)                                                                  &none        &n6_morph  &n7_morph      &n8_morph     &n9_morph    &n0_morph       &plus_morph
 &underscore_morph     &kp Q         &kp W        &kp E        &kp R          &kp T      &kp LG(C)                                                                  &kp LS(TAB)  &kp Y      &kp U          &kp I         &kp O        &kp P           &minus_morph
 &double_quotes_morph  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G      &kp LG(V)      &kp LG(NUBS)  &kp LC(NUBS)      &kp RC(NUBS)  &kp RG(NUBS)  &kp TAB      &kp H      &hmr RSHIFT J  &hmr RGUI K   &hmr RALT L  &hmr RCTRL ESC  &apostrophe_morph
-&colon_morph          &kp Z         &kp X        &kp C        &kp V          &kp B                                   &none             &none                                    &kp N      &kp M          &comma_morph  &dot_morph   &slash_morph    &equal_morph
+&colon_morph          &kp Z         &kp X        &kp C        &kp V          &kp B                                   &sl SYMBOLS       &sl SYMBOLS                              &kp N      &kp M          &comma_morph  &dot_morph   &slash_morph    &equal_morph
 &mo MOD               &none         &none        &left_morph  &up_morph                 &kp BACKSPACE  &smart_shift  &kp LA(NUBS)      &kp RA(NUBS)  &kp ENTER     &kp SPACE               &down_morph    &right_morph  &none        &none           &mo MOD
             >;
         };
@@ -25,15 +25,25 @@
             >;
         };
 
-        layer_2 {
+        symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans                  &trans            &trans            &trans         &trans       &trans  &trans                                      &trans  &trans  &trans             &fr_i_diaeresis   &trans            &trans  &trans
+&trans                  &fr_a_circumflex  &fr_e_circumflex  &fr_e_acute    &fr_e_grave  &trans  &trans                                      &trans  &trans  &fr_u_circumflex   &fr_i_circumflex  &fr_o_circumflex  &trans  &trans
+&u_double_quotes_morph  &fr_a_grave       &trans            &trans         &trans       &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &m_fr_ou           &trans            &trans            &trans  &u_single_quote_morph
+&trans                  &trans            &trans            &fr_c_cedilla  &trans       &trans                  &trans      &trans                  &trans  &trans             &trans            &trans            &trans  &trans
+&trans                  &trans            &trans            &trans         &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans             &trans            &trans            &trans  &trans
             >;
         };
+
+//        symbols {
+//            bindings = <
+//&trans              &trans            &trans            &trans         &trans       &curr_euro     &trans                                      &trans  &trans  &trans       &fr_i_diaeresis            &trans            &trans  &trans
+//&trans              &fr_ae            &fr_e_circumflex  &fr_e_acute    &fr_e_grave  &curr_yen      &trans                                      &trans  &trans  &fr_u_morph  &fr_i_circumflex  &fr_o_circumflex  &fr_oe  &trans
+//&fr_guillemet_pair  &fr_a_grave       &trans            &place_of_interest       &upwards_white_arrow_morph    &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans       &trans            &trans            &fr_ou  &curly_apostrophe_morph
+//&trans              &fr_a_circumflex  &trans            &fr_c_cedilla  &curr_cent   &curr_bitcoin                  &trans      &trans                  &trans  &trans       &trans            &ellipsis         &trans  &trans
+//&trans              &trans            &em_dash          &inequal       &em_dash                    &trans  &trans  &trans      &trans  &trans  &trans          &trans       &trans            &trans            &trans  &trans
+//            >;
+//        };
 
         layer_3 {
             bindings = <

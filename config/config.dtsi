@@ -39,13 +39,10 @@
 
 #define THUMBS_RIGHT 37 38 53 68 69 70
 
+
 #define DEFAULT 0
 #define NUMBERS 1
-#define HYPER   2
-#define LEADER  3
-#define WM      6
-#define SUPER   20
-#define SYMBOLS 27
+#define SYMBOLS 2
 #define MOD     31
 
 
@@ -70,6 +67,24 @@
 };
 
 
+/* Morphs */
+
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+    ZMK_MOD_MORPH(NAME, \
+        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+        bindings = <BINDING1>, <BINDING2>; \
+    )
+
+#define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
+#define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
+
+ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
+	defaults = <&kp LEFT_BRACE>;
+	bindings = <&kp RIGHT_BRACKET>;
+	antecedents = <LEFT_BRACKET>;
+)
+
+
 /* Macros */
 
 #define SIMPLE_MACRO(NAME, SEQUENCE) \
@@ -79,19 +94,6 @@
 		bindings = <SEQUENCE>; \
 	)
 
-ZMK_MACRO(m_leader,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_press &kp LCTRL &kp LALT &kp LSHIFT &kp LGUI>
-	, <&macro_tap &kp F13>
-	, <&macro_release &kp LGUI &kp LSHIFT &kp LALT &kp LCTRL>
-	, <&macro_tap &sl LEADER>
-	;
-)
-SIMPLE_MACRO(m_esc_cmdspace, &kp ESC &kp LG(SPACE))
-
-SIMPLE_MACRO(m_wm, &kp LG(LS(LA(LC(F2)))) &sl WM)
 
 /* Combos */
 
@@ -104,69 +106,62 @@ SIMPLE_MACRO(m_wm, &kp LG(LS(LA(LC(F2)))) &sl WM)
 ZMK_COMBO(escape_combo, &kpi ESCAPE, 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(return_combo, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-//ZMK_COMBO(wm_left_combo, &to WM, 65 66, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(wm_right_combo, &m_wm, 69 70, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-
 
 /* Symbols */
 
-// Punctuation
+// Quotes
 ZMK_UNICODE_SINGLE(u_curly_apostrophe, N2, N0, N1, N9) // ’ RIGHT SINGLE QUOTATION MARK (codepoint 8217, #o20031, #x2019), e.g., don’t
 
 ZMK_UNICODE_SINGLE(u_left_curly_single_quote, N2, N0, N1, N8) // ‘ LEFT SINGLE QUOTATION MARK (codepoint 8216, #o20030, #x2018)
-//SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apostrophe &kp LEFT)
+SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apostrophe &kp LEFT)
+
+SIMPLE_MORPH(u_single_quote_morph, SFT, &u_curly_apostrophe, &m_curly_single_quote_pair)
 
 ZMK_UNICODE_SINGLE(u_left_curly_double_quotes, N2, N0, N1, C) // “ LEFT DOUBLE QUOTATION MARK (codepoint 8220, #o20034, #x201c)
 ZMK_UNICODE_SINGLE(u_right_curly_double_quotes, N2, N0, N1, D) // ” RIGHT DOUBLE QUOTATION MARK (codepoint 8221, #o20035, #x201d)
-//SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
+SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 
 ZMK_UNICODE_SINGLE(u_guillemet_left,  N0, N0, A, B) // « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (codepoint 171, #o253, #xab)
 ZMK_UNICODE_SINGLE(u_guillemet_right, N0, N0, B, B) // » RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (codepoint 187, #o273, #xbb)
-//SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
+SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
 
-ZMK_UNICODE_SINGLE(u_en_dash, N2, N0, N1, N3) // – EN DASH (codepoint 8211, #o20023, #x2013)
-ZMK_UNICODE_SINGLE(u_em_dash, N2, N0, N1, N4) // — EM DASH (codepoint 8212, #o20024, #x2014)
+SIMPLE_MORPH(u_double_quotes_morph, SFT, &m_curly_double_quotes_pair, &m_guillemet_pair)
+
+// Punctuation
 ZMK_UNICODE_SINGLE(u_ellipsis, N2, N0, N2, N6) // … HORIZONTAL ELLIPSIS (codepoint 8230, #o20046, #x2026)
 ZMK_UNICODE_SINGLE(u_interpunct, N0, N0, B, N7) // · MIDDLE DOT (codepoint 183, #o267, #xb7)
+ZMK_UNICODE_SINGLE(u_en_dash, N2, N0, N1, N3) // – EN DASH (codepoint 8211, #o20023, #x2013)
+ZMK_UNICODE_SINGLE(u_em_dash, N2, N0, N1, N4) // — EM DASH (codepoint 8212, #o20024, #x2014)
 
+// Currencies
+ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20254, #x20ac)
+
+// Math
 ZMK_UNICODE_SINGLE(u_multiplication, N0, N0, D, N7) // × MULTIPLICATION SIGN (codepoint 215, #o327, #xd7)
 ZMK_UNICODE_SINGLE(u_division, N0, N0, F, N7) // ÷ DIVISION SIGN (codepoint 247, #o367, #xf7)
 ZMK_UNICODE_SINGLE(u_almost_equal_to, N2, N2, N4, N8) // ≈ ALMOST EQUAL TO (codepoint 8776, #o21110, #x2248)
 
-//ZMK_UNICODE_SINGLE(degree_sign, N0, N0, B, N0)
-//
-//ZMK_UNICODE_SINGLE(option_key, N2, N3, N2, N5)
-//ZMK_UNICODE_SINGLE(place_of_interest, N2, N3, N1, N8)
-//ZMK_UNICODE_SINGLE(upwards_white_arrow, N2, N1, E, N7)
-//ZMK_UNICODE_SINGLE(upwards_white_arrow_from_bar, N2, N1, E, A)
-//SIMPLE_MORPH(upwards_white_arrow_morph, SFT, &upwards_white_arrow, &upwards_white_arrow_from_bar)
-//
-//ZMK_UNICODE_SINGLE(plus_minus, N0, N0, B, N1)
-//ZMK_UNICODE_SINGLE(multiplication, N0, N0, D, N7)
-//ZMK_UNICODE_SINGLE(division, N0, N0, F, N7)
-//ZMK_UNICODE_SINGLE(inequal, N2, N2, N6, N0)
-//
-//SIMPLE_MACRO(fr_ou, &kp O &fr_u_grave)
+// French
+ZMK_UNICODE_PAIR(fr_a_grave, N0, N0, E, N0, N0, N0, C, N0) // à LATIN SMALL LETTER A WITH GRAVE (codepoint 224, #o340, #xe0) / À LATIN CAPITAL LETTER A WITH GRAVE (codepoint 192, #o300, #xc0)
+ZMK_UNICODE_PAIR(fr_a_circumflex, N0, N0, E, N2, N0, N0, C, N2) // â LATIN SMALL LETTER A WITH CIRCUMFLEX (codepoint 226, #o342, #xe2) / Â LATIN CAPITAL LETTER A WITH CIRCUMFLEX (codepoint 194, #o302, #xc2)
 
-ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20254, #x20ac)
+ZMK_UNICODE_PAIR(fr_e_acute, N0, N0, E, N9, N0, N0, C, N9) // é LATIN SMALL LETTER E WITH ACUTE (codepoint 233, #o351, #xe9) / É LATIN CAPITAL LETTER E WITH ACUTE (codepoint 201, #o311, #xc9)
+ZMK_UNICODE_PAIR(fr_e_grave, N0, N0, E, N8, N0, N0, C, N8) // è LATIN SMALL LETTER E WITH GRAVE (codepoint 232, #o350, #xe8) / È LATIN CAPITAL LETTER E WITH GRAVE (codepoint 200, #o310, #xc8)
+ZMK_UNICODE_PAIR(fr_e_circumflex, N0, N0, E, A, N0, N0, C, A) // ê LATIN SMALL LETTER E WITH CIRCUMFLEX (codepoint 234, #o352, #xea) / Ê LATIN CAPITAL LETTER E WITH CIRCUMFLEX (codepoint 202, #o312, #xca)
+
+ZMK_UNICODE_PAIR(fr_i_circumflex, N0, N0, E, E, N0, N0, C, E) // î LATIN SMALL LETTER I WITH CIRCUMFLEX (codepoint 238, #o356, #xee) / Î LATIN CAPITAL LETTER I WITH CIRCUMFLEX (codepoint 206, #o316, #xce)
+ZMK_UNICODE_PAIR(fr_i_diaeresis, N0, N0, E, F, N0, N0, C, F) // ï LATIN SMALL LETTER I WITH DIAERESIS (codepoint 239, #o357, #xef) / Ï LATIN CAPITAL LETTER I WITH DIAERESIS (codepoint 207, #o317, #xcf)
+
+ZMK_UNICODE_PAIR(fr_o_circumflex, N0, N0, F, N4, N0, N0, D, N4) // ô LATIN SMALL LETTER O WITH CIRCUMFLEX (codepoint 244, #o364, #xf4) / Ô LATIN CAPITAL LETTER O WITH CIRCUMFLEX (codepoint 212, #o324, #xd4)
+
+ZMK_UNICODE_SINGLE(fr_u_grave, N0, N0, F, N9) // ù LATIN SMALL LETTER U WITH GRAVE (codepoint 249, #o361, #xf9)
+SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
+ZMK_UNICODE_PAIR(fr_u_circumflex, N0, N0, F, B, N0, N0, D, B) // û LATIN SMALL LETTER U WITH CIRCUMFLEX (codepoint 251, #o363, #xfb) / Û LATIN CAPITAL LETTER U WITH CIRCUMFLEX (codepoint 219, #o333, #xdb)
+
+ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL LETTER C WITH CEDILLA (codepoint 231, #o347, #xe7) / Ç LATIN CAPITAL LETTER C WITH CEDILLA (codepoint 199, #o307, #xc7)
 
 
 /* Custom Behaviors */
-
-#define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
-#define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
-
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_MOD_MORPH(NAME, \
-        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
-
-ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
-	defaults = <&kp LEFT_BRACE>;
-	bindings = <&kp RIGHT_BRACKET>;
-	antecedents = <LEFT_BRACKET>;
-)
 
 // First Row
 SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &kp TILDE)
@@ -267,52 +262,6 @@ ZMK_TAP_DANCE(smart_num,
 &num_word {
 	ignore-modifiers; // Needed for shortcuts like
 };
-
-
-/* Hyper & Super */
-
-ZMK_MACRO_ONE_PARAM(hyper_kp,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_press &kp LG(LCTRL)> // More modifiers before: the next shortcuts are gated and cannot be triggered inadvertently
-    , <&macro_param_1to1>
-	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_release &kp LG(LCTRL)>
-	, <&macro_tap &sl SUPER>
-	;
-)
-
-ZMK_MACRO_ONE_PARAM(super_kp,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_press &kp LCTRL>
-	, <&macro_param_1to1>
-	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_release &kp LCTRL>
-	, <&macro_tap &to DEFAULT>
-	;
-)
-
-ZMK_MACRO(cmd_space,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings = <&kp LG(SPACE) &to DEFAULT>;
-)
-
-
-ZMK_MACRO_ONE_PARAM(wm_kp,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_press &kp LGUI>
-	, <&macro_param_1to1>
-	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_release &kp LGUI>
-	, <&macro_tap &to DEFAULT>
-	;
-)
 
 
 /* Command Mode */
