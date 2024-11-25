@@ -35,16 +35,6 @@
             >;
         };
 
-//        symbols {
-//            bindings = <
-//&trans              &trans            &trans            &trans         &trans       &curr_euro     &trans                                      &trans  &trans  &trans       &fr_i_diaeresis            &trans            &trans  &trans
-//&trans              &fr_ae            &fr_e_circumflex  &fr_e_acute    &fr_e_grave  &curr_yen      &trans                                      &trans  &trans  &fr_u_morph  &fr_i_circumflex  &fr_o_circumflex  &fr_oe  &trans
-//&fr_guillemet_pair  &fr_a_grave       &trans            &place_of_interest       &upwards_white_arrow_morph    &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans       &trans            &trans            &fr_ou  &curly_apostrophe_morph
-//&trans              &fr_a_circumflex  &trans            &fr_c_cedilla  &curr_cent   &curr_bitcoin                  &trans      &trans                  &trans  &trans       &trans            &ellipsis         &trans  &trans
-//&trans              &trans            &em_dash          &inequal       &em_dash                    &trans  &trans  &trans      &trans  &trans  &trans          &trans       &trans            &trans            &trans  &trans
-//            >;
-//        };
-
         layer_3 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -55,13 +45,13 @@
             >;
         };
 
-        layer_4 {
+        mod {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&bootloader  &none         &none         &none         &none         &none  &none                                  &none  &none  &none       &none                   &none       &none  &bootloader
+&none        &none         &none         &none         &none         &none  &none                                  &none  &none  &none       &rgb_ug RGB_MEFS_CMD 5  &none       &none  &none
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &none  &none      &none  &none  &none  &none  &bl BL_DEC  &bl BL_TOG              &bl BL_INC  &none  &none
+&none        &none         &none         &none         &none         &none                &none      &none                &none  &none       &rgb_ug RGB_TOG         &none       &none  &none
+&trans       &none         &none         &none         &none                &none  &none  &none      &none  &none  &none         &none       &none                   &none       &none  &trans
             >;
         };
 
@@ -325,13 +315,13 @@
             >;
         };
 
-        mod {
+        layer_31 {
             bindings = <
-&bootloader  &none         &none         &none         &none         &none  &none                                  &none  &none  &none       &none                   &none       &none  &bootloader
-&none        &none         &none         &none         &none         &none  &none                                  &none  &none  &none       &rgb_ug RGB_MEFS_CMD 5  &none       &none  &none
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &none  &none      &none  &none  &none  &none  &bl BL_DEC  &bl BL_TOG              &bl BL_INC  &none  &none
-&none        &none         &none         &none         &none         &none                &none      &none                &none  &none       &rgb_ug RGB_TOG         &none       &none  &none
-&trans       &none         &none         &none         &none                &none  &none  &none      &none  &none  &none         &none       &none                   &none       &none  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
