@@ -78,10 +78,18 @@
 #define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
 #define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
 
-ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
-	defaults = <&kp LEFT_BRACE>;
-	bindings = <&kp RIGHT_BRACKET>;
-	antecedents = <LEFT_BRACKET>;
+ZMK_ANTECEDENT_MORPH(ad_n9,
+	defaults = <&kp N9>;
+	bindings = <&kp RIGHT_PARENTHESIS>;
+	antecedents = <LEFT_PARENTHESIS>;
+)
+
+ZMK_HOLD_TAP(quick_hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <100>;
+    bindings = <&kp>, <&kp>;
 )
 
 
@@ -89,8 +97,8 @@ ZMK_ANTECEDENT_MORPH(left_brace_or_right_bracket,
 
 #define SIMPLE_MACRO(NAME, SEQUENCE) \
 	ZMK_MACRO(NAME, \
-		wait-ms = <0>; \
-		tap-ms = <0>; \
+		wait-ms = <10>; \
+		tap-ms = <10>; \
 		bindings = <SEQUENCE>; \
 	)
 

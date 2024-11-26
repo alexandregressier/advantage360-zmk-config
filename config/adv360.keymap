@@ -7,11 +7,11 @@
 
         default {
             bindings =<
-&backtick_morph       &n1_morph     &n2_morph    &n3_morph    &n4_morph      &n5_morph  &kp LG(X)                                                                  &none        &n6_morph  &n7_morph      &n8_morph     &n9_morph    &n0_morph       &plus_morph
-&underscore_morph     &kp Q         &kp W        &kp E        &kp R          &kp T      &kp LG(C)                                                                  &kp LS(TAB)  &kp Y      &kp U          &kp I         &kp O        &kp P           &minus_morph
-&double_quotes_morph  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G      &kp LG(V)      &kp LG(NUBS)  &kp LC(NUBS)      &kp RC(NUBS)  &kp RG(NUBS)  &kp TAB      &kp H      &hmr RSHIFT J  &hmr RGUI K   &hmr RALT L  &hmr RCTRL ESC  &apostrophe_morph
-&colon_morph          &kp Z         &kp X        &kp C        &kp V          &kp B                                   &sl SYMBOLS       &sl SYMBOLS                              &kp N      &kp M          &comma_morph  &dot_morph   &slash_morph    &equal_morph
-&mo MOD               &none         &none        &left_morph  &up_morph                 &kp BACKSPACE  &smart_shift  &kp LA(NUBS)      &kp RA(NUBS)  &kp ENTER     &kp SPACE               &down_morph    &right_morph  &none        &none           &mo MOD
+&backtick_morph       &n1_morph     &n2_morph    &n3_morph    &n4_morph      &n5_morph  &kp LG(X)                                                                  &none        &n6_morph  &n7_morph      &quick_hold_tap LPAR N8     &ad_n9    &n0_morph       &plus_morph
+&underscore_morph     &kp Q         &kp W        &kp E        &kp R          &kp T      &kp LG(C)                                                                  &kp LS(TAB)  &kp Y      &kp U          &kp I         &kp O        &kp P           &apostrophe_morph
+&equal_morph  &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G      &kp LG(V)      &kp LG(NUBS)  &kp LC(NUBS)      &kp RC(NUBS)  &kp RG(NUBS)  &kp TAB      &kp H      &hmr RSHIFT J  &hmr RGUI K   &hmr RALT L  &hmr RCTRL ESC  &double_quotes_morph
+&equal_morph          &kp Z         &kp X        &kp C        &kp V          &kp B                                   &sl SYMBOLS       &sl SYMBOLS                              &kp N      &kp M          &comma_morph  &dot_morph   &colon_morph    &double_quotes_morph
+&mo MOD               &underscore_morph         &minus_morph        &left_morph  &right_morph              &kp BACKSPACE  &smart_shift  &kp LA(NUBS)      &kp RA(NUBS)  &kp ENTER     &kp SPACE               &down_morph    &up_morph     &quick_hold_tap RPAR LPAR        &none          &mo MOD
             >;
         };
 
