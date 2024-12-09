@@ -66,6 +66,15 @@
 	quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+/* Macros */
+
+#define SIMPLE_MACRO(NAME, SEQUENCE) \
+	ZMK_MACRO(NAME, \
+		wait-ms = <0>; \
+		tap-ms = <0>; \
+		bindings = <SEQUENCE>; \
+	)
+
 
 /* Morphs */
 
@@ -84,6 +93,12 @@ ZMK_ANTECEDENT_MORPH(ad_n9,
 	antecedents = <LEFT_PARENTHESIS>;
 )
 
+ZMK_ANTECEDENT_MORPH(ad_n4,
+	defaults = <&kp N4>;
+	bindings = <&kp RIGHT_BRACE>;
+	antecedents = <LEFT_BRACE>;
+)
+
 ZMK_HOLD_TAP(quick_hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
@@ -93,15 +108,7 @@ ZMK_HOLD_TAP(quick_hold_tap,
 )
 
 
-/* Macros */
-
-#define SIMPLE_MACRO(NAME, SEQUENCE) \
-	ZMK_MACRO(NAME, \
-		wait-ms = <10>; \
-		tap-ms = <10>; \
-		bindings = <SEQUENCE>; \
-	)
-
+SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 
 /* Combos */
 
@@ -222,9 +229,9 @@ SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
 
 SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
-SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp DOWN)
+SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
 
-SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp RIGHT)
+SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
 
 
 /* Homerow Mods */
