@@ -87,6 +87,34 @@
 #define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
 #define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
 
+/* Homerow Mods */
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
+
+ZMK_HOLD_TAP(ht_backspace,
+	flavor = "tap-preferred";
+	tapping-term-ms = <150>;
+	quick-tap-ms = <QUICK_TAP_MS>;
+	require-prior-idle-ms = <100>;
+	bindings = <&mo>, <&kp>;
+)
+ZMK_ANTECEDENT_MORPH(ad_backspace,
+	defaults = <&ht_backspace NUMBERS BACKSPACE>;
+	bindings = <&kp BACKSPACE>;
+	antecedents = <BACKSPACE>;
+)
+
 ZMK_ANTECEDENT_MORPH(ad_n9,
 	defaults = <&kp N9>;
 	bindings = <&kp RIGHT_PARENTHESIS>;
@@ -234,20 +262,7 @@ SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
 SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
 
 
-/* Homerow Mods */
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <280>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
-MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 /* Smart Shift */
 
