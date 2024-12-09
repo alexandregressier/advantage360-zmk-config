@@ -55,3 +55,5 @@ clean:
 clean-zmk:
 	rm -rf zmk/
 
+format:
+    dtsfmt config/adv360.keymap
