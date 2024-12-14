@@ -134,7 +134,8 @@ ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 30 31, ALL
 
 ZMK_COMBO(escape_combo, &ht_kp_kp LS(ESCAPE) ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(secret_combo, &m_secret, 41 42 43 44, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+TAP_PREFERRED_HOLD_TAP(ht_m_pin_m_secret, &m_secret, &m_pin)
+ZMK_COMBO(secret_combo, &ht_m_pin_m_secret 0 0, 41 42 43 44, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 /* Symbols */
