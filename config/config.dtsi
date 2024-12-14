@@ -129,8 +129,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
+ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 31 32, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 31 42, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 /* Symbols */
@@ -199,7 +199,11 @@ SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
 SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
 
-SIMPLE_ADAPTIVE(ad_left_brace, &kp LEFT_BRACE, LEFT_BRACKET, &kp RIGHT_BRACKET)
+ZMK_ANTECEDENT_MORPH(ad_left_brace,
+	defaults = <&kp LEFT_BRACE>;
+	bindings = <&kp RIGHT_BRACKET>, <&kp GREATER_THAN>;
+	antecedents = <LEFT_BRACKET MINUS>;
+)
 TAP_PREFERRED_HOLD_TAP(ht_ad_left_brace_kp, &kp, &ad_left_brace)
 SIMPLE_MORPH(n3_morph, SFT, &ht_ad_left_brace_kp N3 0, &ht_kp_kp RIGHT_BRACKET HASH)
 
@@ -207,9 +211,7 @@ SIMPLE_ADAPTIVE(ad_minus, &kp MINUS, LEFT_BRACE, &kp RIGHT_BRACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_minus_kp, &kp, &ad_minus)
 SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &ht_kp_kp RIGHT_BRACE DOLLAR)
 
-SIMPLE_ADAPTIVE(ad_underscore, &kp UNDERSCORE, MINUS, &kp GREATER_THAN)
-TAP_PREFERRED_HOLD_TAP(ht_ad_underscore_kp, &kp, &ad_underscore)
-SIMPLE_MORPH(n5_morph, SFT, &ht_ad_underscore_kp N5 0, &kp PERCENT)
+SIMPLE_MORPH(n5_morph, SFT, &ht_kp_kp N5 UNDERSCORE, &kp PERCENT)
 
 SIMPLE_MORPH(n6_morph, SFT, &ht_kp_kp N6 TAB, &kp CARET)
 
