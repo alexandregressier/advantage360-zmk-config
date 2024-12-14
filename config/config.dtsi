@@ -203,12 +203,8 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 /* Custom Behaviors */
 
 // First Row
-
-//SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
-//TAP_PREFERRED_HOLD_TAP(ht_m_triple_backticks_kp, &m_triple_backticks, &kp)
-SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &kp TILDE)
-
-SIMPLE_MORPH(n1_morph, SFT, &kp N1, &kp EXCLAMATION)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
 SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
 
@@ -226,21 +222,19 @@ SIMPLE_MORPH(n8_morph, SFT, &ht_kp_kp N8 LEFT_PARENTHESIS, &kp ASTERISK)
 
 SIMPLE_MORPH(n9_morph, SFT, &ht_kp_kp N9 QUESTION, &kp PIPE)
 
-SIMPLE_MORPH(n0_morph, SFT, &kp N0, &kp BACKSLASH)
+SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
 
-SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &kp PLUS)
-
-//// Top Row
+// Top Row
 SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &kp EXCLAMATION)
 
-SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACE))
+SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACKET))
 
 SIMPLE_MORPH(semi_morph, SFT, &kp SEMICOLON, &kp SEMICOLON)
 
 // Middle Row
 SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
 
-SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACE))
+SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACKET))
 
 SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
 
@@ -257,6 +251,8 @@ SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
 SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
 
 SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
+
+
 
 SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
 
