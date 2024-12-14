@@ -130,13 +130,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(escape_combo, &ht_kp_kp LS(ESCAPE) ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, 150, COMBO_IDLE_SLOW)
 
 TAP_PREFERRED_HOLD_TAP(ht_m_pin_m_secret, &m_secret, &m_pin)
-ZMK_COMBO(secret_combo, &ht_m_pin_m_secret 0 0, 41 42 43 44, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-
+ZMK_COMBO(secret_combo, &ht_m_pin_m_secret 0 0, 41 42 43 44, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Symbols */
 
