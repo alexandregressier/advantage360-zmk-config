@@ -203,11 +203,11 @@ SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
 
 SIMPLE_ADAPTIVE(ad_left_brace, &kp LEFT_BRACE, LEFT_BRACKET, &kp RIGHT_BRACKET)
 TAP_PREFERRED_HOLD_TAP(ht_ad_left_brace_kp, &kp, &ad_left_brace)
-SIMPLE_MORPH(n3_morph, SFT, &ht_ad_left_brace_kp N3 0, &kp HASH)
+SIMPLE_MORPH(n3_morph, SFT, &ht_ad_left_brace_kp N3 0, &ht_kp_kp RIGHT_BRACKET HASH)
 
 SIMPLE_ADAPTIVE(ad_minus, &kp MINUS, LEFT_BRACE, &kp RIGHT_BRACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_minus_kp, &kp, &ad_minus)
-SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &kp DOLLAR)
+SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &ht_kp_kp RIGHT_BRACE DOLLAR)
 
 SIMPLE_ADAPTIVE(ad_underscore, &kp UNDERSCORE, MINUS, &kp GREATER_THAN)
 TAP_PREFERRED_HOLD_TAP(ht_ad_underscore_kp, &kp, &ad_underscore)
@@ -223,7 +223,7 @@ SIMPLE_MORPH(n8_morph, SFT, &ht_ad_left_parenthesis_kp N8 0, &kp ASTERISK)
 
 SIMPLE_ADAPTIVE(ad_question, &kp QUESTION, LEFT_PARENTHESIS, &kp RIGHT_PARENTHESIS)
 TAP_PREFERRED_HOLD_TAP(ht_ad_question_kp, &kp, &ad_question)
-SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &kp PIPE)
+SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &ht_kp_kp RIGHT_PARENTHESIS PIPE)
 
 SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
 
