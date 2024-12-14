@@ -132,12 +132,6 @@ ZMK_ANTECEDENT_MORPH(ad_n9,
 	antecedents = <LEFT_PARENTHESIS>;
 )
 
-ZMK_ANTECEDENT_MORPH(ad_n4,
-	defaults = <&kp N4>;
-	bindings = <&kp RIGHT_BRACE>;
-	antecedents = <LEFT_BRACE>;
-)
-
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 
 /* Combos */
@@ -210,37 +204,43 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 
 // First Row
 
+//SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+//TAP_PREFERRED_HOLD_TAP(ht_m_triple_backticks_kp, &m_triple_backticks, &kp)
 SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &kp TILDE)
 
 SIMPLE_MORPH(n1_morph, SFT, &kp N1, &kp EXCLAMATION)
 
-SIMPLE_MORPH(n2_morph, SFT, &kp N2, &kp AT_SIGN)
+SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
 
-SIMPLE_MORPH(n3_morph, SFT, &ht_kp_kp N3 LEFT_BRACE, &kp RIGHT_BRACE)
+SIMPLE_MORPH(n3_morph, SFT, &ht_kp_kp N3 LEFT_BRACE, &kp HASH)
 
-SIMPLE_MORPH(n4_morph, SFT, &kp N4, &kp DOLLAR)
+SIMPLE_MORPH(n4_morph, SFT, &ht_kp_kp N4 MINUS, &kp DOLLAR)
 
-SIMPLE_MORPH(n5_morph, SFT, &kp N5, &kp PERCENT)
+SIMPLE_MORPH(n5_morph, SFT, &ht_kp_kp N5 UNDERSCORE, &kp PERCENT)
 
-SIMPLE_MORPH(n6_morph, SFT, &kp N6, &kp CARET)
+SIMPLE_MORPH(n6_morph, SFT, &ht_kp_kp N6 TAB, &kp CARET)
 
-SIMPLE_MORPH(n7_morph, SFT, &kp N7, &kp AMPERSAND)
+SIMPLE_MORPH(n7_morph, SFT, &ht_kp_kp N7 EQUAL, &kp AMPERSAND)
 
-SIMPLE_MORPH(n8_morph, SFT, &kp N8, &kp LEFT_BRACE)
+SIMPLE_MORPH(n8_morph, SFT, &ht_kp_kp N8 LEFT_PARENTHESIS, &kp ASTERISK)
 
-SIMPLE_MORPH(n9_morph, SFT, &kp N9, &kp RIGHT_BRACE)
+SIMPLE_MORPH(n9_morph, SFT, &ht_kp_kp N9 QUESTION, &kp PIPE)
 
-SIMPLE_MORPH(n0_morph, SFT, &kp N0, &kp ASTERISK)
+SIMPLE_MORPH(n0_morph, SFT, &kp N0, &kp BACKSLASH)
 
 SIMPLE_MORPH(plus_morph, SFT, &kp PLUS, &kp PLUS)
 
-// Top Row
-SIMPLE_MORPH(underscore_morph, SFT, &kp UNDERSCORE, &kp UNDERSCORE)
+//// Top Row
+SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &kp EXCLAMATION)
 
-SIMPLE_MORPH(minus_morph, SFT, &kp MINUS, &kp MINUS)
+SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACE))
+
+SIMPLE_MORPH(semi_morph, SFT, &kp SEMICOLON, &kp SEMICOLON)
 
 // Middle Row
 SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
+
+SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACE))
 
 SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
 
@@ -253,17 +253,14 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp RIGHT_PARENTHESIS)
 
 SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
 
-SIMPLE_MORPH(equal_morph, SFT, &kp EQUAL, &kp EQUAL)
-
 // Last Row
 SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
 
-SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
+SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
 
 SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
 
-SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
-
+SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
 
 
