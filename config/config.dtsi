@@ -203,7 +203,9 @@ SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
 
 SIMPLE_MORPH(n3_morph, SFT, &ht_kp_kp N3 LEFT_BRACE, &kp HASH)
 
-SIMPLE_MORPH(n4_morph, SFT, &ht_kp_kp N4 MINUS, &kp DOLLAR)
+SIMPLE_ADAPTIVE(ad_minus, &kp MINUS, LEFT_BRACE, &kp RIGHT_BRACE)
+TAP_PREFERRED_HOLD_TAP(ht_ad_minus_kp, &kp, &ad_minus)
+SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &kp DOLLAR)
 
 SIMPLE_MORPH(n5_morph, SFT, &ht_kp_kp N5 UNDERSCORE, &kp PERCENT)
 
