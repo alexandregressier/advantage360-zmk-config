@@ -120,21 +120,6 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
-ZMK_HOLD_TAP(ht_backspace,
-	flavor = "tap-preferred";
-	tapping-term-ms = <150>;
-	quick-tap-ms = <QUICK_TAP_MS>;
-	require-prior-idle-ms = <100>;
-	bindings = <&mo>, <&kp>;
-)
-
-ZMK_ANTECEDENT_MORPH(ad_backspace,
-	defaults = <&ht_backspace NUMBERS BACKSPACE>;
-	bindings = <&kp BACKSPACE>;
-	antecedents = <BACKSPACE>;
-)
-
-
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 
 /* Combos */
@@ -204,6 +189,9 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 
 
 /* Custom Behaviors */
+
+SIMPLE_ADAPTIVE(ad_delete_word, &kp LA(BACKSPACE), BACKSPACE, &kp BACKSPACE)
+TAP_PREFERRED_HOLD_TAP(ht_delete_word_kp, &ad_delete_word, &kp)
 
 // First Row
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
