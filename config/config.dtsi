@@ -87,6 +87,17 @@
 #define ZMK_BEHAVIOR_CORE_antecedent_morph compatible = "zmk,behavior-antecedent-morph"; #binding-cells = <0>
 #define ZMK_ANTECEDENT_MORPH(name, ...) ZMK_BEHAVIOR(name, antecedent_morph, __VA_ARGS__)
 
+#define TAP_PREFERRED_HOLD_TAP(NAME, HOLD, TAP) \
+    ZMK_HOLD_TAP(NAME, \
+		flavor = "tap-preferred"; \
+		tapping-term-ms = <150>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
+		require-prior-idle-ms = <100>; \
+		bindings = <HOLD>, <TAP>; \
+ 	)
+
+TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
+
 /* Homerow Mods */
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
@@ -126,15 +137,6 @@ ZMK_ANTECEDENT_MORPH(ad_n4,
 	bindings = <&kp RIGHT_BRACE>;
 	antecedents = <LEFT_BRACE>;
 )
-
-ZMK_HOLD_TAP(quick_hold_tap,
-    flavor = "tap-preferred";
-    tapping-term-ms = <150>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    require-prior-idle-ms = <100>;
-    bindings = <&kp>, <&kp>;
-)
-
 
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 
@@ -207,13 +209,14 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 /* Custom Behaviors */
 
 // First Row
+
 SIMPLE_MORPH(backtick_morph, SFT, &kp GRAVE, &kp TILDE)
 
 SIMPLE_MORPH(n1_morph, SFT, &kp N1, &kp EXCLAMATION)
 
 SIMPLE_MORPH(n2_morph, SFT, &kp N2, &kp AT_SIGN)
 
-SIMPLE_MORPH(n3_morph, SFT, &kp N3, &kp HASH)
+SIMPLE_MORPH(n3_morph, SFT, &ht_kp_kp N3 LEFT_BRACE, &kp RIGHT_BRACE)
 
 SIMPLE_MORPH(n4_morph, SFT, &kp N4, &kp DOLLAR)
 
