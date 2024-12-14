@@ -194,6 +194,8 @@ SIMPLE_ADAPTIVE(ad_change_word, &m_change_word, BACKSPACE, &kp BACKSPACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_change_word_kp, &ad_change_word, &kp)
 
 // First Row
+SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
+
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
