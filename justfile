@@ -31,7 +31,7 @@ build-parallel:
       'just build-left' \
       'just build-right'
 
-build-left: clean clean-zmk update-zmk
+build-left: clean format clean-zmk update-zmk
 	.venv/bin/west build \
 	    --pristine \
 	    --build-dir=build/left \
