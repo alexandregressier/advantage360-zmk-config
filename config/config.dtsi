@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include "secret.dtsi"
 
 // Must be set before including helper.h
 #define HOST_OS 2
@@ -131,6 +132,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(secret_combo, &m_secret, 41 42 43 44, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 /* Symbols */

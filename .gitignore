@@ -29,3 +29,6 @@ build/
 
 # Firmware files
 *.uf2
+
+# Secret
+secret.dtsi
