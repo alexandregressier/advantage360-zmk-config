@@ -130,8 +130,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+ZMK_COMBO(escape_combo, &ht_kp_kp LS(ESCAPE) ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 ZMK_COMBO(secret_combo, &m_secret, 41 42 43 44, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
@@ -190,6 +192,9 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 
 
 /* Custom Behaviors */
+
+SIMPLE_ADAPTIVE(ad_cmd_return, &kp LG(RETURN), BACKSPACE, &kp BACKSPACE)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_kp, &ad_cmd_return, &kp)
 
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 SIMPLE_ADAPTIVE(ad_change_word, &m_change_word, BACKSPACE, &kp BACKSPACE)
