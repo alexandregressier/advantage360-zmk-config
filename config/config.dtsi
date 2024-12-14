@@ -129,7 +129,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 31 32, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
@@ -245,22 +245,14 @@ SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
 // Bottom Row
 SIMPLE_MORPH(colon_morph, SFT, &kp COLON, &kp COLON)
 
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LEFT_PARENTHESIS)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)
 
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp RIGHT_PARENTHESIS)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)
 
 SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
 
 // Last Row
 SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
-
-SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
-
-SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
-
-SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
-
-SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
 SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_less_than_or_equal_kp, &m_less_than_or_equal, &kp)
