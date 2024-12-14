@@ -129,8 +129,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(escape_combo, &kpi ESCAPE, 30 31, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(return_combo, &kp RETURN, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(cmd_space_combo, &kp LG(SPACE), 31 42, ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 /* Symbols */
@@ -194,8 +194,6 @@ SIMPLE_ADAPTIVE(ad_change_word, &m_change_word, BACKSPACE, &kp BACKSPACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_change_word_kp, &ad_change_word, &kp)
 
 // First Row
-SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
-
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
@@ -228,7 +226,8 @@ SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &ht_kp_kp RIGHT_PARENTHESIS
 SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
 
 // Top Row
-SIMPLE_MORPH(exclamation_morph, SFT, &kp EXCLAMATION, &kp EXCLAMATION)
+SIMPLE_MACRO(m_not_equal, &kp EXCLAMATION &kp EQUAL)
+TAP_PREFERRED_HOLD_TAP(ht_m_not_equal_kp, &m_not_equal, &kp)
 
 SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACKET))
 
@@ -251,17 +250,21 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp RIGHT_PARENTHESIS)
 SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
 
 // Last Row
+SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
+
 SIMPLE_MORPH(left_morph, SFT, &kp LEFT, &kp LEFT)
 
 SIMPLE_MORPH(right_morph, SFT, &kp RIGHT, &kp LA(RIGHT))
-
-
 
 SIMPLE_MORPH(down_morph, SFT, &kp DOWN, &kp LA(LEFT))
 
 SIMPLE_MORPH(up_morph, SFT, &kp UP, &kp UP)
 
+SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
+TAP_PREFERRED_HOLD_TAP(ht_m_less_than_or_equal_kp, &m_less_than_or_equal, &kp)
 
+SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
+TAP_PREFERRED_HOLD_TAP(ht_m_greater_than_or_equal_kp, &m_greater_than_or_equal, &kp)
 
 /* Smart Shift */
 
