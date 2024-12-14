@@ -105,6 +105,7 @@
  	)
 
 TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
+TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
 /* Homerow Mods */
 
