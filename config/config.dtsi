@@ -194,11 +194,7 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 
 /* Custom Behaviors */
 
-SIMPLE_MACRO(m_open_line_below, &kp LG(RIGHT) &kp RETURN)
-SIMPLE_MACRO(m_open_line_above, &kp UP &kp LG(RIGHT) &kp RETURN)
-SIMPLE_MORPH(open_line_morph, SFT, &m_open_line_below, &m_open_line_above)
-SIMPLE_ADAPTIVE(ad_open_line, &open_line_morph, RETURN, &kp RETURN)
-TAP_PREFERRED_HOLD_TAP(ht_open_line_morph_kp, &ad_open_line, &kp)
+// Thumbs
 
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 SIMPLE_ADAPTIVE(ad_change_word, &m_change_word, BACKSPACE, &kp BACKSPACE)
@@ -243,6 +239,12 @@ SIMPLE_MACRO(m_not_equal, &kp EXCLAMATION &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_not_equal_kp, &m_not_equal, &kp)
 
 SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACKET))
+
+SIMPLE_MACRO(m_open_line_below, &kp LG(RIGHT) &kp RETURN)
+SIMPLE_MACRO(m_open_line_above, &kp UP &kp LG(RIGHT) &kp RETURN)
+SIMPLE_MORPH(open_line_morph, SFT, &m_open_line_below, &m_open_line_above)
+SIMPLE_ADAPTIVE(ad_open_line, &open_line_morph, RETURN, &kp RETURN)
+TAP_PREFERRED_HOLD_TAP(ht_open_line_morph_kp, &ad_open_line, &kp)
 
 SIMPLE_MORPH(semi_morph, SFT, &kp SEMICOLON, &kp SEMICOLON)
 
