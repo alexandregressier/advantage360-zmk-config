@@ -76,6 +76,13 @@
 		bindings = <SEQUENCE>; \
 	)
 
+ZMK_MACRO_ONE_PARAM(kp_reset,
+	wait-ms = <0>;
+	tap-ms = <0>;
+	bindings
+	= <&macro_param_1to1>
+	, <&kp MACRO_PLACEHOLDER &to DEFAULT>;
+)
 
 /* Morphs */
 
@@ -133,7 +140,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(escape_combo, &kpi ESCAPE, 42 43, ALL, 150, COMBO_IDLE_SLOW)
+TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
+ZMK_COMBO(escape_combo, &ht_kp_reset_kp_reset LS(ESCAPE) ESCAPE, 42 43, ALL, 150, COMBO_IDLE_SLOW)
 
 TAP_PREFERRED_HOLD_TAP(ht_m_pin_m_secret, &m_secret, &m_pin)
 ZMK_COMBO(secret_combo, &ht_m_pin_m_secret 0 0, 41 42 43 44, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -320,14 +328,3 @@ ZMK_TAP_DANCE(smart_num,
 &num_word {
 	ignore-modifiers; // Needed for shortcuts like
 };
-
-
-/* Command Mode */
-
-ZMK_MACRO_ONE_PARAM(kpi,
-	wait-ms = <0>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_param_1to1>
-    , <&kp MACRO_PLACEHOLDER &to DEFAULT>;
-)
