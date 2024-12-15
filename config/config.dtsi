@@ -204,7 +204,7 @@ TAP_PREFERRED_HOLD_TAP(ht_ad_change_word_kp, &ad_change_word, &kp)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
-SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp AT_SIGN)
+SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp LS(N2))
 
 ZMK_ANTECEDENT_MORPH(ad_left_brace,
 	defaults = <&kp LEFT_BRACE>;
@@ -235,9 +235,6 @@ SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &ht_kp_kp RIGHT_PARENTHESIS
 SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
 
 // Top Row
-SIMPLE_MACRO(m_not_equal, &kp EXCLAMATION &kp EQUAL)
-TAP_PREFERRED_HOLD_TAP(ht_m_not_equal_kp, &m_not_equal, &kp)
-
 SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACKET))
 
 SIMPLE_MACRO(m_open_line_below, &kp LG(RIGHT) &kp RETURN)
@@ -253,25 +250,37 @@ SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
 
 SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACKET))
 
-SIMPLE_MORPH(apostrophe_morph, SFT, &kp APOSTROPHE, &kp APOSTROPHE)
+SIMPLE_MORPH(apostrophe_morph, SFT, &ht_kp_kp GRAVE APOSTROPHE, &kp APOSTROPHE)
 
 // Bottom Row
-SIMPLE_MORPH(colon_morph, SFT, &kp COLON, &kp COLON)
-
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp LESS_THAN)
-
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GREATER_THAN)
-
-SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp QUESTION)
-
-// Last Row
-SIMPLE_MORPH(tilde_morph, SFT, &kp TILDE, &kp TILDE)
-
 SIMPLE_MACRO(m_less_than_or_equal, &kp LESS_THAN &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_less_than_or_equal_kp, &m_less_than_or_equal, &kp)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &ht_m_less_than_or_equal_kp 0 LESS_THAN)
 
 SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_greater_than_or_equal_kp, &m_greater_than_or_equal, &kp)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &ht_m_greater_than_or_equal_kp 0 GREATER_THAN)
+
+SIMPLE_MORPH(slash_morph, SFT, &ht_kp_kp LG(SLASH) SLASH, &kp LS(SLASH))
+
+// Last Row
+TAP_PREFERRED_HOLD_TAP(ht_u_almost_equal_to_kp, &u_almost_equal_to, &kp)
+SIMPLE_MORPH(tilde_morph, SFT, &ht_u_almost_equal_to_kp 0 TILDE, &kp TILDE)
+
+SIMPLE_MORPH(at_sign_morph, SFT, &kp AT_SIGN, &kp AT_SIGN)
+
+SIMPLE_MORPH(left_morph, SFT, &ht_kp_kp LG(LEFT) LEFT, &kp LEFT)
+
+SIMPLE_MORPH(right_morph, SFT, &ht_kp_kp LG(RIGHT) RIGHT, &kp RIGHT)
+
+SIMPLE_MORPH(down_morph, SFT, &ht_kp_kp LG(DOWN) DOWN, &kp DOWN)
+
+SIMPLE_MORPH(up_morph, SFT, &ht_kp_kp LG(UP) UP, &kp UP)
+
+SIMPLE_MACRO(m_not_equal, &kp EXCLAMATION &kp EQUAL)
+TAP_PREFERRED_HOLD_TAP(ht_m_not_equal_kp, &m_not_equal, &kp)
+SIMPLE_MORPH(exclamation_morph, SFT, &ht_m_not_equal_kp 0 EXCLAMATION, &kp EXCLAMATION)
+
 
 /* Smart Shift */
 
