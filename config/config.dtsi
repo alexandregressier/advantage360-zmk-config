@@ -195,10 +195,12 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 /* Custom Behaviors */
 
 // Thumbs
-
 SIMPLE_MACRO(m_change_word, &kp LA(LEFT) &kp LA(RIGHT) &kp LA(BACKSPACE))
 SIMPLE_ADAPTIVE(ad_change_word, &m_change_word, BACKSPACE, &kp BACKSPACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_change_word_kp, &ad_change_word, &kp)
+
+SIMPLE_ADAPTIVE(ad_cmd_return, &kp LG(RETURN), RETURN, &kp RETURN)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_kp, &ad_cmd_return, &kp)
 
 // First Row
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
@@ -261,7 +263,7 @@ SIMPLE_MACRO(m_greater_than_or_equal, &kp GREATER_THAN &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_greater_than_or_equal_kp, &m_greater_than_or_equal, &kp)
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &ht_m_greater_than_or_equal_kp 0 GREATER_THAN)
 
-SIMPLE_MORPH(slash_morph, SFT, &ht_kp_kp LG(SLASH) SLASH, &kp LS(SLASH))
+SIMPLE_MORPH(slash_morph, SFT, &ht_kp_kp LG(F) SLASH, &kp LS(SLASH))
 
 // Last Row
 TAP_PREFERRED_HOLD_TAP(ht_u_almost_equal_to_kp, &u_almost_equal_to, &kp)
@@ -269,13 +271,21 @@ SIMPLE_MORPH(tilde_morph, SFT, &ht_u_almost_equal_to_kp 0 TILDE, &kp TILDE)
 
 SIMPLE_MORPH(at_sign_morph, SFT, &kp AT_SIGN, &kp AT_SIGN)
 
-SIMPLE_MORPH(left_morph, SFT, &ht_kp_kp LG(LEFT) LEFT, &kp LEFT)
+SIMPLE_ADAPTIVE(ad_cmd_left, &kp LG(LEFT), LEFT, &kp LEFT)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_left_kp, &ad_cmd_left, &kp)
+SIMPLE_MORPH(left_morph, SFT, &ht_ad_cmd_left_kp 0 LEFT, &kp LS(LEFT))
 
-SIMPLE_MORPH(right_morph, SFT, &ht_kp_kp LG(RIGHT) RIGHT, &kp RIGHT)
+SIMPLE_ADAPTIVE(ad_cmd_right, &kp LG(RIGHT), RIGHT, &kp RIGHT)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_right_kp, &ad_cmd_right, &kp)
+SIMPLE_MORPH(right_morph, SFT, &ht_ad_cmd_right_kp 0 RIGHT, &kp LS(RIGHT))
 
-SIMPLE_MORPH(down_morph, SFT, &ht_kp_kp LG(DOWN) DOWN, &kp DOWN)
+SIMPLE_ADAPTIVE(ad_cmd_down, &kp LG(DOWN), DOWN, &kp DOWN)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_down_kp, &ad_cmd_down, &kp)
+SIMPLE_MORPH(down_morph, SFT, &ht_ad_cmd_down_kp 0 DOWN, &kp LS(DOWN))
 
-SIMPLE_MORPH(up_morph, SFT, &ht_kp_kp LG(UP) UP, &kp UP)
+SIMPLE_ADAPTIVE(ad_cmd_up, &kp LG(UP), UP, &kp UP)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_up_kp, &ad_cmd_up, &kp)
+SIMPLE_MORPH(up_morph, SFT, &ht_ad_cmd_up_kp 0 UP, &kp LS(UP))
 
 SIMPLE_MACRO(m_not_equal, &kp EXCLAMATION &kp EQUAL)
 TAP_PREFERRED_HOLD_TAP(ht_m_not_equal_kp, &m_not_equal, &kp)
