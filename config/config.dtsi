@@ -216,8 +216,9 @@ ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL L
 SIMPLE_ADAPTIVE(ad_delete_word, &kp LA(BACKSPACE), BACKSPACE, &kp BACKSPACE)
 TAP_PREFERRED_HOLD_TAP(ht_ad_delete_word_kp, &ad_delete_word, &kp)
 
+SIMPLE_ADAPTIVE(ad_shift_return, &kp RETURN, LS(RETURN), &kp LS(RETURN))
 SIMPLE_ADAPTIVE(ad_cmd_return, &kp LG(RETURN), RETURN, &kp RETURN)
-TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_kp, &ad_cmd_return, &kp)
+TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shift_return)
 
 // First Row
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
