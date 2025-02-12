@@ -17,21 +17,9 @@ bootstrap:
 update:
     .venv/bin/west update
 
-update-zmk:
-    .venv/bin/west update zmk
+build: reformat build-left build-right
 
-build: build-left build-right
-
-build-parallel:
-    parallel \
-      --jobs 2 \
-      --linebuffer \
-      --tagstring '{= $_=$job->seq() == 1 ? "\033[34m[L]\033[0m" : "\033[35m[R]\033[0m" =}' \
-      ::: \
-      'just build-left' \
-      'just build-right'
-
-build-left: clean format clean-zmk update-zmk
+build-left:
 	.venv/bin/west build \
 	    --pristine \
 	    --build-dir=build/left \
@@ -52,8 +40,5 @@ build-right:
 clean:
 	rm -rf build/
 
-clean-zmk:
-	rm -rf zmk/
-
-format:
+reformat:
     dtsfmt config/adv360.keymap
