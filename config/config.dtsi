@@ -105,9 +105,9 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 #define TAP_PREFERRED_HOLD_TAP(NAME, HOLD, TAP) \
     ZMK_HOLD_TAP(NAME, \
 		flavor = "tap-preferred"; \
-		tapping-term-ms = <150>; \
-		quick-tap-ms = <QUICK_TAP_MS>; \
-		require-prior-idle-ms = <100>; \
+		tapping-term-ms = <180>; \
+		quick-tap-ms = <0>; \
+		require-prior-idle-ms = <150>; \
 		bindings = <HOLD>, <TAP>; \
  	)
 
