@@ -114,15 +114,6 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
-#define LONG_TAP_PREFERRED_HOLD_TAP(NAME, HOLD, TAP) \
-    ZMK_HOLD_TAP(NAME, \
-		flavor = "tap-preferred"; \
-		tapping-term-ms = <280>; \
-		quick-tap-ms = <QUICK_TAP_MS>; \
-		require-prior-idle-ms = <150>; \
-		bindings = <HOLD>, <TAP>; \
- 	)
-TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 
 /* Homerow Mods */
 
@@ -150,7 +141,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-LONG_TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
+TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
 ZMK_COMBO(escape_combo, &ht_kp_reset_kp_reset LS(ESCAPE) ESCAPE, 42 43, ALL, 150, COMBO_IDLE_SLOW)
 
 TAP_PREFERRED_HOLD_TAP(ht_m_pin_m_secret, &m_secret, &m_pin)
