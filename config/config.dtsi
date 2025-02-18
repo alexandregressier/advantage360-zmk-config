@@ -117,7 +117,7 @@ TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
 #define KP_MOD_SEQUENCE(NAME, MOD) \
 	ZMK_MACRO_ONE_PARAM(NAME, \
-		wait-ms = <40>; \
+		wait-ms = <25>; \
 		tap-ms = <0>; \
 		bindings \
 		= <&macro_press &kp MOD> \
