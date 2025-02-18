@@ -116,7 +116,7 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
 TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
 ZMK_MACRO_ONE_PARAM(rgkp,
-	wait-ms = <20>;
+	wait-ms = <40>;
 	tap-ms = <0>;
 	bindings
 	= <&macro_press &kp RGUI>
