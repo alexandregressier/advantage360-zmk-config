@@ -115,24 +115,28 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
 TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
-ZMK_MACRO_ONE_PARAM(rgkp,
-	wait-ms = <40>;
-	tap-ms = <0>;
-	bindings
-	= <&macro_press &kp RGUI>
-	, <&macro_param_1to1>
-	, <&macro_tap &kp MACRO_PLACEHOLDER>
-	, <&macro_wait_time 0>
-	, <&macro_release &kp RGUI>;
-)
+#define KP_MOD_SEQUENCE(NAME, MOD) \
+	ZMK_MACRO_ONE_PARAM(NAME, \
+		wait-ms = <40>; \
+		tap-ms = <0>; \
+		bindings \
+		= <&macro_press &kp MOD> \
+		, <&macro_param_1to1> \
+		, <&macro_tap &kp MACRO_PLACEHOLDER> \
+		, <&macro_release &kp MOD>; \
+	)
 
-ZMK_HOLD_TAP(ht_rg_kp,
-	flavor = "tap-preferred";
-	tapping-term-ms = <180>;
-	quick-tap-ms = <0>;
-	require-prior-idle-ms = <200>;
-	bindings = <&rgkp>, <&kp>;
-)
+#define MAKE_AUTO_MOD(NAME, HOLD) \
+	ZMK_HOLD_TAP(NAME, \
+		flavor = "tap-preferred"; \
+		tapping-term-ms = <180>; \
+		quick-tap-ms = <0>; \
+		require-prior-idle-ms = <200>; \
+		bindings = <HOLD>, <&kp>; \
+	)
+
+KP_MOD_SEQUENCE(kp_rg, RGUI)
+MAKE_AUTO_MOD(auto_rg, &kp_rg)
 
 /* Homerow Mods */
 
