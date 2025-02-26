@@ -199,6 +199,55 @@ TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shi
 
 // First Row
 
+// 1
+ZMK_ANTECEDENT_MORPH(ad_n1,
+	defaults = <&auto_rg N1 N1>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 2
+ZMK_ANTECEDENT_MORPH(ad_n2,
+	defaults = <&auto_rg N2 MINUS>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 3
+ZMK_ANTECEDENT_MORPH(ad_n3,
+	defaults = <&auto_rg N3 N3>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 4
+ZMK_ANTECEDENT_MORPH(ad_n4,
+	defaults = <&auto_rg N4 N4>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 5
+ZMK_ANTECEDENT_MORPH(ad_n5,
+	defaults = <&auto_rg N5 N5>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 6
+ZMK_ANTECEDENT_MORPH(ad_n6,
+	defaults = <&auto_rg N6 N6>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
+// 7
+ZMK_ANTECEDENT_MORPH(ad_n7,
+	defaults = <&auto_rg N7 N7>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
+
 // 8
 ZMK_ANTECEDENT_MORPH(ad_n8,
 	defaults = <&auto_rg N8 LPAR>;
@@ -213,6 +262,12 @@ ZMK_ANTECEDENT_MORPH(ad_n9,
 	antecedents = <LPAR>;
 )
 
+// 0
+ZMK_ANTECEDENT_MORPH(ad_n0,
+	defaults = <&auto_rg N0 N0>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
+)
 
 
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
