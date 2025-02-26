@@ -201,9 +201,8 @@ TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shi
 
 // 1
 ZMK_MOD_MORPH(n1_morph,
-	bindings = <&auto_rg N1 N1>, <&auto_rg N1 N1>;
+	bindings = <&auto_rg N1 N1>, <&auto_rg LS(N1) N1>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n1,
 	defaults = <&n1_morph>;
@@ -213,9 +212,8 @@ ZMK_ANTECEDENT_MORPH(ad_n1,
 
 // 2
 ZMK_MOD_MORPH(n2_morph,
-	bindings = <&auto_rg N2 N2>, <&auto_rg N2 N2>;
+	bindings = <&auto_rg N2 N2>, <&auto_rg LS(N2) N2>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n2,
 	defaults = <&n2_morph>;
@@ -225,9 +223,8 @@ ZMK_ANTECEDENT_MORPH(ad_n2,
 
 // 3
 ZMK_MOD_MORPH(n3_morph,
-	bindings = <&auto_rg N3 N3>, <&auto_rg N3 N3>;
+	bindings = <&auto_rg N3 N3>, <&auto_rg LS(N3) N3>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n3,
 	defaults = <&n3_morph>;
@@ -237,9 +234,8 @@ ZMK_ANTECEDENT_MORPH(ad_n3,
 
 // 4
 ZMK_MOD_MORPH(n4_morph,
-	bindings = <&auto_rg N4 N4>, <&auto_rg N4 N4>;
+	bindings = <&auto_rg N4 N4>, <&auto_rg LS(N4) N4>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n4,
 	defaults = <&n4_morph>;
@@ -249,9 +245,8 @@ ZMK_ANTECEDENT_MORPH(ad_n4,
 
 // 5
 ZMK_MOD_MORPH(n5_morph,
-	bindings = <&auto_rg N5 N5>, <&auto_rg N5 N5>;
+	bindings = <&auto_rg N5 N5>, <&auto_rg LS(N5) N5>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n5,
 	defaults = <&n5_morph>;
@@ -261,9 +256,8 @@ ZMK_ANTECEDENT_MORPH(ad_n5,
 
 // 6
 ZMK_MOD_MORPH(n6_morph,
-	bindings = <&auto_rg N6 N6>, <&auto_rg N6 N6>;
+	bindings = <&auto_rg N6 N6>, <&auto_rg LS(N6) N6>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n6,
 	defaults = <&n6_morph>;
@@ -273,9 +267,8 @@ ZMK_ANTECEDENT_MORPH(ad_n6,
 
 // 7
 ZMK_MOD_MORPH(n7_morph,
-	bindings = <&auto_rg N7 N7>, <&auto_rg N7 N7>;
+	bindings = <&auto_rg N7 N7>, <&auto_rg LS(N7) N7>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n7,
 	defaults = <&n7_morph>;
@@ -285,9 +278,8 @@ ZMK_ANTECEDENT_MORPH(ad_n7,
 
 // 8
 ZMK_MOD_MORPH(n8_morph,
-	bindings = <&auto_rg N8 N8>, <&auto_rg N8 N8>;
+	bindings = <&auto_rg N8 N8>, <&auto_rg LS(N8) N8>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n8,
 	defaults = <&n8_morph>;
@@ -297,9 +289,8 @@ ZMK_ANTECEDENT_MORPH(ad_n8,
 
 // 9
 ZMK_MOD_MORPH(n9_morph,
-	bindings = <&auto_rg N9 N9>, <&auto_rg N9 N9>;
+	bindings = <&auto_rg N9 N9>, <&auto_rg LS(N9) N9>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n9,
 	defaults = <&n9_morph>;
@@ -309,9 +300,8 @@ ZMK_ANTECEDENT_MORPH(ad_n9,
 
 // 0
 ZMK_MOD_MORPH(n0_morph,
-	bindings = <&auto_rg N0 N0>, <&auto_rg N0 N0>;
+	bindings = <&auto_rg N0 N0>, <&auto_rg LS(N0) N0>;
 	mods = <(MOD_LSFT)>;
-	keep-mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n0,
 	defaults = <&n0_morph>;
