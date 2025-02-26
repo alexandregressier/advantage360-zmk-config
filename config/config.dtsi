@@ -300,7 +300,7 @@ ZMK_ANTECEDENT_MORPH(ad_n9,
 
 // 0
 ZMK_MOD_MORPH(n0_morph,
-	bindings = <&auto_rg N0 SINGLE_QUOTE>, <&auto_rg LS(N0) SINGLE_QUOTE>;
+	bindings = <&auto_rg N0 PLUS>, <&auto_rg LS(N0) PLUS>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_n0,
