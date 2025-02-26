@@ -199,10 +199,17 @@ TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shi
 
 // First Row
 
+// 8
+ZMK_ANTECEDENT_MORPH(ad_n8,
+	defaults = <&auto_rg N8 LPAR>;
+	bindings = <&auto_rg N8 GREATER_THAN>;
+	antecedents = <EQUAL>;
+)
+
 // 9
 ZMK_ANTECEDENT_MORPH(ad_n9,
 	defaults = <&auto_rg N9 EQUAL>;
-	bindings = <&auto_rg SPACE RPAR>;
+	bindings = <&auto_rg N9 RPAR>;
 	antecedents = <LPAR>;
 )
 
