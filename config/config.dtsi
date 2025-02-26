@@ -200,108 +200,158 @@ TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shi
 // First Row
 
 // 1
+ZMK_MOD_MORPH(n1_morph,
+	bindings = <&auto_rg N1 N1>, <&auto_rg N1 N1>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n1,
-	defaults = <&auto_rg N1 N1>;
+	defaults = <&n1_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 2
+ZMK_MOD_MORPH(n2_morph,
+	bindings = <&auto_rg N2 N2>, <&auto_rg N2 N2>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n2,
-	defaults = <&auto_rg N2 MINUS>;
+	defaults = <&n2_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 3
+ZMK_MOD_MORPH(n3_morph,
+	bindings = <&auto_rg N3 N3>, <&auto_rg N3 N3>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n3,
-	defaults = <&auto_rg N3 N3>;
+	defaults = <&n3_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 4
+ZMK_MOD_MORPH(n4_morph,
+	bindings = <&auto_rg N4 N4>, <&auto_rg N4 N4>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n4,
-	defaults = <&auto_rg N4 N4>;
+	defaults = <&n4_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 5
+ZMK_MOD_MORPH(n5_morph,
+	bindings = <&auto_rg N5 N5>, <&auto_rg N5 N5>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n5,
-	defaults = <&auto_rg N5 N5>;
+	defaults = <&n5_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 6
+ZMK_MOD_MORPH(n6_morph,
+	bindings = <&auto_rg N6 N6>, <&auto_rg N6 N6>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n6,
-	defaults = <&auto_rg N6 N6>;
+	defaults = <&n6_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 7
+ZMK_MOD_MORPH(n7_morph,
+	bindings = <&auto_rg N7 N7>, <&auto_rg N7 N7>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n7,
-	defaults = <&auto_rg N7 N7>;
+	defaults = <&n7_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 // 8
+ZMK_MOD_MORPH(n8_morph,
+	bindings = <&auto_rg N8 N8>, <&auto_rg N8 N8>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n8,
-	defaults = <&auto_rg N8 LPAR>;
-	bindings = <&auto_rg N8 GREATER_THAN>;
-	antecedents = <EQUAL>;
+	defaults = <&n8_morph>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
 )
 
 // 9
+ZMK_MOD_MORPH(n9_morph,
+	bindings = <&auto_rg N9 N9>, <&auto_rg N9 N9>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n9,
-	defaults = <&auto_rg N9 EQUAL>;
-	bindings = <&auto_rg N9 RPAR>;
-	antecedents = <LPAR>;
+	defaults = <&n9_morph>;
+	bindings = <&none>;
+	antecedents = <NUBS>;
 )
 
 // 0
+ZMK_MOD_MORPH(n0_morph,
+	bindings = <&auto_rg N0 N0>, <&auto_rg N0 N0>;
+	mods = <(MOD_LSFT)>;
+	keep-mods = <(MOD_LSFT)>;
+)
 ZMK_ANTECEDENT_MORPH(ad_n0,
-	defaults = <&auto_rg N0 N0>;
+	defaults = <&n0_morph>;
 	bindings = <&none>;
 	antecedents = <NUBS>;
 )
 
 
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
-SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
-
-SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp LS(N2))
-
-ZMK_ANTECEDENT_MORPH(ad_left_brace,
-	defaults = <&kp LEFT_BRACE>;
-	bindings = <&kp RIGHT_BRACKET>, <&kp GREATER_THAN>;
-	antecedents = <LEFT_BRACKET MINUS>;
-)
-TAP_PREFERRED_HOLD_TAP(ht_ad_left_brace_kp, &kp, &ad_left_brace)
-SIMPLE_MORPH(n3_morph, SFT, &ht_ad_left_brace_kp N3 0, &ht_kp_kp RIGHT_BRACKET HASH)
-
-SIMPLE_ADAPTIVE(ad_minus, &kp MINUS, LEFT_BRACE, &kp RIGHT_BRACE)
-TAP_PREFERRED_HOLD_TAP(ht_ad_minus_kp, &kp, &ad_minus)
-SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &ht_kp_kp RIGHT_BRACE DOLLAR)
-
-SIMPLE_MORPH(n5_morph, SFT, &ht_kp_kp N5 UNDERSCORE, &kp PERCENT)
-
-SIMPLE_MORPH(n6_morph, SFT, &ht_kp_kp N6 TAB, &kp CARET)
-
-SIMPLE_MORPH(n7_morph, SFT, &ht_kp_kp N7 EQUAL, &kp AMPERSAND)
-
-SIMPLE_ADAPTIVE(ad_left_parenthesis, &kp LEFT_PARENTHESIS, EQUAL, &kp GREATER_THAN)
-TAP_PREFERRED_HOLD_TAP(ht_ad_left_parenthesis_kp, &kp, &ad_left_parenthesis)
-SIMPLE_MORPH(n8_morph, SFT, &ht_ad_left_parenthesis_kp N8 0, &kp ASTERISK)
-
-SIMPLE_ADAPTIVE(ad_question, &kp QUESTION, LEFT_PARENTHESIS, &kp RIGHT_PARENTHESIS)
-TAP_PREFERRED_HOLD_TAP(ht_ad_question_kp, &kp, &ad_question)
-SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &ht_kp_kp RIGHT_PARENTHESIS PIPE)
-
-SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
+//SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+//SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
+//
+//SIMPLE_MORPH(n2_morph, SFT, &ht_kp_kp N2 LEFT_BRACKET, &kp LS(N2))
+//
+//ZMK_ANTECEDENT_MORPH(ad_left_brace,
+//	defaults = <&kp LEFT_BRACE>;
+//	bindings = <&kp RIGHT_BRACKET>, <&kp GREATER_THAN>;
+//	antecedents = <LEFT_BRACKET MINUS>;
+//)
+//TAP_PREFERRED_HOLD_TAP(ht_ad_left_brace_kp, &kp, &ad_left_brace)
+//SIMPLE_MORPH(n3_morph, SFT, &ht_ad_left_brace_kp N3 0, &ht_kp_kp RIGHT_BRACKET HASH)
+//
+//SIMPLE_ADAPTIVE(ad_minus, &kp MINUS, LEFT_BRACE, &kp RIGHT_BRACE)
+//TAP_PREFERRED_HOLD_TAP(ht_ad_minus_kp, &kp, &ad_minus)
+//SIMPLE_MORPH(n4_morph, SFT, &ht_ad_minus_kp N4 0, &ht_kp_kp RIGHT_BRACE DOLLAR)
+//
+//SIMPLE_MORPH(n5_morph, SFT, &ht_kp_kp N5 UNDERSCORE, &kp PERCENT)
+//
+//SIMPLE_MORPH(n6_morph, SFT, &ht_kp_kp N6 TAB, &kp CARET)
+//
+//SIMPLE_MORPH(n7_morph, SFT, &ht_kp_kp N7 EQUAL, &kp AMPERSAND)
+//
+//SIMPLE_ADAPTIVE(ad_left_parenthesis, &kp LEFT_PARENTHESIS, EQUAL, &kp GREATER_THAN)
+//TAP_PREFERRED_HOLD_TAP(ht_ad_left_parenthesis_kp, &kp, &ad_left_parenthesis)
+//SIMPLE_MORPH(n8_morph, SFT, &ht_ad_left_parenthesis_kp N8 0, &kp ASTERISK)
+//
+//SIMPLE_ADAPTIVE(ad_question, &kp QUESTION, LEFT_PARENTHESIS, &kp RIGHT_PARENTHESIS)
+//TAP_PREFERRED_HOLD_TAP(ht_ad_question_kp, &kp, &ad_question)
+//SIMPLE_MORPH(n9_morph, SFT, &ht_ad_question_kp N9 0, &ht_kp_kp RIGHT_PARENTHESIS PIPE)
+//
+//SIMPLE_MORPH(n0_morph, SFT, &ht_kp_kp N0 PLUS, &kp BACKSLASH)
 
 // Top Row
 SIMPLE_ADAPTIVE(ad_cmd_right_bracket, &kp LG(RIGHT_BRACKET), LG(DOWN), &kp LG(DOWN))
