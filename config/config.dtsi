@@ -388,13 +388,13 @@ SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACKET))
 
 // Comma
 ZMK_MOD_MORPH(comma_morph,
-	bindings = <&auto_rg COMMA COMMA>, <&auto_rg LS(COMMA) SEMICOLON>;
+	bindings = <&auto_rg COMMA COMMA>, <&auto_rg LS(COMMA) SINGLE_QUOTE>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ANTECEDENT_MORPH(ad_comma,
 	defaults = <&comma_morph>;
-	bindings = <&none>;
-	antecedents = <NUBS>;
+	bindings = <&auto_rg LS(COMMA) EQUAL>;
+	antecedents = <EXCLAMATION>;
 )
 
 // Dot
@@ -404,7 +404,7 @@ ZMK_MOD_MORPH(dot_morph,
 )
 ZMK_ANTECEDENT_MORPH(ad_dot,
 	defaults = <&dot_morph>;
-	bindings = <&auto_rg DOT EXCLAMATION>;
+	bindings = <&auto_rg LS(DOT) EXCLAMATION>;
 	antecedents = <EXCLAMATION>;
 )
 
@@ -415,7 +415,7 @@ ZMK_MOD_MORPH(slash_morph,
 )
 ZMK_ANTECEDENT_MORPH(ad_slash,
 	defaults = <&slash_morph>;
-	bindings = <&auto_rg SLASH QUESTION>;
+	bindings = <&auto_rg LS(SLASH) QUESTION>;
 	antecedents = <QUESTION>;
 )
 
