@@ -19,5 +19,8 @@ manifest:
     - name: zmk-antecedent-morph
       remote: ssbb
       revision: main
+    - name: zmk-tri-state
+      remote: urob
+      revision: main
   self:
     path: config

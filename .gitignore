@@ -26,6 +26,7 @@ build/
 /zmk-helpers/
 /zmk-auto-layer/
 /zmk-antecedent-morph/
+/zmk-tri-state/
 
 # Firmware files
 *.uf2
