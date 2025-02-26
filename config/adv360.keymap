@@ -7,11 +7,11 @@
 
     default {
       bindings = <
-        &none               &auto_rg N1 GRAVE   &auto_rg N2 LBKT   &auto_rg N3 LBRC    &auto_rg N4 RBRC   &auto_rg N5 UNDER   &none                                                                                                                                                                              &none         &auto_rg N6 N0   &auto_rg N7 EQUAL   &auto_rg N8 LPAR       &auto_rg N9 RPAR   &auto_rg N0 EQUAL      &auto_rg N0 N0
-        &auto_rg N0 N0      &auto_rg Q Q        &auto_rg W W       &auto_rg E E        &auto_rg R R       &auto_rg T T        &ht_kp_ad_cmd_right_bracket LG(UP) 0                                                                                                                                               &redo_morph   &auto_rg Y Y     &auto_rg U U        &auto_rg I I           &auto_rg O O       &auto_rg P P           &auto_rg SEMI SEMI
-        &auto_rg N0 N0      &auto_rg A A        &auto_rg S S       &auto_rg D D        &auto_rg F F       &auto_rg G G        &ht_kp_ad_cmd_left_bracket LG(DOWN) 0                                  &kp_rg NUBS    &kp LC(NUBS)   &kp LC(NUBS)                  &kp_rg NUBS                                     &undo_morph   &auto_rg H H     &auto_rg J J        &auto_rg K K           &auto_rg L L       &auto_rg SEMI COLON    &auto_rg SQT SQT
-        &smart_num          &auto_rg Z Z        &auto_rg X X       &auto_rg C C        &auto_rg V V       &auto_rg B B                                                                                              &sl SYMBOLS    &sl SYMBOLS                                                                                 &auto_rg N N     &auto_rg M M        &auto_rg COMMA COMMA   &auto_rg DOT DOT   &auto_rg SLASH SLASH   &auto_rg DQT DQT
-        &ht_sl_mo MOD MOD   &hml LCTRL TILDE    &hml LALT LEFT     &hml LGUI LS(TAB)   &hml LSHIFT TAB                                                                &auto_rg BACKSPACE BACKSPACE   &smart_shift   &sk LALT       &ht_kp_kp LC(NUBS) LG(NUBS)   &auto_rg RETURN RETURN   &auto_rg SPACE SPACE                                  &hmr LSHIFT DOWN    &hmr LGUI UP           &hmr LALT RIGHT    &hmr LCTRL N0          &ht_sl_mo MOD MOD
+        &smart_fun FUNCTION 0   &auto_rg N1 GRAVE   &auto_rg N2 LBKT   &auto_rg N3 LBRC    &auto_rg N4 RBRC   &auto_rg N5 UNDER   &none                                                                                                                                                                              &none         &auto_rg N6 N0   &auto_rg N7 EQUAL   &auto_rg N8 LPAR       &auto_rg N9 RPAR   &auto_rg N0 EQUAL      &smart_fun FUNCTION 0
+        &auto_rg N0 N0          &auto_rg Q Q        &auto_rg W W       &auto_rg E E        &auto_rg R R       &auto_rg T T        &ht_kp_ad_cmd_right_bracket LG(UP) 0                                                                                                                                               &redo_morph   &auto_rg Y Y     &auto_rg U U        &auto_rg I I           &auto_rg O O       &auto_rg P P           &auto_rg SEMI SEMI
+        &auto_rg N0 N0          &auto_rg A A        &auto_rg S S       &auto_rg D D        &auto_rg F F       &auto_rg G G        &ht_kp_ad_cmd_left_bracket LG(DOWN) 0                                  &kp_rg NUBS    &kp LC(NUBS)   &kp LC(NUBS)                  &kp_rg NUBS                                     &undo_morph   &auto_rg H H     &auto_rg J J        &auto_rg K K           &auto_rg L L       &auto_rg SEMI COLON    &auto_rg SQT SQT
+        &smart_num              &auto_rg Z Z        &auto_rg X X       &auto_rg C C        &auto_rg V V       &auto_rg B B                                                                                              &sl SYMBOLS    &sl SYMBOLS                                                                                 &auto_rg N N     &auto_rg M M        &auto_rg COMMA COMMA   &auto_rg DOT DOT   &auto_rg SLASH SLASH   &auto_rg DQT DQT
+        &ht_sl_mo MOD MOD       &hml LCTRL TILDE    &hml LALT LEFT     &hml LGUI LS(TAB)   &hml LSHIFT TAB                                                                &auto_rg BACKSPACE BACKSPACE   &smart_shift   &sk LALT       &ht_kp_kp LC(NUBS) LG(NUBS)   &auto_rg RETURN RETURN   &auto_rg SPACE SPACE                                  &hmr LSHIFT DOWN    &hmr LGUI UP           &hmr LALT RIGHT    &hmr LCTRL N0          &ht_sl_mo MOD MOD
       >;
     };
     numbers {
@@ -34,11 +34,11 @@
     };
     function {
       bindings = <
-        &trans   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F11                                                         &kp F12   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                          &trans    &trans   &trans   &trans   &trans   &trans    &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans            &trans    &trans   &trans   &trans   &trans   &trans    &trans
-        &trans   &trans   &trans   &trans   &trans   &trans                               &trans   &trans                               &trans   &trans   &trans   &trans   &trans    &trans
-        &trans   &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans    &trans
+        &to DEFAULT   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F11                                                         &kp F12   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &to DEFAULT
+        &trans        &trans   &trans   &trans   &trans   &trans   &trans                                                          &trans    &trans   &trans   &trans   &trans   &trans    &trans
+        &trans        &trans   &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans            &trans    &trans   &trans   &trans   &trans   &trans    &trans
+        &trans        &trans   &trans   &trans   &trans   &trans                               &trans   &trans                               &trans   &trans   &trans   &trans   &trans    &trans
+        &trans        &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans    &trans
       >;
     };
     mod {
