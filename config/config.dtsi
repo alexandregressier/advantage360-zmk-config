@@ -459,15 +459,15 @@ SIMPLE_MORPH(exclamation_morph, SFT, &ht_m_not_equal_kp 0 EXCLAMATION, &kp EXCLA
 
 // Tap: sticky shift | Double-tap: caps-word | Hold: shift
 
-//ZMK_HOLD_TAP(smart_shift,
-//	flavor = "balanced";
-//	tapping-term-ms = <200>;
-//	quick-tap-ms = <QUICK_TAP_MS>;
-//	bindings = <&kp>, <&shift_dance>;
-//)
-ZMK_TAP_DANCE(smart_shift,
+ZMK_TAP_DANCE(shift_dance,
     tapping-term-ms = <400>; // Max time between each step below (200 is too short)
 	bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+)
+ZMK_HOLD_TAP(smart_shift,
+	flavor = "balanced";
+	tapping-term-ms = <200>;
+	quick-tap-ms = <QUICK_TAP_MS>;
+	bindings = <&kp>, <&shift_dance>;
 )
 &caps_word {
 	/delete-property/ ignore-modifiers;
