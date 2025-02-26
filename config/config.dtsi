@@ -44,7 +44,8 @@
 #define DEFAULT 0
 #define NUMBERS 1
 #define SYMBOLS 2
-#define MOD     4
+#define FUNCTION 3
+#define MOD 4
 
 
 /* Global Settings */
