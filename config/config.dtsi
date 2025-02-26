@@ -198,6 +198,16 @@ SIMPLE_ADAPTIVE(ad_cmd_return, &kp LG(RETURN), RETURN, &kp RETURN)
 TAP_PREFERRED_HOLD_TAP(ht_ad_cmd_return_ad_shift_return, &ad_cmd_return, &ad_shift_return)
 
 // First Row
+
+// 9
+ZMK_ANTECEDENT_MORPH(ad_n9,
+	defaults = <&auto_rg N9 EQUAL>;
+	bindings = <&auto_rg SPACE RPAR>;
+	antecedents = <LPAR>;
+)
+
+
+
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 SIMPLE_MORPH(n1_morph, SFT, &ht_kp_kp N1 GRAVE, &m_triple_backticks)
 
