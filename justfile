@@ -17,7 +17,7 @@ bootstrap:
 update:
     .venv/bin/west update
 
-build: reformat build-left build-right
+build: build-left build-right
 
 build-left:
 	.venv/bin/west build \
