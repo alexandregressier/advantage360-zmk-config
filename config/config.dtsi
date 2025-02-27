@@ -227,8 +227,8 @@ ZMK_MOD_MORPH(n3_morph,
 )
 ZMK_ANTECEDENT_MORPH(ad_n3,
 	defaults = <&n3_morph>;
-	bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>;
-	antecedents = <LEFT_BRACKET>;
+	bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>, <&ht_rgkp_kp N3 RIGHT_BRACKET>;
+	antecedents = <LEFT_BRACKET RIGHT_BRACKET>;
 )
 
 // 4
@@ -238,8 +238,8 @@ ZMK_MOD_MORPH(n4_morph,
 )
 ZMK_ANTECEDENT_MORPH(ad_n4,
 	defaults = <&n4_morph>;
-	bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>;
-	antecedents = <LEFT_BRACE>;
+	bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>, <&ht_rgkp_kp N4 RIGHT_BRACE>;
+	antecedents = <LEFT_BRACE RIGHT_BRACE> ;
 )
 
 // 5
