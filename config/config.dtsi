@@ -158,19 +158,49 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 /* Combos */
 
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
+/*
+ ╭────────────────────────────┬────────────────────────────╮
+ │  0   1   2   3   4   5   6 │  7   8   9  10  11  12  13 │
+ │ 14  15  16  17  18  19  20 │ 21  22  23  24  25  26  27 │
+ │ 28  29  30  31  32  33  34 │ 39  40  41  42  43  44  45 │
+ │ 46  47  48  49  50  51 ╭───┴───╮ 54  55  56  57  58  59 │
+ │ 60  61  62  63  64╭────╯       ╰────╮71  72  73  74  75 │
+ ╰───────────────────┼────────┬────────┼───────────────────╯
+                 ╭───╯ 35  36 │ 37  38 ╰───╮
+                 │         52 │ 53         │
+                 │ 65  66  67 │ 68  69  70 │
+                 ╰────────────┴────────────╯
+*/
 
-#define COMBO_IDLE_FAST 150
-#define COMBO_IDLE_SLOW 50
+#define COMBO_TERM_SLOW 110
+#define COMBO_IDLE_SLOW 90
 
-ZMK_COMBO(cmd_space_combo, &ht_kp_kp LC(LA(LG(LS(SPACE)))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+// Left hand - Horizontal
+ZMK_COMBO(combo_16_17, &ht_kp_kp N0 N0, 16 17, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_17_18, &ht_kp_kp N0 N0, 17 18, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_18_19, &ht_kp_kp N0 N0, 18 19, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(left_escape_combo, &ht_kp_reset_kp_reset LS(ESCAPE) ESCAPE, 30 31, ALL, 150, COMBO_IDLE_SLOW)
-ZMK_COMBO(right_escape_combo, &ht_kp_reset_kp_reset LS(ESCAPE) ESCAPE, 42 43, DEFAULT, 150, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_30_31, &ht_kp_kp N0 N0, 30 31, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_31_32, &ht_kp_kp N0 N0, 31 32, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_32_33, &ht_kp_kp N0 N0, 32 33, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-TAP_PREFERRED_HOLD_TAP(ht_m_pin_m_secret, &m_secret, &m_pin)
-ZMK_COMBO(secret_combo, &ht_m_pin_m_secret 0 0, 41 42 43 44, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_48_49, &ht_kp_kp N0 N0, 48 49, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_49_50, &ht_kp_kp N0 N0, 49 50, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_50_51, &ht_kp_kp N0 N0, 50 51, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+// Right hand - Horizontal
+ZMK_COMBO(combo_22_23, &ht_kp_kp N0 N0, 22 23, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_23_24, &ht_kp_kp N0 N0, 23 24, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_24_25, &ht_kp_kp N0 N0, 24 25, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(combo_40_41, &ht_kp_kp N0 N0, 40 41, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_41_42, &ht_kp_kp N0 N0, 41 42, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_42_43, &ht_kp_kp N0 N0, 42 43, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(combo_54_55, &ht_kp_kp N0 N0, 54 55, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_55_56, &ht_kp_kp N0 N0, 55 56, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_56_57, &ht_kp_kp N0 N0, 56 57, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
 
 /* Symbols */
 
