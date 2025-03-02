@@ -23,9 +23,9 @@ build/
 /zephyr/
 /modules/
 /zmk/
-/zmk-helpers/
-/zmk-auto-layer/
 /zmk-antecedent-morph/
+/zmk-auto-layer/
+/zmk-helpers/
 /zmk-tri-state/
 
 # Firmware files
