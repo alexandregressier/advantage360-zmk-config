@@ -105,16 +105,22 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 		antecedents = <ANTECEDENTS>; \
  	)
 
-#define TAP_PREFERRED_HOLD_TAP(NAME, HOLD, TAP) \
+#define TAP_PREFERRED_HOLD_TAP(...) CONCAT(TAP_PREFERRED_HOLD_TAP_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define TAP_PREFERRED_HOLD_TAP_3(NAME, HOLD, TAP) \
+    TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, 180)
+#define TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, TERM) \
+    TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, 200)
+#define TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, IDLE) \
     ZMK_HOLD_TAP(NAME, \
 		flavor = "tap-preferred"; \
-		tapping-term-ms = <180>; \
+		tapping-term-ms = <TERM>; \
 		quick-tap-ms = <0>; \
-		require-prior-idle-ms = <200>; \
+		require-prior-idle-ms = <IDLE>; \
 		bindings = <HOLD>, <TAP>; \
  	)
 
 TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
+TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = slow
 TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
 TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
 
@@ -136,6 +142,7 @@ KP_MOD_SEQUENCE(rakp, RALT)
 KP_MOD_SEQUENCE(rckp, RCTL)
 
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
+TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200)
 TAP_PREFERRED_HOLD_TAP(ht_rckp_rgkp, &rckp, &rgkp)
 TAP_PREFERRED_HOLD_TAP(ht_lakp_rakp, &lakp, &rakp)
 
