@@ -5,8 +5,6 @@ manifest:
   remotes:
     - name: urob
       url-base: https://github.com/urob
-    - name: ssbb
-      url-base: https://github.com/ssbb
 
   projects:
     - name: zmk
@@ -16,8 +14,8 @@ manifest:
       import: app/west.yml
 
     # ZMK modules
-    - name: zmk-antecedent-morph
-      remote: ssbb
+    - name: zmk-adaptive-key
+      remote: urob
     - name: zmk-auto-layer
       remote: urob
     - name: zmk-helpers

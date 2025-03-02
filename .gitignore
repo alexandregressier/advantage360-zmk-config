@@ -23,7 +23,7 @@ build/
 /zephyr/
 /modules/
 /zmk/
-/zmk-antecedent-morph/
+/zmk-adaptive-key/
 /zmk-auto-layer/
 /zmk-helpers/
 /zmk-tri-state/
