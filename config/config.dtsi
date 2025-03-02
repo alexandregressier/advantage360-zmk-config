@@ -216,7 +216,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 /* Custom Behaviors */
 
-// First Row
+/* Topmost Row */
 
 // 1
 ZMK_MOD_MORPH(n1_morph,
@@ -226,7 +226,6 @@ ZMK_MOD_MORPH(n1_morph,
 ZMK_ADAPTIVE_KEY(ak_n1,
 	bindings = <&n1_morph>;
 )
-
 // 2
 ZMK_MOD_MORPH(n2_morph,
 	bindings = <&ht_rgkp_kp N2 DOUBLE_QUOTES>, <&ht_rgkp_kp N2 DOUBLE_QUOTES>;
@@ -235,7 +234,6 @@ ZMK_MOD_MORPH(n2_morph,
 ZMK_ADAPTIVE_KEY(ak_n2,
 	bindings = <&n2_morph>;
 )
-
 // 3
 ZMK_MOD_MORPH(n3_morph,
 	bindings = <&ht_rgkp_kp N3 LEFT_BRACE>, <&ht_rgkp_kp N3 RIGHT_BRACKET>;
@@ -245,7 +243,6 @@ ZMK_ADAPTIVE_KEY(ak_n3,
 	bindings = <&n3_morph>;
 	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>; };
 )
-
 // 4
 ZMK_MOD_MORPH(n4_morph,
 	bindings = <&ht_rgkp_kp N4 LEFT_BRACKET>, <&ht_rgkp_kp N4 RIGHT_BRACE>;
@@ -255,7 +252,6 @@ ZMK_ADAPTIVE_KEY(ak_n4,
 	bindings = <&n4_morph>;
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>; };
 )
-
 // 5
 ZMK_MOD_MORPH(n5_morph,
 	bindings = <&ht_rgkp_kp N5 DOLLAR>, <&ht_rgkp_kp N5 N5>;
@@ -273,7 +269,6 @@ ZMK_MOD_MORPH(n6_morph,
 ZMK_ADAPTIVE_KEY(ak_n6,
 	bindings = <&n6_morph>;
 )
-
 // 7
 ZMK_MOD_MORPH(n7_morph,
 	bindings = <&ht_rgkp_kp N7 MINUS>, <&ht_rgkp_kp LS(N7) LESS_THAN>;
@@ -282,7 +277,6 @@ ZMK_MOD_MORPH(n7_morph,
 ZMK_ADAPTIVE_KEY(ak_n7,
 	bindings = <&n7_morph>;
 )
-
 // 8
 ZMK_MOD_MORPH(n8_morph,
 	bindings = <&ht_rgkp_kp N8 LEFT_PARENTHESIS>, <&ht_rgkp_kp LS(N8) GREATER_THAN>;
@@ -292,7 +286,6 @@ ZMK_ADAPTIVE_KEY(ak_n8,
 	bindings = <&n8_morph>;
 	greater_than { trigger-keys = <MINUS EQUAL LESS_THAN>; bindings = <&ht_rgkp_kp N8 GREATER_THAN>; };
 )
-
 // 9
 ZMK_MOD_MORPH(n9_morph,
 	bindings = <&ht_rgkp_kp N9 EQUAL>, <&ht_rgkp_kp LS(N9) RIGHT_PARENTHESIS>;
@@ -302,7 +295,6 @@ ZMK_ADAPTIVE_KEY(ak_n9,
 	bindings = <&n9_morph>;
 	greater_than { trigger-keys = <LEFT_PARENTHESIS>; bindings = <&ht_rgkp_kp N9 RIGHT_PARENTHESIS>; };
 )
-
 // 0
 ZMK_MOD_MORPH(n0_morph,
 	bindings = <&ht_rgkp_kp N0 PLUS>, <&ht_rgkp_kp LS(N0) PLUS>;
@@ -312,19 +304,89 @@ ZMK_ADAPTIVE_KEY(ak_n0,
 	bindings = <&n0_morph>;
 )
 
+/* Top Row */
 
-// Top Row
+// Q
+ZMK_ADAPTIVE_KEY(ak_q,
+	bindings = <&ht_rgkp_kp Q Q>;
+)
+// W
+ZMK_ADAPTIVE_KEY(ak_w,
+	bindings = <&ht_rgkp_kp W W>;
+)
+// E
+ZMK_ADAPTIVE_KEY(ak_e,
+	bindings = <&ht_rgkp_kp E E>;
+)
+// R
+ZMK_ADAPTIVE_KEY(ak_r,
+	bindings = <&ht_rgkp_kp R R>;
+)
+// T
+ZMK_ADAPTIVE_KEY(ak_t,
+	bindings = <&ht_rgkp_kp T T>;
+)
 
-SIMPLE_MORPH(redo_morph, SFT, &kp LS(LG(Z)), &kp LG(RIGHT_BRACKET))
+// Y
+ZMK_ADAPTIVE_KEY(ak_y,
+	bindings = <&ht_rgkp_kp Y Y>;
+)
+// U
+ZMK_ADAPTIVE_KEY(ak_u,
+	bindings = <&ht_rgkp_kp U U>;
+)
+// I
+ZMK_ADAPTIVE_KEY(ak_i,
+	bindings = <&ht_rgkp_kp I I>;
+)
+// O
+ZMK_ADAPTIVE_KEY(ak_o,
+	bindings = <&ht_rgkp_kp O O>;
+)
+// P
+ZMK_ADAPTIVE_KEY(ak_p,
+	bindings = <&ht_rgkp_kp P P>;
+)
 
-//SIMPLE_MACRO(m_open_line_below, &kp LG(RIGHT) &kp RETURN)
-//SIMPLE_MACRO(m_open_line_above, &kp UP &kp LG(RIGHT) &kp RETURN)
-//SIMPLE_MORPH(open_line_morph, SFT, &m_open_line_below, &m_open_line_above)
+/* Middle Row */
 
-SIMPLE_MORPH(semi_morph, SFT, &kp SEMICOLON, &kp SEMICOLON)
+// A
+ZMK_ADAPTIVE_KEY(ak_a,
+	bindings = <&ht_rgkp_kp A A>;
+)
+// S
+ZMK_ADAPTIVE_KEY(ak_s,
+	bindings = <&ht_rgkp_kp S S>;
+)
+// D
+ZMK_ADAPTIVE_KEY(ak_d,
+	bindings = <&ht_rgkp_kp D D>;
+)
+// F
+ZMK_ADAPTIVE_KEY(ak_f,
+	bindings = <&ht_rgkp_kp F F>;
+)
+// G
+ZMK_ADAPTIVE_KEY(ak_g,
+	bindings = <&ht_rgkp_kp G G>;
+)
 
-// Middle Row
-
+// H
+ZMK_ADAPTIVE_KEY(ak_h,
+	bindings = <&ht_rgkp_kp H H>;
+)
+// J
+ZMK_ADAPTIVE_KEY(ak_j,
+	bindings = <&ht_rgkp_kp J J>;
+)
+// K
+ZMK_ADAPTIVE_KEY(ak_k,
+	bindings = <&ht_rgkp_kp K K>;
+)
+// L
+ZMK_ADAPTIVE_KEY(ak_l,
+	bindings = <&ht_rgkp_kp L L>;
+)
 // Semicolon
 ZMK_MOD_MORPH(colon_morph,
 	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp LS(SEMICOLON) SEMICOLON>;
@@ -339,14 +401,37 @@ ZMK_ADAPTIVE_KEY(ak_semicolon,
 	bindings = <&semicolon_morph>;
 )
 
-//SIMPLE_MORPH(double_quotes_morph, SFT, &kp DOUBLE_QUOTES, &kp DOUBLE_QUOTES)
+/* Bottom Row */
 
-SIMPLE_MORPH(undo_morph, SFT, &kp LG(Z), &kp LG(LEFT_BRACKET))
+// Z
+ZMK_ADAPTIVE_KEY(ak_z,
+	bindings = <&ht_rgkp_kp Z Z>;
+)
+// X
+ZMK_ADAPTIVE_KEY(ak_x,
+	bindings = <&ht_rgkp_kp X X>;
+)
+// C
+ZMK_ADAPTIVE_KEY(ak_c,
+	bindings = <&ht_rgkp_kp C C>;
+)
+// V
+ZMK_ADAPTIVE_KEY(ak_v,
+	bindings = <&ht_rgkp_kp V V>;
+)
+// B
+ZMK_ADAPTIVE_KEY(ak_b,
+	bindings = <&ht_rgkp_kp B B>;
+)
 
-//SIMPLE_MORPH(apostrophe_morph, SFT, &ht_kp_kp GRAVE APOSTROPHE, &kp APOSTROPHE)
-
-// Bottom Row
-
+// N
+ZMK_ADAPTIVE_KEY(ak_n,
+	bindings = <&ht_rgkp_kp N N>;
+)
+// M
+ZMK_ADAPTIVE_KEY(ak_m,
+	bindings = <&ht_rgkp_kp M M>;
+)
 // Comma
 ZMK_MOD_MORPH(comma_morph,
 	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) SINGLE_QUOTE>;
@@ -355,7 +440,6 @@ ZMK_MOD_MORPH(comma_morph,
 ZMK_ADAPTIVE_KEY(ak_comma,
 	bindings = <&comma_morph>;
 )
-
 // Dot
 ZMK_MOD_MORPH(dot_morph,
 	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) EXCLAMATION>;
@@ -364,7 +448,6 @@ ZMK_MOD_MORPH(dot_morph,
 ZMK_ADAPTIVE_KEY(ak_dot,
 	bindings = <&dot_morph>;
 )
-
 // Slash
 ZMK_MOD_MORPH(slash_morph,
 	bindings = <&ht_rgkp_kp SLASH SLASH>, <&ht_rgkp_kp LS(SLASH) QUESTION>;
@@ -375,8 +458,33 @@ ZMK_ADAPTIVE_KEY(ak_slash,
 	question { trigger-keys = <QUESTION>; bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>; };
 )
 
+/* Bottommost Row */
 
-// Last Row
+// Left
+ZMK_ADAPTIVE_KEY(ak_left,
+	bindings = <&hml LALT LEFT>;
+)
+// Shift + Tab
+ZMK_ADAPTIVE_KEY(ak_lstab,
+	bindings = <&hml LGUI LS(TAB)>;
+)
+// Tab
+ZMK_ADAPTIVE_KEY(ak_tab,
+	bindings = <&hml LSHIFT TAB>;
+)
+
+// Down
+ZMK_ADAPTIVE_KEY(ak_down,
+	bindings = <&hmr LSHIFT DOWN>;
+)
+// Up
+ZMK_ADAPTIVE_KEY(ak_up,
+	bindings = <&hmr LGUI UP>;
+)
+// Right
+ZMK_ADAPTIVE_KEY(ak_right,
+	bindings = <&hmr LALT RIGHT>;
+)
 
 
 /* Smart Shift */
