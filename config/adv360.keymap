@@ -7,20 +7,20 @@
 
     default {
       bindings = <
-        &smart_fun FUNCTION 0     &ak_n1      &ak_n2     &ak_n3      &ak_n4    &ak_n5   &none                                                                                                                                              &none   &ak_n6   &ak_n7     &ak_n8      &ak_n9      &ak_n0          &smart_fun FUNCTION 0
-        &none                     &ak_q       &ak_w      &ak_e       &ak_r     &ak_t    &none                                                                                                                                              &none   &ak_y    &ak_u      &ak_i       &ak_o       &ak_p           &ht_rgkp_kp BACKSLASH BACKSLASH
-        &ht_rckp_rgkp NUBS NUBS   &ak_a       &ak_s      &ak_d       &ak_f     &ak_g    &none                                     &none                   &none      &none           &none                                                 &none   &ak_h    &ak_j      &ak_k       &ak_l       &ak_semicolon   &ht_rckp_rgkp NUBS NUBS
-        &smart_num NUMBERS 0      &ak_z       &ak_x      &ak_c       &ak_v     &ak_b                                                                      &none      &none                                                                         &ak_n    &ak_m      &ak_comma   &ak_dot     &ak_slash       &ht_lakp_rakp NUBS NUBS
-        &ht_sl_mo MOD MOD         &kp LCTRL   &ak_left   &ak_lstab   &ak_tab                    &ht_rgkp_kp BACKSPACE BACKSPACE   &smart_shift LSHIFT 0   &sk LALT   &sl UNICODE_1   &ht_rgkp_kp RETURN RETURN   &ht_rgkp_kp SPACE SPACE                    &ak_down   &ak_up      &ak_right   &kp LCTRL       &ht_sl_mo MOD MOD
+        &smart_fun FUNCTION 0   &ak_n1      &ak_n2     &ak_n3      &ak_n4    &ak_n5   &none                                                                                                                                              &none                   &ak_n6   &ak_n7     &ak_n8      &ak_n9      &ak_n0      &smart_fun FUNCTION 0
+        &ak_backslash           &ak_q       &ak_w      &ak_e       &ak_r     &ak_t    &none                                                                                                                                              &kp LG(RIGHT_BRACKET)   &ak_y    &ak_u      &ak_i       &ak_o       &ak_p       &ak_semicolon
+        &ak_double_quotes       &ak_a       &ak_s      &ak_d       &ak_f     &ak_g    &none                                     &none                   &none      &none           &none                                                 &kp LG(LEFT_BRACKET)    &ak_h    &ak_j      &ak_k       &ak_l       &ak_colon   &ak_single_quote
+        &ak_underscore          &ak_z       &ak_x      &ak_c       &ak_v     &ak_b                                                                      &none      &none                                                                                         &ak_n    &ak_m      &ak_comma   &ak_dot     &ak_slash   &ak_minus
+        &ht_sl_mo MOD MOD       &kp LCTRL   &ak_left   &ak_lstab   &ak_tab                    &ht_rgkp_kp BACKSPACE BACKSPACE   &smart_shift LSHIFT 0   &sk LALT   &sl UNICODE_1   &ht_rgkp_kp RETURN RETURN   &ht_rgkp_kp SPACE SPACE                                    &ak_down   &ak_up      &ak_right   &kp LCTRL   &ht_sl_mo MOD MOD
       >;
     };
     numbers {
       bindings = <
-        &trans        &trans   &trans          &trans         &trans      &trans   &trans                                                                         &trans   &trans   &kp KP_MINUS   &kp KP_LEFT_PARENTHESIS   &kp KP_RIGHT_PARENTHESIS   &trans            &trans
-        &trans        &trans   &kp AMPERSAND   &kp ASTERISK   &kp PIPE    &trans   &trans                                                                         &trans   &trans   &kp KP_N7      &kp KP_N8                 &kp KP_N9                  &kp KP_MULTIPLY   &trans
-        &trans        &trans   &kp TILDE       &kp PERCENT    &kp CARET   &trans   &trans            &trans   &trans   &trans   &trans                            &trans   &trans   &kp KP_N4      &kp KP_N5                 &kp KP_N6                  &kp KP_PLUS       &trans
-        &to DEFAULT   &trans   &kp BACKSLASH   &kp AT_SIGN    &kp HASH    &trans                              &trans   &trans                                              &trans   &kp KP_N1      &kp KP_N2                 &kp KP_N3                  &kp KP_DIVIDE     &trans
-        &trans        &trans   &trans          &trans         &trans                        &trans   &trans   &trans   &trans   &ht_kp_kp RETURN KP_N0   &trans                     &none          &kp KP_COMMA              &kp KP_DOT                 &trans            &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                         &trans   &trans   &kp KP_MINUS   &kp KP_LEFT_PARENTHESIS   &kp KP_RIGHT_PARENTHESIS   &trans            &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                         &trans   &trans   &kp KP_N7      &kp KP_N8                 &kp KP_N9                  &kp KP_MULTIPLY   &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans                            &trans   &trans   &kp KP_N4      &kp KP_N5                 &kp KP_N6                  &kp KP_PLUS       &trans
+        &trans   &trans   &trans   &trans   &trans   &trans                              &trans   &trans                                              &trans   &kp KP_N1      &kp KP_N2                 &kp KP_N3                  &kp KP_DIVIDE     &trans
+        &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &ht_kp_kp RETURN KP_N0   &trans                     &none          &kp KP_COMMA              &kp KP_DOT                 &trans            &trans
       >;
     };
     unicode_1 {

@@ -179,7 +179,8 @@ ZMK_COMBO(combo_17_18, &ht_kp_kp N0 N0, 17 18, DEFAULT, COMBO_TERM_SLOW, COMBO_I
 ZMK_COMBO(combo_18_19, &ht_kp_kp N0 N0, 18 19, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(combo_30_31, &ht_kp_kp ESCAPE ESCAPE, 30 31, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(combo_31_32, &ht_kp_kp N0 N0, 31 32, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_31_32, &smart_num NUMBERS 0, 31 32, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(combo_31_32_num, &to DEFAULT, 31 32, NUMBERS, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(combo_32_33, &ht_kp_kp N0 N0, 32 33, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(combo_48_49, &ht_kp_kp N0 N0, 48 49, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -228,7 +229,7 @@ ZMK_ADAPTIVE_KEY(ak_n1,
 )
 // 2
 ZMK_MOD_MORPH(n2_morph,
-	bindings = <&ht_rgkp_kp N2 DOUBLE_QUOTES>, <&ht_rgkp_kp N2 DOUBLE_QUOTES>;
+	bindings = <&ht_rgkp_kp N2 DOLLAR>, <&u_euro>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n2,
@@ -253,8 +254,9 @@ ZMK_ADAPTIVE_KEY(ak_n4,
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>; };
 )
 // 5
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 ZMK_MOD_MORPH(n5_morph,
-	bindings = <&ht_rgkp_kp N5 DOLLAR>, <&ht_rgkp_kp N5 N5>;
+	bindings = <&ht_rgkp_kp N5 GRAVE>, <&m_triple_backticks>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n5,
@@ -306,6 +308,10 @@ ZMK_ADAPTIVE_KEY(ak_n0,
 
 /* Top Row */
 
+// Backslash
+ZMK_ADAPTIVE_KEY(ak_backslash,
+	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
+)
 // Q
 ZMK_ADAPTIVE_KEY(ak_q,
 	bindings = <&ht_rgkp_kp Q Q>;
@@ -347,9 +353,21 @@ ZMK_ADAPTIVE_KEY(ak_o,
 ZMK_ADAPTIVE_KEY(ak_p,
 	bindings = <&ht_rgkp_kp P P>;
 )
+// Semicolon
+ZMK_ADAPTIVE_KEY(ak_semicolon,
+	bindings = <&ht_rgkp_kp SEMICOLON SEMICOLON>;
+)
 
 /* Middle Row */
 
+// Double quotes
+ZMK_MOD_MORPH(double_quotes_morph,
+	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&m_curly_double_quotes_pair>;
+	mods = <(MOD_LSFT)>;
+)
+ZMK_ADAPTIVE_KEY(ak_double_quotes,
+	bindings = <&double_quotes_morph>;
+)
 // A
 ZMK_ADAPTIVE_KEY(ak_a,
 	bindings = <&ht_rgkp_kp A A>;
@@ -387,22 +405,34 @@ ZMK_ADAPTIVE_KEY(ak_k,
 ZMK_ADAPTIVE_KEY(ak_l,
 	bindings = <&ht_rgkp_kp L L>;
 )
-// Semicolon
+// Colon
 ZMK_MOD_MORPH(colon_morph,
 	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp LS(SEMICOLON) SEMICOLON>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_MOD_MORPH(semicolon_morph,
+ZMK_MOD_MORPH(colon_mod_morph,
 	bindings = <&colon_morph>, <&ht_rgkp_kp SEMICOLON SEMICOLON>;
 	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
-ZMK_ADAPTIVE_KEY(ak_semicolon,
-	bindings = <&semicolon_morph>;
+ZMK_ADAPTIVE_KEY(ak_colon,
+	bindings = <&colon_mod_morph>;
+)
+// Single quote
+ZMK_MOD_MORPH(single_quote_morph,
+	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&u_curly_apostrophe>;
+	mods = <(MOD_LSFT)>;
+)
+ZMK_ADAPTIVE_KEY(ak_single_quote,
+	bindings = <&single_quote_morph>;
 )
 
 /* Bottom Row */
 
+// Underscore
+ZMK_ADAPTIVE_KEY(ak_underscore,
+	bindings = <&ht_rgkp_kp UNDERSCORE UNDERSCORE>;
+)
 // Z
 ZMK_ADAPTIVE_KEY(ak_z,
 	bindings = <&ht_rgkp_kp Z Z>;
@@ -434,7 +464,7 @@ ZMK_ADAPTIVE_KEY(ak_m,
 )
 // Comma
 ZMK_MOD_MORPH(comma_morph,
-	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) SINGLE_QUOTE>;
+	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_comma,
@@ -442,7 +472,7 @@ ZMK_ADAPTIVE_KEY(ak_comma,
 )
 // Dot
 ZMK_MOD_MORPH(dot_morph,
-	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) EXCLAMATION>;
+	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) AT_SIGN>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_dot,
@@ -456,6 +486,10 @@ ZMK_MOD_MORPH(slash_morph,
 ZMK_ADAPTIVE_KEY(ak_slash,
 	bindings = <&slash_morph>;
 	question { trigger-keys = <QUESTION>; bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>; };
+)
+// Minus
+ZMK_ADAPTIVE_KEY(ak_minus,
+	bindings = <&ht_rgkp_kp MINUS MINUS>;
 )
 
 /* Bottommost Row */
