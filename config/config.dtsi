@@ -517,19 +517,23 @@ ZMK_ADAPTIVE_KEY(ak_right,
 
 /* Smart Shift */
 
-ZMK_ADAPTIVE_KEY(smart_shift,
-	bindings = <&ht_kp_shiftdance LEFT_SHIFT 0>;
-)
-ZMK_HOLD_TAP(ht_kp_shiftdance,
-	flavor = "balanced";
-	tapping-term-ms = <200>;
-	quick-tap-ms = <QUICK_TAP_MS>;
-	bindings = <&kp>, <&shift_dance>;
-)
-ZMK_TAP_DANCE(shift_dance,
-	tapping-term-ms = <400>; // Max time between each step below (200 is too short)
-	bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
-)
+#define MAKE_SMART_SHIFT(NAME, SHIFT_KEY) \
+	ZMK_ADAPTIVE_KEY(NAME, \
+		bindings = <&ht_kp_ ## SHIFT_KEY ## _dance SHIFT_KEY 0>; \
+	) \
+	ZMK_HOLD_TAP(ht_kp_ ## SHIFT_KEY ## _dance, \
+		flavor = "balanced"; \
+		tapping-term-ms = <200>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
+		bindings = <&kp>, <&SHIFT_KEY ## _dance>; \
+	) \
+	ZMK_TAP_DANCE(SHIFT_KEY ## _dance, \
+		tapping-term-ms = <400>; \
+		bindings = <&sk SHIFT_KEY>, <&caps_word>, <&kp CAPSLOCK>; \
+	)
+MAKE_SMART_SHIFT(smart_lshift, LEFT_SHIFT)
+MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
+
 &caps_word {
 	/delete-property/ ignore-modifiers;
 };
