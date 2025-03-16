@@ -23,10 +23,6 @@ build/
 /zephyr/
 /modules/
 /zmk/
-/zmk-adaptive-key/
-/zmk-auto-layer/
-/zmk-helpers/
-/zmk-tri-state/
 
 # Firmware files
 *.uf2

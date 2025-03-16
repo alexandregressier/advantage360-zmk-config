@@ -16,12 +16,16 @@ manifest:
     # ZMK modules
     - name: zmk-adaptive-key
       remote: urob
+      path: modules/urob/zmk-adaptive-key
     - name: zmk-auto-layer
       remote: urob
+      path: modules/urob/zmk-auto-layer
     - name: zmk-helpers
       remote: urob
+      path: modules/urob/zmk-helpers
     - name: zmk-tri-state
       remote: urob
+      path: modules/urob/zmk-tri-state
 
   self:
     path: config
