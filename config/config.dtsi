@@ -215,7 +215,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 // 1
 ZMK_MOD_MORPH(n1_morph,
-	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_kp N4 GRAVE>;
+	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_kp N5 GRAVE>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n1,
@@ -250,7 +250,7 @@ ZMK_ADAPTIVE_KEY(ak_n4,
 // 5
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 ZMK_MOD_MORPH(n5_morph,
-	bindings = <&ht_rgkp_kp N5 GRAVE>, <&m_triple_backticks>;
+	bindings = <&ht_rgkp_kp N4 GRAVE>, <&m_triple_backticks>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n5,
@@ -284,7 +284,7 @@ ZMK_ADAPTIVE_KEY(ak_n8,
 )
 // 9
 ZMK_MOD_MORPH(n9_morph,
-	bindings = <&ht_rgkp_kp N9 EQUAL>, <&ht_rgkp_kp LS(N9) RIGHT_PARENTHESIS>;
+	bindings = <&ht_rgkp_kp N8 EQUAL>, <&ht_rgkp_kp LS(N8) RIGHT_PARENTHESIS>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n9,
