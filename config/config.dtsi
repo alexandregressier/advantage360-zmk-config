@@ -576,6 +576,48 @@ ZMK_ADAPTIVE_KEY(ag_right,
 // Down
 ZMK_ADAPTIVE_KEY(ag_down,
 	bindings = <&hmr LSHIFT DOWN>;
+	lg_down {
+		trigger-keys = <LG(DOWN)>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LG(DOWN)>;
+		strict-modifiers;
+	};
+	la_down {
+		trigger-keys = <LA(DOWN)>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LA(DOWN)>;
+		strict-modifiers;
+	};
+	lc_down {
+		trigger-keys = <LC(DOWN)>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LC(DOWN)>;
+		strict-modifiers;
+	};
+	lg_la_down {
+		trigger-keys = <LG(LA(DOWN))>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LG(LA(DOWN))>;
+		strict-modifiers;
+	};
+	lg_lc_down {
+		trigger-keys = <LG(LC(DOWN))>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LG(LC(DOWN))>;
+		strict-modifiers;
+	};
+	la_lc_down {
+		trigger-keys = <LA(LC(DOWN))>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LA(LC(DOWN))>;
+		strict-modifiers;
+	};
+	lg_la_lc_down {
+		trigger-keys = <LG(LC(DOWN))>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&kp LG(LC(DOWN))>;
+		strict-modifiers;
+	};
 )
 // Up
 ZMK_ADAPTIVE_KEY(ag_up,
