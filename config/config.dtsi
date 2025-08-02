@@ -130,8 +130,21 @@ TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
         hold-trigger-on-release; \
  	)
 
-BALANCED_HOLD_TAP(ht_numbers_backspace, &mo, &kp, NUMPAD)
+BALANCED_HOLD_TAP(ht_smartnum_kp, &smart_num, &kp, NUMPAD)
 
+ZMK_ADAPTIVE_KEY(smart_num,
+	bindings = <&ht_mo_numdance NUMBERS 0>;
+)
+ZMK_HOLD_TAP(ht_mo_numdance,
+	flavor = "balanced";
+	tapping-term-ms = <200>;
+	quick-tap-ms = <QUICK_TAP_MS>;
+	bindings = <&mo>, <&num_dance>;
+)
+ZMK_TAP_DANCE(num_dance,
+	tapping-term-ms = <400>;
+	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
+)
 
 #define KP_MOD_SEQUENCE(NAME, MOD) \
 	ZMK_MACRO_ONE_PARAM(NAME, \
@@ -610,16 +623,18 @@ MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
 
 /* Smart Number */
 
-ZMK_TAP_DANCE(num_dance,
-	tapping-term-ms = <400>;
-	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
-)
-ZMK_HOLD_TAP(smart_num,
-	flavor = "balanced";
-	tapping-term-ms = <200>;
-	quick-tap-ms = <QUICK_TAP_MS>;
-	bindings = <&mo>, <&num_dance>;
-)
+
+//ZMK_HOLD_TAP(smart_num,
+//	flavor = "balanced";
+//	tapping-term-ms = <200>;
+//	quick-tap-ms = <QUICK_TAP_MS>;
+//	bindings = <&mo>, <&num_dance>;
+//)
+//ZMK_TAP_DANCE(num_dance,
+//	tapping-term-ms = <400>;
+//	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
+//)
+
 &num_word {
 	ignore-modifiers; // Needed for shortcuts like
 };
