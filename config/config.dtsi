@@ -267,44 +267,42 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 ZMK_MOD_MORPH(n1_morph,
-	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_mtriplebackticks N5 0>;
+	bindings = <&ht_rgkp_kp N5 HASH>, <&ht_rgkp_mtriplebackticks N5 TILDE>;
 	mods = <(MOD_RSFT)>;
 )
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // 2
 ZMK_ADAPTIVE_KEY(ag_n2,
 	bindings = <&n2_morph>;
 )
 ZMK_MOD_MORPH(n2_morph,
-	bindings = <&ht_rgkp_kp N3 DOLLAR>, <&u_euro>;
+	bindings = <&ht_rgkp_kp N3 DOLLAR>, <&ht_rgkp_kp N3 CARET>;
 	mods = <(MOD_RSFT)>;
 )
 // 3
 ZMK_ADAPTIVE_KEY(ag_n3,
-	bindings = <&n3_morph>;
-	right_bracket {
-		trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>;
-	};
+	bindings = <&left_brace_mod_morph>;
 )
-ZMK_MOD_MORPH(n3_morph,
-	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp N1 RIGHT_BRACE>;
+ZMK_MOD_MORPH(left_brace_mod_morph,
+	bindings = <&left_brace_morph>, <&kp N1>;
+	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+)
+ZMK_MOD_MORPH(left_brace_morph,
+	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp LS(N1) LEFT_BRACKET>;
 	mods = <(MOD_RSFT)>;
 )
 // 4
 ZMK_ADAPTIVE_KEY(ag_n4,
-	bindings = <&n4_morph>;
-	right_brace {
-		trigger-keys = <LEFT_BRACE RIGHT_BRACE>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>;
-	};
+	bindings = <&right_brace_mod_morph>;
 )
-ZMK_MOD_MORPH(n4_morph,
-	bindings = <&ht_rgkp_kp N2 LEFT_BRACKET>, <&ht_rgkp_kp N2 RIGHT_BRACE>;
+ZMK_MOD_MORPH(right_brace_mod_morph,
+	bindings = <&right_brace_morph>, <&kp N2>;
+	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+)
+ZMK_MOD_MORPH(right_brace_morph,
+	bindings = <&ht_rgkp_kp N2 RIGHT_BRACE>, <&ht_rgkp_kp LS(N2) RIGHT_BRACKET>;
 	mods = <(MOD_RSFT)>;
 )
 // 5
@@ -312,9 +310,12 @@ ZMK_ADAPTIVE_KEY(ag_n5,
 	bindings = <&n5_morph>;
 )
 ZMK_MOD_MORPH(n5_morph,
-	bindings = <&ht_rgkp_kp N4 GRAVE>, <&m_triple_backticks>;
+	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_mtriplebackticks N4 0>;
 	mods = <(MOD_RSFT)>;
 )
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+
 
 // 6
 ZMK_ADAPTIVE_KEY(ag_n6,
@@ -362,7 +363,9 @@ ZMK_MOD_MORPH(n0_morph,
 /* Top Row */
 
 // Backslash
-
+ZMK_ADAPTIVE_KEY(ag_backslash,
+	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
+)
 
 // Q
 ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
@@ -413,23 +416,9 @@ ZMK_ADAPTIVE_KEY(ag_p,
 	bindings = <&sht_rgkp_kp P P>; // Slow because misfires
 )
 
-// Pipe
-ZMK_ADAPTIVE_KEY(ag_pipe,
-	bindings = <&pipe_mod_morph>;
-	ag_backslash {
-		trigger-keys = <BACKSLASH>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
-	};
-)
-ZMK_MOD_MORPH(pipe_mod_morph,
-	bindings = <&pipe_morph>, <&ht_rgkp_kp BACKSLASH BACKSLASH>;
-	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(pipe_morph,
-	bindings = <&ht_rgkp_kp BACKSLASH PIPE>, <&ht_rgkp_kp LS(BACKSLASH) BACKSLASH>;
-	mods = <(MOD_RSFT)>;
+// Backslash
+ZMK_ADAPTIVE_KEY(ag_backslash,
+	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
 )
 
 /* Middle Row */
@@ -509,10 +498,6 @@ ZMK_MOD_MORPH(single_quote_morph,
 
 /* Bottom Row */
 
-// Underscore
-ZMK_ADAPTIVE_KEY(ag_underscore,
-	bindings = <&ht_rgkp_kp UNDERSCORE UNDERSCORE>;
-)
 // Z
 ZMK_ADAPTIVE_KEY(ag_z,
 	bindings = <&ht_rgkp_kp Z Z>;
@@ -569,11 +554,6 @@ MAKE_AG_WITH_SHIFT_MORPH(ag_dot, DOT, dot, AT_SIGN, at_sign)
 
 // Slash
 MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
-
-// Minus
-ZMK_ADAPTIVE_KEY(ag_minus,
-	bindings = <&ht_rgkp_kp MINUS MINUS>;
-)
 
 /* Bottommost Row */
 
