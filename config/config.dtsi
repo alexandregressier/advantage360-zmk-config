@@ -340,6 +340,8 @@ ZMK_ADAPTIVE_KEY(ak_n0,
 ZMK_ADAPTIVE_KEY(ak_backslash,
 	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
 )
+
+
 // Q
 ZMK_ADAPTIVE_KEY(ak_q,
 	bindings = <&ht_rgkp_kp Q Q>;
@@ -358,7 +360,7 @@ ZMK_ADAPTIVE_KEY(ak_r,
 )
 // T
 ZMK_ADAPTIVE_KEY(ak_t,
-	bindings = <&ht_rgkp_kp T T>;
+	bindings = <&sht_rgkp_kp T T>; // Slow because misfires
 )
 
 // Y
@@ -379,7 +381,7 @@ ZMK_ADAPTIVE_KEY(ak_o,
 )
 // P
 ZMK_ADAPTIVE_KEY(ak_p,
-	bindings = <&ht_rgkp_kp P P>;
+	bindings = <&sht_rgkp_kp P P>; // Slow because misfires
 )
 // Semicolon
 ZMK_ADAPTIVE_KEY(ak_semicolon,
