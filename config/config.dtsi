@@ -215,7 +215,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 // 1
 ZMK_MOD_MORPH(n1_morph,
-	bindings = <&ht_rgkp_kp N1 GRAVE>, <&ht_rgkp_kp N1 GRAVE>;
+	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_kp N4 GRAVE>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n1,
@@ -223,7 +223,7 @@ ZMK_ADAPTIVE_KEY(ak_n1,
 )
 // 2
 ZMK_MOD_MORPH(n2_morph,
-	bindings = <&ht_rgkp_kp N2 DOLLAR>, <&u_euro>;
+	bindings = <&ht_rgkp_kp N3 DOLLAR>, <&u_euro>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n2,
@@ -231,7 +231,7 @@ ZMK_ADAPTIVE_KEY(ak_n2,
 )
 // 3
 ZMK_MOD_MORPH(n3_morph,
-	bindings = <&ht_rgkp_kp N3 LEFT_BRACE>, <&ht_rgkp_kp N3 RIGHT_BRACKET>;
+	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp N1 RIGHT_BRACKET>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n3,
@@ -240,7 +240,7 @@ ZMK_ADAPTIVE_KEY(ak_n3,
 )
 // 4
 ZMK_MOD_MORPH(n4_morph,
-	bindings = <&ht_rgkp_kp N4 LEFT_BRACKET>, <&ht_rgkp_kp N4 RIGHT_BRACE>;
+	bindings = <&ht_rgkp_kp N2 LEFT_BRACKET>, <&ht_rgkp_kp N2 RIGHT_BRACE>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n4,
@@ -259,7 +259,7 @@ ZMK_ADAPTIVE_KEY(ak_n5,
 
 // 6
 ZMK_MOD_MORPH(n6_morph,
-	bindings = <&ht_rgkp_kp N6 UNDERSCORE>, <&ht_rgkp_kp LS(N6) UNDERSCORE>;
+	bindings = <&ht_rgkp_kp N7 UNDERSCORE>, <&ht_rgkp_kp LS(N7) UNDERSCORE>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n6,
@@ -267,7 +267,7 @@ ZMK_ADAPTIVE_KEY(ak_n6,
 )
 // 7
 ZMK_MOD_MORPH(n7_morph,
-	bindings = <&ht_rgkp_kp N7 MINUS>, <&ht_rgkp_kp LS(N7) LESS_THAN>;
+	bindings = <&ht_rgkp_kp N9 MINUS>, <&ht_rgkp_kp LS(N9) LESS_THAN>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n7,
@@ -275,7 +275,7 @@ ZMK_ADAPTIVE_KEY(ak_n7,
 )
 // 8
 ZMK_MOD_MORPH(n8_morph,
-	bindings = <&ht_rgkp_kp N8 LEFT_PARENTHESIS>, <&ht_rgkp_kp LS(N8) GREATER_THAN>;
+	bindings = <&ht_rgkp_kp N0 LEFT_PARENTHESIS>, <&ht_rgkp_kp LS(N0) GREATER_THAN>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n8,
@@ -293,7 +293,7 @@ ZMK_ADAPTIVE_KEY(ak_n9,
 )
 // 0
 ZMK_MOD_MORPH(n0_morph,
-	bindings = <&ht_rgkp_kp N0 PLUS>, <&ht_rgkp_kp LS(N0) PLUS>;
+	bindings = <&ht_rgkp_kp N6 PLUS>, <&ht_rgkp_kp LS(N6) PLUS>;
 	mods = <(MOD_LSFT)>;
 )
 ZMK_ADAPTIVE_KEY(ak_n0,
