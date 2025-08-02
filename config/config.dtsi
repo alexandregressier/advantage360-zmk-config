@@ -534,17 +534,17 @@ ZMK_ADAPTIVE_KEY(ag_minus,
 
 /* Bottommost Row */
 
-// Left
-ZMK_ADAPTIVE_KEY(ag_left,
-	bindings = <&hml LALT LEFT>;
-)
 // Shift + Tab
 ZMK_ADAPTIVE_KEY(ag_lstab,
-	bindings = <&hml LGUI LS(TAB)>;
+	bindings = <&hml LALT LS(TAB)>;
 )
-// Tab
-ZMK_ADAPTIVE_KEY(ag_tab,
-	bindings = <&hml LSHIFT TAB>;
+// Left
+ZMK_ADAPTIVE_KEY(ag_left,
+	bindings = <&hml LGUI LEFT>;
+)
+// Right
+ZMK_ADAPTIVE_KEY(ag_right,
+	bindings = <&hmr LSHIFT RIGHT>;
 )
 
 // Down
@@ -555,9 +555,9 @@ ZMK_ADAPTIVE_KEY(ag_down,
 ZMK_ADAPTIVE_KEY(ag_up,
 	bindings = <&hmr LGUI UP>;
 )
-// Right
-ZMK_ADAPTIVE_KEY(ag_right,
-	bindings = <&hmr LALT RIGHT>;
+// Tab
+ZMK_ADAPTIVE_KEY(ag_tab,
+	bindings = <&hml LALT TAB>;
 )
 
 
