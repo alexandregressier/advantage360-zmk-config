@@ -545,11 +545,21 @@ ZMK_MOD_MORPH(comma_morph,
 )
 // Dot
 ZMK_ADAPTIVE_KEY(ag_dot,
-	bindings = <&dot_morph>;
+	bindings = <&dot_mod_morph>;
+	at_sign {
+		trigger-keys = <AT_SIGN>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&ht_rgkp_kp LS(DOT) AT_SIGN>;
+	};
+)
+ZMK_MOD_MORPH(dot_mod_morph,
+	bindings = <&dot_morph>, <&ht_rgkp_kp DOT DOT>;
+	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
 ZMK_MOD_MORPH(dot_morph,
 	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) AT_SIGN>;
-	mods = <(MOD_LSFT)>;
+	mods = <(MOD_RSFT)>;
 )
 // Slash
 ZMK_ADAPTIVE_KEY(ag_slash,
