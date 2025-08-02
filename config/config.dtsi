@@ -281,21 +281,9 @@ MAKE_NUMBER_ROW_KEY(ag_n1, N5, HASH, hash, PERCENT, percent)
 // 2
 MAKE_NUMBER_ROW_KEY(ag_n2, N3, DOLLAR, dollar, CARET, caret)
 // 3
-MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_bracket, LEFT_BRACE, left_brace)
+MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, LEFT_BRACE, left_bracket)
 // 4
-MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_bracket, RIGHT_BRACE, right_brace)
-ZMK_ADAPTIVE_KEY(ag_n4,
-	bindings = <&right_brace_mod_morph>;
-)
-ZMK_MOD_MORPH(right_brace_mod_morph,
-	bindings = <&right_brace_morph>, <&kp N2>;
-	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(right_brace_morph,
-	bindings = <&ht_rgkp_kp N2 RIGHT_BRACE>, <&ht_rgkp_kp LS(N2) RIGHT_BRACKET>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_brace, RIGHT_BRACE, right_bracket)
 // 5
 ZMK_ADAPTIVE_KEY(ag_n5,
 	bindings = <&grave_mod_morph>;
@@ -312,25 +300,12 @@ ZMK_MOD_MORPH(grave_morph,
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE &kp RETURN &kp GRAVE &kp GRAVE &kp GRAVE &kp UP)
 
-
 // 6
-ZMK_ADAPTIVE_KEY(ag_n6,
-	bindings = <&n6_morph>;
-)
-ZMK_MOD_MORPH(n6_morph,
-	bindings = <&ht_rgkp_kp N7 UNDERSCORE>, <&ht_rgkp_kp LS(N7) UNDERSCORE>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand)
 // 7
-ZMK_ADAPTIVE_KEY(ag_n7,
-	bindings = <&n7_morph>;
-)
-ZMK_MOD_MORPH(n7_morph,
-	bindings = <&ht_rgkp_kp N9 MINUS>, <&ht_rgkp_kp LS(N9) LESS_THAN>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than)
 // 8
-ZMK_ADAPTIVE_KEY(ag_n8,
+ZMK_ADAPTIVE_KEY(ag_n8, // TODO
 	bindings = <&n8_morph>;
 	greater_than { trigger-keys = <MINUS EQUAL LESS_THAN>; bindings = <&ht_rgkp_kp N8 GREATER_THAN>; };
 )
@@ -348,13 +323,8 @@ ZMK_MOD_MORPH(n9_morph,
 	mods = <(MOD_RSFT)>;
 )
 // 0
-ZMK_ADAPTIVE_KEY(ag_n0,
-	bindings = <&n0_morph>;
-)
-ZMK_MOD_MORPH(n0_morph,
-	bindings = <&ht_rgkp_kp N6 PLUS>, <&ht_rgkp_kp LS(N6) PLUS>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, ASTERISK, asterisk)
+
 
 /* Top Row */
 
