@@ -241,7 +241,7 @@ ZMK_MOD_MORPH(n1_morph,
 	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_kp N5 GRAVE>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n1,
+ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 
@@ -252,7 +252,7 @@ ZMK_MOD_MORPH(n1_morph,
 	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_kp N5 GRAVE>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n1,
+ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 // 2
@@ -260,7 +260,7 @@ ZMK_MOD_MORPH(n2_morph,
 	bindings = <&ht_rgkp_kp N3 DOLLAR>, <&u_euro>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n2,
+ZMK_ADAPTIVE_KEY(ag_n2,
 	bindings = <&n2_morph>;
 )
 // 3
@@ -268,7 +268,7 @@ ZMK_MOD_MORPH(n3_morph,
 	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp N1 RIGHT_BRACKET>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n3,
+ZMK_ADAPTIVE_KEY(ag_n3,
 	bindings = <&n3_morph>;
 	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>; };
 )
@@ -277,7 +277,7 @@ ZMK_MOD_MORPH(n4_morph,
 	bindings = <&ht_rgkp_kp N2 LEFT_BRACKET>, <&ht_rgkp_kp N2 RIGHT_BRACE>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n4,
+ZMK_ADAPTIVE_KEY(ag_n4,
 	bindings = <&n4_morph>;
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>; };
 )
@@ -287,7 +287,7 @@ ZMK_MOD_MORPH(n5_morph,
 	bindings = <&ht_rgkp_kp N4 GRAVE>, <&m_triple_backticks>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n5,
+ZMK_ADAPTIVE_KEY(ag_n5,
 	bindings = <&n5_morph>;
 )
 
@@ -296,7 +296,7 @@ ZMK_MOD_MORPH(n6_morph,
 	bindings = <&ht_rgkp_kp N7 UNDERSCORE>, <&ht_rgkp_kp LS(N7) UNDERSCORE>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n6,
+ZMK_ADAPTIVE_KEY(ag_n6,
 	bindings = <&n6_morph>;
 )
 // 7
@@ -304,7 +304,7 @@ ZMK_MOD_MORPH(n7_morph,
 	bindings = <&ht_rgkp_kp N9 MINUS>, <&ht_rgkp_kp LS(N9) LESS_THAN>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n7,
+ZMK_ADAPTIVE_KEY(ag_n7,
 	bindings = <&n7_morph>;
 )
 // 8
@@ -312,7 +312,7 @@ ZMK_MOD_MORPH(n8_morph,
 	bindings = <&ht_rgkp_kp N0 LEFT_PARENTHESIS>, <&ht_rgkp_kp LS(N0) GREATER_THAN>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n8,
+ZMK_ADAPTIVE_KEY(ag_n8,
 	bindings = <&n8_morph>;
 	greater_than { trigger-keys = <MINUS EQUAL LESS_THAN>; bindings = <&ht_rgkp_kp N8 GREATER_THAN>; };
 )
@@ -321,7 +321,7 @@ ZMK_MOD_MORPH(n9_morph,
 	bindings = <&ht_rgkp_kp N8 EQUAL>, <&ht_rgkp_kp LS(N8) RIGHT_PARENTHESIS>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n9,
+ZMK_ADAPTIVE_KEY(ag_n9,
 	bindings = <&n9_morph>;
 	greater_than { trigger-keys = <LEFT_PARENTHESIS>; bindings = <&ht_rgkp_kp N9 RIGHT_PARENTHESIS>; };
 )
@@ -330,61 +330,61 @@ ZMK_MOD_MORPH(n0_morph,
 	bindings = <&ht_rgkp_kp N6 PLUS>, <&ht_rgkp_kp LS(N6) PLUS>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_n0,
+ZMK_ADAPTIVE_KEY(ag_n0,
 	bindings = <&n0_morph>;
 )
 
 /* Top Row */
 
 // Backslash
-ZMK_ADAPTIVE_KEY(ak_backslash,
+ZMK_ADAPTIVE_KEY(ag_backslash,
 	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
 )
 
-
 // Q
-ZMK_ADAPTIVE_KEY(ak_q,
+ZMK_ADAPTIVE_KEY(ag_q,
 	bindings = <&ht_rgkp_kp Q Q>;
 )
 // W
-ZMK_ADAPTIVE_KEY(ak_w,
+ZMK_ADAPTIVE_KEY(ag_w,
 	bindings = <&ht_rgkp_kp W W>;
 )
 // E
-ZMK_ADAPTIVE_KEY(ak_e,
+ZMK_ADAPTIVE_KEY(ag_e,
 	bindings = <&ht_rgkp_kp E E>;
 )
 // R
-ZMK_ADAPTIVE_KEY(ak_r,
+ZMK_ADAPTIVE_KEY(ag_r,
 	bindings = <&ht_rgkp_kp R R>;
 )
 // T
-ZMK_ADAPTIVE_KEY(ak_t,
+ZMK_ADAPTIVE_KEY(ag_t,
 	bindings = <&sht_rgkp_kp T T>; // Slow because misfires
 )
 
 // Y
-ZMK_ADAPTIVE_KEY(ak_y,
+ZMK_ADAPTIVE_KEY(ag_y,
 	bindings = <&ht_rgkp_kp Y Y>;
 )
 // U
-ZMK_ADAPTIVE_KEY(ak_u,
+ZMK_ADAPTIVE_KEY(ag_u,
 	bindings = <&ht_rgkp_kp U U>;
 )
 // I
-ZMK_ADAPTIVE_KEY(ak_i,
+ZMK_ADAPTIVE_KEY(ag_i,
 	bindings = <&ht_rgkp_kp I I>;
 )
 // O
-ZMK_ADAPTIVE_KEY(ak_o,
+ZMK_ADAPTIVE_KEY(ag_o,
 	bindings = <&ht_rgkp_kp O O>;
 )
 // P
-ZMK_ADAPTIVE_KEY(ak_p,
+ZMK_ADAPTIVE_KEY(ag_p,
 	bindings = <&sht_rgkp_kp P P>; // Slow because misfires
 )
+
 // Semicolon
-ZMK_ADAPTIVE_KEY(ak_semicolon,
+ZMK_ADAPTIVE_KEY(ag_semicolon,
 	bindings = <&ht_rgkp_kp SEMICOLON SEMICOLON>;
 )
 
@@ -395,44 +395,44 @@ ZMK_MOD_MORPH(double_quotes_morph,
 	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&m_curly_double_quotes_pair>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_double_quotes,
+ZMK_ADAPTIVE_KEY(ag_double_quotes,
 	bindings = <&double_quotes_morph>;
 )
 // A
-ZMK_ADAPTIVE_KEY(ak_a,
+ZMK_ADAPTIVE_KEY(ag_a,
 	bindings = <&ht_rgkp_kp A A>;
 )
 // S
-ZMK_ADAPTIVE_KEY(ak_s,
+ZMK_ADAPTIVE_KEY(ag_s,
 	bindings = <&ht_rgkp_kp S S>;
 )
 // D
-ZMK_ADAPTIVE_KEY(ak_d,
+ZMK_ADAPTIVE_KEY(ag_d,
 	bindings = <&ht_rgkp_kp D D>;
 )
 // F
-ZMK_ADAPTIVE_KEY(ak_f,
+ZMK_ADAPTIVE_KEY(ag_f,
 	bindings = <&ht_rgkp_kp F F>;
 )
 // G
-ZMK_ADAPTIVE_KEY(ak_g,
+ZMK_ADAPTIVE_KEY(ag_g,
 	bindings = <&ht_rgkp_kp G G>;
 )
 
 // H
-ZMK_ADAPTIVE_KEY(ak_h,
+ZMK_ADAPTIVE_KEY(ag_h,
 	bindings = <&ht_rgkp_kp H H>;
 )
 // J
-ZMK_ADAPTIVE_KEY(ak_j,
+ZMK_ADAPTIVE_KEY(ag_j,
 	bindings = <&ht_rgkp_kp J J>;
 )
 // K
-ZMK_ADAPTIVE_KEY(ak_k,
+ZMK_ADAPTIVE_KEY(ag_k,
 	bindings = <&ht_rgkp_kp K K>;
 )
 // L
-ZMK_ADAPTIVE_KEY(ak_l,
+ZMK_ADAPTIVE_KEY(ag_l,
 	bindings = <&ht_rgkp_kp L L>;
 )
 // Colon
@@ -445,7 +445,7 @@ ZMK_MOD_MORPH(colon_mod_morph,
 	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
-ZMK_ADAPTIVE_KEY(ak_colon,
+ZMK_ADAPTIVE_KEY(ag_colon,
 	bindings = <&colon_mod_morph>;
 )
 // Single quote
@@ -453,43 +453,43 @@ ZMK_MOD_MORPH(single_quote_morph,
 	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&u_curly_apostrophe>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_single_quote,
+ZMK_ADAPTIVE_KEY(ag_single_quote,
 	bindings = <&single_quote_morph>;
 )
 
 /* Bottom Row */
 
 // Underscore
-ZMK_ADAPTIVE_KEY(ak_underscore,
+ZMK_ADAPTIVE_KEY(ag_underscore,
 	bindings = <&ht_rgkp_kp UNDERSCORE UNDERSCORE>;
 )
 // Z
-ZMK_ADAPTIVE_KEY(ak_z,
+ZMK_ADAPTIVE_KEY(ag_z,
 	bindings = <&ht_rgkp_kp Z Z>;
 )
 // X
-ZMK_ADAPTIVE_KEY(ak_x,
+ZMK_ADAPTIVE_KEY(ag_x,
 	bindings = <&ht_rgkp_kp X X>;
 )
 // C
-ZMK_ADAPTIVE_KEY(ak_c,
+ZMK_ADAPTIVE_KEY(ag_c,
 	bindings = <&ht_rgkp_kp C C>;
 )
 // V
-ZMK_ADAPTIVE_KEY(ak_v,
+ZMK_ADAPTIVE_KEY(ag_v,
 	bindings = <&ht_rgkp_kp V V>;
 )
 // B
-ZMK_ADAPTIVE_KEY(ak_b,
+ZMK_ADAPTIVE_KEY(ag_b,
 	bindings = <&ht_rgkp_kp B B>;
 )
 
 // N
-ZMK_ADAPTIVE_KEY(ak_n,
+ZMK_ADAPTIVE_KEY(ag_n,
 	bindings = <&ht_rgkp_kp N N>;
 )
 // M
-ZMK_ADAPTIVE_KEY(ak_m,
+ZMK_ADAPTIVE_KEY(ag_m,
 	bindings = <&ht_rgkp_kp M M>;
 )
 // Comma
@@ -497,7 +497,7 @@ ZMK_MOD_MORPH(comma_morph,
 	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_comma,
+ZMK_ADAPTIVE_KEY(ag_comma,
 	bindings = <&comma_morph>;
 )
 // Dot
@@ -505,7 +505,7 @@ ZMK_MOD_MORPH(dot_morph,
 	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) AT_SIGN>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_dot,
+ZMK_ADAPTIVE_KEY(ag_dot,
 	bindings = <&dot_morph>;
 )
 // Slash
@@ -513,40 +513,40 @@ ZMK_MOD_MORPH(slash_morph,
 	bindings = <&ht_rgkp_kp SLASH SLASH>, <&ht_rgkp_kp LS(SLASH) QUESTION>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ak_slash,
+ZMK_ADAPTIVE_KEY(ag_slash,
 	bindings = <&slash_morph>;
 	question { trigger-keys = <QUESTION>; bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>; };
 )
 // Minus
-ZMK_ADAPTIVE_KEY(ak_minus,
+ZMK_ADAPTIVE_KEY(ag_minus,
 	bindings = <&ht_rgkp_kp MINUS MINUS>;
 )
 
 /* Bottommost Row */
 
 // Left
-ZMK_ADAPTIVE_KEY(ak_left,
+ZMK_ADAPTIVE_KEY(ag_left,
 	bindings = <&hml LALT LEFT>;
 )
 // Shift + Tab
-ZMK_ADAPTIVE_KEY(ak_lstab,
+ZMK_ADAPTIVE_KEY(ag_lstab,
 	bindings = <&hml LGUI LS(TAB)>;
 )
 // Tab
-ZMK_ADAPTIVE_KEY(ak_tab,
+ZMK_ADAPTIVE_KEY(ag_tab,
 	bindings = <&hml LSHIFT TAB>;
 )
 
 // Down
-ZMK_ADAPTIVE_KEY(ak_down,
+ZMK_ADAPTIVE_KEY(ag_down,
 	bindings = <&hmr LSHIFT DOWN>;
 )
 // Up
-ZMK_ADAPTIVE_KEY(ak_up,
+ZMK_ADAPTIVE_KEY(ag_up,
 	bindings = <&hmr LGUI UP>;
 )
 // Right
-ZMK_ADAPTIVE_KEY(ak_right,
+ZMK_ADAPTIVE_KEY(ag_right,
 	bindings = <&hmr LALT RIGHT>;
 )
 

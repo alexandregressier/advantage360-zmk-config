@@ -7,11 +7,11 @@
 
     default {
       bindings = <
-        &smart_fun FUNCTION 0   &ak_n1      &ak_n2      &ak_n3     &ak_n4      &ak_n5   &none                                                                                                                          &none                   &ak_n6   &ak_n7     &ak_n8      &ak_n9    &ak_n0      &smart_fun FUNCTION 0
-        &ak_backslash           &ak_q       &ak_w       &ak_e      &ak_r       &ak_t    &none                                                                                                                          &kp LG(RIGHT_BRACKET)   &ak_y    &ak_u      &ak_i       &ak_o     &ak_p       &ak_semicolon
-        &ak_double_quotes       &ak_a       &ak_s       &ak_d      &ak_f       &ak_g    &none                                     &none           &none      &none           &none                                     &kp LG(LEFT_BRACKET)    &ak_h    &ak_j      &ak_k       &ak_l     &ak_colon   &ak_single_quote
-        &smart_num NUMBERS 0    &ak_z       &ak_x       &ak_c      &ak_v       &ak_b                                                              &none      &none                                                                             &ak_n    &ak_m      &ak_comma   &ak_dot   &ak_slash   &ak_minus
-        &ht_sl_mo MOD MOD       &kp LCTRL   &ak_lstab   &ak_left   &ak_right                    &ht_numbers_backspace NUMBERS BACKSPACE  &smart_lshift   &sk LALT   &sl UNICODE_1   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ak_down   &ak_up      &ak_tab   &kp LCTRL   &ht_sl_mo MOD MOD
+        &smart_fun FUNCTION 0   &ag_n1      &ag_n2      &ag_n3     &ag_n4      &ag_n5   &none                                                                                                                          &none                   &ag_n6   &ag_n7     &ag_n8      &ag_n9    &ag_n0      &smart_fun FUNCTION 0
+        &ag_backslash           &ag_q       &ag_w       &ag_e      &ag_r       &ag_t    &none                                                                                                                          &kp LG(RIGHT_BRACKET)   &ag_y    &ag_u      &ag_i       &ag_o     &ag_p       &ag_semicolon
+        &ag_double_quotes       &ag_a       &ag_s       &ag_d      &ag_f       &ag_g    &none                                     &none           &none      &none           &none                                     &kp LG(LEFT_BRACKET)    &ag_h    &ag_j      &ag_k       &ag_l     &ag_colon   &ag_single_quote
+        &smart_num NUMBERS 0    &ag_z       &ag_x       &ag_c      &ag_v       &ag_b                                                              &none      &none                                                                             &ag_n    &ag_m      &ag_comma   &ag_dot   &ag_slash   &ag_minus
+        &ht_sl_mo MOD MOD       &kp LCTRL   &ag_lstab   &ag_left   &ag_right                    &ht_numbers_backspace NUMBERS BACKSPACE  &smart_lshift   &sk LALT   &sl UNICODE_1   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ag_down   &ag_up      &ag_tab   &kp LCTRL   &ht_sl_mo MOD MOD
       >;
     };
     numbers {
