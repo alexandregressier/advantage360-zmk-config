@@ -245,7 +245,7 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 
-#define DEFAULT_ADAPTIVE_TIMEOUT_MS 800
+#define DEFAULT_ADAPTIVE_TIMEOUT_MS 1000
 
 /* Topmost Row */
 
@@ -445,25 +445,26 @@ ZMK_ADAPTIVE_KEY(ag_l,
 	bindings = <&ht_rgkp_kp L L>;
 )
 // Colon
-ZMK_MOD_MORPH(colon_morph,
-	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp LS(SEMICOLON) SEMICOLON>;
-	mods = <(MOD_LSFT)>;
+ZMK_ADAPTIVE_KEY(ag_colon,
+	bindings = <&colon_mod_morph>;
 )
 ZMK_MOD_MORPH(colon_mod_morph,
 	bindings = <&colon_morph>, <&ht_rgkp_kp SEMICOLON SEMICOLON>;
 	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
-ZMK_ADAPTIVE_KEY(ag_colon,
-	bindings = <&colon_mod_morph>;
+ZMK_MOD_MORPH(colon_morph,
+	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp LS(SEMICOLON) SEMICOLON>;
+	mods = <(MOD_LSFT)>;
 )
+
 // Single quote
+ZMK_ADAPTIVE_KEY(ag_single_quote,
+	bindings = <&single_quote_morph>;
+)
 ZMK_MOD_MORPH(single_quote_morph,
 	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&u_curly_apostrophe>;
 	mods = <(MOD_LSFT)>;
-)
-ZMK_ADAPTIVE_KEY(ag_single_quote,
-	bindings = <&single_quote_morph>;
 )
 
 /* Bottom Row */
