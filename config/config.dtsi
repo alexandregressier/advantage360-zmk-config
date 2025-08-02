@@ -284,16 +284,24 @@ ZMK_MOD_MORPH(n2_morph,
 // 3
 ZMK_ADAPTIVE_KEY(ag_n3,
 	bindings = <&n3_morph>;
-	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>; };
+	right_bracket {
+		trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&ht_rgkp_kp N3 RIGHT_BRACKET>;
+	};
 )
 ZMK_MOD_MORPH(n3_morph,
-	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp N1 RIGHT_BRACKET>;
+	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp N1 RIGHT_BRACE>;
 	mods = <(MOD_LSFT)>;
 )
 // 4
 ZMK_ADAPTIVE_KEY(ag_n4,
 	bindings = <&n4_morph>;
-	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>; };
+	right_brace {
+		trigger-keys = <LEFT_BRACE RIGHT_BRACE>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&ht_rgkp_kp N4 RIGHT_BRACE>;
+	};
 )
 ZMK_MOD_MORPH(n4_morph,
 	bindings = <&ht_rgkp_kp N2 LEFT_BRACKET>, <&ht_rgkp_kp N2 RIGHT_BRACE>;
@@ -518,29 +526,40 @@ ZMK_ADAPTIVE_KEY(ag_m,
 	bindings = <&ht_rgkp_kp M M>;
 )
 // Comma
+ZMK_ADAPTIVE_KEY(ag_comma,
+	bindings = <&comma_morph>;
+	exclamation {
+		trigger-keys = <EXCLAMATION>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
+		strict-modifiers;
+	};
+)
 ZMK_MOD_MORPH(comma_morph,
 	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ag_comma,
-	bindings = <&comma_morph>;
-)
 // Dot
+ZMK_ADAPTIVE_KEY(ag_dot,
+	bindings = <&dot_morph>;
+)
 ZMK_MOD_MORPH(dot_morph,
 	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) AT_SIGN>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ag_dot,
-	bindings = <&dot_morph>;
-)
 // Slash
+ZMK_ADAPTIVE_KEY(ag_slash,
+	bindings = <&slash_morph>;
+	question {
+		trigger-keys = <QUESTION>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>;
+		strict-modifiers;
+	};
+)
 ZMK_MOD_MORPH(slash_morph,
 	bindings = <&ht_rgkp_kp SLASH SLASH>, <&ht_rgkp_kp LS(SLASH) QUESTION>;
 	mods = <(MOD_LSFT)>;
-)
-ZMK_ADAPTIVE_KEY(ag_slash,
-	bindings = <&slash_morph>;
-	question { trigger-keys = <QUESTION>; bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>; };
 )
 // Minus
 ZMK_ADAPTIVE_KEY(ag_minus,
