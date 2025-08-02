@@ -267,9 +267,12 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 ZMK_MOD_MORPH(n1_morph,
-	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_kp N5 GRAVE>;
-	mods = <(MOD_LSFT)>;
+	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_mtriplebackticks N5 0>;
+	mods = <(MOD_LSFT|MOD_RSFT)>;
 )
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+
 // 2
 ZMK_ADAPTIVE_KEY(ag_n2,
 	bindings = <&n2_morph>;
@@ -304,7 +307,6 @@ ZMK_MOD_MORPH(n5_morph,
 	bindings = <&ht_rgkp_kp N4 GRAVE>, <&m_triple_backticks>;
 	mods = <(MOD_LSFT)>;
 )
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // 6
 ZMK_ADAPTIVE_KEY(ag_n6,
