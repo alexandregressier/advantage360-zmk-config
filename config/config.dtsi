@@ -563,17 +563,12 @@ ZMK_MOD_MORPH(dot_morph,
 )
 // Slash
 ZMK_ADAPTIVE_KEY(ag_slash,
-	bindings = <&slash_morph>;
+	bindings = <&ht_rgkp_kp SLASH SLASH>;
 	question {
 		trigger-keys = <QUESTION>;
 		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
 		bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>;
-		strict-modifiers;
 	};
-)
-ZMK_MOD_MORPH(slash_morph,
-	bindings = <&ht_rgkp_kp SLASH SLASH>, <&ht_rgkp_kp LS(SLASH) QUESTION>;
-	mods = <(MOD_LSFT)>;
 )
 // Minus
 ZMK_ADAPTIVE_KEY(ag_minus,
