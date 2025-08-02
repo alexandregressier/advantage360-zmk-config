@@ -245,6 +245,8 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 	bindings = <&n1_morph>;
 )
 
+#define DEFAULT_ADAPTIVE_TIMEOUT_MS 800
+
 /* Topmost Row */
 
 // 1
@@ -348,10 +350,17 @@ ZMK_ADAPTIVE_KEY(ag_q,
 // W
 ZMK_ADAPTIVE_KEY(ag_w,
 	bindings = <&ht_rgkp_kp W W>;
+	rg_w {
+		trigger-keys = <LG(W) RG(W)>;
+		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
+		bindings = <&rgkp W>;
+		strict-modifiers;
+	};
 )
 // E
 ZMK_ADAPTIVE_KEY(ag_e,
 	bindings = <&ht_rgkp_kp E E>;
+
 )
 // R
 ZMK_ADAPTIVE_KEY(ag_r,
