@@ -11,7 +11,7 @@
         &ag_backslash           &ag_q       &ag_w       &ag_e      &ag_r       &ag_t    &none                                                                                                            &kp LG(RIGHT_BRACKET)   &ag_y    &ag_u      &ag_i       &ag_o     &ag_p       &ag_semicolon
         &ag_double_quotes       &ag_a       &ag_s       &ag_d      &ag_f       &ag_g    &none                       &none           &none      &none           &none                                     &kp LG(LEFT_BRACKET)    &ag_h    &ag_j      &ag_k       &ag_l     &ag_colon   &ag_single_quote
         &none                   &ag_z       &ag_x       &ag_c      &ag_v       &ag_b                                                &none      &none                                                                             &ag_n    &ag_m      &ag_comma   &ag_dot   &ag_slash   &ag_minus
-        &ht_sl_mo MOD MOD       &kp LCTRL   &ag_lstab   &ag_left   &ag_right                    &ht_num_backspace   &smart_lshift   &sk LALT   &sl UNICODE_1   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ag_down   &ag_up      &ag_tab   &kp LCTRL   &ht_sl_mo MOD MOD
+        &ht_sl_mo MOD MOD       &kp LCTRL   &ag_lstab   &ag_left   &ag_right                    &ht_num_backspace   &smart_rshift   &sk LALT   &sl UNICODE_1   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ag_down   &ag_up      &ag_tab   &kp LCTRL   &ht_sl_mo MOD MOD
       >;
     };
     numbers {
