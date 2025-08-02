@@ -260,39 +260,30 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 )
 
 
-/* Topmost Row */
+/* Number Row */
+
+#define MAKE_NUMBER_ROW_KEY(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
+	ZMK_ADAPTIVE_KEY(NAME, \
+		bindings = <&KEY_LOWER ## _mod_morph>; \
+	) \
+	ZMK_MOD_MORPH(KEY_LOWER ## _mod_morph, \
+		bindings = <&KEY_LOWER ## _morph>, <&kp NUMBER>; \
+		mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+		keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+	) \
+	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
+		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp LS(NUMBER) RS_KEY>; \
+		mods = <(MOD_RSFT)>; \
+	)
 
 // 1
-ZMK_ADAPTIVE_KEY(ag_n1,
-	bindings = <&n1_morph>;
-)
-ZMK_MOD_MORPH(n1_morph,
-	bindings = <&ht_rgkp_kp N5 HASH>, <&ht_rgkp_mtriplebackticks N5 TILDE>;
-	mods = <(MOD_RSFT)>;
-)
-
+MAKE_NUMBER_ROW_KEY(ag_n1, N5, HASH, hash, PERCENT, percent)
 // 2
-ZMK_ADAPTIVE_KEY(ag_n2,
-	bindings = <&n2_morph>;
-)
-ZMK_MOD_MORPH(n2_morph,
-	bindings = <&ht_rgkp_kp N3 DOLLAR>, <&ht_rgkp_kp N3 CARET>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n2, N3, DOLLAR, dollar, CARET, caret)
 // 3
-ZMK_ADAPTIVE_KEY(ag_n3,
-	bindings = <&left_brace_mod_morph>;
-)
-ZMK_MOD_MORPH(left_brace_mod_morph,
-	bindings = <&left_brace_morph>, <&kp N1>;
-	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(left_brace_morph,
-	bindings = <&ht_rgkp_kp N1 LEFT_BRACE>, <&ht_rgkp_kp LS(N1) LEFT_BRACKET>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_bracket, LEFT_BRACE, left_brace)
 // 4
+MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_bracket, RIGHT_BRACE, right_brace)
 ZMK_ADAPTIVE_KEY(ag_n4,
 	bindings = <&right_brace_mod_morph>;
 )
@@ -307,14 +298,19 @@ ZMK_MOD_MORPH(right_brace_morph,
 )
 // 5
 ZMK_ADAPTIVE_KEY(ag_n5,
-	bindings = <&n5_morph>;
+	bindings = <&grave_mod_morph>;
 )
-ZMK_MOD_MORPH(n5_morph,
+ZMK_MOD_MORPH(grave_mod_morph,
+	bindings = <&grave_morph>, <&kp N4>;
+	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+)
+ZMK_MOD_MORPH(grave_morph,
 	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_mtriplebackticks N4 0>;
 	mods = <(MOD_RSFT)>;
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE &kp RETURN &kp GRAVE &kp GRAVE &kp GRAVE &kp UP)
 
 
 // 6
