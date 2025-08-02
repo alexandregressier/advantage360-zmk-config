@@ -569,7 +569,7 @@ ZMK_ADAPTIVE_KEY(ag_tab,
 		bindings = <&np ## NUMBER ## _morph>; \
 	) \
 	ZMK_MOD_MORPH(np ## NUMBER ## _morph, \
-		bindings = <&ht_kp_kp BEHIND_KEY N1>, <&ht_kp_kp BEHIND_KEY N1>; \
+		bindings = <&ht_kp_kp BEHIND_KEY N ## NUMBER>, <&ht_kp_kp BEHIND_KEY N ## NUMBER>; \
 		mods = <(MOD_LSFT)>; \
 	)
 
