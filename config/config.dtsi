@@ -42,6 +42,11 @@
 
 #define THUMBS_RIGHT 37 38 53 68 69 70
 
+#define NUMPAD 23 24 25 \
+               41 42 43 \
+               55 56 57 \
+               69 70
+
 
 #define DEFAULT 0
 #define NUMBERS 1
@@ -113,6 +118,20 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = slow
 TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
 TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
+
+#define BALANCED_HOLD_TAP(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+		flavor = "balanced"; \
+		tapping-term-ms = <180>; \
+		quick-tap-ms = <0>; \
+		require-prior-idle-ms = <200>; \
+		bindings = <HOLD>, <TAP>; \
+		hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+ 	)
+
+BALANCED_HOLD_TAP(ht_numbers_backspace, &mo, &kp, NUMPAD)
+
 
 #define KP_MOD_SEQUENCE(NAME, MOD) \
 	ZMK_MACRO_ONE_PARAM(NAME, \
@@ -217,6 +236,14 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 
 /* Custom Behaviors */
+
+ZMK_MOD_MORPH(n1_morph,
+	bindings = <&ht_rgkp_kp N5 GRAVE>, <&ht_rgkp_kp N5 GRAVE>;
+	mods = <(MOD_LSFT)>;
+)
+ZMK_ADAPTIVE_KEY(ak_n1,
+	bindings = <&n1_morph>;
+)
 
 /* Topmost Row */
 
