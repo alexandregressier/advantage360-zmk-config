@@ -527,15 +527,14 @@ ZMK_ADAPTIVE_KEY(ag_m,
 )
 // Comma
 ZMK_ADAPTIVE_KEY(ag_comma,
-	bindings = <&colon_mod_morph>;
+	bindings = <&comma_mod_morph>;
 	exclamation {
 		trigger-keys = <EXCLAMATION>;
 		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
 		bindings = <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
-		strict-modifiers;
 	};
 )
-ZMK_MOD_MORPH(colon_mod_morph,
+ZMK_MOD_MORPH(comma_mod_morph,
 	bindings = <&comma_morph>, <&ht_rgkp_kp COMMA COMMA>;
 	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
