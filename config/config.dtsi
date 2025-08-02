@@ -526,50 +526,33 @@ ZMK_ADAPTIVE_KEY(ag_m,
 	bindings = <&ht_rgkp_kp M M>;
 )
 // Comma
-ZMK_ADAPTIVE_KEY(ag_comma,
-	bindings = <&comma_mod_morph>;
-	exclamation {
-		trigger-keys = <EXCLAMATION>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
-	};
-)
-ZMK_MOD_MORPH(comma_mod_morph,
-	bindings = <&comma_morph>, <&ht_rgkp_kp COMMA COMMA>;
-	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(comma_morph,
-	bindings = <&ht_rgkp_kp COMMA COMMA>, <&ht_rgkp_kp LS(COMMA) EXCLAMATION>;
-	mods = <(MOD_RSFT)>;
-)
+#define MAKE_AG_WITH_SHIFT_MORPH(NAME, KEY_1, KEY_1_LOWER, KEY_2, KEY_2_LOWER) \
+	ZMK_ADAPTIVE_KEY(NAME, \
+		bindings = <&KEY_1_LOWER ## _mod_morph>; \
+		ag_ ## KEY_2_LOWER { \
+			trigger-keys = <KEY_2>; \
+			max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; \
+			bindings = <&ht_rgkp_kp LS(KEY_1) KEY_2>; \
+		}; \
+	) \
+	ZMK_MOD_MORPH(KEY_1_LOWER ## _mod_morph, \
+		bindings = <&KEY_1_LOWER ## _morph>, <&ht_rgkp_kp KEY_1 KEY_1>; \
+		mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+		keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+	) \
+	ZMK_MOD_MORPH(KEY_1_LOWER ## _morph, \
+		bindings = <&ht_rgkp_kp KEY_1 KEY_1>, <&ht_rgkp_kp LS(KEY_1) KEY_2>; \
+		mods = <(MOD_RSFT)>; \
+	)
+
+MAKE_AG_WITH_SHIFT_MORPH(ag_comma, COMMA, comma, EXCLAMATION, exclamation)
+
 // Dot
-ZMK_ADAPTIVE_KEY(ag_dot,
-	bindings = <&dot_mod_morph>;
-	at_sign {
-		trigger-keys = <AT_SIGN>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp LS(DOT) AT_SIGN>;
-	};
-)
-ZMK_MOD_MORPH(dot_mod_morph,
-	bindings = <&dot_morph>, <&ht_rgkp_kp DOT DOT>;
-	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(dot_morph,
-	bindings = <&ht_rgkp_kp DOT DOT>, <&ht_rgkp_kp LS(DOT) AT_SIGN>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_AG_WITH_SHIFT_MORPH(ag_dot, DOT, dot, AT_SIGN, at_sign)
+
 // Slash
-ZMK_ADAPTIVE_KEY(ag_slash,
-	bindings = <&ht_rgkp_kp SLASH SLASH>;
-	question {
-		trigger-keys = <QUESTION>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp LS(SLASH) QUESTION>;
-	};
-)
+MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
+
 // Minus
 ZMK_ADAPTIVE_KEY(ag_minus,
 	bindings = <&ht_rgkp_kp MINUS MINUS>;
