@@ -184,6 +184,13 @@ ZMK_COMBO(50_51, &ht_kp_kp N0 N0, 50 51, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SL
 
 //ZMK_COMBO(left_return_2, &ht_rgkp_kp RETURN RETURN, 63 64, DEFAULT, COMBO_TERM_SLOW)
 
+// Left hand - Vertical
+ZMK_MOD_MORPH(secret_morph,
+	bindings = <&m_secret_return>, <&m_secret>;
+	mods = <(MOD_LSFT)>;
+)
+ZMK_COMBO(secret, &secret_morph, 0 14, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
 // Right hand - Horizontal
 ZMK_COMBO(40_41, &ht_kp_kp N0 N0, 40 41, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(right_escape, &ht_rgkp_kp ESCAPE ESCAPE, 41 42, ALL, COMBO_TERM_SLOW)
