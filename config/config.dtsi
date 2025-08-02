@@ -344,7 +344,7 @@ ZMK_ADAPTIVE_KEY(ag_backslash,
 )
 
 // Q
-ZMK_ADAPTIVE_KEY(ag_q,
+ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
 	bindings = <&ht_rgkp_kp Q Q>;
 )
 // W
@@ -559,6 +559,21 @@ ZMK_ADAPTIVE_KEY(ag_up,
 ZMK_ADAPTIVE_KEY(ag_tab,
 	bindings = <&hml LALT TAB>;
 )
+
+
+/* Numpad */ // Numpad instead of keypad because it abbreviates kp as well
+
+// aq = adaptive quit
+#define MAKE_NUMPAD_KEY(NUMBER, BEHIND_KEY) \
+	ZMK_ADAPTIVE_KEY(aq_np ## NUMBER ##, \
+		bindings = <&np ## NUMBER ## _morph>; \
+	) \
+	ZMK_MOD_MORPH(np ## NUMBER ## _morph, \
+		bindings = <&ht_kp_kp BEHIND_KEY N1>, <&ht_kp_kp BEHIND_KEY N1>; \
+		mods = <(MOD_LSFT)>; \
+	)
+
+MAKE_NUMPAD_KEY(1, M)
 
 
 /* Smart Shift */
