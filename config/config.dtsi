@@ -272,16 +272,16 @@ ZMK_ADAPTIVE_KEY(ag_n1,
 		keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
-		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp LS(NUMBER) RS_KEY>; \
+		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	)
 
 // 1
-MAKE_NUMBER_ROW_KEY(ag_n1, N5, HASH, hash, PERCENT, percent)
+MAKE_NUMBER_ROW_KEY(ag_n1, N5, HASH, hash, PERCENT, percent) // todo: any previous number should keep the lg
 // 2
 MAKE_NUMBER_ROW_KEY(ag_n2, N3, DOLLAR, dollar, CARET, caret)
 // 3
-MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, LEFT_BRACE, left_bracket)
+MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, LEFT_BRACE, left_bracket) //
 // 4
 MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_brace, RIGHT_BRACE, right_bracket)
 // 5
@@ -294,7 +294,7 @@ ZMK_MOD_MORPH(grave_mod_morph,
 	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
 ZMK_MOD_MORPH(grave_morph,
-	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_mtriplebackticks N4 0>;
+	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_mtriplebackticks RS(N4) 0>; // TODO: make sure RS everywhere
 	mods = <(MOD_RSFT)>;
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
@@ -303,7 +303,7 @@ SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE &kp RETURN &kp GR
 // 6
 MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand)
 // 7
-MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than)
+MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than) // todo: ampersand cannot be twiced (neither is pipe)
 // 8
 ZMK_ADAPTIVE_KEY(ag_n8, // TODO
 	bindings = <&n8_morph>;
@@ -462,6 +462,10 @@ ZMK_MOD_MORPH(single_quote_morph,
 	mods = <(MOD_RSFT)>;
 )
 
+
+// todo: zoom =+0
+// todo: cmd brace can be repeated while held, which is unwanted
+
 /* Bottom Row */
 
 // Z
@@ -474,7 +478,7 @@ ZMK_ADAPTIVE_KEY(ag_x,
 )
 // C
 ZMK_ADAPTIVE_KEY(ag_c,
-	bindings = <&ht_rgkp_kp C C>;
+	bindings = <&ht_rgkp_kp C C>; // todo: implement adaptive for zxcv
 )
 // V
 ZMK_ADAPTIVE_KEY(ag_v,
@@ -523,7 +527,7 @@ MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
 
 /* Bottommost Row */
 
-#define PRESERVE_ADAPTIVE_MODIFIERS_MS 2000
+#define PRESERVE_ADAPTIVE_MODIFIERS_MS 1000
 
 #define PRESERVE_ADAPTIVE_MODIFIERS(KEY, TRIGGER_KEY, TRIGGER_KEY_LOWER) \
 	ls_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(TRIGGER_KEY)>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(KEY)>; strict-modifiers; }; \
@@ -580,7 +584,7 @@ ZMK_ADAPTIVE_KEY(ag_up,
 	PRESERVE_ADAPTIVE_MODIFIERS(UP, UP, up)
 )
 // Tab
-ZMK_ADAPTIVE_KEY(ag_tab,
+ZMK_ADAPTIVE_KEY(ag_tab, // todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
 	bindings = <&hml LALT TAB>;
 	PRESERVE_ADAPTIVE_MODIFIERS(TAB, TAB, tab)
 )
