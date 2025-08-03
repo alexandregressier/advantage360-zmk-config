@@ -208,6 +208,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 #define COMBO_TERM_SLOW 110
 #define COMBO_IDLE_SLOW 150
 
+// todo: mod layer does not need to be tap, hold is sufficient
+// todo: space as right key when previous arrow?
+
 // Left hand - Horizontal
 ZMK_COMBO(left_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(left_escape_bis, &ht_rgkp_kp ESCAPE ESCAPE, 31 32, DEFAULT, COMBO_TERM_SLOW)
@@ -278,20 +281,15 @@ MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, LEFT_BRACE, left_bracket)
 // 4
 MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_brace, RIGHT_BRACE, right_bracket)
 // 5
-ZMK_ADAPTIVE_KEY(ag_n5,
-	bindings = <&grave_mod_morph>;
-)
-ZMK_MOD_MORPH(grave_mod_morph,
-	bindings = <&grave_morph>, <&kp N4>;
-	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
+MAKE_NUMBER_ROW_KEY(ag_n5, N4, DOLLAR, dollar, CARET, caret)
+// todo disable numword after a given timeout
+// todo move
 ZMK_MOD_MORPH(grave_morph,
-	bindings = <&ht_rgkp_kp N4 GRAVE>, <&ht_rgkp_mtriplebackticks RS(N4) 0>; // TODO: make sure RS everywhere
+	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>; // TODO: make sure RS everywhere
 	mods = <(MOD_RSFT)>;
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE &kp RETURN &kp GRAVE &kp GRAVE &kp GRAVE &kp UP)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // 6
 MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand)
