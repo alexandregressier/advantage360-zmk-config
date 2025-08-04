@@ -11,6 +11,7 @@
 #include "zmk-helpers/helper.h"
 
 #include "adv360_symbols.h"
+#include "leader.dtsi"
 #include "secret.dtsi"
 
 /*
