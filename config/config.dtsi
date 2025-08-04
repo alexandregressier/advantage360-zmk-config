@@ -448,9 +448,10 @@ ZMK_ADAPTIVE_KEY(ag_single_quote,
 	bindings = <&single_quote_morph>;
 )
 ZMK_MOD_MORPH(single_quote_morph,
-	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&u_curly_apostrophe>;
+	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&ht_rgkp_ucurlyapostrophe RS(SINGLE_QUOTE) 0>;
 	mods = <(MOD_RSFT)>;
 )
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 
 
 // todo: zoom =+0

@@ -7,12 +7,16 @@
 // = macOS
 #include "zmk-helpers/helper.h"
 
+#define ZMK_UNICODE_SINGLE_SHIFTED(name, S0, S1, S2, S3) \
+    UC_MACRO(name ## _shifted, &kp S0 &kp S1 &kp S2 &kp S3) \
+    UC_MODMORPH(name, &none, &name ## _shifted)
+
 // Quotes
-ZMK_UNICODE_SINGLE(u_curly_apostrophe, N2, N0, N1, N9) // ’ RIGHT SINGLE QUOTATION MARK (codepoint 8217, #o20031, #x2019), e.g., don’t
+ZMK_UNICODE_SINGLE_SHIFTED(u_curly_apostrophe, N2, N0, N1, N9) // ’ RIGHT SINGLE QUOTATION MARK (codepoint 8217, #o20031, #x2019), e.g., don’t
 
 ZMK_UNICODE_SINGLE(u_left_curly_single_quote, N2, N0, N1, N8) // ‘ LEFT SINGLE QUOTATION MARK (codepoint 8216, #o20030, #x2018)
 
-ZMK_UNICODE_SINGLE(u_left_curly_double_quotes, N2, N0, N1, C) // “ LEFT DOUBLE QUOTATION MARK (codepoint 8220, #o20034, #x201c)
+ZMK_UNICODE_SINGLE_SHIFTED(u_left_curly_double_quotes, N2, N0, N1, C) // “ LEFT DOUBLE QUOTATION MARK (codepoint 8220, #o20034, #x201c)
 ZMK_UNICODE_SINGLE(u_right_curly_double_quotes, N2, N0, N1, D) // ” RIGHT DOUBLE QUOTATION MARK (codepoint 8221, #o20035, #x201d)
 
 ZMK_UNICODE_SINGLE(u_guillemet_left,  N0, N0, A, B) // « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (codepoint 171, #o253, #xab)
