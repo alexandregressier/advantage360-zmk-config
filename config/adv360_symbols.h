@@ -24,7 +24,6 @@
         }; \
     };
 
-
 #define ZMK_UNICODE_SINGLE_SHIFTED(name, S0, S1, S2, S3) \
     UC_MACRO(name ## _shifted, &kp S0 &kp S1 &kp S2 &kp S3) \
     UC_MODMORPH(name, &none, &name ## _shifted)
@@ -43,6 +42,7 @@ ZMK_UNICODE_SINGLE(u_guillemet_right, N0, N0, B, B) // » RIGHT-POINTING DOUBLE 
 // Punctuation
 ZMK_UNICODE_SINGLE(u_ellipsis, N2, N0, N2, N6) // … HORIZONTAL ELLIPSIS (codepoint 8230, #o20046, #x2026)
 ZMK_UNICODE_SINGLE(u_interpunct, N0, N0, B, N7) // · MIDDLE DOT (codepoint 183, #o267, #xb7)
+
 ZMK_UNICODE_SINGLE(u_en_dash, N2, N0, N1, N3) // – EN DASH (codepoint 8211, #o20023, #x2013)
 ZMK_UNICODE_SINGLE(u_em_dash, N2, N0, N1, N4) // — EM DASH (codepoint 8212, #o20024, #x2014)
 
