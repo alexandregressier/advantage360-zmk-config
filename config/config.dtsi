@@ -516,7 +516,7 @@ MAKE_AG_WITH_SHIFT_MORPH(ag_dot, DOT, dot, AT_SIGN, at_sign)
 // Slash
 MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
 
-/* Bottommost Row */
+/* Mods Row */
 
 #define PRESERVE_ADAPTIVE_MODIFIERS_MS 500
 
@@ -539,7 +539,7 @@ MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
 
 // Left
 ZMK_ADAPTIVE_KEY(ag_left,
-	bindings = <&hml LALT LEFT>;
+	bindings = <&hml LCTRL LEFT>;
 	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, LEFT, left)
 	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, RIGHT, right)
 	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, DOWN, down)
@@ -547,27 +547,30 @@ ZMK_ADAPTIVE_KEY(ag_left,
 )
 // Right
 ZMK_ADAPTIVE_KEY(ag_right,
-	bindings = <&hmr LGUI RIGHT>;
+	bindings = <&hmr LALT RIGHT>;
 	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, LEFT, left)
 	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, RIGHT, right)
 	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, DOWN, down)
 	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, UP, up)
 )
+
 // todo try numbers as right smart shift to restore auto rg backspace (I think I wont like it)
 // todo: same as mod layer, no need to tap function key just hold
 // todo: function keys same order as numbers
 // todo: remap dollar which is at 2 right now
 // todo; play pause button
 // todo; left wm = prev window on tap, right wm = all windows
+// todo: window urob keyss tristate
+// todo: grave + a = à (compat mode for now)
 // Tab
 ZMK_ADAPTIVE_KEY(ag_tab, // todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
-	bindings = <&hml LSHIFT TAB>;
+	bindings = <&hml LGUI TAB>;
 	PRESERVE_ADAPTIVE_MODIFIERS(TAB, TAB, tab)
 )
 
 // Down
 ZMK_ADAPTIVE_KEY(ag_down,
-	bindings = <&hmr LSHIFT DOWN>;
+	bindings = <&hmr LGUI DOWN>;
 	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, LEFT, left)
 	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, RIGHT, right)
 	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, DOWN, down)
@@ -575,7 +578,7 @@ ZMK_ADAPTIVE_KEY(ag_down,
 )
 // Up
 ZMK_ADAPTIVE_KEY(ag_up,
-	bindings = <&hmr LGUI UP>;
+	bindings = <&hmr LALT UP>;
 	PRESERVE_ADAPTIVE_MODIFIERS(UP, LEFT, left)
 	PRESERVE_ADAPTIVE_MODIFIERS(UP, RIGHT, right)
 	PRESERVE_ADAPTIVE_MODIFIERS(UP, DOWN, down)
@@ -583,7 +586,7 @@ ZMK_ADAPTIVE_KEY(ag_up,
 )
 // Shift + Tab
 ZMK_ADAPTIVE_KEY(ag_lstab,
-	bindings = <&hml LALT LS(TAB)>;
+	bindings = <&hml LCTRL LS(TAB)>;
 )
 
 
