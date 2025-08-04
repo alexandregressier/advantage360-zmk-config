@@ -12,7 +12,6 @@
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 
 #include "adv360_symbols.h"
-#include "leader.dtsi"
 #include "secret.dtsi"
 
 /*

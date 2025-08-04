@@ -6,6 +6,7 @@
 #define HOST_OS 2
 // = macOS
 #include "zmk-helpers/helper.h"
+
 #undef UC_MACRO
 #define UC_MACRO(name, unicode_bindings) \
     / { \
@@ -27,6 +28,21 @@
 #define ZMK_UNICODE_SINGLE_SHIFTED(name, S0, S1, S2, S3) \
     UC_MACRO(name ## _shifted, &kp S0 &kp S1 &kp S2 &kp S3) \
     UC_MODMORPH(name, &none, &name ## _shifted)
+
+#undef ZMK_LEADER_SEQUENCE
+#define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
+    / { \
+        behaviors { \
+            leader: leader { \
+                compatible = "zmk,behavior-leader-key"; \
+                #binding-cells = <0>; \
+                leader_sequence_ ## name { \
+                    bindings = <leader_bindings>; \
+                    sequence = <leader_sequence>; \
+                }; \
+            }; \
+        }; \
+    };
 
 // Quotes
 ZMK_UNICODE_SINGLE_SHIFTED(u_curly_apostrophe, N2, N0, N1, N9) // ’ RIGHT SINGLE QUOTATION MARK (codepoint 8217, #o20031, #x2019), e.g., don’t
@@ -58,9 +74,10 @@ ZMK_UNICODE_SINGLE(u_almost_equal_to, N2, N2, N4, N8) // ≈ ALMOST EQUAL TO (co
 ZMK_UNICODE_PAIR(fr_a_grave, N0, N0, E, N0, N0, N0, C, N0) // à LATIN SMALL LETTER A WITH GRAVE (codepoint 224, #o340, #xe0) / À LATIN CAPITAL LETTER A WITH GRAVE (codepoint 192, #o300, #xc0)
 ZMK_UNICODE_PAIR(fr_a_circumflex, N0, N0, E, N2, N0, N0, C, N2) // â LATIN SMALL LETTER A WITH CIRCUMFLEX (codepoint 226, #o342, #xe2) / Â LATIN CAPITAL LETTER A WITH CIRCUMFLEX (codepoint 194, #o302, #xc2)
 
-ZMK_UNICODE_PAIR(fr_e_acute, N0, N0, E, N9, N0, N0, C, N9) // é LATIN SMALL LETTER E WITH ACUTE (codepoint 233, #o351, #xe9) / É LATIN CAPITAL LETTER E WITH ACUTE (codepoint 201, #o311, #xc9)
 ZMK_UNICODE_PAIR(fr_e_grave, N0, N0, E, N8, N0, N0, C, N8) // è LATIN SMALL LETTER E WITH GRAVE (codepoint 232, #o350, #xe8) / È LATIN CAPITAL LETTER E WITH GRAVE (codepoint 200, #o310, #xc8)
+ZMK_UNICODE_PAIR(fr_e_acute, N0, N0, E, N9, N0, N0, C, N9) // é LATIN SMALL LETTER E WITH ACUTE (codepoint 233, #o351, #xe9) / É LATIN CAPITAL LETTER E WITH ACUTE (codepoint 201, #o311, #xc9)
 ZMK_UNICODE_PAIR(fr_e_circumflex, N0, N0, E, A, N0, N0, C, A) // ê LATIN SMALL LETTER E WITH CIRCUMFLEX (codepoint 234, #o352, #xea) / Ê LATIN CAPITAL LETTER E WITH CIRCUMFLEX (codepoint 202, #o312, #xca)
+ZMK_UNICODE_PAIR(fr_e_diaeresis, N0, N0, E, B, N0, N0, C, B) // ë LATIN SMALL LETTER E WITH DIAERESIS (codepoint 235, #o353, #xeb) / Ë LATIN CAPITAL LETTER E WITH DIAERESIS (codepoint 203, #o313, #xcb)
 
 ZMK_UNICODE_PAIR(fr_i_circumflex, N0, N0, E, E, N0, N0, C, E) // î LATIN SMALL LETTER I WITH CIRCUMFLEX (codepoint 238, #o356, #xee) / Î LATIN CAPITAL LETTER I WITH CIRCUMFLEX (codepoint 206, #o316, #xce)
 ZMK_UNICODE_PAIR(fr_i_diaeresis, N0, N0, E, F, N0, N0, C, F) // ï LATIN SMALL LETTER I WITH DIAERESIS (codepoint 239, #o357, #xef) / Ï LATIN CAPITAL LETTER I WITH DIAERESIS (codepoint 207, #o317, #xcf)
@@ -71,3 +88,24 @@ ZMK_UNICODE_SINGLE(fr_u_grave, N0, N0, F, N9) // ù LATIN SMALL LETTER U WITH GR
 ZMK_UNICODE_PAIR(fr_u_circumflex, N0, N0, F, B, N0, N0, D, B) // û LATIN SMALL LETTER U WITH CIRCUMFLEX (codepoint 251, #o363, #xfb) / Û LATIN CAPITAL LETTER U WITH CIRCUMFLEX (codepoint 219, #o333, #xdb)
 
 ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL LETTER C WITH CEDILLA (codepoint 231, #o347, #xe7) / Ç LATIN CAPITAL LETTER C WITH CEDILLA (codepoint 199, #o307, #xc7)
+
+
+// Leader
+
+ZMK_LEADER_SEQUENCE(fr_a_grave, &fr_a_grave, A)
+
+ZMK_LEADER_SEQUENCE(fr_c_cedilla, &fr_c_cedilla, C)
+
+ZMK_LEADER_SEQUENCE(fr_e_acute, &fr_e_acute, E)
+
+ZMK_LEADER_SEQUENCE(fr_a_circumflex, &fr_a_circumflex, I A)
+ZMK_LEADER_SEQUENCE(fr_i_circumflex, &fr_i_circumflex, I I)
+ZMK_LEADER_SEQUENCE(fr_o_circumflex, &fr_o_circumflex, I O)
+ZMK_LEADER_SEQUENCE(fr_u_circumflex, &fr_u_circumflex, I U)
+
+ZMK_LEADER_SEQUENCE(fr_e_grave, &fr_e_grave, R)
+
+ZMK_LEADER_SEQUENCE(fr_e_diaeresis, &fr_e_diaeresis, U E)
+ZMK_LEADER_SEQUENCE(fr_i_diaeresis, &fr_i_diaeresis, U I)
+
+ZMK_LEADER_SEQUENCE(fr_e_circumflex, &fr_e_circumflex, W)
