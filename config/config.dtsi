@@ -51,7 +51,7 @@
 #define DEFAULT 0
 #define NUMBERS 1
 #define UNICODE_1 2
-#define FUNCTION 3
+//#define FUNCTION 3
 #define MOD 4
 
 
@@ -119,8 +119,7 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 
 TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = slow
-TAP_PREFERRED_HOLD_TAP(ht_kp_reset_kp_reset, &kp_reset, &kp_reset)
-TAP_PREFERRED_HOLD_TAP(ht_sl_mo, &mo, &sl)
+TAP_PREFERRED_HOLD_TAP(ht_mo_kp, &mo, &kp)
 
 #define BALANCED_HOLD_TAP(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
@@ -652,18 +651,3 @@ MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
 //&num_word {
 //	ignore-modifiers; // Needed for shortcuts like
 //};
-
-
-/* Smart Function */
-
-ZMK_TAP_DANCE(fun_dance,
-	tapping-term-ms = <400>;
-	bindings = <&sl FUNCTION>, <&tog FUNCTION>;
-)
-
-ZMK_HOLD_TAP(smart_fun,
-	flavor = "balanced";
-	tapping-term-ms = <200>;
-	quick-tap-ms = <QUICK_TAP_MS>;
-	bindings = <&mo>, <&fun_dance>;
-)

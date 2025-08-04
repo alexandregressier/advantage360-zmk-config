@@ -7,11 +7,11 @@
 
     default {
       bindings = <
-        &smart_fun FUNCTION 0       &ag_n1      &ag_n2     &ag_n3      &ag_n4    &ag_n5   &none                                                                                                          &none                   &ag_n6   &ag_n7     &ag_n8      &ag_n9      &ag_n0      &smart_fun FUNCTION 0
+        &kp X                       &ag_n1      &ag_n2     &ag_n3      &ag_n4    &ag_n5   &none                                                                                                          &none                   &ag_n6   &ag_n7     &ag_n8      &ag_n9      &ag_n0      &kp X
         &grave_morph                &ag_q       &ag_w      &ag_e       &ag_r     &ag_t    &none                                                                                                          &kp LG(RIGHT_BRACKET)   &ag_y    &ag_u      &ag_i       &ag_o       &ag_p       &ag_backslash
         &ag_double_quotes           &ag_a       &ag_s      &ag_d       &ag_f     &ag_g    &none                       &none           &none      &none         &none                                     &kp LG(LEFT_BRACKET)    &ag_h    &ag_j      &ag_k       &ag_l       &ag_colon   &ag_single_quote
         &ht_rgkp_kp ESCAPE ESCAPE   &ag_z       &ag_x      &ag_c       &ag_v     &ag_b                                                &none      &none                                                                           &ag_n    &ag_m      &ag_comma   &ag_dot     &ag_slash   &ht_rgkp_kp RETURN RETURN
-        &ht_sl_mo MOD MOD           &kp LCTRL   &ag_left   &ag_right   &ag_tab                    &ht_num_backspace   &smart_rshift   &sk LALT   &kp LG(TAB)   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ag_down   &ag_up      &ag_lstab   &kp LCTRL   &ht_sl_mo MOD MOD
+        &ht_mo_kp MOD X             &kp LCTRL   &ag_left   &ag_right   &ag_tab                    &ht_num_backspace   &smart_rshift   &sk LALT   &kp LG(TAB)   &smart_rshift   &ht_rgkp_kp SPACE SPACE                                    &ag_down   &ag_up      &ag_lstab   &kp LCTRL   &ht_mo_kp MOD X
       >;
     };
     numbers {
@@ -32,22 +32,22 @@
         &trans   &trans        &trans             &trans          &trans                          &trans   &trans   &trans   &trans   &trans   &trans                     &trans             &trans             &trans             &trans   &trans
       >;
     };
-    function {
+    layer_3 {
       bindings = <
-        &to DEFAULT   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp F11                                                         &kp F12   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &to DEFAULT
-        &trans        &trans   &trans   &trans   &trans   &trans   &trans                                                          &trans    &trans   &trans   &trans   &trans   &trans    &trans
-        &trans        &trans   &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans            &trans    &trans   &trans   &trans   &trans   &trans    &trans
-        &trans        &trans   &trans   &trans   &trans   &trans                               &trans   &trans                               &trans   &trans   &trans   &trans   &trans    &trans
-        &trans        &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans   &trans   &trans                      &trans   &trans   &trans   &trans    &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                         &trans   &trans   &trans   &trans   &trans   &trans   &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                         &trans   &trans   &trans   &trans   &trans   &trans   &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans   &trans   &trans   &trans
+        &trans   &trans   &trans   &trans   &trans   &trans                              &trans   &trans                              &trans   &trans   &trans   &trans   &trans   &trans
+        &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans
       >;
     };
     mod {
       bindings = <
-        &bootloader   &kp F1         &kp F2         &kp F3         &kp F4         &kp F5   &none                                                                                        &none   &kp F6   &kp F7       &kp F8       &ht_kp_kp F11 F9   &ht_kp_kp F12 F10   &bootloader
-        &none         &none          &none          &none          &none          &none    &none                                                                                        &none   &none    &none        &none        &none              &none               &none
-        &none         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &none    &none                &none                    &none   &none   &none                          &none   &none    &bl BL_DEC   &bl BL_INC   &none              &none               &none
-        &none         &none          &none          &none          &none          &none                                                  &none   &none                                          &none    &none        &none        &none              &none               &none
-        &to DEFAULT   &none          &none          &none          &none                           &bt BT_CLR   &rgb_ug RGB_MEFS_CMD 5   &none   &none   &rgb_ug RGB_TOG   &bl BL_TOG                    &none        &none        &none              &none               &to DEFAULT
+        &bootloader   &kp F5         &kp F3         &kp F1         &kp F2         &kp F4   &kp F15                                                                                        &kp F16   &kp F7   &kp F9       &kp F10      &kp F8   &kp F6   &bootloader
+        &none         &none          &none          &none          &none          &none    &kp F13                                                                                        &kp F14   &none    &none        &none        &none    &none    &none
+        &none         &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 0   &bt BT_SEL 1   &none    &kp F11                &none                    &none   &none   &none                          &kp F12   &none    &bl BL_DEC   &bl BL_INC   &none    &none    &none
+        &none         &none          &none          &none          &none          &none                                                    &none   &none                                            &none    &none        &none        &none    &none    &none
+        &trans        &none          &none          &none          &none                             &bt BT_CLR   &rgb_ug RGB_MEFS_CMD 5   &none   &none   &rgb_ug RGB_TOG   &bl BL_TOG                      &none        &none        &none    &none    &trans
       >;
     };
     layer_5 {
