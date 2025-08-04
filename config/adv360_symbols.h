@@ -6,6 +6,24 @@
 #define HOST_OS 2
 // = macOS
 #include "zmk-helpers/helper.h"
+#undef UC_MACRO
+#define UC_MACRO(name, unicode_bindings) \
+    / { \
+        macros { \
+            name: name { \
+                compatible = "zmk,behavior-macro"; \
+                #binding-cells = <0>; \
+                wait-ms = <10>; \
+                tap-ms = <15>; \
+                bindings = <OS_UNICODE_LEAD>, \
+                          <&macro_wait_time 5>, \
+                          <&macro_tap unicode_bindings>, \
+                          <&macro_wait_time 5>, \
+                          <OS_UNICODE_TRAIL>; \
+            }; \
+        }; \
+    };
+
 
 #define ZMK_UNICODE_SINGLE_SHIFTED(name, S0, S1, S2, S3) \
     UC_MACRO(name ## _shifted, &kp S0 &kp S1 &kp S2 &kp S3) \
