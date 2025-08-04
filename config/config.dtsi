@@ -327,7 +327,7 @@ SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // Q
 ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
-	bindings = <&ht_rgkp_kp Q Q>;
+	bindings = <&sht_rgkp_kp Q Q>; // Slow because misfires
 )
 // W
 ZMK_ADAPTIVE_KEY(ag_w,
@@ -355,7 +355,7 @@ ZMK_ADAPTIVE_KEY(ag_t,
 
 // Y
 ZMK_ADAPTIVE_KEY(ag_y,
-	bindings = <&ht_rgkp_kp Y Y>;
+	bindings = <&sht_rgkp_kp Y Y>; // Slow because misfires
 )
 // U
 ZMK_ADAPTIVE_KEY(ag_u,
