@@ -23,6 +23,10 @@ manifest:
     - name: zmk-helpers
       remote: urob
       path: modules/urob/zmk-helpers
+    - name: zmk-leader-key
+      remote: urob
+      path: modules/urob/zmk-leader-key
+      revision: v0.1.0 # Set to same as ZMK version, see zmk/CHANGELOG.md
     - name: zmk-tri-state
       remote: urob
       path: modules/urob/zmk-tri-state

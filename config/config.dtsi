@@ -222,11 +222,7 @@ ZMK_COMBO(50_51, &ht_kp_kp N0 N0, 50 51, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SL
 //ZMK_COMBO(left_return_2, &ht_rgkp_kp RETURN RETURN, 63 64, DEFAULT, COMBO_TERM_SLOW)
 
 // Left hand - Vertical
-ZMK_MOD_MORPH(secret_morph,
-	bindings = <&m_secret_return>, <&m_secret>;
-	mods = <(MOD_RSFT)>;
-)
-ZMK_COMBO(secret, &secret_morph, 0 14, ALL, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
 
 // Right hand - Horizontal
 ZMK_COMBO(40_41, &ht_kp_kp N0 N0, 40 41, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -311,6 +307,10 @@ ZMK_MOD_MORPH(n9_morph,
 // 0
 MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, ASTERISK, asterisk)
 
+ZMK_MOD_MORPH(secret_morph,
+	bindings = <&m_secret_return>, <&m_secret>;
+	mods = <(MOD_RSFT)>;
+)
 
 /* Top Row */
 
