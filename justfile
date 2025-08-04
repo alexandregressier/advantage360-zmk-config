@@ -21,19 +21,17 @@ build: build-left build-right
 
 build-left:
 	.venv/bin/west build \
-	    --pristine \
 	    --build-dir=build/left \
 	    --board=adv360_left \
-	    ../zmk/app \
+	    zmk/app \
 	    -- \
 	    -DZMK_CONFIG="{{justfile_directory()}}/config/"
 
 build-right:
 	.venv/bin/west build \
-	    --pristine \
 	    --build-dir=build/right \
 	    --board=adv360_right \
-	    ../zmk/app \
+	    zmk/app \
 	    -- \
 	    -DZMK_CONFIG="{{justfile_directory()}}/config/"
 
