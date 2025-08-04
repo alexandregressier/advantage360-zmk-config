@@ -272,23 +272,18 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 	)
 
 // 1
-MAKE_NUMBER_ROW_KEY(ag_n1, N5, HASH, hash, PERCENT, percent) // todo: any previous number should keep the lg
+MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde) // todo: any previous number should keep the lg
 // 2
-MAKE_NUMBER_ROW_KEY(ag_n2, N3, DOLLAR, dollar, CARET, caret)
+MAKE_NUMBER_ROW_KEY(ag_n2, N3, LEFT_BRACKET, left_bracket, HASH, hash)
 // 3
-MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, LEFT_BRACE, left_bracket) //
+MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket)
 // 4
-MAKE_NUMBER_ROW_KEY(ag_n4, N2, RIGHT_BRACE, right_brace, RIGHT_BRACE, right_bracket)
+MAKE_NUMBER_ROW_KEY(ag_n4, N2, QUESTION, question, RIGHT_BRACE, right_brace)
 // 5
-MAKE_NUMBER_ROW_KEY(ag_n5, N4, DOLLAR, dollar, CARET, caret)
+MAKE_NUMBER_ROW_KEY(ag_n5, N4, BANG, bang, STAR, star) // `BANG` is deprecated but I’m a daredevil
 // todo disable numword after a given timeout
-// todo move
-ZMK_MOD_MORPH(grave_morph,
-	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>; // TODO: make sure RS everywhere
-	mods = <(MOD_RSFT)>;
-)
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
-SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+
+
 // todo return combo kkkkk
 
 // 6
@@ -319,10 +314,16 @@ MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, ASTERISK, asterisk)
 
 /* Top Row */
 
-// Backslash
-ZMK_ADAPTIVE_KEY(ag_backslash,
-	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
+// Grave
+ZMK_ADAPTIVE_KEY(ag_grave,
+	bindings = <&grave_morph>;
 )
+ZMK_MOD_MORPH(grave_morph,
+	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>; // TODO: make sure RS everywhere
+	mods = <(MOD_RSFT)>;
+)
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
+SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // Q
 ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
@@ -378,16 +379,18 @@ ZMK_ADAPTIVE_KEY(ag_backslash,
 	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
 )
 
+// todo: em dashes
 /* Middle Row */
 
 // Double quotes
+ZMK_ADAPTIVE_KEY(ag_double_quotes,
+	bindings = <&double_quotes_morph>;
+)
 ZMK_MOD_MORPH(double_quotes_morph,
 	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&m_curly_double_quotes_pair>;
 	mods = <(MOD_LSFT)>;
 )
-ZMK_ADAPTIVE_KEY(ag_double_quotes,
-	bindings = <&double_quotes_morph>;
-)
+
 // A
 ZMK_ADAPTIVE_KEY(ag_a,
 	bindings = <&ht_rgkp_kp A A>;
@@ -425,22 +428,18 @@ ZMK_ADAPTIVE_KEY(ag_k,
 ZMK_ADAPTIVE_KEY(ag_l,
 	bindings = <&ht_rgkp_kp L L>;
 )
+
 // Colon
 ZMK_ADAPTIVE_KEY(ag_colon,
 	bindings = <&colon_mod_morph>;
-	ag_semicolon {
-		trigger-keys = <SEMICOLON>;
-		max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>;
-		bindings = <&ht_rgkp_kp SEMICOLON SEMICOLON>;
-	};
 )
 ZMK_MOD_MORPH(colon_mod_morph,
-	bindings = <&colon_morph>, <&ht_rgkp_kp SEMICOLON SEMICOLON>;
-	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	bindings = <&colon_morph>, <&kp SEMICOLON>;
+	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
 )
 ZMK_MOD_MORPH(colon_morph,
-	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp LS(SEMICOLON) SEMICOLON>;
+	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp RS(SEMICOLON) PLUS>;
 	mods = <(MOD_RSFT)>;
 )
 
