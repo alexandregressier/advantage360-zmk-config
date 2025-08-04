@@ -245,10 +245,10 @@ SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apos
 
 SIMPLE_MORPH(u_single_quote_morph, SFT, &u_curly_apostrophe, &m_curly_single_quote_pair)
 
-SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
+//SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
 
-SIMPLE_MORPH(u_double_quotes_morph, SFT, &m_curly_double_quotes_pair, &m_guillemet_pair)
+//SIMPLE_MORPH(u_double_quotes_morph, SFT, &m_curly_double_quotes_pair, &m_guillemet_pair)
 
 SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
@@ -376,8 +376,13 @@ ZMK_ADAPTIVE_KEY(ag_p,
 
 // Backslash
 ZMK_ADAPTIVE_KEY(ag_backslash,
-	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>;
+	bindings = <&backslash_morph>;
 )
+ZMK_MOD_MORPH(backslash_morph,
+	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>, <&ht_rgkp_ueuro RS(BACKSLASH) 0>;
+	mods = <(MOD_RSFT)>;
+)
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_ueuro, &rgkp, &u_euro)
 
 // todo: em dashes
 /* Middle Row */
@@ -387,9 +392,11 @@ ZMK_ADAPTIVE_KEY(ag_double_quotes,
 	bindings = <&double_quotes_morph>;
 )
 ZMK_MOD_MORPH(double_quotes_morph,
-	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&m_curly_double_quotes_pair>;
-	mods = <(MOD_LSFT)>;
+	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&ht_rgkp_mcurlydoublequotespair RS(DOUBLE_QUOTES) 0>;
+	mods = <(MOD_RSFT)>;
 )
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_mcurlydoublequotespair, &rgkp, &u_left_curly_double_quotes)
+//SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 
 // A
 ZMK_ADAPTIVE_KEY(ag_a,

@@ -29,7 +29,7 @@ ZMK_UNICODE_SINGLE(u_en_dash, N2, N0, N1, N3) // – EN DASH (codepoint 8211, #o
 ZMK_UNICODE_SINGLE(u_em_dash, N2, N0, N1, N4) // — EM DASH (codepoint 8212, #o20024, #x2014)
 
 // Currencies
-ZMK_UNICODE_SINGLE(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20254, #x20ac)
+ZMK_UNICODE_SINGLE_SHIFTED(u_euro, N2, N0, A, C)  // € EURO SIGN (codepoint 8364, #o20254, #x20ac)
 
 // Math
 ZMK_UNICODE_SINGLE(u_multiplication, N0, N0, D, N7) // × MULTIPLICATION SIGN (codepoint 215, #o327, #xd7)
