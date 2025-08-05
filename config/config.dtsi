@@ -464,6 +464,10 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 
 // todo: zoom =+0
 // todo: cmd brace can be repeated while held, which is unwanted
+// todo: numbers double ht
+// todo: thumb combos
+// todo: both keys thumb = cmd delete
+// todo: perplexity key
 
 /* Bottom Row */
 
