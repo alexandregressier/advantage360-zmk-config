@@ -23,24 +23,6 @@
         &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &ht_kp_kp RETURN KP_N0   &trans                     &none     &trans    &trans    &trans   &trans
       >;
     };
-    unicode_1 {
-      bindings = <
-        &trans   &trans        &trans             &trans          &trans        &trans   &trans                                                         &trans   &trans   &trans             &trans             &trans             &trans   &trans
-        &trans   &trans        &fr_e_circumflex   &fr_e_acute     &fr_e_grave   &trans   &trans                                                         &trans   &trans   &fr_u_circumflex   &fr_i_circumflex   &fr_o_circumflex   &trans   &trans
-        &trans   &fr_a_grave   &trans             &trans          &trans        &trans   &trans            &trans   &trans   &trans   &trans            &trans   &trans   &m_fr_ou           &trans             &trans             &trans   &trans
-        &trans   &trans        &trans             &fr_c_cedilla   &trans        &trans                              &trans   &trans                              &trans   &trans             &trans             &trans             &trans   &trans
-        &trans   &trans        &trans             &trans          &trans                          &trans   &trans   &trans   &trans   &trans   &trans                     &trans             &trans             &trans             &trans   &trans
-      >;
-    };
-    layer_3 {
-      bindings = <
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                         &trans   &trans   &trans   &trans   &trans   &trans   &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                         &trans   &trans   &trans   &trans   &trans   &trans   &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans   &trans   &trans   &trans
-        &trans   &trans   &trans   &trans   &trans   &trans                              &trans   &trans                              &trans   &trans   &trans   &trans   &trans   &trans
-        &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &trans
-      >;
-    };
     mod {
       bindings = <
         &bootloader   &kp F5         &kp F3         &kp F1         &kp F2         &kp F4   &kp F15                                                                                        &kp F16   &kp F7   &kp F9       &kp F10      &kp F8   &kp F6   &bootloader

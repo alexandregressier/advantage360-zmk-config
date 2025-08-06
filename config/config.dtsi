@@ -51,9 +51,7 @@
 
 #define DEFAULT 0
 #define NUMBERS 1
-#define UNICODE_1 2
-//#define FUNCTION 3
-#define MOD 4
+#define MOD 2
 
 
 /* Global Settings */
