@@ -252,18 +252,22 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 /* Number Row */
 
-#define MAKE_NUMBER_ROW_KEY(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
+#define MAKE_NUMBER_ROW_KEY(...) CONCAT(MAKE_NUMBER_ROW_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define MAKE_NUMBER_ROW_KEY_6(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
+    MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, )
+#define MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(NAME, \
 		bindings = <&KEY_LOWER ## _mod_morph>; \
+		NUMBER_ROW_VAARGS \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _mod_morph, \
 		bindings = <&KEY_LOWER ## _morph>, <&kp NUMBER>; \
-		mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-		keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+		mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+		keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
-		mods = <(MOD_RSFT)>; \
+		mods = <(MOD_LSFT|MOD_RSFT)>; \
 	)
 
 // 1
@@ -271,9 +275,13 @@ MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde) // todo: any previous
 // 2
 MAKE_NUMBER_ROW_KEY(ag_n2, N3, LEFT_BRACKET, left_bracket, HASH, hash)
 // 3
-MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket)
+MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
+	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&kp RIGHT_BRACKET>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // 4
-MAKE_NUMBER_ROW_KEY(ag_n4, N2, QUESTION, question, RIGHT_BRACE, right_brace)
+MAKE_NUMBER_ROW_KEY(ag_n4, N2, QUESTION, question, RIGHT_BRACE, right_brace,
+	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // 5
 MAKE_NUMBER_ROW_KEY(ag_n5, N4, BANG, bang, STAR, star) // `BANG` is deprecated but I’m a daredevil
 // todo disable numword after a given timeout
