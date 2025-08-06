@@ -257,15 +257,10 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
     MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, )
 #define MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(NAME, \
-		bindings = <&KEY_LOWER ## _mod_morph>; \
+		bindings = <&KEY_LOWER ## _shift_morph>; \
 		NUMBER_ROW_VAARGS \
 	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _mod_morph, \
-		bindings = <&KEY_LOWER ## _morph>, <&kp NUMBER>; \
-		mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-		keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
+	ZMK_MOD_MORPH(KEY_LOWER ## _shift_morph, \
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_LSFT|MOD_RSFT)>; \
 	)
