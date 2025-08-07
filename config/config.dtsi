@@ -58,6 +58,7 @@
 
 #define QUICK_TAP_MS 175
 #define DEFAULT_ADAPTIVE_TIMEOUT_MS 1000
+#define SLOW_ADAPTIVE_TIMEOUT_MS 2000
 
 &sk { // Sticky Key
 	release-after-ms = <900>; // Release after 0.9s
@@ -166,8 +167,11 @@ KP_MOD_SEQUENCE(rckp, RCTL)
 
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200)
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
+
 TAP_PREFERRED_HOLD_TAP(ht_rckp_rgkp, &rckp, &rgkp)
 TAP_PREFERRED_HOLD_TAP(ht_lakp_rakp, &lakp, &rakp)
+
 TAP_PREFERRED_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
 
 
@@ -258,12 +262,19 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 #define MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(NAME, \
 		bindings = <&KEY_LOWER ## _shift_morph>; \
+		rg_repeat { \
+			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
+			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; \
+			max-prior-idle-ms = <SLOW_ADAPTIVE_TIMEOUT_MS>; \
+			strict-modifiers; \
+		}; \
 		NUMBER_ROW_VAARGS \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _shift_morph, \
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_LSFT|MOD_RSFT)>; \
 	)
+// Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding
 
 // 1
 MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde) // todo: any previous number should keep the lg
@@ -568,13 +579,10 @@ ZMK_ADAPTIVE_KEY(ag_right,
 )
 
 // todo try numbers as right smart shift to restore auto rg backspace (I think I wont like it)
-// todo: same as mod layer, no need to tap function key just hold
-// todo: function keys same order as numbers
-// todo: remap dollar which is at 2 right now
 // todo; play pause button
 // todo; left wm = prev window on tap, right wm = all windows
 // todo: window urob keyss tristate
-// todo: grave + a = à (compat mode for now)
+// todo: u grave + ellipsis + en dash
 // Tab
 ZMK_ADAPTIVE_KEY(ag_tab, // todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
 	bindings = <&hml LGUI TAB>;
