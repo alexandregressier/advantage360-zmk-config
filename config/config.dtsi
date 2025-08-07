@@ -638,18 +638,15 @@ MAKE_NUMPAD_KEY(9, O)
 
 #define MAKE_SMART_SHIFT(NAME, SHIFT_KEY) \
 	ZMK_ADAPTIVE_KEY(NAME, \
-		bindings = <&ht_kp_ ## SHIFT_KEY ## _dance SHIFT_KEY 0>; \
+		bindings = <&ht_kp_ ## SHIFT_KEY ## _dance SHIFT_KEY SHIFT_KEY>; \
 	) \
 	ZMK_HOLD_TAP(ht_kp_ ## SHIFT_KEY ## _dance, \
 		flavor = "balanced"; \
 		tapping-term-ms = <200>; \
 		quick-tap-ms = <QUICK_TAP_MS>; \
-		bindings = <&kp>, <&SHIFT_KEY ## _dance>; \
-	) \
-	ZMK_TAP_DANCE(SHIFT_KEY ## _dance, \
-		tapping-term-ms = <400>; \
-		bindings = <&sk SHIFT_KEY>, <&caps_word>, <&kp CAPSLOCK>; \
+		bindings = <&kp>, <&sk>; \
 	)
+
 MAKE_SMART_SHIFT(smart_lshift, LEFT_SHIFT)
 MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
 
