@@ -276,9 +276,13 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 // Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding
 
 // 1
-MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde) // todo: any previous number should keep the lg
+MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde
+	tilde { trigger-keys = <TILDE>; bindings = <&kp TILDE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // 2
-MAKE_NUMBER_ROW_KEY(ag_n2, N3, LEFT_BRACKET, left_bracket, HASH, hash)
+MAKE_NUMBER_ROW_KEY(ag_n2, N3, LEFT_BRACKET, left_bracket, HASH, hash
+	hash { trigger-keys = <HASH>; bindings = <&kp HASH>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // 3
 MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
 	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&kp RIGHT_BRACKET>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
