@@ -266,7 +266,6 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
 			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; \
 			max-prior-idle-ms = <SLOW_ADAPTIVE_TIMEOUT_MS>; \
-			strict-modifiers; \
 		}; \
 		NUMBER_ROW_VAARGS \
 	) \
@@ -296,30 +295,27 @@ MAKE_NUMBER_ROW_KEY(ag_n5, N4, BANG, bang, STAR, star) // `BANG` is deprecated b
 // todo return combo kkkkk
 
 // 6
-MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand)
-// 7
-MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than) // todo: ampersand cannot be twiced (neither is pipe)
-// 8
-ZMK_ADAPTIVE_KEY(ag_n8, // TODO
-	bindings = <&n8_morph>;
-	greater_than { trigger-keys = <MINUS EQUAL LESS_THAN>; bindings = <&ht_rgkp_kp N8 GREATER_THAN>; };
+MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand,
+	ampersand { trigger-keys = <AMPERSAND>; bindings = <&kp AMPERSAND>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
-ZMK_MOD_MORPH(n8_morph,
-	bindings = <&ht_rgkp_kp N0 LEFT_PARENTHESIS>, <&ht_rgkp_kp LS(N0) GREATER_THAN>;
-	mods = <(MOD_RSFT)>;
+// 7
+MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than,
+	less_than { trigger-keys = <LESS_THAN GREATER_THAN>; bindings = <&kp LESS_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
+// 8
+MAKE_NUMBER_ROW_KEY(ag_n8, N0, LEFT_PARENTHESIS, left_parenthesis, GREATER_THAN, greater_than,
+	greater_than { trigger-keys = <LESS_THAN GREATER_THAN MINUS EQUAL>; bindings = <&kp GREATER_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 9
-ZMK_ADAPTIVE_KEY(ag_n9,
-	bindings = <&n9_morph>;
-	greater_than { trigger-keys = <LEFT_PARENTHESIS>; bindings = <&ht_rgkp_kp N9 RIGHT_PARENTHESIS>; };
-)
-ZMK_MOD_MORPH(n9_morph,
-	bindings = <&ht_rgkp_kp N8 EQUAL>, <&ht_rgkp_kp LS(N8) RIGHT_PARENTHESIS>;
-	mods = <(MOD_RSFT)>;
+MAKE_NUMBER_ROW_KEY(ag_n9, N8, EQUAL, equal, RIGHT_PARENTHESIS, right_parenthesis,
+	right_parenthesis { trigger-keys = <LEFT_PARENTHESIS RIGHT_PARENTHESIS>; bindings = <&kp RIGHT_PARENTHESIS>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 0
-MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, ASTERISK, asterisk)
+MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, PIPE, pipe,
+	pipe { trigger-keys = <PIPE>; bindings = <&kp PIPE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 
+// Secret
 ZMK_MOD_MORPH(secret_morph,
 	bindings = <&m_secret_return>, <&m_secret>;
 	mods = <(MOD_RSFT)>;
