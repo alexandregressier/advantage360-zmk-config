@@ -3,6 +3,8 @@ manifest:
     revision: main
 
   remotes:
+    - name: alexandregressier
+      url-base: https://github.com/alexandregressier
     - name: urob
       url-base: https://github.com/urob
 
@@ -15,8 +17,8 @@ manifest:
 
     # ZMK modules
     - name: zmk-adaptive-key
-      remote: urob
-      path: modules/urob/zmk-adaptive-key
+      remote: alexandregressier
+      path: modules/alexandregressier/zmk-adaptive-key
     - name: zmk-auto-layer
       remote: urob
       path: modules/urob/zmk-auto-layer
