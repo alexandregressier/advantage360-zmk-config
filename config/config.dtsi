@@ -255,6 +255,17 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 /* Custom Behaviors */
 
 /* Number Row */
+#define MAKE_LETTER_KEY(...) CONCAT(MAKE_LETTER_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define MAKE_LETTER_KEY_2(KEY, KEY_LOWER) \
+    MAKE_LETTER_KEY_3(KEY, KEY_LOWER, ht_rgkp_kp)
+#define MAKE_LETTER_KEY_3(KEY, KEY_LOWER, BEHAVIOR) \
+    MAKE_LETTER_KEY_4(KEY, KEY_LOWER, BEHAVIOR, )
+#define MAKE_LETTER_KEY_4(KEY, KEY_LOWER, BEHAVIOR, LETTER_VAARGS) \
+	ZMK_ADAPTIVE_KEY(ag_ ## KEY_LOWER, \
+		bindings = <&BEHAVIOR KEY KEY>; \
+		rs_ ## KEY_LOWER { trigger-keys = <RS(KEY)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; }; \
+		LETTER_VAARGS \
+	)
 
 #define MAKE_NUMBER_ROW_KEY(...) CONCAT(MAKE_NUMBER_ROW_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
 #define MAKE_NUMBER_ROW_KEY_6(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
@@ -341,48 +352,30 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // Q
-ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
-	bindings = <&sht_rgkp_kp Q Q>; // Slow because misfires
+MAKE_LETTER_KEY(Q, q, sht_rgkp_kp, // Slow because misfires
+	rg_q { trigger-keys = <RG(Q)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // W
-ZMK_ADAPTIVE_KEY(ag_w,
-	bindings = <&ht_rgkp_kp W W>;
-	w { trigger-keys = <RS(W)>; bindings = <&ht_rgkp_kp RS(W) RS(W)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+MAKE_LETTER_KEY(W, w, ht_rgkp_kp,
+	rg_w { trigger-keys = <RG(W)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // E
-ZMK_ADAPTIVE_KEY(ag_e,
-	bindings = <&ht_rgkp_kp E E>;
-
-)
+MAKE_LETTER_KEY(E, e)
 // R
-ZMK_ADAPTIVE_KEY(ag_r,
-	bindings = <&ht_rgkp_kp R R>;
-)
+MAKE_LETTER_KEY(R, r)
 // T
-ZMK_ADAPTIVE_KEY(ag_t,
-	bindings = <&sht_rgkp_kp T T>; // Slow because misfires
-)
+MAKE_LETTER_KEY(T, t, sht_rgkp_kp)
 
 // Y
-ZMK_ADAPTIVE_KEY(ag_y,
-	bindings = <&sht_rgkp_kp Y Y>; // Slow because misfires
-)
+MAKE_LETTER_KEY(Y, y, sht_rgkp_kp) // Slow because misfires
 // U
-ZMK_ADAPTIVE_KEY(ag_u,
-	bindings = <&ht_rgkp_kp U U>;
-)
+MAKE_LETTER_KEY(U, u)
 // I
-ZMK_ADAPTIVE_KEY(ag_i,
-	bindings = <&ht_rgkp_kp I I>;
-)
+MAKE_LETTER_KEY(I, i)
 // O
-ZMK_ADAPTIVE_KEY(ag_o,
-	bindings = <&ht_rgkp_kp O O>;
-)
+MAKE_LETTER_KEY(O, o)
 // P
-ZMK_ADAPTIVE_KEY(ag_p,
-	bindings = <&sht_rgkp_kp P P>; // Slow because misfires
-)
+MAKE_LETTER_KEY(P, p, sht_rgkp_kp) // Slow because misfires
 
 // Backslash
 ZMK_ADAPTIVE_KEY(ag_backslash,
@@ -499,7 +492,9 @@ ZMK_ADAPTIVE_KEY(ag_v,
 )
 // B
 ZMK_ADAPTIVE_KEY(ag_b,
-	bindings = <&ht_rgkp_kp B B>;
+bindings = <&ht_rgkp_kp B B>;
+rs_b { trigger-keys = <RS(B)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; };
+rg_b { trigger-keys = <RG(B)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 
 // N
