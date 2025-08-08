@@ -418,7 +418,9 @@ MAKE_LETTER_KEY(G, g)
 
 
 // H
-MAKE_LETTER_KEY(H, h)
+MAKE_LETTER_KEY(H, h, ht_rgkp_kp,
+	rg_h { trigger-keys = <RG(H)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // J
 MAKE_LETTER_KEY(J, j)
 // K
@@ -461,19 +463,19 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 /* Bottom Row */
 
 // Z
-MAKE_LETTER_KEY(Z, z)
+MAKE_LETTER_KEY(Z, z) // No smart repeat because this isn't used as undo/redo
 
 // X
 MAKE_LETTER_KEY(X, x, ht_rgkp_kp,
-	rg_x { trigger-keys = <RG(X)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+	rg_x { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp X RG(X)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // C
 MAKE_LETTER_KEY(C, c, ht_rgkp_kp,
-	rg_c { trigger-keys = <RG(C)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+	rg_c { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp C RG(C)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // V
 MAKE_LETTER_KEY(V, v, ht_rgkp_kp,
-	rg_v { trigger-keys = <RG(V)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+	rg_v { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp V RG(V)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 // B
