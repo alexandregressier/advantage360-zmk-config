@@ -262,7 +262,6 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 #define MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(NAME, \
 		bindings = <&KEY_LOWER ## _shift_morph>; \
-	    repeat-on-subsequent-presses; \
 		rg_repeat { \
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
 			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; \
@@ -426,7 +425,6 @@ ZMK_ADAPTIVE_KEY(ag_d,
 // F
 ZMK_ADAPTIVE_KEY(ag_f,
 	bindings = <&ht_rgkp_kp F F>;
-	repeat-on-subsequent-presses;
 	less_than { trigger-keys = <LC(LG(A))>; bindings = <&kp LG(LS(LC(B)))>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers;  };
 )
 // G
