@@ -271,7 +271,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _shift_morph, \
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
-		mods = <(MOD_LSFT|MOD_RSFT)>; \
+		mods = <(MOD_RSFT)>; \
 	)
 // Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding
 
@@ -347,9 +347,7 @@ ZMK_ADAPTIVE_KEY(ag_q, // ag = adaptive gui
 // W
 ZMK_ADAPTIVE_KEY(ag_w,
 	bindings = <&ht_rgkp_kp W W>;
-	repeat-on-subsequent-presses;
-	w { trigger-keys = <RS(W)>; bindings = <&kp RS(W)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
-	ws { trigger-keys = <LS(W)>; bindings = <&kp LS(W)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+	w { trigger-keys = <RS(W)>; bindings = <&ht_rgkp_kp RS(W) RS(W)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // E
 ZMK_ADAPTIVE_KEY(ag_e,
