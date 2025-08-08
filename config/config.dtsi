@@ -63,6 +63,7 @@
 &sk { // Sticky Key
 	release-after-ms = <900>; // Release after 0.9s
 	quick-release;            // No double capitalization when rolling keys
+	ignore-modifiers;         // (Default) Allows to combine sticky modifiers
 };
 
 &sl { // Sticky Layer
@@ -153,10 +154,9 @@ BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
 		wait-ms = <25>; \
 		tap-ms = <0>; \
 		bindings \
-		= <&macro_press &kp MOD> \
+		= <&macro_tap &sk MOD> \
 		, <&macro_param_1to1> \
-		, <&macro_tap &kp MACRO_PLACEHOLDER> \
-		, <&macro_release &kp MOD>; \
+		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
 	)
 
 KP_MOD_SEQUENCE(lakp, LALT)
