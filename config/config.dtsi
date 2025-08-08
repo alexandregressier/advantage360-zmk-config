@@ -338,6 +338,7 @@ ZMK_MOD_MORPH(secret_morph,
 	mods = <(MOD_RSFT)>;
 )
 
+
 /* Top Row */
 
 // Grave
@@ -350,6 +351,7 @@ ZMK_MOD_MORPH(grave_morph,
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
+
 
 // Q
 MAKE_LETTER_KEY(Q, q, sht_rgkp_kp, // Slow because misfires
@@ -366,6 +368,7 @@ MAKE_LETTER_KEY(R, r)
 // T
 MAKE_LETTER_KEY(T, t, sht_rgkp_kp)
 
+
 // Y
 MAKE_LETTER_KEY(Y, y, sht_rgkp_kp) // Slow because misfires
 // U
@@ -376,6 +379,7 @@ MAKE_LETTER_KEY(I, i)
 MAKE_LETTER_KEY(O, o)
 // P
 MAKE_LETTER_KEY(P, p, sht_rgkp_kp) // Slow because misfires
+
 
 // Backslash
 ZMK_ADAPTIVE_KEY(ag_backslash,
@@ -402,43 +406,25 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_mcurlydoublequotespair, &rgkp, &u_left_curly_doub
 //SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 
 // A
-ZMK_ADAPTIVE_KEY(ag_a,
-	bindings = <&ht_rgkp_kp A A>;
-)
+MAKE_LETTER_KEY(A, a)
 // S
-ZMK_ADAPTIVE_KEY(ag_s,
-	bindings = <&ht_rgkp_kp S S>;
-)
+MAKE_LETTER_KEY(S, s)
 // D
-ZMK_ADAPTIVE_KEY(ag_d,
-	bindings = <&ht_rgkp_kp D D>;
-)
+MAKE_LETTER_KEY(D, d)
 // F
-ZMK_ADAPTIVE_KEY(ag_f,
-	bindings = <&ht_rgkp_kp F F>;
-	less_than { trigger-keys = <LC(LG(A))>; bindings = <&kp LG(LS(LC(B)))>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers;  };
-)
+MAKE_LETTER_KEY(F, f)
 // G
-ZMK_ADAPTIVE_KEY(ag_g,
-	bindings = <&ht_rgkp_kp G G>;
-)
+MAKE_LETTER_KEY(G, g)
+
 
 // H
-ZMK_ADAPTIVE_KEY(ag_h,
-	bindings = <&ht_rgkp_kp H H>;
-)
+MAKE_LETTER_KEY(H, h)
 // J
-ZMK_ADAPTIVE_KEY(ag_j,
-	bindings = <&ht_rgkp_kp J J>;
-)
+MAKE_LETTER_KEY(J, j)
 // K
-ZMK_ADAPTIVE_KEY(ag_k,
-	bindings = <&ht_rgkp_kp K K>;
-)
+MAKE_LETTER_KEY(K, k)
 // L
-ZMK_ADAPTIVE_KEY(ag_l,
-	bindings = <&ht_rgkp_kp L L>;
-)
+MAKE_LETTER_KEY(L, l)
 
 // Colon
 ZMK_ADAPTIVE_KEY(ag_colon,
@@ -475,36 +461,31 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 /* Bottom Row */
 
 // Z
-ZMK_ADAPTIVE_KEY(ag_z,
-	bindings = <&ht_rgkp_kp Z Z>;
-)
+MAKE_LETTER_KEY(Z, z)
+
 // X
-ZMK_ADAPTIVE_KEY(ag_x,
-	bindings = <&ht_rgkp_kp X X>;
+MAKE_LETTER_KEY(X, x, ht_rgkp_kp,
+	rg_x { trigger-keys = <RG(X)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // C
-ZMK_ADAPTIVE_KEY(ag_c,
-	bindings = <&ht_rgkp_kp C C>; // todo: implement adaptive for zxcv
+MAKE_LETTER_KEY(C, c, ht_rgkp_kp,
+	rg_c { trigger-keys = <RG(C)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // V
-ZMK_ADAPTIVE_KEY(ag_v,
-	bindings = <&ht_rgkp_kp V V>;
-)
-// B
-ZMK_ADAPTIVE_KEY(ag_b,
-bindings = <&ht_rgkp_kp B B>;
-rs_b { trigger-keys = <RS(B)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; };
-rg_b { trigger-keys = <RG(B)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+MAKE_LETTER_KEY(V, v, ht_rgkp_kp,
+	rg_v { trigger-keys = <RG(V)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 
+// B
+MAKE_LETTER_KEY(B, b)
+
+
 // N
-ZMK_ADAPTIVE_KEY(ag_n,
-	bindings = <&ht_rgkp_kp N N>;
-)
+MAKE_LETTER_KEY(N, n)
+
 // M
-ZMK_ADAPTIVE_KEY(ag_m,
-	bindings = <&ht_rgkp_kp M M>;
-)
+MAKE_LETTER_KEY(M, m)
+
 // Comma
 #define MAKE_AG_WITH_SHIFT_MORPH(NAME, KEY_1, KEY_1_LOWER, KEY_2, KEY_2_LOWER) \
 	ZMK_ADAPTIVE_KEY(NAME, \
@@ -532,6 +513,7 @@ MAKE_AG_WITH_SHIFT_MORPH(ag_dot, DOT, dot, AT_SIGN, at_sign)
 
 // Slash
 MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
+
 
 /* Mods Row */
 
