@@ -131,9 +131,9 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 /* Homerow Mods */
 
 // Left
-MAKE_HOMEROW_MODS(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
+MAKE_HOMEROW_MODS(lhrm, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
 // Right
-MAKE_HOMEROW_MODS(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
+MAKE_HOMEROW_MODS(rhrm, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
 
 
 /* Smart Shift */
@@ -342,33 +342,33 @@ MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
 
 // Left
 ZMK_ADAPTIVE_KEY(ag_left,
-	bindings = <&hml LCTRL LEFT>;
+	bindings = <&lhrm LCTRL LEFT>;
 	left { trigger-keys = <LEFT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Right
 ZMK_ADAPTIVE_KEY(ag_right,
-	bindings = <&hmr LGUI RIGHT>;
+	bindings = <&lhrm LGUI RIGHT>;
 	right { trigger-keys = <RIGHT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Tab
 ZMK_ADAPTIVE_KEY(ag_tab,
-	bindings = <&hml LALT TAB>;
+	bindings = <&lhrm LALT TAB>;
 	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 // Down
 ZMK_ADAPTIVE_KEY(ag_down,
-	bindings = <&hmr LALT DOWN>;
+	bindings = <&rhrm LALT DOWN>;
 	down { trigger-keys = <DOWN>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Up
 ZMK_ADAPTIVE_KEY(ag_up,
-	bindings = <&hmr LGUI UP>;
+	bindings = <&rhrm LGUI UP>;
 	up { trigger-keys = <UP>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Shift + Tab
 ZMK_ADAPTIVE_KEY(ag_lstab,
-	bindings = <&hml LCTRL LS(TAB)>;
+	bindings = <&rhrm LCTRL LS(TAB)>;
 	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
