@@ -295,7 +295,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 		bindings = <&KEY_LOWER ## _shift_morph>; \
 		rg_repeat { \
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
-			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; \
+			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; /* Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding */ \
 			max-prior-idle-ms = <SLOW_ADAPTIVE_TIMEOUT_MS>; \
 		}; \
 		NUMBER_ROW_VAARGS \
@@ -304,7 +304,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	)
-// Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding
+
 
 #define MAKE_SPECIAL_CHAR_KEY(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, ORIGINAL_KEY) \
 	ZMK_ADAPTIVE_KEY(ag_ ## KEY_LOWER, \
