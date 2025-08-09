@@ -330,8 +330,8 @@ MAKE_NUMBER_ROW_KEY(N5, n5, CARET, caret, TILDE, tilde,
 	tilde { trigger-keys = <TILDE>; bindings = <&kp TILDE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 2
-MAKE_NUMBER_ROW_KEY(N3, n3, LEFT_BRACKET, left_bracket, HASH, hash,
-	hash { trigger-keys = <HASH>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+MAKE_NUMBER_ROW_KEY(N3, n3, LEFT_BRACKET, left_bracket, ASTERISK, ASTERISK,
+	hash { trigger-keys = <ASTERISK>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 3
 MAKE_NUMBER_ROW_KEY(N1, n1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
@@ -342,8 +342,8 @@ MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, right_brace,
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 5
-MAKE_NUMBER_ROW_KEY(N4, n4, BANG, bang, STAR, star, // `BANG` is deprecated but I’m a daredevil
-	star { trigger-keys = <STAR>; bindings = <&kp STAR>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+MAKE_NUMBER_ROW_KEY(N4, n4, EXCLAMATION, exclamation, HASH, hash,
+	star { trigger-keys = <HASH>; bindings = <&kp HASH>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 
@@ -501,7 +501,7 @@ MAKE_LETTER_KEY(N, n)
 // M
 MAKE_LETTER_KEY(M, m)
 // Comma
-MAKE_SPECIAL_CHAR_KEY(COMMA, comma, EXCLAMATION, exclamation)
+MAKE_SPECIAL_CHAR_KEY(COMMA, comma, SEMICOLON, semicolon)
 // Dot
 MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, at_sign)
 // Slash
