@@ -142,6 +142,11 @@ MAKE_HOMEROW_MODS(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
 MAKE_HOMEROW_MODS(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
 
 
+/* Smart Shift */
+
+MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT, rs)
+
+
 /* Combos */
 
 #include "combos.dtsi"
@@ -436,21 +441,7 @@ MAKE_NUMPAD_KEY(8, I)
 MAKE_NUMPAD_KEY(9, O)
 
 
-/* Smart Shift */
 
-#define MAKE_SMART_SHIFT(NAME, SHIFT_KEY) \
-	ZMK_ADAPTIVE_KEY(NAME, \
-		bindings = <&ht_kp_ ## SHIFT_KEY ## _dance SHIFT_KEY SHIFT_KEY>; \
-	) \
-	ZMK_HOLD_TAP(ht_kp_ ## SHIFT_KEY ## _dance, \
-		flavor = "balanced"; \
-		tapping-term-ms = <200>; \
-		quick-tap-ms = <QUICK_TAP_MS>; \
-		bindings = <&kp>, <&sk>; \
-	)
-
-MAKE_SMART_SHIFT(smart_lshift, LEFT_SHIFT)
-MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
 
 /* Smart Number */
 

@@ -65,6 +65,32 @@
         hold-trigger-on-release; \
     )
 
+
+/* MAKE_SMART_SHIFT */
+
+#if !defined MAKE_SMART_SHIFT__HT_TAPPING_TERM_MS
+	#define MAKE_SMART_SHIFT__HT_TAPPING_TERM_MS 200
+#endif
+#if !defined MAKE_SMART_SHIFT__DANCE_TAPPING_TERM_MS
+	#define MAKE_SMART_SHIFT__DANCE_TAPPING_TERM_MS 400
+#endif
+
+#define MAKE_SMART_SHIFT(NAME, SHIFT_KEY, SHIFT_KEY_LOWER) \
+	ZMK_ADAPTIVE_KEY(NAME, \
+		bindings = <&ht_kp_ ## SHIFT_KEY_LOWER ## _dance SHIFT_KEY 0>; \
+	) \
+	ZMK_HOLD_TAP(ht_kp_ ## SHIFT_KEY_LOWER ## _dance, \
+		flavor = "balanced"; \
+		tapping-term-ms = <MAKE_SMART_SHIFT__HT_TAPPING_TERM_MS>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
+		bindings = <&kp>, <&SHIFT_KEY_LOWER ## _dance>; \
+	) \
+	ZMK_TAP_DANCE(SHIFT_KEY_LOWER ## _dance, \
+		tapping-term-ms = <MAKE_SMART_SHIFT__DANCE_TAPPING_TERM_MS>; \
+		bindings = <&sk SHIFT_KEY>, <&caps_word>, <&kp CAPSLOCK>; \
+	)
+
+
 /* KP_WITH_MOD_SEQUENCE */
 
 #if !defined KP_WITH_MOD_SEQUENCE__WAIT_MS
