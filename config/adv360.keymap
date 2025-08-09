@@ -16,11 +16,11 @@
     };
     numbers {
       bindings = <
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                         &trans   &trans   &trans    &trans      &trans    &trans         &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                         &trans   &trans   &aq_np7   &aq_np8     &aq_np9   &kp ASTERISK   &trans
-        &trans   &trans   &trans   &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans                            &trans   &trans   &aq_np4   &aq_np5     &aq_np6   &kp PLUS       &trans
-        &trans   &trans   &trans   &trans   &trans   &trans                              &trans   &trans                                              &trans   &aq_np1   &aq_np2     &aq_np3   &trans         &trans
-        &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &ht_kp_kp RETURN KP_N0   &trans                     &trans    &kp COMMA   &kp DOT   &trans         &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                        &trans   &trans   &trans           &trans               &trans                  &trans         &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans                                                                        &trans   &trans   &ht_kp_kp U N7   &ht_kp_kp I N8       &ht_kp_kp O N9          &kp ASTERISK   &trans
+        &trans   &trans   &trans   &trans   &trans   &trans   &trans            &trans   &trans   &trans   &trans                           &trans   &trans   &ht_kp_kp J N4   &ht_kp_kp K N5       &ht_kp_kp L N6          &kp PLUS       &trans
+        &trans   &trans   &trans   &trans   &trans   &trans                              &trans   &trans                                             &trans   &ht_kp_kp M N1   &ht_kp_kp COMMA N2   &ht_kp_kp DOT N3        &trans         &trans
+        &trans   &trans   &trans   &trans   &trans                     &trans   &trans   &trans   &trans   &ht_sk_kp K_CANCEL N0   &trans                     &trans           &ht_kp_kp UP COMMA   &ht_kp_kp LS(TAB) DOT   &trans         &trans
       >;
     };
     mod {

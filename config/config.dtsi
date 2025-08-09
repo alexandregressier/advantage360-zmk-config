@@ -51,6 +51,11 @@
 	/delete-property/ ignore-modifiers; // By default, Caps Word continue on all mods (requires ZMK-AUTO-LAYER or PR #1451)
 };
 
+&num_word {
+	continue-list = <BACKSPACE DELETE DOT COMMA>;
+	ignore-modifiers; // Needed for key bindings using mods + numbers (because only lg + numbers is supported in number row)
+};
+
 
 /* Macros */
 
@@ -82,10 +87,6 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 		bindings = <HOLD>, <TAP>; \
  	)
 
-TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
-TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = slow
-TAP_PREFERRED_HOLD_TAP(ht_mo_kp, &mo, &kp)
-
 #define BALANCED_HOLD_TAP(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
 		flavor = "balanced"; \
@@ -97,10 +98,6 @@ TAP_PREFERRED_HOLD_TAP(ht_mo_kp, &mo, &kp)
         hold-trigger-on-release; \
  	)
 
-ZMK_AUTO_LAYER(number_word,
-	continue-list = <BACKSPACE DELETE DOT COMMA>;
-	ignore-numbers;
-)
 
 ZMK_ADAPTIVE_KEY(ht_num_backspace,
 	bindings = <&bht_numword_kp NUMBERS BACKSPACE>;
@@ -110,10 +107,15 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 		bindings = <&kp BACKSPACE>;
 	};
 )
-BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
+BALANCED_HOLD_TAP(bht_numword_kp, &num_word, &kp, NUMPAD)
 
 
 /* Hold-Taps */
+
+TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
+TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = Slow
+TAP_PREFERRED_HOLD_TAP(ht_sk_kp, &sk, &kp)
+TAP_PREFERRED_HOLD_TAP(ht_mo_kp, &mo, &kp)
 
 // RGUI
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
@@ -123,6 +125,7 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
 
 // RALT
 TAP_PREFERRED_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
+TAP_PREFERRED_HOLD_TAP(ht_rgkp_rakp, &rgkp, &rakp)
 
 // RCTRL
 TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
@@ -130,9 +133,7 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 /* Homerow Mods */
 
-// Left
 MAKE_HOMEROW_MODS(lhrm, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
-// Right
 MAKE_HOMEROW_MODS(rhrm, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
 
 
@@ -178,7 +179,6 @@ MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, rightbrace,
 MAKE_NUMBER_ROW_KEY(N4, n4, EXCLAMATION, exclamation, HASH, hash,
 	hash { trigger-keys = <HASH>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-
 
 // 6
 MAKE_NUMBER_ROW_KEY(N7, n7, UNDERSCORE, underscore, AMPERSAND, ampersand,
@@ -234,7 +234,6 @@ MAKE_LETTER_KEY(R, r)
 // T
 MAKE_LETTER_KEY(T, t, sht_rgkp_kp)
 
-
 // Y
 MAKE_LETTER_KEY(Y, y, sht_rgkp_kp) // Slow because misfires
 // U
@@ -281,7 +280,6 @@ MAKE_LETTER_KEY(F, f)
 // G
 MAKE_LETTER_KEY(G, g)
 
-
 // H
 MAKE_LETTER_KEY(H, h, ht_rgkp_kp,
 	rg_h { trigger-keys = <RG(H)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
@@ -309,7 +307,6 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 
 // Z
 MAKE_LETTER_KEY(Z, z) // No smart repeat because this isn't used as undo/redo
-
 // X
 MAKE_LETTER_KEY(X, x, ht_rgkp_kp,
 	rg_x { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp X RG(X)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
@@ -324,7 +321,6 @@ MAKE_LETTER_KEY(V, v, ht_rgkp_kp,
 )
 // B
 MAKE_LETTER_KEY(B, b)
-
 
 // N
 MAKE_LETTER_KEY(N, n)
@@ -371,47 +367,3 @@ ZMK_ADAPTIVE_KEY(ag_lstab,
 	bindings = <&rhrm LCTRL LS(TAB)>;
 	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-
-
-/* Numpad */ // Numpad instead of keypad because it abbreviates kp as well
-
-// aq = adaptive quit
-#define MAKE_NUMPAD_KEY(NUMBER, BEHIND_KEY) \
-	ZMK_ADAPTIVE_KEY(aq_np ## NUMBER ##, \
-		bindings = <&np ## NUMBER ## _morph>; \
-	) \
-	ZMK_MOD_MORPH(np ## NUMBER ## _morph, \
-		bindings = <&ht_kp_kp BEHIND_KEY N ## NUMBER>, <&ht_kp_kp BEHIND_KEY N ## NUMBER>; \
-		mods = <(MOD_RSFT)>; \
-	)
-
-MAKE_NUMPAD_KEY(1, M)
-MAKE_NUMPAD_KEY(2, COMMA)
-MAKE_NUMPAD_KEY(3, DOT)
-MAKE_NUMPAD_KEY(4, J)
-MAKE_NUMPAD_KEY(5, K)
-MAKE_NUMPAD_KEY(6, L)
-MAKE_NUMPAD_KEY(7, U)
-MAKE_NUMPAD_KEY(8, I)
-MAKE_NUMPAD_KEY(9, O)
-
-
-
-
-/* Smart Number */
-
-
-//ZMK_HOLD_TAP(smart_num,
-//	flavor = "balanced";
-//	tapping-term-ms = <200>;
-//	quick-tap-ms = <QUICK_TAP_MS>;
-//	bindings = <&mo>, <&num_dance>;
-//)
-//ZMK_TAP_DANCE(num_dance,
-//	tapping-term-ms = <400>;
-//	bindings = <&num_word NUMBERS>, <&tog NUMBERS>;
-//)
-
-//&num_word {
-//	ignore-modifiers; // Needed for shortcuts like
-//};
