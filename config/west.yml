@@ -10,7 +10,7 @@ manifest:
 
   projects:
     - name: zmk
-      url: ../../zmk
+      remote: alexandregressier
       revision: advantage360
       clone-depth: 0
       import: app/west.yml
