@@ -288,11 +288,11 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 	)
 
 #define MAKE_NUMBER_ROW_KEY(...) CONCAT(MAKE_NUMBER_ROW_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
-#define MAKE_NUMBER_ROW_KEY_6(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
-    MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, )
-#define MAKE_NUMBER_ROW_KEY_7(NAME, NUMBER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
-	ZMK_ADAPTIVE_KEY(NAME, \
-		bindings = <&KEY_LOWER ## _shift_morph>; \
+#define MAKE_NUMBER_ROW_KEY_6(NUMBER, NUMBER_LOWER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
+    MAKE_NUMBER_ROW_KEY_7(NUMBER, NUMBER_LOWER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, )
+#define MAKE_NUMBER_ROW_KEY_7(NUMBER, NUMBER_LOWER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
+	ZMK_ADAPTIVE_KEY(ag_ ## NUMBER_LOWER, \
+		bindings = <&KEY_LOWER ## _rs_morph>; \
 		rg_repeat { \
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
 			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; /* Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding */ \
@@ -300,7 +300,7 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 		}; \
 		NUMBER_ROW_VAARGS \
 	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _shift_morph, \
+	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
 		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	)
@@ -324,45 +324,45 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 /* Number Row */
 
 // 1
-MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde,
+MAKE_NUMBER_ROW_KEY(N5, n5, CARET, caret, TILDE, tilde,
 	tilde { trigger-keys = <TILDE>; bindings = <&kp TILDE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 2
-MAKE_NUMBER_ROW_KEY(ag_n2, N3, LEFT_BRACKET, left_bracket, HASH, hash,
+MAKE_NUMBER_ROW_KEY(N3, n3, LEFT_BRACKET, left_bracket, HASH, hash,
 	hash { trigger-keys = <HASH>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 3
-MAKE_NUMBER_ROW_KEY(ag_n3, N1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
+MAKE_NUMBER_ROW_KEY(N1, n1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
 	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&kp RIGHT_BRACKET>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 4
-MAKE_NUMBER_ROW_KEY(ag_n4, N2, QUESTION, question, RIGHT_BRACE, right_brace,
+MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, right_brace,
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 5
-MAKE_NUMBER_ROW_KEY(ag_n5, N4, BANG, bang, STAR, star, // `BANG` is deprecated but I’m a daredevil
+MAKE_NUMBER_ROW_KEY(N4, n4, BANG, bang, STAR, star, // `BANG` is deprecated but I’m a daredevil
 	star { trigger-keys = <STAR>; bindings = <&kp STAR>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 
 // 6
-MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand,
+MAKE_NUMBER_ROW_KEY(N7, n7, UNDERSCORE, underscore, AMPERSAND, ampersand,
 	ampersand { trigger-keys = <AMPERSAND>; bindings = <&kp AMPERSAND>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 7
-MAKE_NUMBER_ROW_KEY(ag_n7, N9, MINUS, minus, LESS_THAN, less_than,
+MAKE_NUMBER_ROW_KEY(N9, n9, MINUS, minus, LESS_THAN, less_than,
 	less_than { trigger-keys = <LESS_THAN GREATER_THAN>; bindings = <&kp LESS_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 8
-MAKE_NUMBER_ROW_KEY(ag_n8, N0, LEFT_PARENTHESIS, left_parenthesis, GREATER_THAN, greater_than,
+MAKE_NUMBER_ROW_KEY(N0, n0, LEFT_PARENTHESIS, left_parenthesis, GREATER_THAN, greater_than,
 	greater_than { trigger-keys = <LESS_THAN GREATER_THAN MINUS EQUAL>; bindings = <&kp GREATER_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 9
-MAKE_NUMBER_ROW_KEY(ag_n9, N8, EQUAL, equal, RIGHT_PARENTHESIS, right_parenthesis,
+MAKE_NUMBER_ROW_KEY(N8, n8, EQUAL, equal, RIGHT_PARENTHESIS, right_parenthesis,
 	right_parenthesis { trigger-keys = <LEFT_PARENTHESIS RIGHT_PARENTHESIS>; bindings = <&kp RIGHT_PARENTHESIS>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 0
-MAKE_NUMBER_ROW_KEY(ag_n0, N6, PLUS, plus, PIPE, pipe,
+MAKE_NUMBER_ROW_KEY(N6, n6, PLUS, plus, PIPE, pipe,
 	pipe { trigger-keys = <PIPE>; bindings = <&kp PIPE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 
