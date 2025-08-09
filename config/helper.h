@@ -1,6 +1,19 @@
 // .h = only #defines. #defines do not have to be made in a strict order.
 
 
+/* Timings */
+
+#if !defined QUICK_TAP_MS
+	#define QUICK_TAP_MS 175
+#endif
+#if !defined DEFAULT_ADAPTIVE_TIMEOUT_MS
+	#define DEFAULT_ADAPTIVE_TIMEOUT_MS 1000
+#endif
+#if !defined SLOW_ADAPTIVE_TIMEOUT_MS
+	#define SLOW_ADAPTIVE_TIMEOUT_MS 2000
+#endif
+
+
 /* Key position groups */
 
 #define KEYS_LEFT  0  1  2  3  4  5  6 \
@@ -31,6 +44,26 @@
                                  \
                69 70
 
+
+/* MAKE_HOMEROW_MODS */
+
+#if !defined MAKE_HOMEROW_MODS__TAPPING_TERM_MS
+	#define MAKE_HOMEROW_MODS__TAPPING_TERM_MS 180
+#endif
+#if !defined MAKE_HOMEROW_MODS__REQUIRE_PRIOR_IDLE_MS
+	#define MAKE_HOMEROW_MODS__REQUIRE_PRIOR_IDLE_MS 200
+#endif
+
+#define MAKE_HOMEROW_MODS(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "balanced"; \
+        tapping-term-ms = <MAKE_HOMEROW_MODS__TAPPING_TERM_MS>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <MAKE_HOMEROW_MODS__REQUIRE_PRIOR_IDLE_MS>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
 
 /* KP_WITH_MOD_SEQUENCE */
 

@@ -9,6 +9,7 @@
 #include "zmk-helpers/helper.h"
 
 #include "helper.h"
+
 #include "secret.dtsi"
 #include "symbols.dtsi"
 
@@ -133,18 +134,8 @@ TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 /* Homerow Mods */
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <180>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <200>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
-MAKE_HRM(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT) // Left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
+MAKE_HOMEROW_MODS(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
+MAKE_HOMEROW_MODS(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
 
 
 /* Combos */
