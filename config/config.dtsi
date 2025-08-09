@@ -213,6 +213,27 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 // todo: mod layer does not need to be tap, hold is sufficient
 // todo: space as right key when previous arrow?
 
+// todo disable numword after a given timeout
+// todo return combo kkkkk
+
+// TODO: make sure RS everywhere
+// todo: em dashes
+
+// todo: zoom =+0
+// todo: cmd brace can be repeated while held, which is unwanted
+// todo: numbers double ht
+// todo: thumb combos
+// todo: both keys thumb = cmd delete
+// todo: perplexity key
+
+// todo try numbers as right smart shift to restore auto rg backspace (I think I wont like it)
+// todo; play pause button
+// todo; left wm = prev window on tap, right wm = all windows
+// todo: window urob keyss tristate
+// todo: u grave + ellipsis + en dash
+
+// todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
+
 // Left hand - Horizontal
 ZMK_COMBO(left_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(left_escape_bis, &ht_rgkp_kp ESCAPE ESCAPE, 31 32, DEFAULT, COMBO_TERM_SLOW)
@@ -254,7 +275,6 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 /* Custom Behaviors */
 
-/* Number Row */
 #define MAKE_LETTER_KEY(...) CONCAT(MAKE_LETTER_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
 #define MAKE_LETTER_KEY_2(KEY, KEY_LOWER) \
     MAKE_LETTER_KEY_3(KEY, KEY_LOWER, ht_rgkp_kp)
@@ -286,6 +306,23 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 	)
 // Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding
 
+#define MAKE_SPECIAL_CHAR_KEY(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, ORIGINAL_KEY) \
+	ZMK_ADAPTIVE_KEY(ag_ ## KEY_LOWER, \
+		bindings = <&KEY_LOWER ## _mods_morph>; \
+		ag_ ## RS_KEY_LOWER { trigger-keys = <RS_KEY>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; }; \
+	) \
+	ZMK_MOD_MORPH(KEY_LOWER ## _mods_morph, \
+		bindings = <&KEY_LOWER ## _morph>, <&ht_rgkp_kp ORIGINAL_KEY ORIGINAL_KEY>; \
+		mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+		keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
+	) \
+	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
+		bindings = <&ht_rgkp_kp KEY KEY>, <&ht_rgkp_kp RS(RS_KEY) RS_KEY>; \
+		mods = <(MOD_RSFT)>; \
+	)
+
+/* Number Row */
+
 // 1
 MAKE_NUMBER_ROW_KEY(ag_n1, N5, CARET, caret, TILDE, tilde,
 	tilde { trigger-keys = <TILDE>; bindings = <&kp TILDE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
@@ -306,10 +343,7 @@ MAKE_NUMBER_ROW_KEY(ag_n4, N2, QUESTION, question, RIGHT_BRACE, right_brace,
 MAKE_NUMBER_ROW_KEY(ag_n5, N4, BANG, bang, STAR, star, // `BANG` is deprecated but I’m a daredevil
 	star { trigger-keys = <STAR>; bindings = <&kp STAR>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-// todo disable numword after a given timeout
 
-
-// todo return combo kkkkk
 
 // 6
 MAKE_NUMBER_ROW_KEY(ag_n6, N7, UNDERSCORE, underscore, AMPERSAND, ampersand,
@@ -346,12 +380,11 @@ ZMK_ADAPTIVE_KEY(ag_grave,
 	bindings = <&grave_morph>;
 )
 ZMK_MOD_MORPH(grave_morph,
-	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>; // TODO: make sure RS everywhere
+	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>;
 	mods = <(MOD_RSFT)>;
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
-
 
 // Q
 MAKE_LETTER_KEY(Q, q, sht_rgkp_kp, // Slow because misfires
@@ -380,7 +413,6 @@ MAKE_LETTER_KEY(O, o)
 // P
 MAKE_LETTER_KEY(P, p, sht_rgkp_kp) // Slow because misfires
 
-
 // Backslash
 ZMK_ADAPTIVE_KEY(ag_backslash,
 	bindings = <&backslash_morph>;
@@ -391,7 +423,7 @@ ZMK_MOD_MORPH(backslash_morph,
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_ueuro, &rgkp, &u_euro)
 
-// todo: em dashes
+
 /* Middle Row */
 
 // Double quotes
@@ -427,20 +459,8 @@ MAKE_LETTER_KEY(J, j)
 MAKE_LETTER_KEY(K, k)
 // L
 MAKE_LETTER_KEY(L, l)
-
 // Colon
-ZMK_ADAPTIVE_KEY(ag_colon,
-	bindings = <&colon_mod_morph>;
-)
-ZMK_MOD_MORPH(colon_mod_morph,
-	bindings = <&colon_morph>, <&kp SEMICOLON>;
-	mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-	keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>;
-)
-ZMK_MOD_MORPH(colon_morph,
-	bindings = <&ht_rgkp_kp SEMICOLON COLON>, <&ht_rgkp_kp RS(SEMICOLON) PLUS>;
-	mods = <(MOD_RSFT)>;
-)
+MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus, SEMICOLON)
 
 // Single quote
 ZMK_ADAPTIVE_KEY(ag_single_quote,
@@ -452,13 +472,6 @@ ZMK_MOD_MORPH(single_quote_morph,
 )
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 
-
-// todo: zoom =+0
-// todo: cmd brace can be repeated while held, which is unwanted
-// todo: numbers double ht
-// todo: thumb combos
-// todo: both keys thumb = cmd delete
-// todo: perplexity key
 
 /* Bottom Row */
 
@@ -477,44 +490,20 @@ MAKE_LETTER_KEY(C, c, ht_rgkp_kp,
 MAKE_LETTER_KEY(V, v, ht_rgkp_kp,
 	rg_v { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp V RG(V)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-
 // B
 MAKE_LETTER_KEY(B, b)
 
 
 // N
 MAKE_LETTER_KEY(N, n)
-
 // M
 MAKE_LETTER_KEY(M, m)
-
 // Comma
-#define MAKE_AG_WITH_SHIFT_MORPH(NAME, KEY_1, KEY_1_LOWER, KEY_2, KEY_2_LOWER) \
-	ZMK_ADAPTIVE_KEY(NAME, \
-		bindings = <&KEY_1_LOWER ## _mod_morph>; \
-		ag_ ## KEY_2_LOWER { \
-			trigger-keys = <KEY_2>; \
-			max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; \
-			bindings = <&ht_rgkp_kp LS(KEY_1) KEY_2>; \
-		}; \
-	) \
-	ZMK_MOD_MORPH(KEY_1_LOWER ## _mod_morph, \
-		bindings = <&KEY_1_LOWER ## _morph>, <&ht_rgkp_kp KEY_1 KEY_1>; \
-		mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-		keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-	) \
-	ZMK_MOD_MORPH(KEY_1_LOWER ## _morph, \
-		bindings = <&ht_rgkp_kp KEY_1 KEY_1>, <&ht_rgkp_kp LS(KEY_1) KEY_2>; \
-		mods = <(MOD_RSFT)>; \
-	)
-
-MAKE_AG_WITH_SHIFT_MORPH(ag_comma, COMMA, comma, EXCLAMATION, exclamation)
-
+MAKE_SPECIAL_CHAR_KEY(COMMA, comma, EXCLAMATION, exclamation, COMMA)
 // Dot
-MAKE_AG_WITH_SHIFT_MORPH(ag_dot, DOT, dot, AT_SIGN, at_sign)
-
+MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, at_sign, DOT)
 // Slash
-MAKE_AG_WITH_SHIFT_MORPH(ag_slash, SLASH, slash, QUESTION, question)
+MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent, SLASH)
 
 
 /* Mods Row */
@@ -555,13 +544,9 @@ ZMK_ADAPTIVE_KEY(ag_right,
 	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, UP, up)
 )
 
-// todo try numbers as right smart shift to restore auto rg backspace (I think I wont like it)
-// todo; play pause button
-// todo; left wm = prev window on tap, right wm = all windows
-// todo: window urob keyss tristate
-// todo: u grave + ellipsis + en dash
+
 // Tab
-ZMK_ADAPTIVE_KEY(ag_tab, // todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
+ZMK_ADAPTIVE_KEY(ag_tab,
 	bindings = <&hml LGUI TAB>;
 	PRESERVE_ADAPTIVE_MODIFIERS(TAB, TAB, tab)
 )
