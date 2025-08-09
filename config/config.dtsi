@@ -47,6 +47,10 @@
 	quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+&caps_word {
+	/delete-property/ ignore-modifiers; // By default, Caps Word continue on all mods (requires ZMK-AUTO-LAYER or PR #1451)
+};
+
 
 /* Macros */
 
@@ -115,27 +119,33 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
 
 
+/* Hold-Taps */
 
-
+// RGUI
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow
 TAP_PREFERRED_HOLD_TAP(ht_kp_rgkp, &kp, &rgkp)
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
 
+// RALT
 TAP_PREFERRED_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
 
+// RCTRL
 TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 
 /* Homerow Mods */
 
+// Left
 MAKE_HOMEROW_MODS(hml, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
+// Right
 MAKE_HOMEROW_MODS(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
 
 
 /* Combos */
 
 #include "combos.dtsi"
+
 
 /* Symbols */
 
@@ -441,11 +451,6 @@ MAKE_NUMPAD_KEY(9, O)
 
 MAKE_SMART_SHIFT(smart_lshift, LEFT_SHIFT)
 MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT)
-
-&caps_word {
-	/delete-property/ ignore-modifiers;
-};
-
 
 /* Smart Number */
 
