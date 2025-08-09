@@ -55,7 +55,7 @@
 #define MAKE_NUMBER_ROW_KEY_7(NUMBER, NUMBER_LOWER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(ag_ ## NUMBER_LOWER, \
 		bindings = <&KEY_LOWER ## _rs_morph>; \
-		NUMBER_ROW_VAARGS /* Placing it here allows for potential overrides */ \
+		NUMBER_ROW_VAARGS /* Placing va_args here to allow for potential overrides */ \
 		ag_repeat { \
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
 			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; /* Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding */ \
@@ -80,7 +80,7 @@
 #define MAKE_SPECIAL_CHAR_KEY_5(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, SPECIAL_CHAR_VAARGS) \
 	ZMK_ADAPTIVE_KEY(ag_ ## KEY_LOWER, \
 		bindings = <&KEY_LOWER ## _rs_morph>; \
-		SPECIAL_CHAR_VAARGS /* Placing it here allows for potential overrides */ \
+		SPECIAL_CHAR_VAARGS /* Placing va_args here to allow for potential overrides */ \
 		ag_ ## RS_KEY_LOWER { trigger-keys = <RS_KEY>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; }; \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
