@@ -5,9 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-// Must be set before including helper.h
-#define HOST_OS 2
-// = macOS
+#define HOST_OS 2 // = macOS; Must be set before including helper.h
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 
@@ -77,7 +75,6 @@
 	quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-// TODO: WWWWW != Wwwww == WWWWWW (same for e, b)
 
 /* Macros */
 
@@ -209,30 +206,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT) // Right-hand HRMs
 
 #define COMBO_TERM_SLOW 110
 #define COMBO_IDLE_SLOW 150
-
-// todo: mod layer does not need to be tap, hold is sufficient
-// todo: space as right key when previous arrow?
-
-// todo disable numword after a given timeout
-// todo return combo kkkkk
-
-// TODO: make sure RS everywhere
-// todo: em dashes
-
-// todo: zoom =+0
-// todo: cmd brace can be repeated while held, which is unwanted
-// todo: numbers double ht
-// todo: thumb combos
-// todo: both keys thumb = cmd delete
-// todo: perplexity key
-
-// todo try numbers as right smart shift to restore auto rg backspace (I think I wont like it)
-// todo; play pause button
-// todo; left wm = prev window on tap, right wm = all windows
-// todo: window urob keyss tristate
-// todo: u grave + ellipsis + en dash
-
-// todo: tab and shit tab cannot be repeated by being maintainted, same for arrows
 
 // Left hand - Horizontal
 ZMK_COMBO(left_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, DEFAULT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
