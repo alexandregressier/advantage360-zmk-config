@@ -69,9 +69,10 @@
 		wait-ms = <KP_WITH_MOD_SEQUENCE__WAIT_MS>; \
 		tap-ms = <KP_WITH_MOD_SEQUENCE__TAP_MS>; \
 		bindings \
-		= <&macro_tap &sk MOD> \
+		= <&macro_press &kp MOD> /* Interestingly, sk won’t work */ \
 		, <&macro_param_1to1> \
-		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
+		, <&macro_tap &kp MACRO_PLACEHOLDER> \
+		, <&macro_release &kp MOD>; \
 	)
 
 
