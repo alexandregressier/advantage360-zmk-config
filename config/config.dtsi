@@ -212,10 +212,7 @@ ZMK_MOD_MORPH(secret_morph,
 /* Top Row */
 
 // Grave
-ZMK_ADAPTIVE_KEY(ag_grave,
-	bindings = <&grave_morph>;
-)
-ZMK_MOD_MORPH(grave_morph,
+ZMK_MOD_MORPH(ag_grave,
 	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>;
 	mods = <(MOD_RSFT)>;
 )
@@ -263,7 +260,7 @@ TAP_PREFERRED_HOLD_TAP(ht_rgkp_ueuro, &rgkp, &u_euro)
 /* Middle Row */
 
 // Double quotes
-ZMK_ADAPTIVE_KEY(ag_double_quotes,
+ZMK_ADAPTIVE_KEY(ag_doublequotes,
 	bindings = <&double_quotes_morph>;
 )
 ZMK_MOD_MORPH(double_quotes_morph,
@@ -299,10 +296,7 @@ MAKE_LETTER_KEY(L, l)
 MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus)
 
 // Single quote
-ZMK_ADAPTIVE_KEY(ag_single_quote,
-	bindings = <&single_quote_morph>;
-)
-ZMK_MOD_MORPH(single_quote_morph,
+ZMK_MOD_MORPH(ag_singlequote,
 	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&ht_rgkp_ucurlyapostrophe RS(SINGLE_QUOTE) 0>;
 	mods = <(MOD_RSFT)>;
 )
