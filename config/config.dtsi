@@ -117,19 +117,9 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
 
 
-#define KP_MOD_SEQUENCE(NAME, MOD) \
-	ZMK_MACRO_ONE_PARAM(NAME, \
-		wait-ms = <25>; \
-		tap-ms = <0>; \
-		bindings \
-		= <&macro_tap &sk MOD> \
-		, <&macro_param_1to1> \
-		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
-	)
-
-KP_MOD_SEQUENCE(rgkp, RGUI)
-KP_MOD_SEQUENCE(rakp, RALT)
-KP_MOD_SEQUENCE(rckp, RCTL)
+KP_WITH_MOD_SEQUENCE(rgkp, RGUI)
+KP_WITH_MOD_SEQUENCE(rakp, RALT)
+KP_WITH_MOD_SEQUENCE(rckp, RCTL)
 
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow
@@ -173,10 +163,6 @@ SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guilleme
 //SIMPLE_MORPH(u_double_quotes_morph, SFT, &m_curly_double_quotes_pair, &m_guillemet_pair)
 
 SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
-
-
-/* Custom Behaviors */
-
 
 
 /* Number Row */

@@ -32,6 +32,26 @@
                69 70
 
 
+/* KP_WITH_MOD_SEQUENCE */
+
+#if !defined KP_WITH_MOD_SEQUENCE__WAIT_MS
+	#define KP_WITH_MOD_SEQUENCE__WAIT_MS 25
+#endif
+#if !defined KP_WITH_MOD_SEQUENCE__TAP_MS
+	#define KP_WITH_MOD_SEQUENCE__TAP_MS 0
+#endif
+
+#define KP_WITH_MOD_SEQUENCE(NAME, MOD) \
+	ZMK_MACRO_ONE_PARAM(NAME, \
+		wait-ms = <KP_WITH_MOD_SEQUENCE__WAIT_MS>; \
+		tap-ms = <KP_WITH_MOD_SEQUENCE__TAP_MS>; \
+		bindings \
+		= <&macro_tap &sk MOD> \
+		, <&macro_param_1to1> \
+		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
+	)
+
+
 /* MAKE_LETTER_KEY */
 
 #define MAKE_LETTER_KEY(...) CONCAT(MAKE_LETTER_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
