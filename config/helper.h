@@ -45,6 +45,36 @@
                69 70
 
 
+/* SIMPLE_MACRO */
+
+#define SIMPLE_MACRO(NAME, SEQUENCE) \
+	ZMK_MACRO(NAME, \
+		wait-ms = <0>; \
+		tap-ms = <0>; \
+		bindings = <SEQUENCE>; \
+	)
+
+
+/* KP_WITH_MOD_SEQUENCE */
+
+#if !defined KP_WITH_MOD_SEQUENCE__WAIT_MS
+	#define KP_WITH_MOD_SEQUENCE__WAIT_MS 25
+#endif
+#if !defined KP_WITH_MOD_SEQUENCE__TAP_MS
+	#define KP_WITH_MOD_SEQUENCE__TAP_MS 0
+#endif
+
+#define KP_WITH_MOD_SEQUENCE(NAME, MOD) \
+	ZMK_MACRO_ONE_PARAM(NAME, \
+		wait-ms = <KP_WITH_MOD_SEQUENCE__WAIT_MS>; \
+		tap-ms = <KP_WITH_MOD_SEQUENCE__TAP_MS>; \
+		bindings \
+		= <&macro_tap &sk MOD> \
+		, <&macro_param_1to1> \
+		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
+	)
+
+
 /* MAKE_HOMEROW_MODS */
 
 #if !defined MAKE_HOMEROW_MODS__TAPPING_TERM_MS
@@ -88,26 +118,6 @@
 	ZMK_TAP_DANCE(SHIFT_KEY_LOWER ## _dance, \
 		tapping-term-ms = <MAKE_SMART_SHIFT__DANCE_TAPPING_TERM_MS>; \
 		bindings = <&sk SHIFT_KEY>, <&caps_word>, <&kp CAPSLOCK>; \
-	)
-
-
-/* KP_WITH_MOD_SEQUENCE */
-
-#if !defined KP_WITH_MOD_SEQUENCE__WAIT_MS
-	#define KP_WITH_MOD_SEQUENCE__WAIT_MS 25
-#endif
-#if !defined KP_WITH_MOD_SEQUENCE__TAP_MS
-	#define KP_WITH_MOD_SEQUENCE__TAP_MS 0
-#endif
-
-#define KP_WITH_MOD_SEQUENCE(NAME, MOD) \
-	ZMK_MACRO_ONE_PARAM(NAME, \
-		wait-ms = <KP_WITH_MOD_SEQUENCE__WAIT_MS>; \
-		tap-ms = <KP_WITH_MOD_SEQUENCE__TAP_MS>; \
-		bindings \
-		= <&macro_tap &sk MOD> \
-		, <&macro_param_1to1> \
-		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
 	)
 
 
@@ -169,14 +179,4 @@
 	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
 		bindings = <&ht_rgkp_kp KEY KEY>, <&ht_rgkp_kp RS_KEY RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
-	)
-
-
-/* SIMPLE_MACRO */
-
-#define SIMPLE_MACRO(NAME, SEQUENCE) \
-	ZMK_MACRO(NAME, \
-		wait-ms = <0>; \
-		tap-ms = <0>; \
-		bindings = <SEQUENCE>; \
 	)
