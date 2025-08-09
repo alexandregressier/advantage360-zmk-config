@@ -50,12 +50,9 @@
 
 /* Macros */
 
-#define SIMPLE_MACRO(NAME, SEQUENCE) \
-	ZMK_MACRO(NAME, \
-		wait-ms = <0>; \
-		tap-ms = <0>; \
-		bindings = <SEQUENCE>; \
-	)
+KP_WITH_MOD_SEQUENCE(rgkp, RGUI)
+KP_WITH_MOD_SEQUENCE(rakp, RALT)
+KP_WITH_MOD_SEQUENCE(rckp, RCTL)
 
 ZMK_MACRO_ONE_PARAM(kp_reset,
 	wait-ms = <0>;
@@ -118,9 +115,7 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
 
 
-KP_WITH_MOD_SEQUENCE(rgkp, RGUI)
-KP_WITH_MOD_SEQUENCE(rakp, RALT)
-KP_WITH_MOD_SEQUENCE(rckp, RCTL)
+
 
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
 TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow

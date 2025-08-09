@@ -144,3 +144,13 @@
 		bindings = <&ht_rgkp_kp KEY KEY>, <&ht_rgkp_kp RS_KEY RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	)
+
+
+/* SIMPLE_MACRO */
+
+#define SIMPLE_MACRO(NAME, SEQUENCE) \
+	ZMK_MACRO(NAME, \
+		wait-ms = <0>; \
+		tap-ms = <0>; \
+		bindings = <SEQUENCE>; \
+	)
