@@ -293,31 +293,33 @@ SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 #define MAKE_NUMBER_ROW_KEY_7(NUMBER, NUMBER_LOWER, KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, NUMBER_ROW_VAARGS) \
 	ZMK_ADAPTIVE_KEY(ag_ ## NUMBER_LOWER, \
 		bindings = <&KEY_LOWER ## _rs_morph>; \
-		rg_repeat { \
+		NUMBER_ROW_VAARGS /* Placing it here allows for potential overrides */ \
+		ag_repeat { \
 			trigger-keys = <RG(N1) RG(N2) RG(N3) RG(N4) RG(N5) RG(N6) RG(N7) RG(N8) RG(N9) RG(N0)>; \
 			bindings = <&ht_rgkp_rgkp NUMBER NUMBER>; /* Why <&ht_rgkp_rgkp NUMBER NUMBER>; ? Because a simple <&kp RG(NUMBER)> would be repeated while holding */ \
 			max-prior-idle-ms = <SLOW_ADAPTIVE_TIMEOUT_MS>; \
 		}; \
-		NUMBER_ROW_VAARGS \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
-		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
+		bindings = <&ht_rgkp_kp NUMBER KEY>, <&KEY_LOWER ## _shifted_ls_morph>; \
 		mods = <(MOD_RSFT)>; \
+	) \
+	ZMK_MOD_MORPH(KEY_LOWER ## _shifted_ls_morph, \
+		bindings = <&ht_rgkp_kp KEY RS_KEY>, <&ht_rgkp_kp LS(NUMBER) RS_KEY>; \
+		mods = <(MOD_LSFT)>; \
 	)
 
-
-#define MAKE_SPECIAL_CHAR_KEY(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, ORIGINAL_KEY) \
+#define MAKE_SPECIAL_CHAR_KEY(...) CONCAT(MAKE_SPECIAL_CHAR_KEY_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define MAKE_SPECIAL_CHAR_KEY_4(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER) \
+	MAKE_SPECIAL_CHAR_KEY_5(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, )
+#define MAKE_SPECIAL_CHAR_KEY_5(KEY, KEY_LOWER, RS_KEY, RS_KEY_LOWER, SPECIAL_CHAR_VAARGS) \
 	ZMK_ADAPTIVE_KEY(ag_ ## KEY_LOWER, \
-		bindings = <&KEY_LOWER ## _mods_morph>; \
+		bindings = <&KEY_LOWER ## _rs_morph>; \
+		SPECIAL_CHAR_VAARGS /* Placing it here allows for potential overrides */ \
 		ag_ ## RS_KEY_LOWER { trigger-keys = <RS_KEY>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; }; \
 	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _mods_morph, \
-		bindings = <&KEY_LOWER ## _morph>, <&ht_rgkp_kp ORIGINAL_KEY ORIGINAL_KEY>; \
-		mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-		keep-mods = <(MOD_LSFT|MOD_LGUI|MOD_LALT|MOD_LCTL)>; \
-	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _morph, \
-		bindings = <&ht_rgkp_kp KEY KEY>, <&ht_rgkp_kp RS(RS_KEY) RS_KEY>; \
+	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
+		bindings = <&ht_rgkp_kp KEY KEY>, <&ht_rgkp_kp RS_KEY RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	)
 
@@ -460,7 +462,7 @@ MAKE_LETTER_KEY(K, k)
 // L
 MAKE_LETTER_KEY(L, l)
 // Colon
-MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus, SEMICOLON)
+MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus)
 
 // Single quote
 ZMK_ADAPTIVE_KEY(ag_single_quote,
@@ -499,11 +501,11 @@ MAKE_LETTER_KEY(N, n)
 // M
 MAKE_LETTER_KEY(M, m)
 // Comma
-MAKE_SPECIAL_CHAR_KEY(COMMA, comma, EXCLAMATION, exclamation, COMMA)
+MAKE_SPECIAL_CHAR_KEY(COMMA, comma, EXCLAMATION, exclamation)
 // Dot
-MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, at_sign, DOT)
+MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, at_sign)
 // Slash
-MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent, SLASH)
+MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
 
 
 /* Mods Row */
