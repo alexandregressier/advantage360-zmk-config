@@ -343,68 +343,36 @@ MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
 
 /* Mods Row */
 
-#define PRESERVE_ADAPTIVE_MODIFIERS_MS 500
-
-#define PRESERVE_ADAPTIVE_MODIFIERS(KEY, TRIGGER_KEY, TRIGGER_KEY_LOWER) \
-	ls_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(TRIGGER_KEY)>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(KEY)>; strict-modifiers; }; \
-	lg_ ## TRIGGER_KEY_LOWER { trigger-keys = <LG(TRIGGER_KEY)>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LG(KEY)>; strict-modifiers; }; \
-	la_ ## TRIGGER_KEY_LOWER { trigger-keys = <LA(TRIGGER_KEY)>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LA(KEY)>; strict-modifiers; }; \
-	lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LC(TRIGGER_KEY)>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LC(KEY)>; strict-modifiers; }; \
-	ls_lg_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LG(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LG(KEY))>; strict-modifiers; }; \
-	ls_la_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LA(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LA(KEY))>; strict-modifiers; }; \
-	ls_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LC(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LC(KEY))>; strict-modifiers; }; \
-	lg_la_ ## TRIGGER_KEY_LOWER { trigger-keys = <LG(LA(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LG(LA(KEY))>; strict-modifiers; }; \
-	lg_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LG(LC(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LG(LC(KEY))>; strict-modifiers; }; \
-	la_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LA(LC(TRIGGER_KEY))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LA(LC(KEY))>; strict-modifiers; }; \
-	ls_lg_la_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LG(LA(TRIGGER_KEY)))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LG(LA(KEY)))>; strict-modifiers; }; \
-	ls_lg_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LG(LC(TRIGGER_KEY)))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LG(LC(KEY)))>; strict-modifiers; }; \
-	ls_la_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LA(LC(TRIGGER_KEY)))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LA(LC(KEY)))>; strict-modifiers; }; \
-	lg_la_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LG(LA(LC(TRIGGER_KEY)))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LG(LA(LC(KEY)))>; strict-modifiers; }; \
-	ls_lg_la_lc_ ## TRIGGER_KEY_LOWER { trigger-keys = <LS(LG(LA(LC(TRIGGER_KEY))))>; max-prior-idle-ms = <PRESERVE_ADAPTIVE_MODIFIERS_MS>; bindings = <&kp LS(LG(LA(LC(KEY))))>; strict-modifiers; };
-
 // Left
 ZMK_ADAPTIVE_KEY(ag_left,
 	bindings = <&hml LCTRL LEFT>;
-	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, LEFT, left)
-	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, RIGHT, right)
-	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, DOWN, down)
-	PRESERVE_ADAPTIVE_MODIFIERS(LEFT, UP, up)
+	left { trigger-keys = <LEFT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Right
 ZMK_ADAPTIVE_KEY(ag_right,
-	bindings = <&hmr LALT RIGHT>;
-	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, LEFT, left)
-	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, RIGHT, right)
-	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, DOWN, down)
-	PRESERVE_ADAPTIVE_MODIFIERS(RIGHT, UP, up)
+	bindings = <&hmr LGUI RIGHT>;
+	right { trigger-keys = <RIGHT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-
-
 // Tab
 ZMK_ADAPTIVE_KEY(ag_tab,
-	bindings = <&hml LGUI TAB>;
-	PRESERVE_ADAPTIVE_MODIFIERS(TAB, TAB, tab)
+	bindings = <&hml LALT TAB>;
+	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 // Down
 ZMK_ADAPTIVE_KEY(ag_down,
-	bindings = <&hmr LGUI DOWN>;
-	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, LEFT, left)
-	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, RIGHT, right)
-	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, DOWN, down)
-	PRESERVE_ADAPTIVE_MODIFIERS(DOWN, UP, up)
+	bindings = <&hmr LALT DOWN>;
+	down { trigger-keys = <DOWN>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Up
 ZMK_ADAPTIVE_KEY(ag_up,
-	bindings = <&hmr LALT UP>;
-	PRESERVE_ADAPTIVE_MODIFIERS(UP, LEFT, left)
-	PRESERVE_ADAPTIVE_MODIFIERS(UP, RIGHT, right)
-	PRESERVE_ADAPTIVE_MODIFIERS(UP, DOWN, down)
-	PRESERVE_ADAPTIVE_MODIFIERS(UP, UP, up)
+	bindings = <&hmr LGUI UP>;
+	up { trigger-keys = <UP>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Shift + Tab
 ZMK_ADAPTIVE_KEY(ag_lstab,
 	bindings = <&hml LCTRL LS(TAB)>;
+	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 
