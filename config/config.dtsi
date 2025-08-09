@@ -7,7 +7,6 @@
 
 #define HOST_OS 2 // = macOS; Must be set before including helper.h
 #include "zmk-helpers/helper.h"
-#include "zmk-helpers/unicode-chars/greek.dtsi"
 
 #include "symbols.dtsi"
 #include "secret.dtsi"
