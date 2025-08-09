@@ -289,7 +289,9 @@ MAKE_LETTER_KEY(H, h, ht_rgkp_kp,
 // J
 MAKE_LETTER_KEY(J, j)
 // K
-MAKE_LETTER_KEY(K, k)
+MAKE_LETTER_KEY(K, k, ht_rgkp_kp,
+	return { trigger-keys = <RETURN>; bindings = <&kp RETURN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+)
 // L
 MAKE_LETTER_KEY(L, l)
 // Colon
