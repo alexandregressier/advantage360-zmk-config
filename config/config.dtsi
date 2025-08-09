@@ -168,15 +168,15 @@ MAKE_NUMBER_ROW_KEY(N5, n5, CARET, caret, TILDE, tilde,
 	tilde { trigger-keys = <TILDE>; bindings = <&kp TILDE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 2
-MAKE_NUMBER_ROW_KEY(N3, n3, LEFT_BRACKET, left_bracket, ASTERISK, ASTERISK,
+MAKE_NUMBER_ROW_KEY(N3, n3, LEFT_BRACKET, leftbracket, ASTERISK, ASTERISK,
 	hash { trigger-keys = <ASTERISK>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 3
-MAKE_NUMBER_ROW_KEY(N1, n1, LEFT_BRACE, left_brace, RIGHT_BRACKET, right_bracket,
+MAKE_NUMBER_ROW_KEY(N1, n1, LEFT_BRACE, leftbrace, RIGHT_BRACKET, rightbracket,
 	right_bracket { trigger-keys = <LEFT_BRACKET RIGHT_BRACKET>; bindings = <&kp RIGHT_BRACKET>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 4
-MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, right_brace,
+MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, rightbrace,
 	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 5
@@ -190,15 +190,15 @@ MAKE_NUMBER_ROW_KEY(N7, n7, UNDERSCORE, underscore, AMPERSAND, ampersand,
 	ampersand { trigger-keys = <AMPERSAND>; bindings = <&kp AMPERSAND>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 7
-MAKE_NUMBER_ROW_KEY(N9, n9, MINUS, minus, LESS_THAN, less_than,
+MAKE_NUMBER_ROW_KEY(N9, n9, MINUS, minus, LESS_THAN, lessthan,
 	less_than { trigger-keys = <LESS_THAN GREATER_THAN>; bindings = <&kp LESS_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 8
-MAKE_NUMBER_ROW_KEY(N0, n0, LEFT_PARENTHESIS, left_parenthesis, GREATER_THAN, greater_than,
+MAKE_NUMBER_ROW_KEY(N0, n0, LEFT_PARENTHESIS, leftparenthesis, GREATER_THAN, greaterthan,
 	greater_than { trigger-keys = <LESS_THAN GREATER_THAN MINUS EQUAL>; bindings = <&kp GREATER_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 9
-MAKE_NUMBER_ROW_KEY(N8, n8, EQUAL, equal, RIGHT_PARENTHESIS, right_parenthesis,
+MAKE_NUMBER_ROW_KEY(N8, n8, EQUAL, equal, RIGHT_PARENTHESIS, rightparenthesis,
 	right_parenthesis { trigger-keys = <LEFT_PARENTHESIS RIGHT_PARENTHESIS>; bindings = <&kp RIGHT_PARENTHESIS>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // 0
@@ -341,7 +341,7 @@ MAKE_LETTER_KEY(M, m)
 // Comma
 MAKE_SPECIAL_CHAR_KEY(COMMA, comma, SEMICOLON, semicolon)
 // Dot
-MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, at_sign)
+MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, atsign)
 // Slash
 MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
 
