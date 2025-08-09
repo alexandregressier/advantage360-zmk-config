@@ -187,6 +187,7 @@ MAKE_NUMBER_ROW_KEY(N7, n7, UNDERSCORE, underscore, AMPERSAND, ampersand,
 // 7
 MAKE_NUMBER_ROW_KEY(N9, n9, MINUS, minus, LESS_THAN, lessthan,
 	less_than { trigger-keys = <LESS_THAN GREATER_THAN>; bindings = <&kp LESS_THAN>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
+	semicolon { trigger-keys = <RIGHT_PARENTHESIS>; bindings = <&kp SEMICOLON>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; }; // (); is very common according to Pascal Getreuer
 )
 // 8
 MAKE_NUMBER_ROW_KEY(N0, n0, LEFT_PARENTHESIS, leftparenthesis, GREATER_THAN, greaterthan,
