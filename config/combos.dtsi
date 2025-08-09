@@ -18,19 +18,19 @@
 
 /* Left hand - Horizontal */
 
-ZMK_COMBO(left_ag_escape_combo, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, ALL, COMBO_TERM_MS) // No prior idle
-ZMK_COMBO(left_rg_nubs_combo, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 31 32, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
+ZMK_COMBO(combo_left_ag_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_left_rg_nubs, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 31 32, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
-ZMK_COMBO(left_ra_nubs_combo, &ht_kp_rakp RA(RS(NUBS)) NUBS, 48 49, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
-ZMK_COMBO(left_rc_nubs_combo, &ht_kp_rckp RC(RS(NUBS)) NUBS, 49 50, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
+ZMK_COMBO(combo_left_ra_nubs, &ht_kp_rakp RA(RS(NUBS)) NUBS, 48 49, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
+ZMK_COMBO(combo_left_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 49 50, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
 
 /* Right hand - Horizontal */
 
-ZMK_COMBO(right_lg_space_combo, &ht_kp_kp LC(LA(LG(SPACE))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
+ZMK_COMBO(combo_right_lg_space, &ht_kp_kp LC(LA(LG(SPACE))) LG(SPACE), 41 42 43, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
-ZMK_COMBO(right_rg_nubs_combo, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 41 42, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
-ZMK_COMBO(right_ag_return_combo, &ht_rgkp_kp ESCAPE ESCAPE, 42 43, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_right_rg_nubs, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 41 42, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
+ZMK_COMBO(combo_right_ag_return, &ht_rgkp_kp ESCAPE ESCAPE, 42 43, ALL, COMBO_TERM_MS) // No prior idle
 
-ZMK_COMBO(right_rc_nubs_combo, &ht_kp_rckp RC(RS(NUBS)) NUBS, 55 56, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
-ZMK_COMBO(right_ra_nubs_combo, &ht_kp_rakp RA(RS(NUBS)) NUBS, 56 57, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
+ZMK_COMBO(combo_right_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 55 56, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
+ZMK_COMBO(combo_right_ra_nubs, &ht_kp_rakp RA(RS(NUBS)) NUBS, 56 57, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
