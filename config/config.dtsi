@@ -336,20 +336,20 @@ MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
 
 /* Mods Row */
 
+// Shift + Tab
+ZMK_ADAPTIVE_KEY(ag_lstab,
+	bindings = <&lhrm LCTRL LS(TAB)>;
+	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+)
 // Left
 ZMK_ADAPTIVE_KEY(ag_left,
-	bindings = <&lhrm LCTRL LEFT>;
+	bindings = <&lhrm LGUI LEFT>;
 	left { trigger-keys = <LEFT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Right
 ZMK_ADAPTIVE_KEY(ag_right,
-	bindings = <&lhrm LGUI RIGHT>;
+	bindings = <&lhrm LALT RIGHT>;
 	right { trigger-keys = <RIGHT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
-)
-// Tab
-ZMK_ADAPTIVE_KEY(ag_tab,
-	bindings = <&lhrm LALT TAB>;
-	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 // Down
@@ -362,8 +362,8 @@ ZMK_ADAPTIVE_KEY(ag_up,
 	bindings = <&rhrm LGUI UP>;
 	up { trigger-keys = <UP>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
-// Shift + Tab
-ZMK_ADAPTIVE_KEY(ag_lstab,
-	bindings = <&rhrm LCTRL LS(TAB)>;
-	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+// Tab
+ZMK_ADAPTIVE_KEY(ag_tab,
+	bindings = <&lhrm LCTRL TAB>;
+	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
