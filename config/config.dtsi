@@ -68,12 +68,6 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 
 /* Morphs */
 
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_MOD_MORPH(NAME, \
-        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
-
 #define TAP_PREFERRED_HOLD_TAP(...) CONCAT(TAP_PREFERRED_HOLD_TAP_, VARGS(__VA_ARGS__))(__VA_ARGS__)
 #define TAP_PREFERRED_HOLD_TAP_3(NAME, HOLD, TAP) \
     TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, 180)
@@ -156,12 +150,8 @@ MAKE_SMART_SHIFT(smart_rshift, RIGHT_SHIFT, rs)
 
 SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apostrophe &kp LEFT)
 
-SIMPLE_MORPH(u_single_quote_morph, SFT, &u_curly_apostrophe, &m_curly_single_quote_pair)
-
 //SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
-
-//SIMPLE_MORPH(u_double_quotes_morph, SFT, &m_curly_double_quotes_pair, &m_guillemet_pair)
 
 SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
