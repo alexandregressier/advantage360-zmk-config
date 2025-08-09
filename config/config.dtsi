@@ -9,7 +9,7 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 
-#include "symbols.h"
+#include "symbols.dtsi"
 #include "secret.dtsi"
 
 
@@ -35,16 +35,21 @@
                69 70
 
 
+/* Layers */
+
 #define DEFAULT 0
 #define NUMBERS 1
 #define MOD 2
 
 
-/* Global Settings */
+/* Timings */
 
 #define QUICK_TAP_MS 175
 #define DEFAULT_ADAPTIVE_TIMEOUT_MS 1000
 #define SLOW_ADAPTIVE_TIMEOUT_MS 2000
+
+
+/* Reconfigurations */
 
 &sk { // Sticky Key
 	release-after-ms = <900>; // Release after 0.9s
@@ -144,20 +149,18 @@ BALANCED_HOLD_TAP(bht_numword_kp, &number_word, &kp, NUMPAD)
 		, <&macro_tap &kp MACRO_PLACEHOLDER> ; \
 	)
 
-KP_MOD_SEQUENCE(lakp, LALT)
-
 KP_MOD_SEQUENCE(rgkp, RGUI)
 KP_MOD_SEQUENCE(rakp, RALT)
 KP_MOD_SEQUENCE(rckp, RCTL)
 
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
-TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200)
+TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow
+TAP_PREFERRED_HOLD_TAP(ht_kp_rgkp, &kp, &rgkp)
 TAP_PREFERRED_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
 
-TAP_PREFERRED_HOLD_TAP(ht_rckp_rgkp, &rckp, &rgkp)
-TAP_PREFERRED_HOLD_TAP(ht_lakp_rakp, &lakp, &rakp)
-
 TAP_PREFERRED_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
+
+TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 
 /* Homerow Mods */
