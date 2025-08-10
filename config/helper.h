@@ -157,11 +157,11 @@
 		}; \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _rs_morph, \
-		bindings = <&ht_rgkp_kp NUMBER KEY>, <&KEY_LOWER ## _shifted_ls_morph>; \
+		bindings = <&KEY_LOWER ## _ls_morph>, <&ht_rgkp_kp RS(NUMBER) RS_KEY>; \
 		mods = <(MOD_RSFT)>; \
 	) \
-	ZMK_MOD_MORPH(KEY_LOWER ## _shifted_ls_morph, \
-		bindings = <&ht_rgkp_kp KEY RS_KEY>, <&ht_rgkp_kp LS(NUMBER) RS_KEY>; \
+	ZMK_MOD_MORPH(KEY_LOWER ## _ls_morph, \
+		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp KEY NUMBER>; \
 		mods = <(MOD_LSFT)>; \
 	)
 
