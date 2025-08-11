@@ -109,3 +109,5 @@ ZMK_LEADER_SEQUENCE(fr_e_diaeresis, &fr_e_diaeresis, U E)
 ZMK_LEADER_SEQUENCE(fr_i_diaeresis, &fr_i_diaeresis, U I)
 
 ZMK_LEADER_SEQUENCE(fr_e_circumflex, &fr_e_circumflex, W)
+
+ZMK_LEADER_SEQUENCE(u_ellipsis, &u_ellipsis, DOT)
