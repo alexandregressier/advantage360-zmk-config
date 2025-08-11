@@ -161,7 +161,7 @@
 		mods = <(MOD_RSFT)>; \
 	) \
 	ZMK_MOD_MORPH(KEY_LOWER ## _ls_morph, \
-		bindings = <&ht_rgkp_kp NUMBER KEY>, <&ht_rgkp_kp KEY NUMBER>; \
+		bindings = <&ht_rgkp_kp NUMBER KEY>, <&kp RS_KEY>; \
 		mods = <(MOD_LSFT)>; \
 	)
 

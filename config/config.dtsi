@@ -198,7 +198,7 @@ MAKE_NUMBER_ROW_KEY(N8, n8, EQUAL, equal, RIGHT_PARENTHESIS, rightparenthesis,
 	right_parenthesis { trigger-keys = <LEFT_PARENTHESIS RIGHT_PARENTHESIS>; bindings = <&kp RIGHT_PARENTHESIS>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 0
-MAKE_NUMBER_ROW_KEY(N6, n6, PLUS, plus, PIPE, pipe,
+MAKE_NUMBER_ROW_KEY(N6, n6, DOLLAR, dollar, PIPE, pipe,
 	pipe { trigger-keys = <PIPE>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
