@@ -7,7 +7,7 @@ This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk) configura
 
 ### Base
 
-![](assets/advantage360-alexandre-gressier-layout.png)
+![](assets/advantage360-alexandre-gressier-layout-base.png)
 
 ## ZMK
 
