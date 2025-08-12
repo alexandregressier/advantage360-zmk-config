@@ -224,7 +224,7 @@ MAKE_LETTER_KEY(Q, q, sht_rgkp_kp, // Slow because misfires
 	rg_q { trigger-keys = <RG(Q)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // W
-MAKE_LETTER_KEY(W, w, ht_rgkp_kp,
+MAKE_LETTER_KEY(W, w, sht_rgkp_kp, // Slow because misfires
 	rg_w { trigger-keys = <RG(W)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; strict-modifiers; };
 )
 // E
@@ -241,7 +241,7 @@ MAKE_LETTER_KEY(U, u)
 // I
 MAKE_LETTER_KEY(I, i)
 // O
-MAKE_LETTER_KEY(O, o)
+MAKE_LETTER_KEY(O, o sht_rgkp_kp) // Slow because misfires
 // P
 MAKE_LETTER_KEY(P, p, sht_rgkp_kp) // Slow because misfires
 
