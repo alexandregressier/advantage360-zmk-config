@@ -9,6 +9,14 @@ This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk) configura
 
 ![](assets/advantage360-alexandre-gressier-layout-base.png)
 
+### Long Presses
+
+![](assets/advantage360-alexandre-gressier-layout-long-presses.png)
+
+### Numbers
+
+![](assets/advantage360-alexandre-gressier-layout-numbers.png)
+
 ## ZMK
 
 By default, this config references a [customized version of ZMK](https://github.com/ReFil/zmk/tree/adv360-z3.5) with
