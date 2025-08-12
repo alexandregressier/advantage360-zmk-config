@@ -17,9 +17,9 @@
                 wait-ms = <10>; \
                 tap-ms = <15>; \
                 bindings = <OS_UNICODE_LEAD>, \
-                          <&macro_wait_time 5>, \
+                          <&macro_wait_time 10>, \
                           <&macro_tap unicode_bindings>, \
-                          <&macro_wait_time 5>, \
+                          <&macro_wait_time 10>, \
                           <OS_UNICODE_TRAIL>; \
             }; \
         }; \
