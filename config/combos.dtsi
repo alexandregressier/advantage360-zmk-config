@@ -25,7 +25,7 @@ ZMK_COMBO(combo_left_ra_nubs, &ht_rgkp_rakp TAB NUBS, 48 49, ALL, COMBO_TERM_MS,
 ZMK_COMBO(combo_left_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 49 50, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
 ZMK_COMBO(combo_right_lg_left, &kp LG(LEFT), 62 63, ALL, COMBO_TERM_MS) // No prior idle
-ZMK_COMBO(combo_right_lg_right, &kp LG(RIGHT), 63 64, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_right_lg_right, &kp LS(RETURN), 63 64, ALL, COMBO_TERM_MS) // No prior idle
 
 ZMK_COMBO(combo_left_rg_backspace, &kp RG(BACKSPACE), 65 66, ALL, COMBO_TERM_MS) // No prior idle
 
