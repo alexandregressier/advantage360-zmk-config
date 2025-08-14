@@ -41,6 +41,6 @@ ZMK_COMBO(combo_right_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 55 56, DEFAULT, CO
 ZMK_COMBO(combo_right_ra_nubs, &ht_kp_rakp RA(RS(NUBS)) NUBS, 56 57, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
 
 ZMK_COMBO(combo_right_ag_return_arrows, &ht_rgkp_kp RETURN RETURN, 71 72, ALL, COMBO_TERM_MS) // No prior idle
-ZMK_COMBO(combo_right_ag_escape_arrows, &ht_rgkp_kp ESCAPE ESCAPE, 72 73, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_right_ag_escape_arrows, &ht_rgkp_kp LS(RETURN) LS(RETURN), 72 73, ALL, COMBO_TERM_MS) // No prior idle
 
 ZMK_COMBO(combo_right_lg_la_lc_f, &kp LG(LA(LC(F))), 69 70, ALL, COMBO_TERM_MS) // No prior idle
