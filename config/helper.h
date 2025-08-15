@@ -76,6 +76,45 @@
 	)
 
 
+/* MAKE_MOD_SEQUENCE */
+
+#if !defined MAKE_HOLD__TAP_TERM_MS
+	#define MAKE_HOLD__TAP_TERM_MS 180
+#endif
+#if !defined MAKE_HOLD_TAP__IDLE_MS
+	#define MAKE_HOLD_TAP__IDLE_MS 200
+#endif
+#if !defined MAKE_HOLD_TAP__FLAVOR
+	#define MAKE_HOLD_TAP__FLAVOR "tap-preferred"
+#endif
+
+#define MAKE_HOLD_TAP(...) CONCAT(MAKE_HOLD_TAP_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define MAKE_HOLD_TAP_3(NAME, HOLD, TAP) \
+    MAKE_HOLD_TAP_4(NAME, HOLD, TAP, MAKE_HOLD__TAP_TERM_MS)
+#define MAKE_HOLD_TAP_4(NAME, HOLD, TAP, TERM_MS) \
+    MAKE_HOLD_TAP_5(NAME, HOLD, TAP, TERM_MS, MAKE_HOLD_TAP__IDLE_MS)
+#define MAKE_HOLD_TAP_5(NAME, HOLD, TAP, TERM_MS, IDLE_MS) \
+    MAKE_HOLD_TAP_6(NAME, HOLD, TAP, TERM_MS, IDLE_MS, MAKE_HOLD_TAP__FLAVOR)
+#define MAKE_HOLD_TAP_6(NAME, HOLD, TAP, TERM_MS, IDLE_MS, FLAVOR) \
+    ZMK_HOLD_TAP(NAME, \
+		flavor = FLAVOR; \
+		tapping-term-ms = <TERM_MS>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
+		require-prior-idle-ms = <IDLE_MS>; \
+		bindings = <HOLD>, <TAP>; \
+ 	)
+#define MAKE_HOLD_TAP_7(NAME, HOLD, TAP, TERM_MS, IDLE_MS, FLAVOR, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+		flavor = FLAVOR; \
+		tapping-term-ms = <TERM_MS>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
+		require-prior-idle-ms = <IDLE_MS>; \
+		bindings = <HOLD>, <TAP>; \
+		hold-trigger-key-positions = <TRIGGER_POS>; \
+		hold-trigger-on-release; \
+ 	)
+
+
 /* MAKE_HOMEROW_MODS */
 
 #if !defined MAKE_HOMEROW_MODS__TAPPING_TERM_MS
