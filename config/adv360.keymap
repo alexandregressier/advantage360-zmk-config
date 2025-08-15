@@ -1,6 +1,6 @@
+// Make sure that there are no other imports, otherwise the config will be overwritten (e.g., behavior reconfigurations)
 #include "config.dtsi"
 
-// Make sure that there are no other imports, otherwise the config will be overwritten (e.g., behavior reconfigurations)
 / {
   keymap {
     compatible = "zmk,keymap";
