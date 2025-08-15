@@ -83,7 +83,7 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
     ZMK_HOLD_TAP(NAME, \
 		flavor = "tap-preferred"; \
 		tapping-term-ms = <TERM>; \
-		quick-tap-ms = <0>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
 		require-prior-idle-ms = <IDLE>; \
 		bindings = <HOLD>, <TAP>; \
  	)
@@ -92,7 +92,7 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
     ZMK_HOLD_TAP(NAME, \
 		flavor = "balanced"; \
 		tapping-term-ms = <180>; \
-		quick-tap-ms = <0>; \
+		quick-tap-ms = <QUICK_TAP_MS>; \
 		require-prior-idle-ms = <200>; \
 		bindings = <HOLD>, <TAP>; \
 		hold-trigger-key-positions = <TRIGGER_POS>; \
