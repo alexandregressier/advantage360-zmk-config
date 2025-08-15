@@ -74,14 +74,14 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 
 /* Morphs */
 
-#define TAP_PREFERRED_HOLD_TAP(...) CONCAT(TAP_PREFERRED_HOLD_TAP_, VARGS(__VA_ARGS__))(__VA_ARGS__)
-#define TAP_PREFERRED_HOLD_TAP_3(NAME, HOLD, TAP) \
-    TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, 180)
-#define TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, TERM) \
-    TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, 200)
-#define TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, IDLE) \
-    TAP_PREFERRED_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, "tap-preferred")
-#define TAP_PREFERRED_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, FLAVOR) \
+#define MAKE_HOLD_TAP(...) CONCAT(MAKE_HOLD_TAP_, VARGS(__VA_ARGS__))(__VA_ARGS__)
+#define MAKE_HOLD_TAP_3(NAME, HOLD, TAP) \
+    MAKE_HOLD_TAP_4(NAME, HOLD, TAP, 180)
+#define MAKE_HOLD_TAP_4(NAME, HOLD, TAP, TERM) \
+    MAKE_HOLD_TAP_5(NAME, HOLD, TAP, TERM, 200)
+#define MAKE_HOLD_TAP_5(NAME, HOLD, TAP, TERM, IDLE) \
+    MAKE_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, "tap-preferred")
+#define MAKE_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, FLAVOR) \
     ZMK_HOLD_TAP(NAME, \
 		flavor = FLAVOR; \
 		tapping-term-ms = <TERM>; \
@@ -89,7 +89,7 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 		require-prior-idle-ms = <IDLE>; \
 		bindings = <HOLD>, <TAP>; \
  	)
-#define TAP_PREFERRED_HOLD_TAP_7(NAME, HOLD, TAP, TERM, IDLE, FLAVOR, TRIGGER_POS) \
+#define MAKE_HOLD_TAP_7(NAME, HOLD, TAP, TERM, IDLE, FLAVOR, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
 		flavor = FLAVOR; \
 		tapping-term-ms = <TERM>; \
@@ -109,28 +109,28 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 		bindings = <&kp BACKSPACE>;
 	};
 )
-TAP_PREFERRED_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", NUMPAD)
+MAKE_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", NUMPAD)
 
 
 /* Hold-Taps */
 
-TAP_PREFERRED_HOLD_TAP(ht_kp_kp, &kp, &kp)
-TAP_PREFERRED_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = Slow
-TAP_PREFERRED_HOLD_TAP(ht_sk_kp, &sk, &kp)
-TAP_PREFERRED_HOLD_TAP(ht_mo_kp, &mo, &kp)
+MAKE_HOLD_TAP(ht_kp_kp, &kp, &kp)
+MAKE_HOLD_TAP(sht_kp_kp, &kp, &kp, 280, 200) // s = Slow
+MAKE_HOLD_TAP(ht_sk_kp, &sk, &kp)
+MAKE_HOLD_TAP(ht_mo_kp, &mo, &kp)
 
 // RGUI
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
-TAP_PREFERRED_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow
-TAP_PREFERRED_HOLD_TAP(ht_kp_rgkp, &kp, &rgkp)
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
+MAKE_HOLD_TAP(ht_rgkp_kp, &rgkp, &kp)
+MAKE_HOLD_TAP(sht_rgkp_kp, &rgkp, &kp, 280, 200) // s = Slow
+MAKE_HOLD_TAP(ht_kp_rgkp, &kp, &rgkp)
+MAKE_HOLD_TAP(ht_rgkp_rgkp, &rgkp, &rgkp)
 
 // RALT
-TAP_PREFERRED_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_rakp, &rgkp, &rakp)
+MAKE_HOLD_TAP(ht_kp_rakp, &kp, &rakp)
+MAKE_HOLD_TAP(ht_rgkp_rakp, &rgkp, &rakp)
 
 // RCTRL
-TAP_PREFERRED_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
+MAKE_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 
 /* Homerow Mods */
@@ -218,7 +218,7 @@ ZMK_MOD_MORPH(ag_grave,
 	bindings = <&ht_rgkp_kp GRAVE GRAVE>, <&ht_rgkp_mtriplebackticks RS(GRAVE) 0>;
 	mods = <(MOD_RSFT)>;
 )
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
+MAKE_HOLD_TAP(ht_rgkp_mtriplebackticks, &rgkp, &m_triple_backticks)
 SIMPLE_MACRO(m_triple_backticks, &kp GRAVE &kp GRAVE &kp GRAVE)
 
 // Q
@@ -255,7 +255,7 @@ ZMK_MOD_MORPH(backslash_morph,
 	bindings = <&ht_rgkp_kp BACKSLASH BACKSLASH>, <&ht_rgkp_ueuro RS(BACKSLASH) 0>;
 	mods = <(MOD_RSFT)>;
 )
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_ueuro, &rgkp, &u_euro)
+MAKE_HOLD_TAP(ht_rgkp_ueuro, &rgkp, &u_euro)
 
 
 /* Middle Row */
@@ -268,7 +268,7 @@ ZMK_MOD_MORPH(double_quotes_morph,
 	bindings = <&ht_rgkp_kp DOUBLE_QUOTES DOUBLE_QUOTES>, <&ht_rgkp_mcurlydoublequotespair RS(DOUBLE_QUOTES) 0>;
 	mods = <(MOD_RSFT)>;
 )
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_mcurlydoublequotespair, &rgkp, &u_left_curly_double_quotes)
+MAKE_HOLD_TAP(ht_rgkp_mcurlydoublequotespair, &rgkp, &u_left_curly_double_quotes)
 //SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 
 // A
@@ -302,7 +302,7 @@ ZMK_MOD_MORPH(ag_singlequote,
 	bindings = <&ht_rgkp_kp SINGLE_QUOTE SINGLE_QUOTE>, <&ht_rgkp_ucurlyapostrophe RS(SINGLE_QUOTE) 0>;
 	mods = <(MOD_RSFT)>;
 )
-TAP_PREFERRED_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
+MAKE_HOLD_TAP(ht_rgkp_ucurlyapostrophe, &rgkp, &u_curly_apostrophe)
 
 
 /* Bottom Row */
