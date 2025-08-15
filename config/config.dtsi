@@ -320,10 +320,10 @@ MAKE_LETTER_KEY(V, v, ht_rgkp_kp,
 	rg_v { trigger-keys = <RG(A) RG(X) RG(C) RG(V) LG(A) LG(X) LG(C) LG(V)>; bindings = <&ht_rgkp_kp V RG(V)>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // B
-MAKE_LETTER_KEY(B, b)
+MAKE_LETTER_KEY(B, b, sht_rgkp_kp) // Slow because misfires
 
 // N
-MAKE_LETTER_KEY(N, n)
+MAKE_LETTER_KEY(N, n, sht_rgkp_kp) // Slow because misfires
 // M
 MAKE_LETTER_KEY(M, m)
 // Comma
