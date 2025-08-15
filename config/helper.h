@@ -50,7 +50,7 @@
 #define SIMPLE_MACRO(NAME, SEQUENCE) \
 	ZMK_MACRO(NAME, \
 		wait-ms = <0>; \
-		tap-ms = <0>; \
+		tap-ms = <10>; \
 		bindings = <SEQUENCE>; \
 	)
 

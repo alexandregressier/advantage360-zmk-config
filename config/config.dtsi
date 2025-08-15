@@ -58,6 +58,9 @@
 
 /* Macros */
 
+SIMPLE_MACRO(macro_double_lessthan, &kp LESS_THAN &kp LESS_THAN)
+SIMPLE_MACRO(macro_double_greaterthan, &kp GREATER_THAN &kp GREATER_THAN)
+
 KP_WITH_MOD_SEQUENCE(rgkp, RGUI)
 KP_WITH_MOD_SEQUENCE(rakp, RALT)
 KP_WITH_MOD_SEQUENCE(rckp, RCTL)
@@ -323,6 +326,7 @@ ZMK_ADAPTIVE_KEY(ag_right,
 ZMK_ADAPTIVE_KEY(ag_tab,
 	bindings = <&lhrm LALT TAB>;
 	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+    double_greaterthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_greaterthan>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
 // Down
@@ -339,4 +343,5 @@ ZMK_ADAPTIVE_KEY(ag_up,
 ZMK_ADAPTIVE_KEY(ag_lstab,
 	bindings = <&rhrm LCTRL LS(TAB)>;
 	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+	double_lessthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_lessthan>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
