@@ -101,13 +101,13 @@ MAKE_HOLD_TAP(ht_rgkp_rakp, &rgkp, &rakp)
 MAKE_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
 // Numword
-MAKE_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", NUMPAD)
+MAKE_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", POS_NUMPAD)
 
 
 /* Homerow Mods */
 
-MAKE_HOMEROW_MODS(lhrm, &kp, &kp, KEYS_RIGHT THUMBS_LEFT THUMBS_RIGHT)
-MAKE_HOMEROW_MODS(rhrm, &kp, &kp, KEYS_LEFT THUMBS_LEFT THUMBS_RIGHT)
+MAKE_HOMEROW_MODS(lhrm, &kp, &kp, POS_RIGHT_KEYS POS_LEFT_THUMB POS_RIGHT_THUMB)
+MAKE_HOMEROW_MODS(rhrm, &kp, &kp, POS_LEFT_KEYS POS_LEFT_THUMB POS_RIGHT_THUMB)
 
 
 /* Smart Shift */
