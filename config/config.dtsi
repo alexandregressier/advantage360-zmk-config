@@ -48,6 +48,7 @@
 };
 
 &caps_word {
+	continue-list = <BACKSPACE DELETE UNDERSCORE>; // (Default)
 	/delete-property/ ignore-modifiers; // By default, Caps Word continue on all mods (requires ZMK-AUTO-LAYER or PR #1451)
 };
 
@@ -93,7 +94,9 @@ MAKE_HOLD_TAP(ht_rgkp_rakp, &rgkp, &rakp)
 // RCTRL
 MAKE_HOLD_TAP(ht_kp_rckp, &kp, &rckp)
 
+// Numword
 MAKE_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", NUMPAD)
+
 
 /* Homerow Mods */
 
@@ -122,10 +125,8 @@ ZMK_ADAPTIVE_KEY(bht_numword_backspace,
 
 SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apostrophe &kp LEFT)
 
-//SIMPLE_MACRO(m_curly_double_quotes_pair, &u_left_curly_double_quotes &u_right_curly_double_quotes &kp LEFT)
 SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
 
-SIMPLE_MACRO(m_fr_ou, &kp O &fr_u_grave)
 
 
 /* Number Row */
@@ -144,7 +145,7 @@ MAKE_NUMBER_ROW_KEY(N1, n1, LEFT_BRACE, leftbrace, RIGHT_BRACKET, rightbracket,
 )
 // 4
 MAKE_NUMBER_ROW_KEY(N2, n2, QUESTION, question, RIGHT_BRACE, rightbrace,
-	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; };
+	right_brace { trigger-keys = <LEFT_BRACE RIGHT_BRACE>; bindings = <&kp RIGHT_BRACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // 5
 MAKE_NUMBER_ROW_KEY(N4, n4, EXCLAMATION, exclamation, HASH, hash,
