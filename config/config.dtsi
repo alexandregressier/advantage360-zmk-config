@@ -80,23 +80,24 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 #define TAP_PREFERRED_HOLD_TAP_4(NAME, HOLD, TAP, TERM) \
     TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, 200)
 #define TAP_PREFERRED_HOLD_TAP_5(NAME, HOLD, TAP, TERM, IDLE) \
+    TAP_PREFERRED_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, "tap-preferred")
+#define TAP_PREFERRED_HOLD_TAP_6(NAME, HOLD, TAP, TERM, IDLE, FLAVOR) \
     ZMK_HOLD_TAP(NAME, \
-		flavor = "tap-preferred"; \
+		flavor = FLAVOR; \
 		tapping-term-ms = <TERM>; \
 		quick-tap-ms = <QUICK_TAP_MS>; \
 		require-prior-idle-ms = <IDLE>; \
 		bindings = <HOLD>, <TAP>; \
  	)
-
-#define BALANCED_HOLD_TAP(NAME, HOLD, TAP, TRIGGER_POS) \
+#define TAP_PREFERRED_HOLD_TAP_7(NAME, HOLD, TAP, TERM, IDLE, FLAVOR, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
-		flavor = "balanced"; \
-		tapping-term-ms = <180>; \
+		flavor = FLAVOR; \
+		tapping-term-ms = <TERM>; \
 		quick-tap-ms = <QUICK_TAP_MS>; \
-		require-prior-idle-ms = <200>; \
+		require-prior-idle-ms = <IDLE>; \
 		bindings = <HOLD>, <TAP>; \
 		hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
+		hold-trigger-on-release; \
  	)
 
 
@@ -108,7 +109,7 @@ ZMK_ADAPTIVE_KEY(ht_num_backspace,
 		bindings = <&kp BACKSPACE>;
 	};
 )
-BALANCED_HOLD_TAP(bht_numword_kp, &num_word, &kp, NUMPAD)
+TAP_PREFERRED_HOLD_TAP(bht_numword_kp, &num_word, &kp, 180, 200, "balanced", NUMPAD)
 
 
 /* Hold-Taps */
