@@ -13,9 +13,9 @@
 
 /* Layers */
 
-#define DEFAULT 0
+#define BASE 0
 #define NUMBERS 1
-#define MOD 2
+#define SYSTEM 2
 
 
 /* Timings */
@@ -70,7 +70,7 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 	tap-ms = <0>;
 	bindings
 	= <&macro_param_1to1>
-	, <&kp MACRO_PLACEHOLDER &to DEFAULT>;
+	, <&kp MACRO_PLACEHOLDER &to BASE>;
 )
 
 // Symbols
