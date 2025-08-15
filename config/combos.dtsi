@@ -26,8 +26,8 @@ ZMK_COMBO(combo_left_rg_nubs, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 31 32, ALL, COMBO_T
 ZMK_COMBO(combo_left_ra_nubs, &ht_rgkp_rakp TAB NUBS, 48 49, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 ZMK_COMBO(combo_left_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 49 50, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
-ZMK_COMBO(combo_left_ag_lsescape, &ht_rgkp_kp LS(ESCAPE) LS(ESCAPE), 62 63, ALL, COMBO_TERM_MS) // No prior idle
-ZMK_COMBO(combo_left_ag_escape, &ht_rgkp_kp ESCAPE ESCAPE, 63 64, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_left_ag_lsescape_arrows, &ht_rgkp_kp LS(ESCAPE) LS(ESCAPE), 62 63, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_left_ag_escape_arrows, &ht_rgkp_kp ESCAPE ESCAPE, 63 64, ALL, COMBO_TERM_MS) // No prior idle
 
 // Thumb
 ZMK_COMBO(combo_left_rg_backspace, &kp RG(BACKSPACE), 65 66, ALL, COMBO_TERM_MS) // No prior idle
