@@ -241,7 +241,7 @@ MAKE_LETTER_KEY(U, u)
 // I
 MAKE_LETTER_KEY(I, i)
 // O
-MAKE_LETTER_KEY(O, o sht_rgkp_kp) // Slow because misfires
+MAKE_LETTER_KEY(O, o, sht_rgkp_kp) // Slow because misfires
 // P
 MAKE_LETTER_KEY(P, p, sht_rgkp_kp) // Slow because misfires
 
