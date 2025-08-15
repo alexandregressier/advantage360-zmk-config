@@ -52,8 +52,9 @@
 };
 
 &num_word {
-	continue-list = <BACKSPACE DELETE DOT COMMA>;
-	ignore-modifiers; // Needed for key bindings using mods + numbers (because only lg + numbers is supported in number row)
+	continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS ASTERISK SLASH PERCENT>;
+	// todo: just ignore right shift?
+	//ignore-modifiers; // Needed for key bindings using mods + numbers (because only lg + numbers is supported in number row)
 };
 
 
