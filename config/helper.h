@@ -55,6 +55,28 @@
 	)
 
 
+/* UC_MACRO */
+
+#undef UC_MACRO
+#define UC_MACRO(NAME, UNICODE_BINDINGS) \
+	ZMK_MACRO(NAME, \
+		wait-ms = <10>; \
+		tap-ms = <15>; \
+		bindings = <OS_UNICODE_LEAD>, \
+				  <&macro_wait_time 10>, \
+				  <&macro_tap UNICODE_BINDINGS>, \
+				  <&macro_wait_time 10>, \
+				  <OS_UNICODE_TRAIL>; \
+	)
+
+
+/* ZMK_UNICODE_SINGLE_SHIFTED */
+
+#define ZMK_UNICODE_SINGLE_SHIFTED(NAME, S0, S1, S2, S3) \
+    UC_MACRO(NAME ## _shifted, &kp S0 &kp S1 &kp S2 &kp S3) \
+    UC_MODMORPH(NAME, &none, &NAME ## _shifted)
+
+
 /* KP_WITH_MOD_SEQUENCE */
 
 #if !defined KP_WITH_MOD_SEQUENCE__WAIT_MS
@@ -159,6 +181,24 @@
 		tapping-term-ms = <MAKE_SMART_SHIFT__DANCE_TAPPING_TERM_MS>; \
 		bindings = <&sk SHIFT_KEY>, <&caps_word>, <&kp CAPSLOCK>; \
 	)
+
+
+/* ZMK_LEADER_SEQUENCE */
+
+#undef ZMK_LEADER_SEQUENCE
+#define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
+    / { \
+        behaviors { \
+            leader: leader { \
+                compatible = "zmk,behavior-leader-key"; \
+                #binding-cells = <0>; \
+                leader_sequence_ ## name { \
+                    bindings = <leader_bindings>; \
+                    sequence = <leader_sequence>; \
+                }; \
+            }; \
+        }; \
+    };
 
 
 /* MAKE_LETTER_KEY */

@@ -10,9 +10,6 @@
 
 #include "helper.h"
 
-#include "secret.dtsi"
-#include "symbols.dtsi"
-
 
 /* Layers */
 
@@ -73,6 +70,12 @@ ZMK_MACRO_ONE_PARAM(kp_reset,
 	, <&kp MACRO_PLACEHOLDER &to DEFAULT>;
 )
 
+// Symbols
+#include "symbols.dtsi"
+
+// Secret
+#include "secret.dtsi"
+
 
 /* Hold-Taps */
 
@@ -116,17 +119,10 @@ ZMK_ADAPTIVE_KEY(bht_numword_backspace,
 	backspace { trigger-keys = <BACKSPACE>; bindings = <&kp BACKSPACE>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 
+
 /* Combos */
 
 #include "combos.dtsi"
-
-
-/* Symbols */
-
-SIMPLE_MACRO(m_curly_single_quote_pair, &u_left_curly_single_quote &u_curly_apostrophe &kp LEFT)
-
-SIMPLE_MACRO(m_guillemet_pair, &u_guillemet_left &kp SPACE &kp SPACE &u_guillemet_right &kp LEFT &kp LEFT)
-
 
 
 /* Number Row */
@@ -176,7 +172,7 @@ MAKE_NUMBER_ROW_KEY(N6, n6, DOLLAR, dollar, PIPE, pipe,
 
 // Secret
 ZMK_MOD_MORPH(secret_morph,
-	bindings = <&m_secret_return>, <&m_secret>;
+	bindings = <&macro_secret>, <&macro_secret_noreturn>;
 	mods = <(MOD_RSFT)>;
 )
 

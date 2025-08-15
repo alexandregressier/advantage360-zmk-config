@@ -20,7 +20,7 @@
 
 ZMK_COMBO(combo_left_lalgspace, &ht_kp_kp LA(LG(LS(SPACE))) LA(LG(SPACE)), 31 32 33, ALL, COMBO_TERM_MS) // No prior idle
 
-ZMK_COMBO(combo_left_ag_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, ALL, COMBO_TERM_MS) // No prior idle
+ZMK_COMBO(combo_left_ag_escape, &ht_rgkp_kp ESCAPE ESCAPE, 30 31, ALL, COMBO_TERM_MS, COMBO_IDLE_MS) // "ds" bigram is quite common
 ZMK_COMBO(combo_left_rg_nubs, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 31 32, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
 
 ZMK_COMBO(combo_left_ra_nubs, &ht_rgkp_rakp TAB NUBS, 48 49, ALL, COMBO_TERM_MS, COMBO_IDLE_MS)
@@ -38,6 +38,7 @@ ZMK_COMBO(combo_left_rg_backspace, &kp RG(BACKSPACE), 65 66, ALL, COMBO_TERM_MS)
 ZMK_COMBO(combo_right_lclgspace, &ht_kp_kp LC(LG(LS(SPACE))) LC(LG(SPACE)), 41 42 43, ALL, COMBO_TERM_MS) // No prior idle
 
 ZMK_COMBO(combo_right_rg_nubs, &ht_kp_rgkp RG(RS(NUBS)) NUBS, 41 42, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
+ZMK_COMBO(combo_right_ag_return, &ht_rgkp_kp RETURN RETURN, 42 43, DEFAULT, COMBO_TERM_MS) // No prior idle // DEFAULT because of numberpad
 
 ZMK_COMBO(combo_right_rc_nubs, &ht_kp_rckp RC(RS(NUBS)) NUBS, 55 56, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
 ZMK_COMBO(combo_right_ra_nubs, &ht_kp_rakp RA(RS(NUBS)) NUBS, 56 57, DEFAULT, COMBO_TERM_MS, COMBO_IDLE_MS) // DEFAULT because of numberpad
