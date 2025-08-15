@@ -306,7 +306,7 @@ MAKE_LETTER_KEY(N, n, sht_rgkp_kp) // Slow because misfires
 MAKE_LETTER_KEY(M, m)
 // Comma
 MAKE_SPECIAL_CHAR_KEY(COMMA, comma, SEMICOLON, semicolon,
-	semicolon { trigger-keys = <SEMICOLON>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+	semicolon { trigger-keys = <SEMICOLON>; bindings = <&kp SEMICOLON> /* Not key_repeat b/c it will produce `:` o/w */; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
 )
 // Dot
 MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, atsign,
