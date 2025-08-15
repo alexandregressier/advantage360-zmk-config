@@ -186,15 +186,15 @@
 /* ZMK_LEADER_SEQUENCE */
 
 #undef ZMK_LEADER_SEQUENCE
-#define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
+#define ZMK_LEADER_SEQUENCE(LEADER, NAME, SEQUENCE) \
     / { \
         behaviors { \
-            leader: leader { \
+            LEADER: LEADER { \
                 compatible = "zmk,behavior-leader-key"; \
                 #binding-cells = <0>; \
                 leader_sequence_ ## name { \
-                    bindings = <leader_bindings>; \
-                    sequence = <leader_sequence>; \
+                    bindings = <&NAME>; \
+                    sequence = <SEQUENCE>; \
                 }; \
             }; \
         }; \

@@ -1,19 +1,20 @@
-ZMK_LEADER_SEQUENCE(fr_a_grave, &fr_a_grave, A)
+// Unicode
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_a_grave, A)
 
-ZMK_LEADER_SEQUENCE(fr_c_cedilla, &fr_c_cedilla, C)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_c_cedilla, C)
 
-ZMK_LEADER_SEQUENCE(fr_e_acute, &fr_e_acute, E)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_e_acute, E)
 
-ZMK_LEADER_SEQUENCE(fr_a_circumflex, &fr_a_circumflex, I A)
-ZMK_LEADER_SEQUENCE(fr_i_circumflex, &fr_i_circumflex, I I)
-ZMK_LEADER_SEQUENCE(fr_o_circumflex, &fr_o_circumflex, I O)
-ZMK_LEADER_SEQUENCE(fr_u_circumflex, &fr_u_circumflex, I U)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_a_circumflex, I A)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_i_circumflex, I I)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_o_circumflex, I O)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_u_circumflex, I U)
 
-ZMK_LEADER_SEQUENCE(fr_e_grave, &fr_e_grave, R)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_e_grave, R)
 
-ZMK_LEADER_SEQUENCE(fr_e_diaeresis, &fr_e_diaeresis, U E)
-ZMK_LEADER_SEQUENCE(fr_i_diaeresis, &fr_i_diaeresis, U I)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_e_diaeresis, U E)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_i_diaeresis, U I)
 
-ZMK_LEADER_SEQUENCE(fr_e_circumflex, &fr_e_circumflex, W)
+ZMK_LEADER_SEQUENCE(leader_unicode, fr_e_circumflex, W)
 
-ZMK_LEADER_SEQUENCE(u_ellipsis, &u_ellipsis, DOT)
+ZMK_LEADER_SEQUENCE(leader_unicode, u_ellipsis, DOT)
