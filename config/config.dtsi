@@ -269,7 +269,9 @@ MAKE_LETTER_KEY(K, k, ht_rgkp_kp,
 // L
 MAKE_LETTER_KEY(L, l)
 // Colon
-MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus)
+MAKE_SPECIAL_CHAR_KEY(COLON, colon, PLUS, plus,
+	plus { trigger-keys = <PLUS>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+)
 
 // Single quote
 ZMK_MOD_MORPH(ag_singlequote,
@@ -303,11 +305,17 @@ MAKE_LETTER_KEY(N, n, sht_rgkp_kp) // Slow because misfires
 // M
 MAKE_LETTER_KEY(M, m)
 // Comma
-MAKE_SPECIAL_CHAR_KEY(COMMA, comma, SEMICOLON, semicolon)
+MAKE_SPECIAL_CHAR_KEY(COMMA, comma, SEMICOLON, semicolon,
+	semicolon { trigger-keys = <SEMICOLON>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+)
 // Dot
-MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, atsign)
+MAKE_SPECIAL_CHAR_KEY(DOT, dot, AT_SIGN, atsign,
+	atsign { trigger-keys = <AT_SIGN>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+)
 // Slash
-MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent)
+MAKE_SPECIAL_CHAR_KEY(SLASH, slash, PERCENT, percent,
+	percent { trigger-keys = <PERCENT>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+)
 
 
 /* Mods Row */
@@ -326,7 +334,7 @@ ZMK_ADAPTIVE_KEY(ag_right,
 ZMK_ADAPTIVE_KEY(ag_tab,
 	bindings = <&lhrm LALT TAB>;
 	tab { trigger-keys = <TAB>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
-    double_greaterthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_greaterthan>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+    double_greaterthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_greaterthan>; max-prior-idle-ms = <2000>; allow-more-modifiers; };
 )
 
 // Down
@@ -343,5 +351,5 @@ ZMK_ADAPTIVE_KEY(ag_up,
 ZMK_ADAPTIVE_KEY(ag_lstab,
 	bindings = <&rhrm LCTRL LS(TAB)>;
 	lstab { trigger-keys = <LS(TAB)>; bindings = <&key_repeat>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
-	double_lessthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_lessthan>; max-prior-idle-ms = <DEFAULT_ADAPTIVE_TIMEOUT_MS>; allow-more-modifiers; };
+	double_lessthan { trigger-keys = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0 LESS_THAN GREATER_THAN>; bindings = <&macro_double_lessthan>; max-prior-idle-ms = <2000>; allow-more-modifiers; };
 )
