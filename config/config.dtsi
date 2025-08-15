@@ -120,6 +120,11 @@ ZMK_ADAPTIVE_KEY(bht_numword_backspace,
 )
 
 
+/* Leader */
+
+#include "leader.dtsi"
+
+
 /* Combos */
 
 #include "combos.dtsi"

@@ -42,26 +42,3 @@ ZMK_UNICODE_SINGLE(fr_u_grave, N0, N0, F, N9) // ù LATIN SMALL LETTER U WITH GR
 ZMK_UNICODE_PAIR(fr_u_circumflex, N0, N0, F, B, N0, N0, D, B) // û LATIN SMALL LETTER U WITH CIRCUMFLEX (codepoint 251, #o363, #xfb) / Û LATIN CAPITAL LETTER U WITH CIRCUMFLEX (codepoint 219, #o333, #xdb)
 
 ZMK_UNICODE_PAIR(fr_c_cedilla, N0, N0, E, N7, N0, N0, C, N7) // ç LATIN SMALL LETTER C WITH CEDILLA (codepoint 231, #o347, #xe7) / Ç LATIN CAPITAL LETTER C WITH CEDILLA (codepoint 199, #o307, #xc7)
-
-
-// Leader
-
-ZMK_LEADER_SEQUENCE(fr_a_grave, &fr_a_grave, A)
-
-ZMK_LEADER_SEQUENCE(fr_c_cedilla, &fr_c_cedilla, C)
-
-ZMK_LEADER_SEQUENCE(fr_e_acute, &fr_e_acute, E)
-
-ZMK_LEADER_SEQUENCE(fr_a_circumflex, &fr_a_circumflex, I A)
-ZMK_LEADER_SEQUENCE(fr_i_circumflex, &fr_i_circumflex, I I)
-ZMK_LEADER_SEQUENCE(fr_o_circumflex, &fr_o_circumflex, I O)
-ZMK_LEADER_SEQUENCE(fr_u_circumflex, &fr_u_circumflex, I U)
-
-ZMK_LEADER_SEQUENCE(fr_e_grave, &fr_e_grave, R)
-
-ZMK_LEADER_SEQUENCE(fr_e_diaeresis, &fr_e_diaeresis, U E)
-ZMK_LEADER_SEQUENCE(fr_i_diaeresis, &fr_i_diaeresis, U I)
-
-ZMK_LEADER_SEQUENCE(fr_e_circumflex, &fr_e_circumflex, W)
-
-ZMK_LEADER_SEQUENCE(u_ellipsis, &u_ellipsis, DOT)
